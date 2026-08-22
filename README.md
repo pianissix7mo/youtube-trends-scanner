@@ -1,118 +1,197 @@
 # youtube-trends-scanner
 
-A hybrid, entity-focused topic radar for a Chinese-language investing channel.
+A three-stage topic radar for a Chinese-language U.S.-stock / investing YouTube channel.
 
-## What it does
+## Core idea
 
-The scanner uses two discovery layers, then collapses long-tail queries into unique stocks/companies/assets:
+**Python gathers data; ChatGPT makes editorial judgements; Python measures YouTube competition; ChatGPT makes the final recommendation.**
 
-1. **Broad-net layer:** fetches Google Trending RSS across several relevant markets and cheaply filters for finance/investing topics using the trend title plus related news headlines.
-2. **YouTube layer:** uses Google Trends **YouTube Search** (`gprop="youtube"`) with **Worldwide** geography to discover Rising and Top related searches from curated finance anchors.
-3. Merges both pools and filters creator/channel names plus known low-value queries.
-4. Maps related searches to canonical entities. For example, `台積電 亞利桑那州廠`, `台積電 工安 意外`, `TSM`, and `台積電 股票` all count as one **TSMC** entity.
-5. Keeps only the strongest discovered query for each entity before expensive validation.
-6. Runs exact Google Trends benchmarks and YouTube Data API checks only on the final unique entities.
-7. Produces `output/latest.md`, `output/latest.csv`, and `output/latest.json` with clean canonical entity names.
+The active daily pipeline deliberately avoids trying to encode every editorial rule into Python. Old blacklist / alias / scoring logic is kept only as legacy rollback code and is no longer the scheduled main path.
 
-The broad Google Trending layer is used for discovery. The final Opportunity Score is still driven by YouTube Search Trends plus recent YouTube competition/performance data.
+## Daily pipeline
 
-## Why entity-focused
+### 1. 05:00 Toronto — collect raw trends with Python
 
-A topic can generate many highly similar searches. Without entity deduplication, one company such as TSMC can occupy a large part of the final ranking with variants about factories, accidents, employees, stock price, and news.
+GitHub Actions workflow: **Collect Raw Trends**
 
-The scanner now searches broadly first, then gives each stock/company/asset only **one final slot**. This preserves discovery coverage while making the final list much more diverse and useful for choosing videos.
+`collect_trends.py` gathers broad signals from three near-equal discovery markets:
 
-## Default scan
+- United States
+- Canada
+- Taiwan
 
-- Worldwide Chinese YouTube Search validation
-- 5 Google Trends YouTube discovery anchors
-- Google Trending RSS broad scan: `US, CA, TW, HK, SG`
-- Broad Trending lookback: 48 hours
-- Broad Trending feeds fetched in parallel
-- Wide cheap preselection before entity deduplication
-- One final row per stock/company/asset entity
-- **20 final unique entities**
-- 3 exact YouTube Trends benchmark groups (up to 12 entities)
-- 7-day YouTube lookback
-- 12-hour YouTube metrics cache for repeated manual runs
-- Up to 48-hour stale-cache fallback if YouTube search quota is exhausted
-- Workflow timeout: 20 minutes
+Taiwan may be treated as only slightly more important, but it must not dominate simply because the current channel audience is Taiwan-heavy.
 
-## Candidate priority
+The collector combines:
 
-The hybrid discovery roughly prioritizes:
+- Google Trending RSS, 48-hour lookback
+- Google Trends property = **YouTube Search**
+- Rising and Top related searches from broad anchors in each market
 
-1. Found in both Google Trending and YouTube Rising
-2. YouTube Rising
-3. Broad Google Trending finance candidates
-4. YouTube Top related searches
-5. Curated seeds
+The collector intentionally performs almost no editorial filtering. It can keep entertainment, sports, generic terms, creators, companies, crypto, macro, and other noise because ChatGPT reviews the pool later.
 
-After that ranking, queries are collapsed by entity. Only the strongest representative query for TSMC, Apple, NVIDIA, Micron, Bitcoin, etc. advances to the expensive checks.
+The default cap is **1,000 raw candidates**.
 
-The final report displays the clean entity name, while the strongest underlying long-tail query is still used internally for scoring.
+Outputs:
+
+- `data/raw_candidates.json` — full machine-readable evidence
+- `data/raw_review.jsonl` — compact one-candidate-per-line review file for ChatGPT
+
+The workflow commits these files back to the repository.
+
+### 2. 05:30 Toronto — ChatGPT selects up to 20 entities
+
+A ChatGPT Scheduled Task reads all of `data/raw_review.jsonl` in chunks and applies editorial judgement.
+
+Selection principles:
+
+- U.S., Canada, and Taiwan are near-equal discovery markets
+- prioritize topics relevant to U.S. equities / investors
+- a Taiwan, Canadian, Asian, or other non-U.S. company is valid when it can materially affect U.S.-listed stocks, technology supply chains, market sentiment, macro expectations, or investor attention
+- one slot per company / asset / entity
+- merge long-tail searches about the same entity
+- remove sports, entertainment, creator/channel names, generic evergreen terms, generic how-to searches, and other low-value noise
+- macro / policy / crypto topics are allowed when materially market-relevant
+
+Examples:
+
+- `台積電 亞利桑那州廠`, `TSMC Arizona`, `台積電 工安` → one **TSMC** entity
+- `BTC`, `Bitcoin`, `比特幣暴漲` → one **Bitcoin** entity
+- a non-U.S. supplier can still qualify if its news materially affects NVIDIA, Apple, memory, semiconductors, AI infrastructure, or other U.S.-market themes
+
+ChatGPT writes:
+
+- `data/selected_entities.json`
+
+Each selected row contains a canonical entity, entity type, one concise YouTube query, source regions, selection reason, and trend evidence.
+
+### 3. Automatic — YouTube Data API enrichment
+
+GitHub Actions workflow: **Enrich Selected Entities**
+
+A commit to `data/selected_entities.json` automatically triggers `youtube_enrich.py`.
+
+Only the selected **up to 20 entities** use the expensive YouTube search call.
+
+For each entity the script measures:
+
+- approximate number of relevant videos published in the last 7 days
+- median views
+- median views/day
+- small-channel hit rate
+- median sampled channel subscribers
+- sample high-velocity videos
+
+The Python stage does **not** compute a final editorial Opportunity Score.
+
+Outputs:
+
+- `output/latest.json`
+- `output/latest.md`
+
+The workflow commits the latest output back to the repository and also uploads it as an artifact.
+
+### 4. 06:00 Toronto — ChatGPT final ranking + email
+
+A second ChatGPT Scheduled Task reads the fresh enrichment output and performs the final review.
+
+It combines:
+
+- trend strength / Rising / Breakout evidence
+- freshness and catalyst quality
+- relevance to U.S. investors
+- 7-day YouTube content supply
+- median views/day
+- small-channel hit rate
+- whether a newer/smaller channel has a realistic content angle
+
+The email contains:
+
+- **今天最值得做 Top 3**
+- full ranked list of up to 20 entities
+- a model judgement score out of 10
+- catalyst / trend explanation
+- YouTube competition metrics
+- one concrete Chinese video angle for each entity
+
+## Geography philosophy
+
+Do **not** use the channel's current audience percentages as literal weights.
+
+The current audience may be Taiwan-heavy because the channel is still young. The intended long-run audience is more balanced across Taiwan, the United States, and Canada.
+
+Therefore the system uses the three regions as near-equal discovery markets. A useful mental model is roughly:
+
+- Taiwan: ~36%
+- United States: ~32%
+- Canada: ~32%
+
+These are not hard mathematical weights. Model judgement should still preserve an important U.S.-first story even when Taiwan search interest has not caught up yet.
 
 ## GitHub Actions
 
-Manual run:
+### Collect Raw Trends
 
-`Actions → YouTube Trend Scan → Run workflow`
+Automatic run: **05:00 America/Toronto every day**, DST-safe.
 
-Automatic run:
+Manual run is also available from GitHub Actions.
 
-- once per day at **12:00 UTC**
-- **20:00 Taiwan**
-- **08:00 Toronto during EDT / 07:00 during EST**
+Inputs:
 
-The scheduled run defaults to **20 unique entities** and a 7-day YouTube Search Trends window.
+- `timeframe` — default `now 7-d`
+- `raw_limit` — default `1000`
 
-## YouTube Data API
+### Enrich Selected Entities
 
-Add the repository secret:
+Runs automatically when ChatGPT writes `data/selected_entities.json`.
 
-`Settings → Secrets and variables → Actions → New repository secret`
+It can also be launched manually.
 
-Name:
+## YouTube API
+
+Repository secret required:
 
 `YOUTUBE_API_KEY`
 
-With the key enabled, the report adds:
+The enrichment stage uses only one `search.list` query per selected entity, so a normal daily run uses at most about 20 expensive search calls rather than spending quota on the full raw candidate pool.
 
-- estimated number of relevant videos published in the last 7 days
-- median views and median views/day from up to 50 sampled videos
-- share of sampled videos where a channel under 50k subscribers still reached at least 1k views
-- combined Opportunity Score
+A 12-hour fresh cache and 48-hour stale fallback are supported for repeated tests or quota failures.
 
-Repeated runs reuse cached YouTube metrics when possible, which avoids spending another expensive YouTube search call for the same recent query. If a deep check has no live or cached YouTube data, its score is forced to zero rather than allowing a Trends-only proxy to rank above fully checked entities.
+## Active files
 
-## Tune the scan
+- `collect_trends.py` — broad US/CA/TW trend collection
+- `make_review_file.py` — compact ChatGPT-readable raw view
+- `youtube_enrich.py` — YouTube Data API measurement stage
+- `.github/workflows/scan.yml` — 05:00 raw collection
+- `.github/workflows/enrich.yml` — automatic YouTube enrichment
+- `data/raw_candidates.json` — generated raw evidence
+- `data/raw_review.jsonl` — generated compact review input
+- `data/selected_entities.json` — generated ChatGPT selection
+- `output/latest.json` / `output/latest.md` — generated YouTube measurements
 
-- `creator_blocklist.txt` — creator/channel names and explicit low-value queries to exclude
-- `keywords.json` — discovery anchors and curated seed queries
-- `entity_cached.py` — canonical entity aliases used to merge query variants
+## Legacy files
 
-Environment variables:
+The previous scanner remains in the repository for rollback/reference but is not part of the scheduled main pipeline:
 
-- `TOP_N` — final unique entity count, default `20`
-- `TRENDS_TIMEFRAME` — YouTube Search Trends window, default `now 7-d`
-- `DISCOVERY_ANCHORS` — default `5`
-- `TREND_BENCHMARK_GROUPS` — default `3`; each group measures up to 4 candidates against the shared anchor
-- `TRENDS_MAX_ATTEMPTS` — default `1`
-- `TRENDS_RETRY_WAIT` — default `5`
-- `TRENDING_RSS_GEOS` — broad-net regions, default `US,CA,TW,HK,SG`
-- `TRENDING_RSS_HOURS` — broad-net lookback, default `48`
-- `TRENDING_RSS_TIMEOUT` — per-feed timeout, default `10`
-- `TRENDING_RSS_PER_GEO` — maximum RSS rows inspected per region, default `50`
-- `TRENDING_PRESELECT_LIMIT` — maximum broad-only candidates admitted before Top/seeds, default `16`
-- `YOUTUBE_CACHE_TTL_HOURS` — fresh YouTube-metrics cache window, default `12`
-- `YOUTUBE_STALE_FALLBACK_HOURS` — stale cache allowed after quota failure, default `48`
-- `YOUTUBE_API_KEY` — optional YouTube Data API v3 key
+- `scan.py`
+- `hybrid_scan.py`
+- `hybrid_cached.py`
+- `entity_cached.py`
+- `creator_blocklist.txt`
+- `keywords.json`
 
-## Local run
+## Local usage
+
+Collect raw data:
 
 ```bash
 pip install -r requirements.txt
-python entity_cached.py
+python collect_trends.py
+python make_review_file.py
 ```
 
-`scan.py` remains the base scanner, `hybrid_scan.py` adds broad discovery, `hybrid_cached.py` adds YouTube metrics caching, and `entity_cached.py` adds entity deduplication plus final-report cleanup.
+After `data/selected_entities.json` exists:
+
+```bash
+YOUTUBE_API_KEY=... python youtube_enrich.py
+```

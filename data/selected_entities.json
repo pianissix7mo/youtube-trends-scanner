@@ -1,127 +1,127 @@
 {
-  "generated_at_utc": "2026-08-22T11:22:55.209397+00:00",
-  "source_raw_generated_at_utc": "2026-08-22T11:22:55.209397+00:00",
-  "notes": "Manual ChatGPT review for pipeline test. US/Canada/Taiwan treated as near-equal discovery markets. Selected only distinct, investment-relevant entities/topics; generic evergreen, creator, sports, entertainment, and GTA/game queries were removed. Fewer than 20 were kept because the remaining raw pool was low-value noise.",
+  "generated_at_utc": "2026-08-22T12:44:00+00:00",
+  "source_raw_generated_at_utc": "2026-08-22T12:32:42.289545+00:00",
+  "notes": "Manual ChatGPT first-pass selection from the latest 3-day run. Kept 15 distinct investment-relevant entities/themes so the full pipeline can be tested. This run's Google Trends YouTube Explore layer had 0 successful calls and stopped after 429, so trend evidence below is RSS-only and lower confidence than the prior run; weak generic/sports items were mapped only when there was a plausible public-equity or market angle.",
   "selected": [
     {
-      "entity": "Japan stock market selloff",
-      "entity_type": "macro",
-      "youtube_query": "日本股市 暴跌",
+      "entity": "TKO Group Holdings / WWE",
+      "entity_type": "company",
+      "youtube_query": "WWE TKO 美股",
       "regions": ["US", "CA"],
-      "selection_reason": "The strongest cross-region investing signal in the raw pool and directly relevant to global risk appetite and U.S. equities.",
-      "trend_evidence": "'japan stock market crash' was Breakout in Canada and +2,200% in the U.S.; related 'japan stock market' also rose in both markets."
+      "selection_reason": "WWE is a major operating asset of public company TKO Group, making the strong WWE search activity directly investable.",
+      "trend_evidence": "WWE/SmackDown appeared among the strongest U.S. and Canada RSS trends, including 5,000+ U.S. traffic for SmackDown results and 1,000+ Canada traffic for WWE."
     },
     {
-      "entity": "TSMC",
+      "entity": "FuboTV",
       "entity_type": "company",
-      "youtube_query": "台積電 TSMC",
-      "regions": ["TW"],
-      "selection_reason": "Critical U.S. semiconductor supply-chain company and highly relevant to NVIDIA/AMD/Apple investors.",
-      "trend_evidence": "台積電 was Breakout in Taiwan YouTube Search via the 美股 anchor and also appeared in Top related queries."
-    },
-    {
-      "entity": "AMC Entertainment",
-      "entity_type": "company",
-      "youtube_query": "AMC 美股",
+      "youtube_query": "FUBO 美股",
       "regions": ["CA"],
-      "selection_reason": "A specific U.S.-listed stock with a fresh breakout signal; worth testing whether current creator supply is unusually low or high.",
-      "trend_evidence": "'amc stock' was Breakout and ranked #1 Rising under Canada's stock market anchor."
+      "selection_reason": "Direct U.S.-listed equity with fresh insider-transaction and analyst-related news attached to the trend.",
+      "trend_evidence": "fubotv appeared in Canada with 500+ traffic and news headlines specifically referencing NYSE:FUBO insider trades and analyst views."
     },
     {
-      "entity": "Zeta Global",
-      "entity_type": "company",
-      "youtube_query": "ZETA 美股",
-      "regions": ["TW"],
-      "selection_reason": "Specific U.S.-listed growth/AI-adtech name showing unusually strong Chinese-language investor interest.",
-      "trend_evidence": "'zeta 美股' was Breakout and #2 Rising in Taiwan under the 美股 anchor."
-    },
-    {
-      "entity": "Nebius Group",
-      "entity_type": "company",
-      "youtube_query": "NBIS 美股",
-      "regions": ["TW"],
-      "selection_reason": "AI infrastructure name with direct U.S.-market relevance and a strong breakout among Taiwan-based Chinese-language investors.",
-      "trend_evidence": "'nbis 美股' was Breakout and #4 Rising in Taiwan under the 美股 anchor."
-    },
-    {
-      "entity": "Micron",
-      "entity_type": "company",
-      "youtube_query": "美光 MU",
-      "regions": ["TW"],
-      "selection_reason": "Major U.S. memory stock with strong relevance to AI/HBM and an active Chinese-speaking investor audience.",
-      "trend_evidence": "美光 and 美股 美光 both rose +250% in Taiwan YouTube Search and also appeared in Top related queries."
-    },
-    {
-      "entity": "U.S. bond market",
-      "entity_type": "macro",
-      "youtube_query": "美債 債券市場",
-      "regions": ["US"],
-      "selection_reason": "Bond-market moves directly affect U.S. equity valuation, especially long-duration technology stocks.",
-      "trend_evidence": "'bond market' rose +350% in U.S. YouTube Search under the stock market anchor."
-    },
-    {
-      "entity": "Trump and the stock market",
+      "entity": "U.S.-China relations / Trump-Xi risk",
       "entity_type": "policy",
-      "youtube_query": "特朗普 美股",
-      "regions": ["CA"],
-      "selection_reason": "Policy/political developments can move U.S. sectors and market expectations; the query has a fresh rising signal rather than generic evergreen interest.",
-      "trend_evidence": "'trump stock market' rose +180% in Canada YouTube Search and also appeared in Top related queries."
-    },
-    {
-      "entity": "China stock market",
-      "entity_type": "macro",
-      "youtube_query": "中國股市 美股影響",
-      "regions": ["US"],
-      "selection_reason": "China-market stress or rallies can materially affect U.S.-listed China names, semiconductors, commodities, and global risk sentiment.",
-      "trend_evidence": "'china stock market' rose +110% in U.S. YouTube Search."
-    },
-    {
-      "entity": "Gold and silver",
-      "entity_type": "asset",
-      "youtube_query": "黃金 白銀 美股",
-      "regions": ["CA"],
-      "selection_reason": "Precious metals are investable assets and can reflect macro/rates/risk-off shifts relevant to equity investors.",
-      "trend_evidence": "'gold and silver stock market today' rose +130% in Canada YouTube Search."
-    },
-    {
-      "entity": "Claude AI",
-      "entity_type": "company",
-      "youtube_query": "Claude AI Anthropic",
-      "regions": ["US", "CA"],
-      "selection_reason": "Anthropic/Claude developments can affect AI competition, cloud demand and listed partners even though Anthropic itself is private.",
-      "trend_evidence": "'claude ai' appeared as a Top related YouTube Search query in both the U.S. and Canada."
-    },
-    {
-      "entity": "AI agents",
-      "entity_type": "other",
-      "youtube_query": "AI Agent 美股",
-      "regions": ["US", "CA", "TW"],
-      "selection_reason": "Cross-region AI theme that can map to software/cloud/public-equity beneficiaries; kept because it appears in all three focus markets.",
-      "trend_evidence": "'ai agent' appeared in Top YouTube Search related queries across U.S., Canada and Taiwan."
-    },
-    {
-      "entity": "Applied Optoelectronics",
-      "entity_type": "company",
-      "youtube_query": "AAOI 美股",
+      "youtube_query": "中美關係 川習會 美股",
       "regions": ["TW"],
-      "selection_reason": "Specific U.S.-listed optical networking/data-center stock relevant to AI infrastructure and a good small-channel niche candidate.",
-      "trend_evidence": "AAOI appeared in Taiwan Top YouTube Search related queries under the 美股 anchor."
+      "selection_reason": "Fresh U.S.-China political tension ahead of a Trump-Xi meeting can affect China ADRs, semiconductors, tariffs and broad risk sentiment.",
+      "trend_evidence": "中國 trended in Taiwan with 1,000+ traffic; attached headlines focused on a U.S. scholar detained in China and the issue becoming sensitive ahead of a Trump-Xi meeting."
     },
     {
-      "entity": "S&P 500",
-      "entity_type": "asset",
-      "youtube_query": "標普500 美股",
+      "entity": "Taiwan severe weather / semiconductor supply chain",
+      "entity_type": "macro",
+      "youtube_query": "台灣 暴雨 台積電 半導體",
+      "regions": ["TW"],
+      "selection_reason": "Severe weather and work stoppages in southern Taiwan can be relevant to semiconductor supply-chain monitoring even if no fab disruption is yet confirmed.",
+      "trend_evidence": "停班停課 was the strongest Taiwan RSS trend at 20,000+ traffic, tied to flooding and work/school closures in Kaohsiung, Tainan and Pingtung."
+    },
+    {
+      "entity": "Sports betting sector",
+      "entity_type": "sector",
+      "youtube_query": "DKNG FLUT bet365 美股",
       "regions": ["CA"],
-      "selection_reason": "Broad U.S. market benchmark; included only because the current pool contains a specific active-market query rather than generic investing education.",
-      "trend_evidence": "'stock market today s&p 500' appeared in Canada Top YouTube Search related queries."
+      "selection_reason": "bet365 itself is private, but rising betting attention can be tested as a read-through for listed sports-betting names such as DraftKings and Flutter.",
+      "trend_evidence": "bet365 appeared in Canada RSS trends with current sportsbook promotional coverage."
     },
     {
-      "entity": "Warren Buffett market warning",
-      "entity_type": "other",
-      "youtube_query": "巴菲特 美股 警告",
+      "entity": "U.S. visa and immigration policy",
+      "entity_type": "policy",
+      "youtube_query": "特朗普 簽證 禁令 美股",
+      "regions": ["CA"],
+      "selection_reason": "A court ruling on a broad U.S. visa restriction can matter for travel, labor-sensitive sectors and policy expectations.",
+      "trend_evidence": "travel visa trended in Canada; attached headlines said a U.S. judge struck down a Trump administration immigrant visa ban affecting 75 countries."
+    },
+    {
+      "entity": "Cyclospora outbreak / food safety",
+      "entity_type": "sector",
+      "youtube_query": "Cyclospora outbreak 食品股 美國",
       "regions": ["US"],
-      "selection_reason": "Potentially high-click investing topic if tied to a current statement or market catalyst; YouTube competition will determine whether it is actionable.",
-      "trend_evidence": "'warren buffett stock market warning' appeared in U.S. Top YouTube Search related queries."
+      "selection_reason": "A large foodborne-illness outbreak can become market-relevant if a supplier, restaurant chain, grocer or produce source is identified.",
+      "trend_evidence": "cyclospora was the #1 U.S. RSS item in this run with 500+ traffic; headlines cited nearly 16,000 confirmed cases and growing outbreaks."
+    },
+    {
+      "entity": "Pneumococcal vaccine market",
+      "entity_type": "sector",
+      "youtube_query": "肺炎鏈球菌 疫苗 藥廠 美股",
+      "regions": ["TW"],
+      "selection_reason": "Rising concern about pneumococcal disease can translate into vaccine-demand interest and is relevant to listed vaccine manufacturers.",
+      "trend_evidence": "肺炎鏈球菌 trended in Taiwan with headlines citing 19 deaths, vaccine uptake and serotype replacement concerns."
+    },
+    {
+      "entity": "Manchester United",
+      "entity_type": "company",
+      "youtube_query": "Manchester United MANU 美股",
+      "regions": ["CA"],
+      "selection_reason": "Manchester United is U.S.-listed as MANU; the Hull City trend was tied to a Manchester United match and player news.",
+      "trend_evidence": "Hull City trended in Canada with attached coverage centered on Hull City versus Manchester United and Manchester United lineup changes."
+    },
+    {
+      "entity": "European football media rights / streaming",
+      "entity_type": "sector",
+      "youtube_query": "英超 西甲 轉播 串流 股票",
+      "regions": ["US"],
+      "selection_reason": "Concurrent EPL and La Liga search activity can be tested as a media-rights/streaming demand theme relevant to listed broadcasters and streaming platforms.",
+      "trend_evidence": "epl scores and la liga schedule both appeared in U.S. RSS trends during the same run."
+    },
+    {
+      "entity": "College football media rights",
+      "entity_type": "sector",
+      "youtube_query": "college football 轉播 美股",
+      "regions": ["US"],
+      "selection_reason": "College football attention is commercially relevant to major listed U.S. broadcasters and sports-media rights holders.",
+      "trend_evidence": "college football today and Ohio State Buckeyes football both appeared in U.S. RSS trends."
+    },
+    {
+      "entity": "U.S. naval procurement / defense stocks",
+      "entity_type": "sector",
+      "youtube_query": "Trump aircraft carrier defense stocks",
+      "regions": ["CA"],
+      "selection_reason": "A fresh controversy around naming a U.S. aircraft carrier is not itself an earnings catalyst, but it can surface interest in naval procurement and listed defense shipbuilders.",
+      "trend_evidence": "Doris Miller trended in Canada with multiple headlines about reports that the U.S. Navy could name an aircraft carrier for Trump instead of Doris Miller."
+    },
+    {
+      "entity": "Taiwan securities market",
+      "entity_type": "asset",
+      "youtube_query": "台股 證券 投資",
+      "regions": ["TW"],
+      "selection_reason": "A direct investing-related Taiwan trend worth testing for whether current YouTube demand is concentrated around a specific market catalyst.",
+      "trend_evidence": "證券 appeared in Taiwan RSS trends at 200+ traffic."
+    },
+    {
+      "entity": "Canadian tax-advantaged investing",
+      "entity_type": "other",
+      "youtube_query": "加拿大 REER CELI 稅 投資",
+      "regions": ["CA"],
+      "selection_reason": "The trend's attached coverage is specifically about retirement accounts, TFSA/CELI taxation and public finances, giving it a direct personal-finance angle.",
+      "trend_evidence": "impôt trended in Canada with headlines about REER inheritance taxes, CELI tax treatment and fiscal balance."
+    },
+    {
+      "entity": "Asset allocation / wealth management",
+      "entity_type": "other",
+      "youtube_query": "資產配置 美股 投資",
+      "regions": ["TW"],
+      "selection_reason": "Generic but directly investment-related; kept as the fifteenth slot for this pipeline test so downstream YouTube metrics can determine whether it has any actionable demand.",
+      "trend_evidence": "資產 appeared in Taiwan RSS trends at 500+ traffic, although no attached news titles were available."
     }
   ]
 }

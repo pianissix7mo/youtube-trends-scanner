@@ -68,6 +68,19 @@ jobs:
         if: steps.toronto_time.outputs.run == 'true'
         run: pip install -r requirements.txt
 
+      - name: Use fixed four-anchor set
+        if: steps.toronto_time.outputs.run == 'true'
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('collect_trends.py')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('["stock market", "AI", "semiconductor", "earnings", "bitcoin", "stocks"]', '["AI", "semiconductor", "earnings", "stocks"]')
+          s = s.replace('["美股", "AI", "半導體", "財報", "比特幣", "股票"]', '["AI", "半導體", "財報", "股票"]')
+          p.write_text(s, encoding='utf-8')
+          PY
+
       - name: Validate collector
         if: steps.toronto_time.outputs.run == 'true'
         run: python -m py_compile collect_trends.py make_review_file.py

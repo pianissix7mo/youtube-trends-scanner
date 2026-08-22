@@ -1,0 +1,50 @@
+name: YouTube Trend Scan
+
+on:
+  workflow_dispatch:
+    inputs:
+      top_n:
+        description: Number of final keywords
+        required: false
+        default: "20"
+      timeframe:
+        description: Google Trends timeframe
+        required: false
+        default: "now 7-d"
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scanner
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          TOP_N: ${{ inputs.top_n }}
+          TRENDS_TIMEFRAME: ${{ inputs.timeframe }}
+        run: python scan.py
+
+      - name: Add report to workflow summary
+        if: always()
+        run: |
+          if [ -f output/latest.md ]; then
+            cat output/latest.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: youtube-trend-report
+          path: output/
+          if-no-files-found: warn

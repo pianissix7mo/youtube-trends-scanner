@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - "data/selected_entities.json"
+      - "youtube_enrich.py"
+      - ".github/workflows/enrich.yml"
   workflow_dispatch:
 
 permissions:
@@ -44,6 +46,7 @@ jobs:
       - name: Run YouTube enrichment
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_LOOKBACK_DAYS: "3"
           YOUTUBE_CACHE_TTL_HOURS: "12"
           YOUTUBE_STALE_FALLBACK_HOURS: "48"
         run: python youtube_enrich.py

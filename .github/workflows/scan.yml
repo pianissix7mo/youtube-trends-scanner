@@ -34,9 +34,19 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Restore YouTube metrics cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          # A unique key lets every successful run save an updated cache, while
+          # restore-keys pulls the newest prior cache for repeated manual runs.
+          key: youtube-metrics-${{ github.run_id }}
+          restore-keys: |
+            youtube-metrics-
+
       - name: Validate scanner
         run: |
-          python -m py_compile scan.py hybrid_scan.py
+          python -m py_compile scan.py hybrid_scan.py hybrid_cached.py
           python -m json.tool keywords.json > /dev/null
 
       - name: Run hybrid scanner
@@ -48,6 +58,10 @@ jobs:
           TREND_BENCHMARK_GROUPS: "3"
           TRENDS_MAX_ATTEMPTS: "1"
           TRENDS_RETRY_WAIT: "5"
+          # Reuse expensive search.list results while tuning filters. If quota
+          # is exhausted, cached samples up to 48h old can fill the report.
+          YOUTUBE_CACHE_TTL_HOURS: "12"
+          YOUTUBE_STALE_FALLBACK_HOURS: "48"
           # Cheap broad-net layer. Five feeds are fetched in parallel, so this
           # adds coverage without materially increasing total runtime.
           TRENDING_RSS_GEOS: "US,CA,TW,HK,SG"
@@ -55,7 +69,7 @@ jobs:
           TRENDING_RSS_TIMEOUT: "10"
           TRENDING_RSS_PER_GEO: "50"
           TRENDING_PRESELECT_LIMIT: "16"
-        run: python hybrid_scan.py
+        run: python hybrid_cached.py
 
       - name: Add report to workflow summary
         if: always()

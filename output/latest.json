@@ -1,10 +1,11 @@
 {
-  "generated_at_utc": "2026-08-22T22:33:49.252634+00:00",
+  "generated_at_utc": "2026-08-22T22:49:12.466973+00:00",
   "lookback_days": 3,
   "selection_generated_at_utc": "2026-08-22T19:00:00+00:00",
   "selection_notes": "Manual ChatGPT first-pass selection from the fixed-anchor 72-hour Google Trends YouTube Search run. Anchors remain fixed at AI, semiconductor, earnings and stocks for US/CA, and AI, 半導體, 財報 and 股票 for TW. Twelve logical Explore requests were attempted, eleven succeeded, and no 429 rate limit occurred. Duplicate long-tail queries were merged; sports, entertainment, creator names, generic beginner/how-to queries and other low-value noise were removed. Dynamic relevance_groups were added so YouTube metrics are calculated only from title-matched relevant videos.",
   "small_channel_max_subscribers": 50000,
   "small_channel_hit_vpd_threshold": 1000,
+  "rejected_sample_size": 5,
   "entities": [
     {
       "entity": "Semiconductor stocks",
@@ -27,25 +28,78 @@
         ]
       ],
       "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
+        "recent_video_estimate": 7526,
+        "raw_recent_video_estimate": 7526,
+        "raw_sample_size": 50,
+        "relevant_sample_size": 5,
+        "relevance_ratio": 10.0,
+        "median_views": 25,
+        "median_views_per_day": 9,
+        "small_channel_sample_size": 5,
+        "small_channel_median_views_per_day": 9,
+        "small_channel_hit_rate": 0.0,
+        "top10_small_channel_share": 100.0,
+        "top10_small_channel_count": 5,
+        "top10_known_channels": 5,
+        "median_channel_subscribers": 503,
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_unit': '1/d/{project}', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_limit_value': '100', 'service': 'youtube.googleapis.com', 'quota_location': 'global', 'quota_limit': 'defaultSearchListPerDayPerProject', 'window_start_time': '1787382000', 'consumer': 'projects/316383767993'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "rejected_sample_titles": [
+          "This AI Stock Selloff Could Be Your Last Chance (Micron Sandisk AMD Nvidia SK Hynix Meta)",
+          "How Much Would an AI Crash Destroy?",
+          "If You Own Credo Technology Stock...You Need to Hear This!!",
+          "How 3 Harvard dropouts built a $21 billion AI chip startup that is taking on Nvidia",
+          "Nvidia's $30B Intel Bet: Should You Buy INTC Too?"
+        ],
+        "status": "ok_low_relevance",
+        "sample_videos": [
+          {
+            "video_id": "iEHhXk2GQ1Y",
+            "title": "CNBC Today: MU Micron & NVIDIA Stock Update | Latest AI Chip & Semiconductor News",
+            "channel_id": "UCzBnivQF8AsK4iIEaKh0_9Q",
+            "published_at": "2026-08-20T13:48:52+00:00",
+            "views": 67,
+            "views_per_day": 28,
+            "channel_subscribers": 2710
+          },
+          {
+            "video_id": "YrN2wFeIejw",
+            "title": "CNBC Today: MU & NVIDIA Stock Update | NVDA and Micron Latest News, AI Chip Stocks",
+            "channel_id": "UCzBnivQF8AsK4iIEaKh0_9Q",
+            "published_at": "2026-08-20T15:22:27+00:00",
+            "views": 38,
+            "views_per_day": 16,
+            "channel_subscribers": 2710
+          },
+          {
+            "video_id": "Qd_NCxSSJPk",
+            "title": "Old Chips Got More Expensive While Chip Stocks Crashed",
+            "channel_id": "UChSSTwTuNE2AtL7J5zm5FdQ",
+            "published_at": "2026-08-20T02:20:29+00:00",
+            "views": 25,
+            "views_per_day": 9,
+            "channel_subscribers": 503
+          },
+          {
+            "video_id": "PxM4cR7OXjw",
+            "title": "Moderna Soars 177% as Chip Stocks Slide | Market Close Aug 19",
+            "channel_id": "UCtTDljzQ8kG11geD5bg4NAA",
+            "published_at": "2026-08-20T06:55:55+00:00",
+            "views": 4,
+            "views_per_day": 2,
+            "channel_subscribers": 27
+          },
+          {
+            "video_id": "i1Rl7MhPryI",
+            "title": "Y-Voices: Lam Research LRCX and the Divine Blueprint for Semiconductor Deposition Engineering",
+            "channel_id": "UC-DHrYKQB7NkgvQVJk7qYug",
+            "published_at": "2026-08-20T23:11:18+00:00",
+            "views": 1,
+            "views_per_day": 1,
+            "channel_subscribers": 346
+          }
+        ]
       }
     },
     {
@@ -92,7 +146,8 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
-        "status": "ok_no_relevant_videos"
+        "status": "ok_no_relevant_videos",
+        "cache_status": "fresh"
       }
     },
     {
@@ -130,25 +185,42 @@
         ]
       ],
       "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
+        "recent_video_estimate": 296,
+        "raw_recent_video_estimate": 296,
+        "raw_sample_size": 50,
+        "relevant_sample_size": 1,
+        "relevance_ratio": 2.0,
+        "median_views": 10,
+        "median_views_per_day": 4,
+        "small_channel_sample_size": 1,
+        "small_channel_median_views_per_day": 4,
+        "small_channel_hit_rate": 0.0,
+        "top10_small_channel_share": 100.0,
+        "top10_small_channel_count": 1,
+        "top10_known_channels": 1,
+        "median_channel_subscribers": 962,
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_metric': 'youtube.googleapis.com/search_list', 'consumer': 'projects/316383767993', 'window_start_time': '1787382000', 'quota_limit_value': '100', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_unit': '1/d/{project}', 'quota_location': 'global', 'service': 'youtube.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "rejected_sample_titles": [
+          "Bessent's Treasury Market Intervention, Samsung, SK Hynix Buybacks | The Opening Trade 8/20/2026",
+          "Walmart FY2027 Q2 Earnings Release",
+          "Bond Market Tests Limits of Treasury Intervention",
+          "Can You Deduct Interest When Your ETF Pays Return of Capital?",
+          "If You Have Under $500,000 - DON'T Convert Your RRSP.  Do THIS Instead!"
+        ],
+        "status": "ok_low_relevance",
+        "sample_videos": [
+          {
+            "video_id": "puocGXqE9e0",
+            "title": "RBC Drops 3% After 50% Surge—Earnings Showdown Ahead! #Earnings #StockMarket",
+            "channel_id": "UC9x864bd1Eg5YFA_fKIwcjA",
+            "published_at": "2026-08-20T17:19:22+00:00",
+            "views": 10,
+            "views_per_day": 4,
+            "channel_subscribers": 962
+          }
+        ]
       }
     },
     {
@@ -185,7 +257,8 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
-        "status": "ok_no_relevant_videos"
+        "status": "ok_no_relevant_videos",
+        "cache_status": "fresh"
       }
     },
     {
@@ -234,8 +307,9 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
         "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_unit': '1/d/{project}', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_limit_value': '100', 'service': 'youtube.googleapis.com', 'quota_location': 'global', 'quota_limit': 'defaultSearchListPerDayPerProject', 'window_start_time': '1787382000', 'consumer': 'projects/316383767993'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_unit': '1/d/{project}', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_metric': 'youtube.googleapis.com/search_list', 'service': 'youtube.googleapis.com', 'consumer': 'projects/316383767993', 'quota_location': 'global', 'quota_limit_value': '100', 'window_start_time': '1787382000'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     },
     {
@@ -273,8 +347,9 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
         "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_limit_value': '100', 'window_start_time': '1787382000', 'quota_location': 'global', 'quota_unit': '1/d/{project}', 'consumer': 'projects/316383767993', 'quota_limit': 'defaultSearchListPerDayPerProject', 'service': 'youtube.googleapis.com', 'quota_metric': 'youtube.googleapis.com/search_list'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_metric': 'youtube.googleapis.com/search_list', 'quota_unit': '1/d/{project}', 'quota_limit': 'defaultSearchListPerDayPerProject', 'service': 'youtube.googleapis.com', 'consumer': 'projects/316383767993', 'window_start_time': '1787382000', 'quota_limit_value': '100', 'quota_location': 'global'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     },
     {
@@ -305,25 +380,69 @@
         ]
       ],
       "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
+        "recent_video_estimate": 779,
+        "raw_recent_video_estimate": 779,
+        "raw_sample_size": 50,
+        "relevant_sample_size": 4,
+        "relevance_ratio": 8.0,
+        "median_views": 1682,
+        "median_views_per_day": 1349,
+        "small_channel_sample_size": 3,
+        "small_channel_median_views_per_day": 1164,
+        "small_channel_hit_rate": 66.7,
+        "top10_small_channel_share": 75.0,
+        "top10_small_channel_count": 3,
+        "top10_known_channels": 4,
+        "median_channel_subscribers": 15600,
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_unit': '1/d/{project}', 'quota_location': 'global', 'service': 'youtube.googleapis.com', 'quota_limit_value': '100', 'consumer': 'projects/316383767993', 'quota_limit': 'defaultSearchListPerDayPerProject', 'window_start_time': '1787382000', 'quota_metric': 'youtube.googleapis.com/search_list'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "rejected_sample_titles": [
+          "Rick Rule Evaluates 8 Mining Stocks: What He Likes, What He Doesn't",
+          "THIS is BIG! 💥💥 COMMODITY BULL MARKET \"Get Long & Buckle Up!\" (Billionaire Shift) - Silver & Gold",
+          "Gold and Silver Miners: Are They Ready to Break Out?",
+          "ERIC YEUNG | Why the miners will become the new MAG-7!",
+          "Everything You Need to Know About This Silver & Gold Rally"
+        ],
+        "status": "ok_low_relevance",
+        "sample_videos": [
+          {
+            "video_id": "6qfFWJSHrSk",
+            "title": "Tim Knight Is Short Mining Stocks While Silver Breaks Out",
+            "channel_id": "UCLJiSMXJ9K-1AOTqIqdXJgQ",
+            "published_at": "2026-08-20T22:31:35+00:00",
+            "views": 4038,
+            "views_per_day": 2007,
+            "channel_subscribers": 491000
+          },
+          {
+            "video_id": "632hwGPqTtI",
+            "title": "These 5 Mining Stocks Are Massively Undervalued — Steppe Gold/Heliostar/Stllr/Denarius/Rio Silver",
+            "channel_id": "UCocuDNxiw0EeUJXKi-5h7TA",
+            "published_at": "2026-08-21T12:00:21+00:00",
+            "views": 2226,
+            "views_per_day": 1535,
+            "channel_subscribers": 803
+          },
+          {
+            "video_id": "aIOCvW5F0iQ",
+            "title": "Masterclass: Investing in Gold/Silver Mining Stocks (Part 4)",
+            "channel_id": "UCtSChNaSSTZiUYlo4R1yPJw",
+            "published_at": "2026-08-21T23:21:47+00:00",
+            "views": 1138,
+            "views_per_day": 1164,
+            "channel_subscribers": 15600
+          },
+          {
+            "video_id": "xStvPtnhzZ8",
+            "title": "SHOULD YOU BUY PHYSICAL SILVER OR MINING STOCKS? #stockmarket #stocks #silver #gold #wealth #money ",
+            "channel_id": "UC9TaVP8KMpExfGmWEftBdPQ",
+            "published_at": "2026-08-21T11:02:16+00:00",
+            "views": 165,
+            "views_per_day": 111,
+            "channel_subscribers": 15600
+          }
+        ]
       }
     },
     {
@@ -462,7 +581,8 @@
             "views_per_day": 47,
             "channel_subscribers": 563
           }
-        ]
+        ],
+        "cache_status": "fresh"
       }
     },
     {
@@ -501,8 +621,9 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
         "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_metric': 'youtube.googleapis.com/search_list', 'quota_limit_value': '100', 'quota_limit': 'defaultSearchListPerDayPerProject', 'window_start_time': '1787382000', 'service': 'youtube.googleapis.com', 'quota_unit': '1/d/{project}', 'quota_location': 'global', 'consumer': 'projects/316383767993'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_location': 'global', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_unit': '1/d/{project}', 'service': 'youtube.googleapis.com', 'window_start_time': '1787382000', 'quota_limit_value': '100', 'consumer': 'projects/316383767993'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     },
     {
@@ -642,7 +763,8 @@
             "views_per_day": 129,
             "channel_subscribers": 36700
           }
-        ]
+        ],
+        "cache_status": "fresh"
       }
     },
     {
@@ -692,8 +814,9 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
         "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/316383767993', 'service': 'youtube.googleapis.com', 'window_start_time': '1787382000', 'quota_unit': '1/d/{project}', 'quota_location': 'global', 'quota_limit_value': '100', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_limit': 'defaultSearchListPerDayPerProject'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/316383767993', 'quota_metric': 'youtube.googleapis.com/search_list', 'window_start_time': '1787382000', 'quota_location': 'global', 'service': 'youtube.googleapis.com', 'quota_limit_value': '100', 'quota_unit': '1/d/{project}', 'quota_limit': 'defaultSearchListPerDayPerProject'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     },
     {
@@ -730,8 +853,9 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
         "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/316383767993', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_metric': 'youtube.googleapis.com/search_list', 'window_start_time': '1787382000', 'quota_limit_value': '100', 'service': 'youtube.googleapis.com', 'quota_location': 'global', 'quota_unit': '1/d/{project}'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/316383767993', 'quota_unit': '1/d/{project}', 'quota_limit_value': '100', 'service': 'youtube.googleapis.com', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_location': 'global', 'quota_metric': 'youtube.googleapis.com/search_list', 'window_start_time': '1787382000'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     },
     {
@@ -777,8 +901,9 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
         "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_limit_value': '100', 'quota_unit': '1/d/{project}', 'quota_location': 'global', 'service': 'youtube.googleapis.com', 'window_start_time': '1787382000', 'quota_metric': 'youtube.googleapis.com/search_list', 'consumer': 'projects/316383767993', 'quota_limit': 'defaultSearchListPerDayPerProject'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_limit_value': '100', 'service': 'youtube.googleapis.com', 'quota_unit': '1/d/{project}', 'consumer': 'projects/316383767993', 'window_start_time': '1787382000'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     },
     {
@@ -800,25 +925,29 @@
         ]
       ],
       "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
+        "recent_video_estimate": 3,
+        "raw_recent_video_estimate": 3,
+        "raw_sample_size": 3,
+        "relevant_sample_size": 0,
+        "relevance_ratio": 0.0,
+        "median_views": 0,
+        "median_views_per_day": 0,
+        "small_channel_sample_size": 0,
+        "small_channel_median_views_per_day": 0,
+        "small_channel_hit_rate": 0.0,
+        "top10_small_channel_share": 0.0,
+        "top10_small_channel_count": 0,
+        "top10_known_channels": 0,
         "median_channel_subscribers": null,
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'quota_limit': 'defaultSearchListPerDayPerProject', 'service': 'youtube.googleapis.com', 'window_start_time': '1787382000', 'quota_limit_value': '100', 'consumer': 'projects/316383767993', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_unit': '1/d/{project}'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "rejected_sample_titles": [
+          "運價高檔、地緣政治干擾不斷！別只看貨櫃三雄，拆解航運冷鏈與關鍵零組件的真正贏家！#台股 #航運股 #陽明 #萬海 #長榮 #散裝航運 #冷鏈物流 #小資理財",
+          "貨櫃三雄飆漲後怎麼選？避開航運景氣循環波動，鎖定越運越賺的船用設備贏家！#台股 #航運股 #陽明 #萬海 #長榮 #船用設備 #低基期飆股 #小資理財",
+          "運價飆高、萬海半年報淨利狂增 96%！別只看貨櫃三雄，拆解 40 元以下設備零組件贏家！#台股 #航運股 #萬海 #陽明 #長榮 #運價飆漲 #旺季效應 #小資理財"
+        ],
+        "status": "ok_no_relevant_videos"
       }
     },
     {
@@ -853,8 +982,9 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
         "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'service': 'youtube.googleapis.com', 'quota_unit': '1/d/{project}', 'consumer': 'projects/316383767993', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_limit_value': '100', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_location': 'global', 'window_start_time': '1787382000'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_metric': 'youtube.googleapis.com/search_list', 'window_start_time': '1787382000', 'quota_limit_value': '100', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_unit': '1/d/{project}', 'quota_location': 'global', 'service': 'youtube.googleapis.com', 'consumer': 'projects/316383767993'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     },
     {
@@ -891,8 +1021,9 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
         "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'window_start_time': '1787382000', 'quota_location': 'global', 'quota_limit_value': '100', 'quota_metric': 'youtube.googleapis.com/search_list', 'service': 'youtube.googleapis.com', 'consumer': 'projects/316383767993', 'quota_unit': '1/d/{project}', 'quota_limit': 'defaultSearchListPerDayPerProject'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_metric': 'youtube.googleapis.com/search_list', 'window_start_time': '1787382000', 'quota_location': 'global', 'service': 'youtube.googleapis.com', 'consumer': 'projects/316383767993', 'quota_unit': '1/d/{project}', 'quota_limit_value': '100', 'quota_limit': 'defaultSearchListPerDayPerProject'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     },
     {
@@ -929,8 +1060,9 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
         "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'quota_limit': 'defaultSearchListPerDayPerProject', 'service': 'youtube.googleapis.com', 'window_start_time': '1787382000', 'quota_limit_value': '100', 'consumer': 'projects/316383767993', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_unit': '1/d/{project}'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/316383767993', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_location': 'global', 'quota_limit': 'defaultSearchListPerDayPerProject', 'service': 'youtube.googleapis.com', 'window_start_time': '1787382000', 'quota_limit_value': '100', 'quota_unit': '1/d/{project}'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     },
     {
@@ -969,8 +1101,9 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
         "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_unit': '1/d/{project}', 'window_start_time': '1787382000', 'quota_location': 'global', 'quota_metric': 'youtube.googleapis.com/search_list', 'consumer': 'projects/316383767993', 'service': 'youtube.googleapis.com', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_limit_value': '100'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'quota_limit_value': '100', 'quota_metric': 'youtube.googleapis.com/search_list', 'consumer': 'projects/316383767993', 'window_start_time': '1787382000', 'service': 'youtube.googleapis.com', 'quota_unit': '1/d/{project}', 'quota_limit': 'defaultSearchListPerDayPerProject'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     },
     {
@@ -1015,8 +1148,9 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
         "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_limit': 'defaultSearchListPerDayPerProject', 'window_start_time': '1787382000', 'quota_unit': '1/d/{project}', 'quota_location': 'global', 'service': 'youtube.googleapis.com', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_limit_value': '100', 'consumer': 'projects/316383767993'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_unit': '1/d/{project}', 'quota_location': 'global', 'service': 'youtube.googleapis.com', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_limit_value': '100', 'consumer': 'projects/316383767993', 'quota_metric': 'youtube.googleapis.com/search_list', 'window_start_time': '1787382000'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     },
     {
@@ -1063,8 +1197,9 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
         "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_limit': 'defaultSearchListPerDayPerProject', 'window_start_time': '1787382000', 'quota_unit': '1/d/{project}', 'quota_location': 'global', 'service': 'youtube.googleapis.com', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_limit_value': '100', 'consumer': 'projects/316383767993'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
+        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/316383767993', 'quota_unit': '1/d/{project}', 'window_start_time': '1787382000', 'quota_location': 'global', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_limit_value': '100', 'service': 'youtube.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     }
   ]

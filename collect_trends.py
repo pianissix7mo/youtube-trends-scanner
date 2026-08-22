@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Collect a broad, mostly-unfiltered Google Trends candidate pool.
 
-Python only gathers and ranks raw signals. It does NOT decide whether a query is
-an investing idea. ChatGPT reviews data/raw_candidates.json later and selects
-up to 20 unique companies/assets/topics for YouTube enrichment.
+Python gathers raw discovery signals only. RSS is the reliable broad layer.
+Google Trends Explore (YouTube Search) is deliberately light-touch so the
+collector does not hammer Google's unofficial endpoint and trigger 429s.
+ChatGPT later reviews the resulting pool and selects the investable entities.
 """
 
 from __future__ import annotations
@@ -12,6 +13,7 @@ import json
 import math
 import os
 import re
+import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -27,19 +29,22 @@ RSS_URL = "https://trends.google.com/trending/rss"
 RAW_LIMIT = max(100, int(os.getenv("RAW_LIMIT", "1000")))
 RSS_HOURS = max(4, int(os.getenv("TRENDING_RSS_HOURS", "48")))
 TIMEFRAME = os.getenv("TRENDS_TIMEFRAME", "now 7-d")
+YT_ANCHORS_PER_REGION = max(0, int(os.getenv("YT_TRENDS_ANCHORS_PER_REGION", "2")))
+YT_DELAY_SECONDS = max(0.0, float(os.getenv("YT_TRENDS_DELAY_SECONDS", "12")))
+YT_MAX_CONSECUTIVE_429 = max(1, int(os.getenv("YT_TRENDS_MAX_CONSECUTIVE_429", "2")))
 
 REGIONS = {
     "US": {
         "name": "United States",
-        "anchors": ["stocks", "stock market", "earnings", "AI", "semiconductor", "bitcoin"],
+        "anchors": ["stock market", "AI", "semiconductor", "earnings", "bitcoin", "stocks"],
     },
     "CA": {
         "name": "Canada",
-        "anchors": ["stocks", "stock market", "earnings", "AI", "semiconductor", "bitcoin"],
+        "anchors": ["stock market", "AI", "semiconductor", "earnings", "bitcoin", "stocks"],
     },
     "TW": {
         "name": "Taiwan",
-        "anchors": ["美股", "股票", "財報", "AI", "半導體", "比特幣"],
+        "anchors": ["美股", "AI", "半導體", "財報", "比特幣", "股票"],
     },
 }
 
@@ -76,12 +81,17 @@ def rising_strength(item: dict[str, Any]) -> tuple[str, float]:
     return raw or "Rising", 20.0
 
 
+def is_rate_limited(exc: Exception) -> bool:
+    status = getattr(getattr(exc, "response", None), "status_code", None)
+    return status == 429 or "429" in str(exc)
+
+
 def fetch_rss(geo: str) -> list[dict[str, Any]]:
     r = requests.get(
         RSS_URL,
         params={"geo": geo, "hours": RSS_HOURS},
         timeout=15,
-        headers={"User-Agent": "youtube-trends-scanner/2.0"},
+        headers={"User-Agent": "Mozilla/5.0 youtube-trends-scanner/3.0"},
     )
     r.raise_for_status()
     root = ET.fromstring(r.text)
@@ -104,7 +114,6 @@ def fetch_rss(geo: str) -> list[dict[str, Any]]:
         except Exception:
             published_at = pub or None
         traffic = parse_compact_number(traffic_text)
-        # Mechanical prominence only; no finance relevance judgement here.
         strength = 25.0 + min(50.0, 10.0 * math.log10(max(1, traffic))) - min(rank, 50) * 0.15
         rows.append({
             "query": title,
@@ -188,7 +197,6 @@ def aggregate(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
     out: list[dict[str, Any]] = []
     for g in grouped.values():
-        # Reward cross-region appearance, but keep US/CA/TW broadly comparable.
         g["raw_priority"] = round(float(g["max_strength"]) + 8.0 * max(0, len(g["regions"]) - 1), 2)
         g["news_titles"] = g["news_titles"][:12]
         out.append(g)
@@ -200,8 +208,13 @@ def aggregate(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
 def main() -> None:
     all_rows: list[dict[str, Any]] = []
     errors: list[str] = []
+    explore_attempted = 0
+    explore_succeeded = 0
+    consecutive_429 = 0
+    explore_stopped_for_429 = False
 
-    for geo, cfg in REGIONS.items():
+    # Reliable broad layer first.
+    for geo in REGIONS:
         print(f"[rss] {geo}")
         try:
             rows = fetch_rss(geo)
@@ -212,17 +225,44 @@ def main() -> None:
             print(f"[warn] {msg}")
             errors.append(msg)
 
-    for geo, cfg in REGIONS.items():
-        for anchor in cfg["anchors"]:
-            print(f"[youtube trends] {geo} / {anchor!r}")
-            try:
-                rows = fetch_youtube_related(geo, anchor)
-                print(f"[youtube trends] {geo} / {anchor!r}: {len(rows)} rows")
-                all_rows.extend(rows)
-            except Exception as exc:
-                msg = f"YouTube Trends {geo}/{anchor}: {exc}"
-                print(f"[warn] {msg}")
-                errors.append(msg)
+    # Light-touch YouTube Search layer. Round-robin regions so US/CA/TW get a
+    # fair chance before any region receives a second Explore request.
+    if YT_ANCHORS_PER_REGION > 0:
+        for anchor_index in range(YT_ANCHORS_PER_REGION):
+            for geo, cfg in REGIONS.items():
+                anchors = cfg["anchors"]
+                if anchor_index >= len(anchors):
+                    continue
+                if explore_stopped_for_429:
+                    break
+
+                anchor = anchors[anchor_index]
+                explore_attempted += 1
+                print(f"[youtube trends] {geo} / {anchor!r} (attempt {explore_attempted})")
+                try:
+                    rows = fetch_youtube_related(geo, anchor)
+                    print(f"[youtube trends] {geo} / {anchor!r}: {len(rows)} rows")
+                    all_rows.extend(rows)
+                    explore_succeeded += 1
+                    consecutive_429 = 0
+                except Exception as exc:
+                    msg = f"YouTube Trends {geo}/{anchor}: {exc}"
+                    print(f"[warn] {msg}")
+                    errors.append(msg)
+                    if is_rate_limited(exc):
+                        consecutive_429 += 1
+                        print(f"[rate-limit] consecutive 429s: {consecutive_429}")
+                        if consecutive_429 >= YT_MAX_CONSECUTIVE_429:
+                            explore_stopped_for_429 = True
+                            print("[rate-limit] stopping further Explore calls; RSS data will still be used")
+                    else:
+                        consecutive_429 = 0
+
+                if not explore_stopped_for_429 and YT_DELAY_SECONDS > 0:
+                    time.sleep(YT_DELAY_SECONDS)
+
+            if explore_stopped_for_429:
+                break
 
     candidates = aggregate(all_rows)
     now = datetime.now(timezone.utc)
@@ -239,6 +279,13 @@ def main() -> None:
         "row_count_before_dedupe": len(all_rows),
         "candidate_count": len(candidates),
         "candidate_region_counts": region_counts,
+        "youtube_trends": {
+            "anchors_per_region": YT_ANCHORS_PER_REGION,
+            "delay_seconds": YT_DELAY_SECONDS,
+            "calls_attempted": explore_attempted,
+            "calls_succeeded": explore_succeeded,
+            "stopped_after_429": explore_stopped_for_429,
+        },
         "errors": errors,
         "selection_guidance": {
             "geo": "Treat US, Canada, and Taiwan as near-equal discovery markets; Taiwan may be only slightly higher, not dominant.",

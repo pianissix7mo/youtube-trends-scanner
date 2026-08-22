@@ -26,7 +26,7 @@ OUT = ROOT / "output"
 CACHE_DIR = ROOT / ".cache"
 CACHE_FILE = CACHE_DIR / "youtube_metrics.json"
 YT_API = "https://www.googleapis.com/youtube/v3"
-LOOKBACK_DAYS = 7
+LOOKBACK_DAYS = max(1, int(os.getenv("YOUTUBE_LOOKBACK_DAYS", "3")))
 SAMPLE_SIZE = 50
 CACHE_TTL_HOURS = float(os.getenv("YOUTUBE_CACHE_TTL_HOURS", "12"))
 STALE_FALLBACK_HOURS = float(os.getenv("YOUTUBE_STALE_FALLBACK_HOURS", "48"))
@@ -52,7 +52,8 @@ def save_cache(cache: dict[str, Any]) -> None:
 
 
 def cache_key(query: str) -> str:
-    return " ".join((query or "").lower().split())
+    normalized = " ".join((query or "").lower().split())
+    return f"{LOOKBACK_DAYS}d|{normalized}"
 
 
 def cached_metrics(cache: dict[str, Any], query: str, max_age_hours: float) -> dict[str, Any] | None:
@@ -205,6 +206,7 @@ def write_outputs(payload: dict[str, Any]) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "latest.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
+    window_label = f"{LOOKBACK_DAYS}d"
     lines = [
         "# YouTube Entity Enrichment",
         "",
@@ -212,7 +214,7 @@ def write_outputs(payload: dict[str, Any]) -> None:
         "",
         "This is a measurement table, not the final editorial ranking. ChatGPT reviews it at 06:00 Toronto time.",
         "",
-        "| # | Entity | YouTube query | Regions | 7d videos* | Median views/day | Small-channel hit | Status |",
+        f"| # | Entity | YouTube query | Regions | {window_label} videos* | Median views/day | Small-channel hit | Status |",
         "|---:|---|---|---|---:|---:|---:|---|",
     ]
     for i, row in enumerate(payload["entities"], 1):
@@ -225,7 +227,7 @@ def write_outputs(payload: dict[str, Any]) -> None:
         )
     lines.extend([
         "",
-        "\* `7d videos` is YouTube API's approximate total result count for videos published in the last 7 days.",
+        f"\\* `{window_label} videos` is YouTube API's approximate total result count for videos published in the last {LOOKBACK_DAYS} days.",
     ])
     (OUT / "latest.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -299,7 +301,7 @@ def main() -> None:
         "entities": enriched,
     }
     write_outputs(payload)
-    print(f"[done] enriched {len(enriched)} entities")
+    print(f"[done] enriched {len(enriched)} entities over {LOOKBACK_DAYS} days")
 
 
 if __name__ == "__main__":

@@ -30,8 +30,10 @@ RSS_URL = "https://trends.google.com/trending/rss"
 RAW_LIMIT = max(100, int(os.getenv("RAW_LIMIT", "1000")))
 RSS_HOURS = max(4, int(os.getenv("TRENDING_RSS_HOURS", "48")))
 TIMEFRAME = os.getenv("TRENDS_TIMEFRAME", "now 3-d")
-YT_ANCHORS_PER_REGION = max(0, int(os.getenv("YT_TRENDS_ANCHORS_PER_REGION", "2")))
+YT_ANCHORS_PER_REGION = max(0, int(os.getenv("YT_TRENDS_ANCHORS_PER_REGION", "4")))
 YT_DELAY_SECONDS = max(0.0, float(os.getenv("YT_TRENDS_DELAY_SECONDS", "12")))
+YT_BATCH_SIZE = max(1, int(os.getenv("YT_TRENDS_BATCH_SIZE", "6")))
+YT_BATCH_PAUSE_SECONDS = max(0.0, float(os.getenv("YT_TRENDS_BATCH_PAUSE_SECONDS", "120")))
 YT_CACHE_TTL_SECONDS = max(3600.0, float(os.getenv("YT_TRENDS_CACHE_TTL_SECONDS", "86400")))
 ROTATION_TZ = ZoneInfo("America/Toronto")
 
@@ -108,9 +110,9 @@ def resolve_explore_timeframe() -> str:
 def anchor_rotation() -> tuple[int, int, dict[str, list[str]], str]:
     """Choose one rotating anchor group per Toronto calendar day.
 
-    With six anchors and two anchors per region this creates three daily groups,
-    covering the full anchor set once every three days while keeping each run to
-    at most six logical Explore requests across US/CA/TW.
+    Four anchors per region yields 12 logical Explore requests across US/CA/TW.
+    The selected window rotates by Toronto calendar day while the execution
+    layer splits those requests into smaller rate-limit-friendly batches.
     """
     today = datetime.now(ROTATION_TZ).date()
     if YT_ANCHORS_PER_REGION <= 0:
@@ -281,19 +283,45 @@ def main() -> None:
             print(f"[warn] {msg}")
             errors.append(msg)
 
-    # Light-touch YouTube Search layer. At two anchors per region this is at most
-    # six logical requests per run. The group rotates daily, so all six anchors
-    # per region are covered across the same three-day window.
+    # Build the logical Explore requests in round-robin region order, then run
+    # them in smaller batches. With four anchors per region this is 12 logical
+    # requests total, split by default into 6 + 6 with an extra cooldown between.
+    logical_requests: list[tuple[str, str]] = []
     max_rounds = max((len(v) for v in selected_anchors.values()), default=0)
     for anchor_index in range(max_rounds):
         for geo in REGIONS:
             anchors = selected_anchors.get(geo) or []
-            if anchor_index >= len(anchors) or explore_stopped_for_429:
-                continue
+            if anchor_index < len(anchors):
+                logical_requests.append((geo, anchors[anchor_index]))
 
-            anchor = anchors[anchor_index]
+    batches = [
+        logical_requests[i : i + YT_BATCH_SIZE]
+        for i in range(0, len(logical_requests), YT_BATCH_SIZE)
+    ]
+    print(
+        f"[youtube trends] {len(logical_requests)} logical requests in "
+        f"{len(batches)} batch(es), size={YT_BATCH_SIZE}, "
+        f"batch_pause={YT_BATCH_PAUSE_SECONDS}s"
+    )
+
+    for batch_index, batch in enumerate(batches, 1):
+        if batch_index > 1 and not explore_stopped_for_429 and YT_BATCH_PAUSE_SECONDS > 0:
+            print(
+                f"[youtube trends] cooling down {YT_BATCH_PAUSE_SECONDS}s "
+                f"before batch {batch_index}/{len(batches)}"
+            )
+            time.sleep(YT_BATCH_PAUSE_SECONDS)
+
+        print(f"[youtube trends] starting batch {batch_index}/{len(batches)} ({len(batch)} requests)")
+        for request_index, (geo, anchor) in enumerate(batch, 1):
+            if explore_stopped_for_429:
+                break
+
             explore_attempted += 1
-            print(f"[youtube trends] {geo} / {anchor!r} (logical request {explore_attempted})")
+            print(
+                f"[youtube trends] {geo} / {anchor!r} "
+                f"(logical request {explore_attempted}, batch {batch_index}:{request_index})"
+            )
             try:
                 rows = fetch_youtube_related(geo, anchor, explore_timeframe)
                 print(f"[youtube trends] {geo} / {anchor!r}: {len(rows)} rows")
@@ -307,7 +335,8 @@ def main() -> None:
                     explore_stopped_for_429 = True
                     print("[rate-limit] first 429/block detected; stopping Explore immediately and keeping RSS results")
 
-            if not explore_stopped_for_429 and YT_DELAY_SECONDS > 0:
+            is_last_in_batch = request_index == len(batch)
+            if not explore_stopped_for_429 and not is_last_in_batch and YT_DELAY_SECONDS > 0:
                 time.sleep(YT_DELAY_SECONDS)
 
         if explore_stopped_for_429:
@@ -336,7 +365,11 @@ def main() -> None:
             "rotation_group_count": rotation_groups,
             "anchors_used": selected_anchors,
             "delay_seconds": YT_DELAY_SECONDS,
+            "batch_size": YT_BATCH_SIZE,
+            "batch_pause_seconds": YT_BATCH_PAUSE_SECONDS,
+            "batch_count": len(batches),
             "cache_ttl_seconds": YT_CACHE_TTL_SECONDS,
+            "logical_requests_planned": len(logical_requests),
             "logical_requests_attempted": explore_attempted,
             "calls_succeeded": explore_succeeded,
             "stopped_after_429": explore_stopped_for_429,

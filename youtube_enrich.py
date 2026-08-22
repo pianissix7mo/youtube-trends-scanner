@@ -36,6 +36,7 @@ CACHE_TTL_HOURS = float(os.getenv("YOUTUBE_CACHE_TTL_HOURS", "12"))
 STALE_FALLBACK_HOURS = float(os.getenv("YOUTUBE_STALE_FALLBACK_HOURS", "48"))
 SMALL_CHANNEL_MAX_SUBS = max(1, int(os.getenv("SMALL_CHANNEL_MAX_SUBS", "50000")))
 SMALL_CHANNEL_HIT_VPD = max(1, int(os.getenv("SMALL_CHANNEL_HIT_VPD", "1000")))
+REJECTED_SAMPLE_SIZE = max(0, int(os.getenv("REJECTED_SAMPLE_SIZE", "5")))
 
 
 def load_json(path: Path) -> Any:
@@ -157,6 +158,7 @@ def empty_metrics(
     relevance_ratio: float | None,
     relevance_groups: list[list[str]],
     status: str,
+    rejected_sample_titles: list[str] | None = None,
 ) -> dict[str, Any]:
     return {
         "recent_video_estimate": estimated_supply,
@@ -176,6 +178,7 @@ def empty_metrics(
         "small_channel_max_subscribers": SMALL_CHANNEL_MAX_SUBS,
         "small_channel_hit_vpd_threshold": SMALL_CHANNEL_HIT_VPD,
         "relevance_filter_applied": bool(relevance_groups),
+        "rejected_sample_titles": rejected_sample_titles or [],
         "status": status,
     }
 
@@ -242,10 +245,20 @@ def fetch_metrics(
             "views_per_day": int(round(views / age_days)),
         })
 
-    relevant = [
-        row for row in raw_parsed
-        if is_relevant_title(str(row.get("title") or ""), relevance_groups)
-    ]
+    relevant: list[dict[str, Any]] = []
+    rejected: list[dict[str, Any]] = []
+    for row in raw_parsed:
+        if is_relevant_title(str(row.get("title") or ""), relevance_groups):
+            relevant.append(row)
+        else:
+            rejected.append(row)
+
+    rejected_sample_titles = [
+        str(row.get("title") or "").strip()
+        for row in rejected
+        if str(row.get("title") or "").strip()
+    ][:REJECTED_SAMPLE_SIZE]
+
     raw_sample_size = len(raw_parsed)
     relevant_sample_size = len(relevant)
     relevance_ratio = (
@@ -262,6 +275,7 @@ def fetch_metrics(
             relevance_ratio=relevance_ratio,
             relevance_groups=relevance_groups,
             status="ok_no_relevant_videos",
+            rejected_sample_titles=rejected_sample_titles,
         )
 
     channel_ids = [
@@ -343,6 +357,7 @@ def fetch_metrics(
         "small_channel_max_subscribers": SMALL_CHANNEL_MAX_SUBS,
         "small_channel_hit_vpd_threshold": SMALL_CHANNEL_HIT_VPD,
         "relevance_filter_applied": bool(relevance_groups),
+        "rejected_sample_titles": rejected_sample_titles,
         "status": status,
         "sample_videos": sorted_relevant[:10],
     }
@@ -380,14 +395,31 @@ def write_outputs(payload: dict[str, Any]) -> None:
             f"{fmt(m.get('small_channel_hit_rate'))}% | "
             f"{fmt(m.get('top10_small_channel_share'))}% | {m.get('status','—')} |"
         )
+
+    debug_rows: list[str] = []
+    for row in payload["entities"]:
+        m = row.get("youtube_metrics") or {}
+        rejected_titles = m.get("rejected_sample_titles") or []
+        if m.get("status") not in {"ok_no_relevant_videos", "ok_low_relevance"} or not rejected_titles:
+            continue
+        debug_rows.append(f"### {row.get('entity','')} — {m.get('status')}")
+        debug_rows.append(f"Relevance groups: `{json.dumps(row.get('relevance_groups') or [], ensure_ascii=False)}`")
+        for title in rejected_titles:
+            debug_rows.append(f"- Rejected: {title}")
+        debug_rows.append("")
+
     lines.extend([
         "",
         f"- Window: last {LOOKBACK_DAYS} days.",
         f"- Small channel: fewer than {SMALL_CHANNEL_MAX_SUBS:,} subscribers.",
         f"- Small-channel hit: at least {SMALL_CHANNEL_HIT_VPD:,} views/day.",
+        f"- Rejected-title diagnostic sample: up to {REJECTED_SAMPLE_SIZE} titles per low/no-relevance entity.",
         "- Relevance rules are generated dynamically by the selection-stage ChatGPT.",
         "- YouTube totalResults remains a raw approximate count and is not treated as a clean relevant-video count.",
     ])
+    if debug_rows:
+        lines.extend(["", "## Relevance filter diagnostics", "", *debug_rows])
+
     (OUT / "latest.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -465,6 +497,7 @@ def main() -> None:
                         "small_channel_max_subscribers": SMALL_CHANNEL_MAX_SUBS,
                         "small_channel_hit_vpd_threshold": SMALL_CHANNEL_HIT_VPD,
                         "relevance_filter_applied": bool(relevance_groups),
+                        "rejected_sample_titles": [],
                         "status": "api_failed_no_cache",
                         "api_error": str(exc),
                     }
@@ -480,13 +513,15 @@ def main() -> None:
         "selection_notes": selected_payload.get("notes"),
         "small_channel_max_subscribers": SMALL_CHANNEL_MAX_SUBS,
         "small_channel_hit_vpd_threshold": SMALL_CHANNEL_HIT_VPD,
+        "rejected_sample_size": REJECTED_SAMPLE_SIZE,
         "entities": enriched,
     }
     write_outputs(payload)
     print(
         f"[done] enriched {len(enriched)} entities over {LOOKBACK_DAYS} days; "
         f"small channel < {SMALL_CHANNEL_MAX_SUBS:,} subs; "
-        f"hit >= {SMALL_CHANNEL_HIT_VPD:,} views/day"
+        f"hit >= {SMALL_CHANNEL_HIT_VPD:,} views/day; "
+        f"rejected debug sample <= {REJECTED_SAMPLE_SIZE} titles"
     )
 
 

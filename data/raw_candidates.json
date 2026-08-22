@@ -1,6 +1,7 @@
 {
-  "generated_at_utc": "2026-08-22T13:06:41.718444+00:00",
+  "generated_at_utc": "2026-08-22T13:14:20.647449+00:00",
   "timeframe": "now 3-d",
+  "explore_timeframe": "2026-08-19T13 2026-08-22T13",
   "rss_hours": 48,
   "raw_limit": 1000,
   "regions": {
@@ -38,12 +39,12 @@
       ]
     }
   },
-  "row_count_before_dedupe": 30,
-  "candidate_count": 30,
+  "row_count_before_dedupe": 204,
+  "candidate_count": 144,
   "candidate_region_counts": {
-    "US": 10,
-    "CA": 10,
-    "TW": 10
+    "US": 77,
+    "CA": 55,
+    "TW": 39
   },
   "youtube_trends": {
     "anchors_per_region": 2,
@@ -67,17 +68,10 @@
     "delay_seconds": 12.0,
     "cache_ttl_seconds": 86400.0,
     "logical_requests_attempted": 6,
-    "calls_succeeded": 0,
+    "calls_succeeded": 6,
     "stopped_after_429": false
   },
-  "errors": [
-    "YouTube Trends US/bitcoin: Google Trends Explore did not render the interest-over-time chart, and no rate-limit message was shown — the page structure may have changed.\n\nThis usually means Google updated the Explore UI. Solutions:\n• Update trendspyg: pip install --upgrade trendspyg\n• Run with headless=False (CLI: --visible) to see the page\n• Report it: https://github.com/flack0x/trendspyg/issues\n\nKeyword: 'bitcoin' | Geo: US | Timeframe: now 3-d",
-    "YouTube Trends CA/bitcoin: Google Trends Explore did not render the interest-over-time chart, and no rate-limit message was shown — the page structure may have changed.\n\nThis usually means Google updated the Explore UI. Solutions:\n• Update trendspyg: pip install --upgrade trendspyg\n• Run with headless=False (CLI: --visible) to see the page\n• Report it: https://github.com/flack0x/trendspyg/issues\n\nKeyword: 'bitcoin' | Geo: CA | Timeframe: now 3-d",
-    "YouTube Trends TW/比特幣: Google Trends Explore did not render the interest-over-time chart, and no rate-limit message was shown — the page structure may have changed.\n\nThis usually means Google updated the Explore UI. Solutions:\n• Update trendspyg: pip install --upgrade trendspyg\n• Run with headless=False (CLI: --visible) to see the page\n• Report it: https://github.com/flack0x/trendspyg/issues\n\nKeyword: '比特幣' | Geo: TW | Timeframe: now 3-d",
-    "YouTube Trends US/stocks: Google Trends Explore did not render the interest-over-time chart, and no rate-limit message was shown — the page structure may have changed.\n\nThis usually means Google updated the Explore UI. Solutions:\n• Update trendspyg: pip install --upgrade trendspyg\n• Run with headless=False (CLI: --visible) to see the page\n• Report it: https://github.com/flack0x/trendspyg/issues\n\nKeyword: 'stocks' | Geo: US | Timeframe: now 3-d",
-    "YouTube Trends CA/stocks: Google Trends Explore did not render the interest-over-time chart, and no rate-limit message was shown — the page structure may have changed.\n\nThis usually means Google updated the Explore UI. Solutions:\n• Update trendspyg: pip install --upgrade trendspyg\n• Run with headless=False (CLI: --visible) to see the page\n• Report it: https://github.com/flack0x/trendspyg/issues\n\nKeyword: 'stocks' | Geo: CA | Timeframe: now 3-d",
-    "YouTube Trends TW/股票: Google Trends Explore did not render the interest-over-time chart, and no rate-limit message was shown — the page structure may have changed.\n\nThis usually means Google updated the Explore UI. Solutions:\n• Update trendspyg: pip install --upgrade trendspyg\n• Run with headless=False (CLI: --visible) to see the page\n• Report it: https://github.com/flack0x/trendspyg/issues\n\nKeyword: '股票' | Geo: TW | Timeframe: now 3-d"
-  ],
+  "errors": [],
   "selection_guidance": {
     "geo": "Treat US, Canada, and Taiwan as near-equal discovery markets; Taiwan may be only slightly higher, not dominant.",
     "relevance": "Prefer entities/events that matter to US equities, technology supply chains, macro, rates, or major crypto assets. A non-US company is valid if it can materially affect US-listed stocks or investor attention.",
@@ -85,6 +79,1190 @@
     "target": 20
   },
   "candidates": [
+    {
+      "query": "btc",
+      "regions": [
+        "US",
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 18,
+          "signal": "Top",
+          "strength": 20.6
+        },
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "比特幣",
+          "rank": 1,
+          "signal": "Breakout",
+          "strength": 111.6
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "比特幣",
+          "rank": 2,
+          "signal": "Top",
+          "strength": 33.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.6,
+      "raw_priority": 119.6
+    },
+    {
+      "query": "남산",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 3,
+          "signal": "+600%",
+          "strength": 78.81
+        },
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 2,
+          "signal": "Breakout",
+          "strength": 111.2
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 10,
+          "signal": "Top",
+          "strength": 27.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.2,
+      "raw_priority": 119.2
+    },
+    {
+      "query": "xrp live",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 19,
+          "signal": "+50%",
+          "strength": 52.98
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 24,
+          "signal": "Top",
+          "strength": 15.8
+        },
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 5,
+          "signal": "Breakout",
+          "strength": 110.0
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 13,
+          "signal": "Top",
+          "strength": 24.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 110.0,
+      "raw_priority": 118.0
+    },
+    {
+      "query": "bitcoin hoy",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 14,
+          "signal": "+90%",
+          "strength": 59.58
+        },
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 9,
+          "signal": "Breakout",
+          "strength": 108.4
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 17,
+          "signal": "Top",
+          "strength": 21.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 108.4,
+      "raw_priority": 116.4
+    },
+    {
+      "query": "bitcoin bull trap",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 1,
+          "signal": "Breakout",
+          "strength": 111.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.6,
+      "raw_priority": 111.6
+    },
+    {
+      "query": "canadian bank stocks",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 1,
+          "signal": "Breakout",
+          "strength": 111.6
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 16,
+          "signal": "Top",
+          "strength": 22.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.6,
+      "raw_priority": 111.6
+    },
+    {
+      "query": "live bitcoin chart",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 1,
+          "signal": "Breakout",
+          "strength": 111.6
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 9,
+          "signal": "Top",
+          "strength": 27.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.6,
+      "raw_priority": 111.6
+    },
+    {
+      "query": "tesla stocks today",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 1,
+          "signal": "Breakout",
+          "strength": 111.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.6,
+      "raw_priority": 111.6
+    },
+    {
+      "query": "機器人 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "股票",
+          "rank": 1,
+          "signal": "Breakout",
+          "strength": 111.6
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 23,
+          "signal": "Top",
+          "strength": 16.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.6,
+      "raw_priority": 111.6
+    },
+    {
+      "query": "bitcoin",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 2,
+          "signal": "Breakout",
+          "strength": 111.2
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 23,
+          "signal": "Top",
+          "strength": 16.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.2,
+      "raw_priority": 111.2
+    },
+    {
+      "query": "bitcoin short squeeze",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 2,
+          "signal": "Breakout",
+          "strength": 111.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.2,
+      "raw_priority": 111.2
+    },
+    {
+      "query": "coinbase 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "股票",
+          "rank": 2,
+          "signal": "Breakout",
+          "strength": 111.2
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 24,
+          "signal": "Top",
+          "strength": 15.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.2,
+      "raw_priority": 111.2
+    },
+    {
+      "query": "比特 幣 走勢",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "比特幣",
+          "rank": 2,
+          "signal": "Breakout",
+          "strength": 111.2
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "比特幣",
+          "rank": 4,
+          "signal": "Top",
+          "strength": 31.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.2,
+      "raw_priority": 111.2
+    },
+    {
+      "query": "bitcoin solana",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 3,
+          "signal": "Breakout",
+          "strength": 110.8
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 11,
+          "signal": "Top",
+          "strength": 26.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 110.8,
+      "raw_priority": 110.8
+    },
+    {
+      "query": "semiconductor stocks",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 3,
+          "signal": "Breakout",
+          "strength": 110.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 110.8,
+      "raw_priority": 110.8
+    },
+    {
+      "query": "八方 雲集 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "股票",
+          "rank": 3,
+          "signal": "Breakout",
+          "strength": 110.8
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 25,
+          "signal": "Top",
+          "strength": 15.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 110.8,
+      "raw_priority": 110.8
+    },
+    {
+      "query": "silver mining stocks",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 4,
+          "signal": "Breakout",
+          "strength": 110.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 110.4,
+      "raw_priority": 110.4
+    },
+    {
+      "query": "solana",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 4,
+          "signal": "Breakout",
+          "strength": 110.4
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 12,
+          "signal": "Top",
+          "strength": 25.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 110.4,
+      "raw_priority": 110.4
+    },
+    {
+      "query": "bitcoin pump it up",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 6,
+          "signal": "Breakout",
+          "strength": 109.6
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 14,
+          "signal": "Top",
+          "strength": 23.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 109.6,
+      "raw_priority": 109.6
+    },
+    {
+      "query": "xlm",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 7,
+          "signal": "Breakout",
+          "strength": 109.2
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 15,
+          "signal": "Top",
+          "strength": 23.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 109.2,
+      "raw_priority": 109.2
+    },
+    {
+      "query": "bitcoin please go to moon",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 8,
+          "signal": "Breakout",
+          "strength": 108.8
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 16,
+          "signal": "Top",
+          "strength": 22.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 108.8,
+      "raw_priority": 108.8
+    },
+    {
+      "query": "satto bitcoin",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 4,
+          "signal": "+500%",
+          "strength": 76.98
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 76.98,
+      "raw_priority": 76.98
+    },
+    {
+      "query": "bitcoin live stream",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 5,
+          "signal": "+450%",
+          "strength": 75.76
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 75.76,
+      "raw_priority": 75.76
+    },
+    {
+      "query": "spacex 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "股票",
+          "rank": 4,
+          "signal": "+400%",
+          "strength": 75.24
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 17,
+          "signal": "Top",
+          "strength": 21.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 75.24,
+      "raw_priority": 75.24
+    },
+    {
+      "query": "why is bitcoin going up",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 6,
+          "signal": "+350%",
+          "strength": 73.39
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 73.39,
+      "raw_priority": 73.39
+    },
+    {
+      "query": "國巨 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "股票",
+          "rank": 5,
+          "signal": "+300%",
+          "strength": 72.59
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 22,
+          "signal": "Top",
+          "strength": 17.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 72.59,
+      "raw_priority": 72.59
+    },
+    {
+      "query": "bitcoin pump",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 7,
+          "signal": "+300%",
+          "strength": 71.79
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 71.79,
+      "raw_priority": 71.79
+    },
+    {
+      "query": "micha stocks",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 5,
+          "signal": "+250%",
+          "strength": 71.16
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 24,
+          "signal": "Top",
+          "strength": 15.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 71.16,
+      "raw_priority": 71.16
+    },
+    {
+      "query": "bitcoin hoje",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 8,
+          "signal": "+250%",
+          "strength": 69.96
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 69.96,
+      "raw_priority": 69.96
+    },
+    {
+      "query": "bitcoin short",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 9,
+          "signal": "+250%",
+          "strength": 69.56
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 69.56,
+      "raw_priority": 69.56
+    },
+    {
+      "query": "mining stocks",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 6,
+          "signal": "+150%",
+          "strength": 66.77
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 15,
+          "signal": "Top",
+          "strength": 23.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 66.77,
+      "raw_priority": 66.77
+    },
+    {
+      "query": "股票 技術 分析",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "股票",
+          "rank": 6,
+          "signal": "+150%",
+          "strength": 66.77
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 13,
+          "signal": "Top",
+          "strength": 24.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 66.77,
+      "raw_priority": 66.77
+    },
+    {
+      "query": "ben cowen",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 10,
+          "signal": "+180%",
+          "strength": 66.59
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 66.59,
+      "raw_priority": 66.59
+    },
+    {
+      "query": "比特 幣 交易",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "比特幣",
+          "rank": 3,
+          "signal": "+110%",
+          "strength": 65.55
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "比特幣",
+          "rank": 3,
+          "signal": "Top",
+          "strength": 32.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 65.55,
+      "raw_priority": 65.55
+    },
+    {
+      "query": "陽明 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "股票",
+          "rank": 7,
+          "signal": "+130%",
+          "strength": 65.25
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 20,
+          "signal": "Top",
+          "strength": 19.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 65.25,
+      "raw_priority": 65.25
+    },
+    {
+      "query": "stock market",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 23,
+          "signal": "Top",
+          "strength": 16.6
+        },
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 9,
+          "signal": "+50%",
+          "strength": 56.98
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 14,
+          "signal": "Top",
+          "strength": 23.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 56.98,
+      "raw_priority": 64.98
+    },
+    {
+      "query": "bitcoin chart",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 10,
+          "signal": "+140%",
+          "strength": 64.63
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 8,
+          "signal": "Top",
+          "strength": 28.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 64.63,
+      "raw_priority": 64.63
+    },
+    {
+      "query": "wicked stocks",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 25,
+          "signal": "Top",
+          "strength": 15.0
+        },
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 10,
+          "signal": "+50%",
+          "strength": 56.58
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 20,
+          "signal": "Top",
+          "strength": 19.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 56.58,
+      "raw_priority": 64.58
+    },
+    {
+      "query": "bitcoin today",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 17,
+          "signal": "+70%",
+          "strength": 56.41
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 4,
+          "signal": "Top",
+          "strength": 31.8
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 2,
+          "signal": "Top",
+          "strength": 33.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 56.41,
+      "raw_priority": 64.41
+    },
+    {
+      "query": "canadian stocks to buy now",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 7,
+          "signal": "+110%",
+          "strength": 63.95
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 63.95,
+      "raw_priority": 63.95
+    },
+    {
+      "query": "bitcoin technical analysis",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 11,
+          "signal": "+120%",
+          "strength": 63.03
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 63.03,
+      "raw_priority": 63.03
+    },
+    {
+      "query": "lottery stocks",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 8,
+          "signal": "+100%",
+          "strength": 62.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 62.8,
+      "raw_priority": 62.8
+    },
+    {
+      "query": "crypto",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 5,
+          "signal": "Top",
+          "strength": 31.0
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 4,
+          "signal": "Top",
+          "strength": 31.8
+        },
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 11,
+          "signal": "+40%",
+          "strength": 54.44
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 22,
+          "signal": "Top",
+          "strength": 17.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 54.44,
+      "raw_priority": 62.44
+    },
+    {
+      "query": "crypto news",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 12,
+          "signal": "+110%",
+          "strength": 61.95
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 61.95,
+      "raw_priority": 61.95
+    },
+    {
+      "query": "bitcoin news today",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 18,
+          "signal": "+50%",
+          "strength": 53.38
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 7,
+          "signal": "Top",
+          "strength": 29.4
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 6,
+          "signal": "Top",
+          "strength": 30.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 53.38,
+      "raw_priority": 61.38
+    },
     {
       "query": "canada tariffs trump",
       "regions": [
@@ -102,12 +1280,133 @@
         }
       ],
       "news_titles": [
-        "Carney Stands Up to Trump in Trade War Despite the Risks",
+        "Canada-U.S. Trade War Escalates as Talks Collapse",
         "Canada rejects US terms for trade deal as 50 percent tariffs take effect",
         "U.S.-Canada trade talks collapse, setting new 50% tariffs in motion"
       ],
       "max_strength": 60.94,
       "raw_priority": 60.94
+    },
+    {
+      "query": "世紀 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "股票",
+          "rank": 8,
+          "signal": "+70%",
+          "strength": 60.01
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 11,
+          "signal": "Top",
+          "strength": 26.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 60.01,
+      "raw_priority": 60.01
+    },
+    {
+      "query": "adam livingston",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 13,
+          "signal": "+90%",
+          "strength": 59.98
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 59.98,
+      "raw_priority": 59.98
+    },
+    {
+      "query": "pump it up bitcoin",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 15,
+          "signal": "+90%",
+          "strength": 59.18
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 59.18,
+      "raw_priority": 59.18
+    },
+    {
+      "query": "thailand vs vietnam",
+      "regions": [
+        "US",
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "google_trending",
+          "rank": 8,
+          "signal": "GTrend 500+",
+          "strength": 50.79,
+          "traffic": 500,
+          "published_at": "2026-08-22T12:30:00+00:00"
+        },
+        {
+          "region": "TW",
+          "source": "google_trending",
+          "rank": 2,
+          "signal": "GTrend 200+",
+          "strength": 47.71,
+          "traffic": 200,
+          "published_at": "2026-08-22T13:00:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "Thailand will avoid Rafaelson focus in ASEAN Championship final vs. 'favourites' Vietnam",
+        "Thailand face Vietnam tonight in the first of a two-match ASEAN Hyundai Cup final",
+        "War Elephants ready to strike first in Bangkok",
+        "Thailand vs Vietnam LIVE Score Updates in 2026 ASEAN Hyundai Cup Match",
+        "'First-ever' aiming for back-to-back titles, 'Vietnamese Hero' Coach Kim Sang-sik: \"It will be difficult... but I am confident\"",
+        "The race for the top scorer title at the 2026 AFF Cup heats up ahead of the Vietnam-Thailand final."
+      ],
+      "max_strength": 50.79,
+      "raw_priority": 58.79
+    },
+    {
+      "query": "bitcoin song",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "bitcoin",
+          "rank": 16,
+          "signal": "+80%",
+          "strength": 57.86
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 57.86,
+      "raw_priority": 57.86
     },
     {
       "query": "lucas herrington",
@@ -126,14 +1425,41 @@
         }
       ],
       "news_titles": [
-        "Licensable picture: Bromley v Cambridge United Sky Bet League 1",
+        "Licensable picture: West Ham United v Charlton Athletic Sky Bet Championship",
         "Licensable picture: Hull City v Manchester United Premier League"
       ],
       "max_strength": 57.86,
       "raw_priority": 57.86
     },
     {
-      "query": "中國",
+      "query": "股票 新手",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "股票",
+          "rank": 9,
+          "signal": "+50%",
+          "strength": 56.98
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 5,
+          "signal": "Top",
+          "strength": 31.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 56.98,
+      "raw_priority": 56.98
+    },
+    {
+      "query": "油價",
       "regions": [
         "TW"
       ],
@@ -141,20 +1467,20 @@
         {
           "region": "TW",
           "source": "google_trending",
-          "rank": 8,
-          "signal": "GTrend 2000+",
-          "strength": 56.81,
-          "traffic": 2000,
-          "published_at": "2026-08-22T12:00:00+00:00"
+          "rank": 1,
+          "signal": "GTrend 1000+",
+          "strength": 54.85,
+          "traffic": 1000,
+          "published_at": "2026-08-22T13:00:00+00:00"
         }
       ],
       "news_titles": [
-        "中國人「潤日」踢鐵板？日本堵簽證漏洞 30天離境壓力恐含淚賣豪宅",
-        "每日消息（共同社） - 日政府專家會議討論創設外國人日語及制度學習項目",
-        "日本收緊外國人政策：現有條件與以往的主要分別"
+        "不用趕著加油 中油宣布下週油價續凍",
+        "指標油價重回90美元！國內油價連4周凍漲 吸收金額擴大",
+        "國際油價上漲 持續專案平穩 汽、柴油各吸收6.4及6.1元 8/24-8/30國內汽、柴油價格維持不調整"
       ],
-      "max_strength": 56.81,
-      "raw_priority": 56.81
+      "max_strength": 54.85,
+      "raw_priority": 54.85
     },
     {
       "query": "thái lan đấu với việt nam",
@@ -165,20 +1491,44 @@
         {
           "region": "TW",
           "source": "google_trending",
-          "rank": 2,
+          "rank": 6,
           "signal": "GTrend 1000+",
-          "strength": 54.7,
+          "strength": 54.1,
           "traffic": 1000,
           "published_at": "2026-08-22T12:40:00+00:00"
         }
       ],
       "news_titles": [
         "HLV Thái Lan: 'Ủng hộ cách Việt Nam nhập tịch cầu thủ Brazil'",
-        "ĐT Việt Nam mơ ngôi vô địch AFF Cup lần thứ 4: Hành trình kỳ lạ như 2 năm trước",
-        "Hàng nghìn cổ động viên phủ đỏ phố Nguyễn Huệ trước trận Việt Nam - Thái Lan"
+        "Không phải Xuân Son, Thái Lan nên lo lắng \"vũ khí\" tối thượng này của Việt Nam",
+        "Người hâm mộ TP.HCM nhuộm đỏ phố đi bộ Nguyễn Huệ cổ vũ ĐT Việt Nam"
       ],
-      "max_strength": 54.7,
-      "raw_priority": 54.7
+      "max_strength": 54.1,
+      "raw_priority": 54.1
+    },
+    {
+      "query": "thời tiết ngày mai",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "google_trending",
+          "rank": 7,
+          "signal": "GTrend 1000+",
+          "strength": 53.95,
+          "traffic": 1000,
+          "published_at": "2026-08-22T12:40:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "Dự báo thời tiết ngày 23/8/2026: Nhiều mây, có mưa vừa, mưa to và dông",
+        "35 nhà ở bị ảnh hưởng, hư hỏng do mưa lớn và dông lốc",
+        "Dự báo thời tiết từ đêm 22/8 đến ngày 24/8:"
+      ],
+      "max_strength": 53.95,
+      "raw_priority": 53.95
     },
     {
       "query": "2026",
@@ -189,9 +1539,9 @@
         {
           "region": "TW",
           "source": "google_trending",
-          "rank": 3,
+          "rank": 8,
           "signal": "GTrend 1000+",
-          "strength": 54.55,
+          "strength": 53.8,
           "traffic": 1000,
           "published_at": "2026-08-22T12:30:00+00:00"
         }
@@ -201,52 +1551,8 @@
         "Vance’s homecoming is a throwback to 2024 — and a preview for 2026 and 2028: From the Politics Desk",
         "Vance campaigns at the Ohio steel plant where his grandfather worked"
       ],
-      "max_strength": 54.55,
-      "raw_priority": 54.55
-    },
-    {
-      "query": "濟州 島",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "google_trending",
-          "rank": 5,
-          "signal": "GTrend 1000+",
-          "strength": 54.25,
-          "traffic": 1000,
-          "published_at": "2026-08-22T12:10:00+00:00"
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 54.25,
-      "raw_priority": 54.25
-    },
-    {
-      "query": "中信兄弟",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "google_trending",
-          "rank": 4,
-          "signal": "GTrend 500+",
-          "strength": 51.39,
-          "traffic": 500,
-          "published_at": "2026-08-22T12:30:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "中職》一壘手失誤釀致命大局 兄弟輸獅無緣1項最佳紀錄",
-        "中職》象迷加持！傳統一戰票房開紅盤 獅寫主場最多觀眾紀錄",
-        "喬登6局無失分好投 統一獅頂住兄弟8局反撲5比3終止連敗"
-      ],
-      "max_strength": 51.39,
-      "raw_priority": 51.39
+      "max_strength": 53.8,
+      "raw_priority": 53.8
     },
     {
       "query": "hull city",
@@ -273,31 +1579,31 @@
       "raw_priority": 51.09
     },
     {
-      "query": "thailand vs vietnam",
+      "query": "impôt",
       "regions": [
-        "US"
+        "CA"
       ],
       "signals": [
         {
-          "region": "US",
+          "region": "CA",
           "source": "google_trending",
-          "rank": 8,
+          "rank": 7,
           "signal": "GTrend 500+",
-          "strength": 50.79,
+          "strength": 50.94,
           "traffic": 500,
-          "published_at": "2026-08-22T12:30:00+00:00"
+          "published_at": "2026-08-22T12:00:00+00:00"
         }
       ],
       "news_titles": [
-        "Thailand will avoid Rafaelson focus in ASEAN Championship final vs. 'favourites' Vietnam",
-        "Thailand face Vietnam tonight in the first of a two-match ASEAN Hyundai Cup final",
-        "War Elephants ready to strike first in Bangkok"
+        "Comment léguer un REER sans facture fiscale",
+        "Le CELI, pas si «libre d’impôt» que ça?",
+        "Finances publiques | Note aux partis : les Québécois priorisent l’équilibre budgétaire"
       ],
-      "max_strength": 50.79,
-      "raw_priority": 50.79
+      "max_strength": 50.94,
+      "raw_priority": 50.94
     },
     {
-      "query": "柯叔元",
+      "query": "中信兄弟",
       "regions": [
         "TW"
       ],
@@ -305,16 +1611,20 @@
         {
           "region": "TW",
           "source": "google_trending",
-          "rank": 1,
-          "signal": "GTrend 200+",
-          "strength": 47.86,
-          "traffic": 200,
-          "published_at": "2026-08-22T12:50:00+00:00"
+          "rank": 9,
+          "signal": "GTrend 500+",
+          "strength": 50.64,
+          "traffic": 500,
+          "published_at": "2026-08-22T12:30:00+00:00"
         }
       ],
-      "news_titles": [],
-      "max_strength": 47.86,
-      "raw_priority": 47.86
+      "news_titles": [
+        "中職》一壘手失誤釀致命大局 兄弟輸獅無緣1項最佳紀錄",
+        "中職》象迷加持！傳統一戰票房開紅盤 獅寫主場最多觀眾紀錄",
+        "喬登6局無失分好投 統一獅頂住兄弟8局反撲5比3終止連敗"
+      ],
+      "max_strength": 50.64,
+      "raw_priority": 50.64
     },
     {
       "query": "la liga",
@@ -389,6 +1699,30 @@
       "raw_priority": 47.56
     },
     {
+      "query": "奈良岡功大",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "google_trending",
+          "rank": 3,
+          "signal": "GTrend 200+",
+          "strength": 47.56,
+          "traffic": 200,
+          "published_at": "2026-08-22T13:00:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "山口、連覇に王手＝世界バドミントン",
+        "奥原希望 準々決勝を棄権 「膝のけがのため」と大会公式X 7月22日に手術 自身のXでは「今日もコートに立ちたかったですが、叶わずとても残念」",
+        "奈良岡メダル確定／世界バド｜青森スポーツ｜青森ニュース｜Web東奥"
+      ],
+      "max_strength": 47.56,
+      "raw_priority": 47.56
+    },
+    {
       "query": "doris miller",
       "regions": [
         "CA"
@@ -406,14 +1740,14 @@
       ],
       "news_titles": [
         "Trump faces backlash over reports US navy carrier could be named after him instead of Black war hero",
-        "'Slap in the face': NAACP rips Trump over aircraft carrier name",
+        "Navy discusses renaming aircraft carrier after Trump instead of heroic Black sailor",
         "Navy reportedly weighs naming aircraft carrier for Trump instead of Black Pearl Harbor hero"
       ],
       "max_strength": 47.26,
       "raw_priority": 47.26
     },
     {
-      "query": "施文彬",
+      "query": "柯叔元",
       "regions": [
         "TW"
       ],
@@ -421,44 +1755,16 @@
         {
           "region": "TW",
           "source": "google_trending",
-          "rank": 6,
+          "rank": 5,
           "signal": "GTrend 200+",
-          "strength": 47.11,
+          "strength": 47.26,
           "traffic": 200,
-          "published_at": "2026-08-22T12:10:00+00:00"
+          "published_at": "2026-08-22T12:50:00+00:00"
         }
       ],
-      "news_titles": [
-        "取消陳盈潔告別會！許常德不忍再發聲 公開她「欠款未還的人」",
-        "代替陳盈潔向欠款未還的人致歉！許常德提回饋方式籲債主私訊- 娛樂",
-        "陳盈潔生前最深歉意曝光！許常德心疼債主「信任被粉碎」：此生無法來世還"
-      ],
-      "max_strength": 47.11,
-      "raw_priority": 47.11
-    },
-    {
-      "query": "impôt",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "google_trending",
-          "rank": 7,
-          "signal": "GTrend 200+",
-          "strength": 46.96,
-          "traffic": 200,
-          "published_at": "2026-08-22T12:00:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "Comment léguer un REER sans facture fiscale",
-        "Le CELI, pas si «libre d’impôt» que ça?",
-        "Finances publiques | Note aux partis : les Québécois priorisent l’équilibre budgétaire"
-      ],
-      "max_strength": 46.96,
-      "raw_priority": 46.96
+      "news_titles": [],
+      "max_strength": 47.26,
+      "raw_priority": 47.26
     },
     {
       "query": "travel visa",
@@ -509,73 +1815,6 @@
       "raw_priority": 46.66
     },
     {
-      "query": "wall street journal",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "google_trending",
-          "rank": 9,
-          "signal": "GTrend 200+",
-          "strength": 46.66,
-          "traffic": 200,
-          "published_at": "2026-08-22T11:50:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "Iran’s Top Politicians Urge an End to the War",
-        "Iran says the world has accepted it has defeated the US, and other Middle East developments",
-        "Oil prices are little changed after Iran's president indicates Tehran wants war to end soon"
-      ],
-      "max_strength": 46.66,
-      "raw_priority": 46.66
-    },
-    {
-      "query": "證券",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "google_trending",
-          "rank": 9,
-          "signal": "GTrend 200+",
-          "strength": 46.66,
-          "traffic": 200,
-          "published_at": "2026-08-22T12:00:00+00:00"
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 46.66,
-      "raw_priority": 46.66
-    },
-    {
-      "query": "brampton weather",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "google_trending",
-          "rank": 10,
-          "signal": "GTrend 200+",
-          "strength": 46.51,
-          "traffic": 200,
-          "published_at": "2026-08-22T11:50:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "Brampton’s weather, highway closures and top stories on Aug. 22",
-        "Brampton’s weather, highway closures and top stories on Aug. 20"
-      ],
-      "max_strength": 46.51,
-      "raw_priority": 46.51
-    },
-    {
       "query": "caitlin clark uncalled foul wnba",
       "regions": [
         "US"
@@ -600,7 +1839,30 @@
       "raw_priority": 46.51
     },
     {
-      "query": "烏干達",
+      "query": "weather brampton",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "google_trending",
+          "rank": 10,
+          "signal": "GTrend 200+",
+          "strength": 46.51,
+          "traffic": 200,
+          "published_at": "2026-08-22T11:50:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "Brampton’s weather, highway closures and top stories on Aug. 22",
+        "Brampton’s weather, highway closures and top stories on Aug. 20"
+      ],
+      "max_strength": 46.51,
+      "raw_priority": 46.51
+    },
+    {
+      "query": "兄弟",
       "regions": [
         "TW"
       ],
@@ -612,10 +1874,14 @@
           "signal": "GTrend 200+",
           "strength": 46.51,
           "traffic": 200,
-          "published_at": "2026-08-22T12:00:00+00:00"
+          "published_at": "2026-08-22T12:20:00+00:00"
         }
       ],
-      "news_titles": [],
+      "news_titles": [
+        "中職》抗議過程勝騎士練投丟護網 餅總：我不知道⋯",
+        "中職》兄弟抗議過久沒收警告 餅總挑戰裁判：你趕我出去啊",
+        "學平野抗議「吵久一點」？林岳平坦言故意的：裁判可以趕我"
+      ],
       "max_strength": 46.51,
       "raw_priority": 46.51
     },
@@ -637,7 +1903,7 @@
       ],
       "news_titles": [
         "4:0 in Wiesbaden: Bayer zieht souverän in die zweite Pokalrunde ein",
-        "Schick als Dosenöffner: Pokal: Bayer nach der Pause Standesgemäß - FCA zittert lange",
+        "Kurzpässe: Pflichtspielstart im DFB-Pokal",
         "Ronny König im Interview vor dem DFB-Pokalspiel - „An die eigene Chance glauben“"
       ],
       "max_strength": 44.85,
@@ -708,9 +1974,33 @@
         }
       ],
       "news_titles": [
-        "Manager Michael Carrick staat voor de uitdaging om de defensieve zwakheden van Manchester United te compenseren met een aanvallende aanpak in hun eerste Premier League-wedstrijd.",
-        "Youri Tielemans meteen in de basis bij Manchester United, wat kan hij tegen promovendus Hull City?",
-        "Manchester United meteen in de problemen: Senne Lammens al twee keer geklopt tegen promovendus Hull City in competitiedebuut van Youri Tielemans"
+        "De kansen om de wedstrijd Hull City tegen MU op 22 augustus om 18:30 uur te winnen, volgens een supercomputer.",
+        "LIVE: Manchester United in de problemen! Tielemans en Lammens kijken op bezoek bij Hull City tegen dubbele achterstand aan",
+        "Youri Tielemans meteen in de basis bij Premier League-debuut voor Manchester United, ook Senne Lammens start"
+      ],
+      "max_strength": 44.4,
+      "raw_priority": 44.4
+    },
+    {
+      "query": "勒布朗·詹姆斯",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "google_trending",
+          "rank": 4,
+          "signal": "GTrend 100+",
+          "strength": 44.4,
+          "traffic": 100,
+          "published_at": "2026-08-22T13:00:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "76人又为詹姆斯补强！3冠名帅加盟，最懂怎么围绕詹姆斯打球",
+        "让爱德华兹17投仅3中的防守设计师，菲尔·汉迪正式加入76人教练组",
+        "76人队记：23年附加赛 汉迪曾为湖人制定防守策略锁死爱德华兹"
       ],
       "max_strength": 44.4,
       "raw_priority": 44.4
@@ -764,28 +2054,1416 @@
       "raw_priority": 44.1
     },
     {
-      "query": "肺炎鏈球菌",
+      "query": "wall street journal",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "google_trending",
+          "rank": 9,
+          "signal": "GTrend 100+",
+          "strength": 43.65,
+          "traffic": 100,
+          "published_at": "2026-08-22T11:50:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "Iranian president says time to end war with US from ‘position of strength’",
+        "Iran says the world has accepted it has defeated the US, and other Middle East developments",
+        "Oil prices are little changed after Iran's president indicates Tehran wants war to end soon"
+      ],
+      "max_strength": 43.65,
+      "raw_priority": 43.65
+    },
+    {
+      "query": "live bitcoin",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 1,
+          "signal": "Top",
+          "strength": 34.2
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 1,
+          "signal": "Top",
+          "strength": 34.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 34.2,
+      "raw_priority": 42.2
+    },
+    {
+      "query": "penny stocks",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 1,
+          "signal": "Top",
+          "strength": 34.2
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 9,
+          "signal": "Top",
+          "strength": 27.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 34.2,
+      "raw_priority": 42.2
+    },
+    {
+      "query": "stocks to buy",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 2,
+          "signal": "Top",
+          "strength": 33.4
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 1,
+          "signal": "Top",
+          "strength": 34.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 34.2,
+      "raw_priority": 42.2
+    },
+    {
+      "query": "best stocks",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 3,
+          "signal": "Top",
+          "strength": 32.6
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 2,
+          "signal": "Top",
+          "strength": 33.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 33.4,
+      "raw_priority": 41.4
+    },
+    {
+      "query": "bitcoin news",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 2,
+          "signal": "Top",
+          "strength": 33.4
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 3,
+          "signal": "Top",
+          "strength": 32.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 33.4,
+      "raw_priority": 41.4
+    },
+    {
+      "query": "bitcoin price",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 3,
+          "signal": "Top",
+          "strength": 32.6
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 5,
+          "signal": "Top",
+          "strength": 31.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 32.6,
+      "raw_priority": 40.6
+    },
+    {
+      "query": "how to invest in stocks",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 13,
+          "signal": "Top",
+          "strength": 24.6
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 3,
+          "signal": "Top",
+          "strength": 32.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 32.6,
+      "raw_priority": 40.6
+    },
+    {
+      "query": "stocks to buy now",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 4,
+          "signal": "Top",
+          "strength": 31.8
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 4,
+          "signal": "Top",
+          "strength": 31.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 31.8,
+      "raw_priority": 39.8
+    },
+    {
+      "query": "trading stocks",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 5,
+          "signal": "Top",
+          "strength": 31.0
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 7,
+          "signal": "Top",
+          "strength": 29.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 31.0,
+      "raw_priority": 39.0
+    },
+    {
+      "query": "stocks for beginners",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 6,
+          "signal": "Top",
+          "strength": 30.2
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 8,
+          "signal": "Top",
+          "strength": 28.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 30.2,
+      "raw_priority": 38.2
+    },
+    {
+      "query": "stocks today",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 15,
+          "signal": "Top",
+          "strength": 23.0
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 6,
+          "signal": "Top",
+          "strength": 30.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 30.2,
+      "raw_priority": 38.2
+    },
+    {
+      "query": "bitcoin analysis",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 14,
+          "signal": "Top",
+          "strength": 23.8
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 7,
+          "signal": "Top",
+          "strength": 29.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 29.4,
+      "raw_priority": 37.4
+    },
+    {
+      "query": "stocks with josh",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 7,
+          "signal": "Top",
+          "strength": 29.4
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 11,
+          "signal": "Top",
+          "strength": 26.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 29.4,
+      "raw_priority": 37.4
+    },
+    {
+      "query": "比特 幣",
       "regions": [
         "TW"
       ],
       "signals": [
         {
           "region": "TW",
-          "source": "google_trending",
-          "rank": 7,
-          "signal": "GTrend 100+",
-          "strength": 43.95,
-          "traffic": 100,
-          "published_at": "2026-08-22T12:10:00+00:00"
+          "source": "youtube_top",
+          "anchor": "比特幣",
+          "rank": 1,
+          "signal": "Top",
+          "strength": 34.2
         }
       ],
-      "news_titles": [
-        "肺炎鏈球菌已奪19死！醫揭「1」隱憂：小心造成3大嚴重疾病",
-        "肺炎防治／肺鏈疫苗衝施打率 立委促循流感目標",
-        "流感季還沒到肺炎鏈球菌已19死！醫揭：「血清型置換」成隱憂"
+      "news_titles": [],
+      "max_strength": 34.2,
+      "raw_priority": 34.2
+    },
+    {
+      "query": "股票 分析",
+      "regions": [
+        "TW"
       ],
-      "max_strength": 43.95,
-      "raw_priority": 43.95
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 1,
+          "signal": "Top",
+          "strength": 34.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 34.2,
+      "raw_priority": 34.2
+    },
+    {
+      "query": "best stocks to buy now",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 20,
+          "signal": "Top",
+          "strength": 19.0
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 12,
+          "signal": "Top",
+          "strength": 25.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 25.4,
+      "raw_priority": 33.4
+    },
+    {
+      "query": "股票 直播",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 2,
+          "signal": "Top",
+          "strength": 33.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 33.4,
+      "raw_priority": 33.4
+    },
+    {
+      "query": "ai stocks",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 14,
+          "signal": "Top",
+          "strength": 23.8
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 13,
+          "signal": "Top",
+          "strength": 24.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 24.6,
+      "raw_priority": 32.6
+    },
+    {
+      "query": "股票 教學",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 3,
+          "signal": "Top",
+          "strength": 32.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 32.6,
+      "raw_priority": 32.6
+    },
+    {
+      "query": "股票 入門",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 4,
+          "signal": "Top",
+          "strength": 31.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 31.8,
+      "raw_priority": 31.8
+    },
+    {
+      "query": "stocks canada",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 5,
+          "signal": "Top",
+          "strength": 31.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 31.0,
+      "raw_priority": 31.0
+    },
+    {
+      "query": "the bitcoin",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 6,
+          "signal": "Top",
+          "strength": 30.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 30.2,
+      "raw_priority": 30.2
+    },
+    {
+      "query": "股票 新聞",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 6,
+          "signal": "Top",
+          "strength": 30.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 30.2,
+      "raw_priority": 30.2
+    },
+    {
+      "query": "how to trade stocks",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 17,
+          "signal": "Top",
+          "strength": 21.4
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 17,
+          "signal": "Top",
+          "strength": 21.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 21.4,
+      "raw_priority": 29.4
+    },
+    {
+      "query": "股票 投資",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 7,
+          "signal": "Top",
+          "strength": 29.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 29.4,
+      "raw_priority": 29.4
+    },
+    {
+      "query": "how to invest in stocks for beginners",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 24,
+          "signal": "Top",
+          "strength": 15.8
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 18,
+          "signal": "Top",
+          "strength": 20.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 20.6,
+      "raw_priority": 28.6
+    },
+    {
+      "query": "bitcoin trading",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 8,
+          "signal": "Top",
+          "strength": 28.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 28.6,
+      "raw_priority": 28.6
+    },
+    {
+      "query": "nasdaq penny stocks",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 8,
+          "signal": "Top",
+          "strength": 28.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 28.6,
+      "raw_priority": 28.6
+    },
+    {
+      "query": "股票 分析 師",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 8,
+          "signal": "Top",
+          "strength": 28.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 28.6,
+      "raw_priority": 28.6
+    },
+    {
+      "query": "bitcoin cash",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 9,
+          "signal": "Top",
+          "strength": 27.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 27.8,
+      "raw_priority": 27.8
+    },
+    {
+      "query": "hood stocks",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 9,
+          "signal": "Top",
+          "strength": 27.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 27.8,
+      "raw_priority": 27.8
+    },
+    {
+      "query": "東森 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 9,
+          "signal": "Top",
+          "strength": 27.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 27.8,
+      "raw_priority": 27.8
+    },
+    {
+      "query": "bitcoin prediction",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 10,
+          "signal": "Top",
+          "strength": 27.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 27.0,
+      "raw_priority": 27.0
+    },
+    {
+      "query": "canadian stocks",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 10,
+          "signal": "Top",
+          "strength": 27.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 27.0,
+      "raw_priority": 27.0
+    },
+    {
+      "query": "investing",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 10,
+          "signal": "Top",
+          "strength": 27.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 27.0,
+      "raw_priority": 27.0
+    },
+    {
+      "query": "台灣 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 10,
+          "signal": "Top",
+          "strength": 27.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 27.0,
+      "raw_priority": 27.0
+    },
+    {
+      "query": "bitcoin mining",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 11,
+          "signal": "Top",
+          "strength": 26.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 26.2,
+      "raw_priority": 26.2
+    },
+    {
+      "query": "how to invest",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 11,
+          "signal": "Top",
+          "strength": 26.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 26.2,
+      "raw_priority": 26.2
+    },
+    {
+      "query": "bitcoin price prediction",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 12,
+          "signal": "Top",
+          "strength": 25.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 25.4,
+      "raw_priority": 25.4
+    },
+    {
+      "query": "dividend stocks",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 12,
+          "signal": "Top",
+          "strength": 25.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 25.4,
+      "raw_priority": 25.4
+    },
+    {
+      "query": "怎麼 看 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 12,
+          "signal": "Top",
+          "strength": 25.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 25.4,
+      "raw_priority": 25.4
+    },
+    {
+      "query": "xrp",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 13,
+          "signal": "Top",
+          "strength": 24.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 24.6,
+      "raw_priority": 24.6
+    },
+    {
+      "query": "今天 的 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 14,
+          "signal": "Top",
+          "strength": 23.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 23.8,
+      "raw_priority": 23.8
+    },
+    {
+      "query": "live bitcoin trading",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 15,
+          "signal": "Top",
+          "strength": 23.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 23.0,
+      "raw_priority": 23.0
+    },
+    {
+      "query": "韓國 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 15,
+          "signal": "Top",
+          "strength": 23.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 23.0,
+      "raw_priority": 23.0
+    },
+    {
+      "query": "best stocks to buy",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 16,
+          "signal": "Top",
+          "strength": 22.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 22.2,
+      "raw_priority": 22.2
+    },
+    {
+      "query": "bitcoin 2026",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 16,
+          "signal": "Top",
+          "strength": 22.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 22.2,
+      "raw_priority": 22.2
+    },
+    {
+      "query": "etf",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 16,
+          "signal": "Top",
+          "strength": 22.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 22.2,
+      "raw_priority": 22.2
+    },
+    {
+      "query": "bitcoin miner",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 17,
+          "signal": "Top",
+          "strength": 21.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 21.4,
+      "raw_priority": 21.4
+    },
+    {
+      "query": "how to buy stocks",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 18,
+          "signal": "Top",
+          "strength": 20.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 20.6,
+      "raw_priority": 20.6
+    },
+    {
+      "query": "長榮 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 18,
+          "signal": "Top",
+          "strength": 20.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 20.6,
+      "raw_priority": 20.6
+    },
+    {
+      "query": "bitcoin university",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 19,
+          "signal": "Top",
+          "strength": 19.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 19.8,
+      "raw_priority": 19.8
+    },
+    {
+      "query": "investing in stocks",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 19,
+          "signal": "Top",
+          "strength": 19.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 19.8,
+      "raw_priority": 19.8
+    },
+    {
+      "query": "silver stocks",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 19,
+          "signal": "Top",
+          "strength": 19.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 19.8,
+      "raw_priority": 19.8
+    },
+    {
+      "query": "今日 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 19,
+          "signal": "Top",
+          "strength": 19.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 19.8,
+      "raw_priority": 19.8
+    },
+    {
+      "query": "btc bitcoin",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 20,
+          "signal": "Top",
+          "strength": 19.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 19.0,
+      "raw_priority": 19.0
+    },
+    {
+      "query": "canadian dividend stocks",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 21,
+          "signal": "Top",
+          "strength": 18.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 18.2,
+      "raw_priority": 18.2
+    },
+    {
+      "query": "ethereum",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 21,
+          "signal": "Top",
+          "strength": 18.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 18.2,
+      "raw_priority": 18.2
+    },
+    {
+      "query": "stocks news",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 21,
+          "signal": "Top",
+          "strength": 18.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 18.2,
+      "raw_priority": 18.2
+    },
+    {
+      "query": "美股",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 21,
+          "signal": "Top",
+          "strength": 18.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 18.2,
+      "raw_priority": 18.2
+    },
+    {
+      "query": "stocks live",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 22,
+          "signal": "Top",
+          "strength": 17.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 17.4,
+      "raw_priority": 17.4
+    },
+    {
+      "query": "trump bitcoin",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 22,
+          "signal": "Top",
+          "strength": 17.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 17.4,
+      "raw_priority": 17.4
+    },
+    {
+      "query": "swan bitcoin",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 23,
+          "signal": "Top",
+          "strength": 16.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 16.6,
+      "raw_priority": 16.6
+    },
+    {
+      "query": "bitcoin liquidation watch",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "bitcoin",
+          "rank": 25,
+          "signal": "Top",
+          "strength": 15.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 15.0,
+      "raw_priority": 15.0
+    },
+    {
+      "query": "stocks to buy today",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 25,
+          "signal": "Top",
+          "strength": 15.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 15.0,
+      "raw_priority": 15.0
     }
   ]
 }

@@ -99,54 +99,6 @@ jobs:
             cat output/latest.md >> "$GITHUB_STEP_SUMMARY"
           fi
 
-      - name: Email report
-        if: steps.toronto_time.outputs.run == 'true' && always()
-        env:
-          EMAIL_USER: ${{ secrets.EMAIL_USER }}
-          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
-          EMAIL_TO: ${{ secrets.EMAIL_TO }}
-          EMAIL_SMTP_HOST: ${{ secrets.EMAIL_SMTP_HOST }}
-          EMAIL_SMTP_PORT: ${{ secrets.EMAIL_SMTP_PORT }}
-        shell: bash
-        run: |
-          if [ ! -f output/latest.md ]; then
-            echo "No report found; skipping email."
-            exit 0
-          fi
-          if [ -z "$EMAIL_USER" ] || [ -z "$EMAIL_APP_PASSWORD" ] || [ -z "$EMAIL_TO" ]; then
-            echo "Email secrets are not configured; skipping email."
-            exit 0
-          fi
-
-          python - <<'PY'
-          import os
-          import smtplib
-          from datetime import datetime
-          from email.message import EmailMessage
-          from pathlib import Path
-          from zoneinfo import ZoneInfo
-
-          user = os.environ["EMAIL_USER"]
-          password = os.environ["EMAIL_APP_PASSWORD"]
-          recipient = os.environ["EMAIL_TO"]
-          host = os.environ.get("EMAIL_SMTP_HOST") or "smtp.gmail.com"
-          port = int(os.environ.get("EMAIL_SMTP_PORT") or "465")
-
-          report = Path("output/latest.md").read_text(encoding="utf-8")
-          date_str = datetime.now(ZoneInfo("America/Toronto")).strftime("%Y-%m-%d")
-
-          msg = EmailMessage()
-          msg["Subject"] = f"YouTube Stock Trend Radar — {date_str}"
-          msg["From"] = user
-          msg["To"] = recipient
-          msg.set_content(report)
-
-          with smtplib.SMTP_SSL(host, port, timeout=30) as smtp:
-              smtp.login(user, password)
-              smtp.send_message(msg)
-          print(f"Report emailed to {recipient}")
-          PY
-
       - name: Upload report artifact
         if: steps.toronto_time.outputs.run == 'true' && always()
         uses: actions/upload-artifact@v4

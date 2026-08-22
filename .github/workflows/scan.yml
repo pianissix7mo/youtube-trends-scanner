@@ -78,8 +78,10 @@ jobs:
           TRENDS_TIMEFRAME: ${{ github.event.inputs.timeframe || 'now 3-d' }}
           RAW_LIMIT: ${{ github.event.inputs.raw_limit || '1000' }}
           TRENDING_RSS_HOURS: "48"
-          YT_TRENDS_ANCHORS_PER_REGION: "2"
+          YT_TRENDS_ANCHORS_PER_REGION: "4"
           YT_TRENDS_DELAY_SECONDS: "12"
+          YT_TRENDS_BATCH_SIZE: "6"
+          YT_TRENDS_BATCH_PAUSE_SECONDS: "120"
           YT_TRENDS_CACHE_TTL_SECONDS: "86400"
           TRENDSPYG_DB: ".cache/trendspyg/trendspyg.db"
           TRENDSPYG_COOKIES: ".cache/trendspyg/explore_cookies.json"

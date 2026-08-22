@@ -1,25 +1,25 @@
 # YouTube Entity Enrichment
 
-Generated: **2026-08-22T13:36:55.854529+00:00**
+Generated: **2026-08-22T18:00:02.902816+00:00**
 
 This is a measurement table, not the final editorial ranking. ChatGPT reviews it at 06:00 Toronto time.
 
 | # | Entity | YouTube query | Regions | 3d videos* | Median views/day | Small-channel hit | Status |
 |---:|---|---|---|---:|---:|---:|---|
-| 1 | Bitcoin market / short squeeze | Bitcoin short squeeze BTC | US,CA,TW | 4567 | 3491 | 23.5% | cache_fresh |
-| 2 | XRP | XRP crypto | US,CA | 83735 | 9609 | 100.0% | cache_fresh |
-| 3 | Solana | Solana crypto SOL | CA | 15780 | 369 | 14.8% | cache_fresh |
-| 4 | Canadian bank stocks | Canadian bank stocks | CA | 477 | 499 | 20.0% | cache_fresh |
-| 5 | Tesla | Tesla stock TSLA | US | 533 | 2241 | 42.9% | cache_fresh |
-| 6 | Robotics stocks | 機器人 股票 robotics stocks | TW | 360 | 149 | 16.7% | cache_fresh |
-| 7 | Coinbase | Coinbase COIN 股票 | TW | 301 | 57 | 12.5% | cache_fresh |
-| 8 | Semiconductor stocks | semiconductor stocks AI chips | CA | 9058 | 422 | 27.3% | cache_fresh |
-| 9 | Silver mining stocks | silver mining stocks | CA | 810 | 2103 | 33.3% | cache_fresh |
-| 10 | SpaceX | SpaceX 股票 投資 | TW | 504 | 380 | 35.0% | cache_fresh |
-| 11 | Yageo | 國巨 Yageo 股票 | TW | 13 | 629 | 16.7% | cache_fresh |
-| 12 | Yang Ming Marine Transport | 陽明 股票 shipping | TW | 21 | 1230 | 14.3% | cache_fresh |
-| 13 | Oil prices | 油價 oil prices stocks | TW,CA | 70 | 1230 | 47.8% | cache_fresh |
-| 14 | Canada-U.S. tariff escalation | Canada tariffs Trump trade war stocks | US,CA | 219 | 1454 | 37.5% | cache_fresh |
-| 15 | Robinhood | Robinhood HOOD stock | US | 313 | 174 | 5.9% | cache_fresh |
+| 1 | NVIDIA earnings | NVIDIA earnings NVDA | US,CA | 421 | 642 | 32.3% | ok |
+| 2 | Walmart earnings | Walmart earnings WMT | US,CA | 305 | 130 | 3.2% | ok |
+| 3 | Apple earnings | Apple earnings AAPL | US | 53 | 27 | 11.6% | ok |
+| 4 | ON Semiconductor | ON Semiconductor stock ON | US | 57649 | 89 | 26.3% | ok |
+| 5 | QQQ / Nasdaq-100 | QQQ 美股 Nasdaq 100 | TW | 11 | 225 | 30.0% | ok |
+| 6 | Alibaba earnings | Alibaba earnings BABA | US | 90 | 48 | 5.0% | ok |
+| 7 | SK Hynix | SK Hynix 海力士 美股 HBM | TW | 17 | 54 | 12.5% | ok |
+| 8 | Wolfspeed | Wolfspeed earnings stock WOLF | US | 18 | 10 | 0.0% | ok |
+| 9 | Webull | Webull earnings BULL stock | US | 40 | 48 | 7.1% | ok |
+| 10 | Iran war / market risk | Iran war stock market oil | CA | 590 | 916 | 25.0% | ok |
+| 11 | Netflix earnings | Netflix earnings NFLX | CA | 25 | 27 | 14.3% | ok |
+| 12 | U.S. stock-market crash / next-week outlook | stock market crash 2026 next week outlook | US,CA | 8414 | 4185 | 40.9% | ok |
+| 13 | Bitcoin | Bitcoin BTC price market | US | 72936 | 1570 | 50.0% | ok |
+| 14 | Bond market / yields | bond market treasury yields stocks | US | 43537 | 2701 | 12.5% | ok |
+| 15 | AI data centers | AI data center stocks NVIDIA power | CA | 226 | 305 | 10.7% | ok |
 
 \* `3d videos` is YouTube API's approximate total result count for videos published in the last 3 days.

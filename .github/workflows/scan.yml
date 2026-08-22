@@ -12,8 +12,10 @@ on:
         required: false
         default: "now 7-d"
   schedule:
-    # 12:00 UTC = 20:00 Taiwan; 08:00 Toronto during EDT (07:00 during EST).
-    - cron: "0 12 * * *"
+    # Toronto 05:00 is 09:00 UTC during EDT and 10:00 UTC during EST.
+    # We trigger both and gate scheduled runs using America/Toronto below.
+    - cron: "0 9 * * *"
+    - cron: "0 10 * * *"
 
 concurrency:
   group: youtube-trend-scan
@@ -24,17 +26,40 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
+      - name: Check Toronto schedule
+        id: toronto_time
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "Manual run: proceeding."
+            exit 0
+          fi
+
+          TORONTO_HOUR=$(TZ=America/Toronto date +%H)
+          echo "Toronto hour: $TORONTO_HOUR"
+          if [ "$TORONTO_HOUR" = "05" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping duplicate UTC trigger; it is not 05:00 in Toronto."
+          fi
+
       - uses: actions/checkout@v4
+        if: steps.toronto_time.outputs.run == 'true'
 
       - uses: actions/setup-python@v5
+        if: steps.toronto_time.outputs.run == 'true'
         with:
           python-version: "3.12"
           cache: pip
 
       - name: Install dependencies
+        if: steps.toronto_time.outputs.run == 'true'
         run: pip install -r requirements.txt
 
       - name: Restore YouTube metrics cache
+        if: steps.toronto_time.outputs.run == 'true'
         uses: actions/cache@v4
         with:
           path: .cache
@@ -43,11 +68,13 @@ jobs:
             youtube-metrics-
 
       - name: Validate scanner
+        if: steps.toronto_time.outputs.run == 'true'
         run: |
           python -m py_compile scan.py hybrid_scan.py hybrid_cached.py entity_cached.py
           python -m json.tool keywords.json > /dev/null
 
       - name: Run entity-focused hybrid scanner
+        if: steps.toronto_time.outputs.run == 'true'
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           TOP_N: ${{ github.event.inputs.top_n || '20' }}
@@ -66,14 +93,62 @@ jobs:
         run: python entity_cached.py
 
       - name: Add report to workflow summary
-        if: always()
+        if: steps.toronto_time.outputs.run == 'true' && always()
         run: |
           if [ -f output/latest.md ]; then
             cat output/latest.md >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Email report
+        if: steps.toronto_time.outputs.run == 'true' && always()
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          EMAIL_SMTP_HOST: ${{ secrets.EMAIL_SMTP_HOST }}
+          EMAIL_SMTP_PORT: ${{ secrets.EMAIL_SMTP_PORT }}
+        shell: bash
+        run: |
+          if [ ! -f output/latest.md ]; then
+            echo "No report found; skipping email."
+            exit 0
+          fi
+          if [ -z "$EMAIL_USER" ] || [ -z "$EMAIL_APP_PASSWORD" ] || [ -z "$EMAIL_TO" ]; then
+            echo "Email secrets are not configured; skipping email."
+            exit 0
+          fi
+
+          python - <<'PY'
+          import os
+          import smtplib
+          from datetime import datetime
+          from email.message import EmailMessage
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          user = os.environ["EMAIL_USER"]
+          password = os.environ["EMAIL_APP_PASSWORD"]
+          recipient = os.environ["EMAIL_TO"]
+          host = os.environ.get("EMAIL_SMTP_HOST") or "smtp.gmail.com"
+          port = int(os.environ.get("EMAIL_SMTP_PORT") or "465")
+
+          report = Path("output/latest.md").read_text(encoding="utf-8")
+          date_str = datetime.now(ZoneInfo("America/Toronto")).strftime("%Y-%m-%d")
+
+          msg = EmailMessage()
+          msg["Subject"] = f"YouTube Stock Trend Radar — {date_str}"
+          msg["From"] = user
+          msg["To"] = recipient
+          msg.set_content(report)
+
+          with smtplib.SMTP_SSL(host, port, timeout=30) as smtp:
+              smtp.login(user, password)
+              smtp.send_message(msg)
+          print(f"Report emailed to {recipient}")
+          PY
+
       - name: Upload report artifact
-        if: always()
+        if: steps.toronto_time.outputs.run == 'true' && always()
         uses: actions/upload-artifact@v4
         with:
           name: youtube-trend-report

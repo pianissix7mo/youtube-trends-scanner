@@ -1,26 +1,26 @@
 # youtube-trends-scanner
 
-A hybrid topic radar for a Chinese-language investing channel.
+A hybrid, entity-focused topic radar for a Chinese-language investing channel.
 
 ## What it does
 
-The scanner now uses two discovery layers and merges them into one candidate pool:
+The scanner uses two discovery layers, then collapses long-tail queries into unique stocks/companies/assets:
 
-1. **Broad-net layer:** fetches Google Trending RSS across several relevant markets and cheaply filters for finance/investing topics using the trend title plus its related news headlines.
+1. **Broad-net layer:** fetches Google Trending RSS across several relevant markets and cheaply filters for finance/investing topics using the trend title plus related news headlines.
 2. **YouTube layer:** uses Google Trends **YouTube Search** (`gprop="youtube"`) with **Worldwide** geography to discover Rising and Top related searches from curated finance anchors.
-3. Merges and deduplicates both pools.
-4. Gives priority to terms found by both methods, then strong YouTube Rising terms, then a capped number of broad Trending candidates.
-5. Keeps the first exact Trends benchmark groups diverse so broad-net ideas also get real YouTube Search validation.
-6. Uses YouTube Data API v3 for every final candidate to estimate recent content supply and sampled performance.
-7. Produces `output/latest.md`, `output/latest.csv`, and `output/latest.json`.
+3. Merges both pools and filters creator/channel names plus known low-value queries.
+4. Maps related searches to canonical entities. For example, `台積電 亞利桑那州廠`, `台積電 工安 意外`, `TSM`, and `台積電 股票` all count as one **TSMC** entity.
+5. Keeps only the strongest discovered query for each entity before expensive validation.
+6. Runs exact Google Trends benchmarks and YouTube Data API checks only on the final unique entities.
+7. Produces `output/latest.md`, `output/latest.csv`, and `output/latest.json` with clean canonical entity names.
 
-The Google Trending layer is used only for **discovery**, not as a substitute for YouTube demand. A broad trend gets into the funnel, but the final Opportunity Score is still driven by the existing YouTube Search Trends and YouTube performance logic.
+The broad Google Trending layer is used for discovery. The final Opportunity Score is still driven by YouTube Search Trends plus recent YouTube competition/performance data.
 
-## Why hybrid
+## Why entity-focused
 
-The original anchor-based method is precise but can miss an unexpected ticker, company, macro event, policy story, crypto move, or sector that is not closely related to the configured anchors.
+A topic can generate many highly similar searches. Without entity deduplication, one company such as TSMC can occupy a large part of the final ranking with variants about factories, accidents, employees, stock price, and news.
 
-The hybrid method adds a cheap large-net scan first, then sends only a limited number of candidates into the expensive validation steps. This improves coverage without making the workflow dramatically slower.
+The scanner now searches broadly first, then gives each stock/company/asset only **one final slot**. This preserves discovery coverage while making the final list much more diverse and useful for choosing videos.
 
 ## Default scan
 
@@ -29,17 +29,18 @@ The hybrid method adds a cheap large-net scan first, then sends only a limited n
 - Google Trending RSS broad scan: `US, CA, TW, HK, SG`
 - Broad Trending lookback: 48 hours
 - Broad Trending feeds fetched in parallel
-- Up to 16 broad-only candidates admitted to the final preselection pool
-- 3 exact YouTube Trends benchmark groups (up to 12 keywords)
-- 40 final keywords sent through YouTube Data API
+- Wide cheap preselection before entity deduplication
+- One final row per stock/company/asset entity
+- **20 final unique entities**
+- 3 exact YouTube Trends benchmark groups (up to 12 entities)
 - 7-day YouTube lookback
+- 12-hour YouTube metrics cache for repeated manual runs
+- Up to 48-hour stale-cache fallback if YouTube search quota is exhausted
 - Workflow timeout: 20 minutes
-
-The seed list in `keywords.json` contains broad market, macro, US tech, semiconductors, AI, crypto, and Taiwan-relevant terms in both Simplified and Traditional Chinese, plus commonly searched ticker symbols.
 
 ## Candidate priority
 
-The hybrid preselection roughly follows:
+The hybrid discovery roughly prioritizes:
 
 1. Found in both Google Trending and YouTube Rising
 2. YouTube Rising
@@ -47,9 +48,9 @@ The hybrid preselection roughly follows:
 4. YouTube Top related searches
 5. Curated seeds
 
-The first benchmark slots deliberately mix strong YouTube Rising terms with broad Trending candidates so the latter are tested against real YouTube Search demand instead of being trusted just because they are hot on Google Search.
+After that ranking, queries are collapsed by entity. Only the strongest representative query for TSMC, Apple, NVIDIA, Micron, Bitcoin, etc. advances to the expensive checks.
 
-In the report, `source=trending` means the term entered through the broad Google Trending layer. A broad-only candidate may show a signal such as `GTrend 100,000+ [US,CA]` in the Rising column; that label is informational and does **not** count as YouTube Rising momentum.
+The final report displays the clean entity name, while the strongest underlying long-tail query is still used internally for scoring.
 
 ## GitHub Actions
 
@@ -63,7 +64,7 @@ Automatic run:
 - **20:00 Taiwan**
 - **08:00 Toronto during EDT / 07:00 during EST**
 
-The scheduled run defaults to 40 final keywords and a 7-day YouTube Search Trends window.
+The scheduled run defaults to **20 unique entities** and a 7-day YouTube Search Trends window.
 
 ## YouTube Data API
 
@@ -82,13 +83,17 @@ With the key enabled, the report adds:
 - share of sampled videos where a channel under 50k subscribers still reached at least 1k views
 - combined Opportunity Score
 
+Repeated runs reuse cached YouTube metrics when possible, which avoids spending another expensive YouTube search call for the same recent query. If a deep check has no live or cached YouTube data, its score is forced to zero rather than allowing a Trends-only proxy to rank above fully checked entities.
+
 ## Tune the scan
 
-Edit `keywords.json` to change discovery anchors or curated seeds.
+- `creator_blocklist.txt` — creator/channel names and explicit low-value queries to exclude
+- `keywords.json` — discovery anchors and curated seed queries
+- `entity_cached.py` — canonical entity aliases used to merge query variants
 
 Environment variables:
 
-- `TOP_N` — final result count, default `40`
+- `TOP_N` — final unique entity count, default `20`
 - `TRENDS_TIMEFRAME` — YouTube Search Trends window, default `now 7-d`
 - `DISCOVERY_ANCHORS` — default `5`
 - `TREND_BENCHMARK_GROUPS` — default `3`; each group measures up to 4 candidates against the shared anchor
@@ -99,13 +104,15 @@ Environment variables:
 - `TRENDING_RSS_TIMEOUT` — per-feed timeout, default `10`
 - `TRENDING_RSS_PER_GEO` — maximum RSS rows inspected per region, default `50`
 - `TRENDING_PRESELECT_LIMIT` — maximum broad-only candidates admitted before Top/seeds, default `16`
+- `YOUTUBE_CACHE_TTL_HOURS` — fresh YouTube-metrics cache window, default `12`
+- `YOUTUBE_STALE_FALLBACK_HOURS` — stale cache allowed after quota failure, default `48`
 - `YOUTUBE_API_KEY` — optional YouTube Data API v3 key
 
 ## Local run
 
 ```bash
 pip install -r requirements.txt
-python hybrid_scan.py
+python entity_cached.py
 ```
 
-The original `scan.py` remains in the repository as the non-hybrid base scanner and is imported by `hybrid_scan.py`.
+`scan.py` remains the base scanner, `hybrid_scan.py` adds broad discovery, `hybrid_cached.py` adds YouTube metrics caching, and `entity_cached.py` adds entity deduplication plus final-report cleanup.

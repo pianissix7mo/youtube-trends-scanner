@@ -1,25 +1,25 @@
 # YouTube Entity Enrichment
 
-Generated: **2026-08-22T11:32:01.690140+00:00**
+Generated: **2026-08-22T12:46:07.385461+00:00**
 
 This is a measurement table, not the final editorial ranking. ChatGPT reviews it at 06:00 Toronto time.
 
 | # | Entity | YouTube query | Regions | 7d videos* | Median views/day | Small-channel hit | Status |
 |---:|---|---|---|---:|---:|---:|---|
-| 1 | Japan stock market selloff | 日本股市 暴跌 | US,CA | 264 | 8353 | 41.2% | ok |
-| 2 | TSMC | 台積電 TSMC | TW | 58290 | 3561 | 57.1% | ok |
-| 3 | AMC Entertainment | AMC 美股 | CA | 42 | 185 | 55.6% | ok |
-| 4 | Zeta Global | ZETA 美股 | TW | 1 | 9 | 0.0% | ok |
-| 5 | Nebius Group | NBIS 美股 | TW | 144 | 93 | 35.6% | ok |
-| 6 | Micron | 美光 MU | TW | 728 | 134 | 19.5% | ok |
-| 7 | U.S. bond market | 美債 債券市場 | US | 1940 | 5861 | 57.1% | ok |
-| 8 | Trump and the stock market | 特朗普 美股 | CA | 429 | 465 | 29.6% | ok |
-| 9 | China stock market | 中國股市 美股影響 | US | 225 | 6873 | 40.0% | ok |
-| 10 | Gold and silver | 黃金 白銀 美股 | CA | 301 | 70 | 23.4% | ok |
-| 11 | Claude AI | Claude AI Anthropic | US,CA | 66776 | 1080 | 47.6% | ok |
-| 12 | AI agents | AI Agent 美股 | US,CA,TW | 125 | 20 | 21.4% | ok |
-| 13 | Applied Optoelectronics | AAOI 美股 | TW | 108 | 188 | 32.6% | ok |
-| 14 | S&P 500 | 標普500 美股 | CA | 6109 | 46 | 20.9% | ok |
-| 15 | Warren Buffett market warning | 巴菲特 美股 警告 | US | 20 | 4565 | 64.3% | ok |
+| 1 | TKO Group Holdings / WWE | WWE TKO 美股 | US,CA | 0 | 0 | 0.0% | ok_no_videos |
+| 2 | FuboTV | FUBO 美股 | CA | 3 | 55 | 0.0% | ok |
+| 3 | U.S.-China relations / Trump-Xi risk | 中美關係 川習會 美股 | TW | 10 | 16577 | 100.0% | ok |
+| 4 | Taiwan severe weather / semiconductor supply chain | 台灣 暴雨 台積電 半導體 | TW | 2 | 7797 | 0.0% | ok |
+| 5 | Sports betting sector | DKNG FLUT bet365 美股 | CA | 0 | 0 | 0.0% | ok_no_videos |
+| 6 | U.S. visa and immigration policy | 特朗普 簽證 禁令 美股 | CA | 0 | 0 | 0.0% | ok_no_videos |
+| 7 | Cyclospora outbreak / food safety | Cyclospora outbreak 食品股 美國 | US | 0 | 0 | 0.0% | ok_no_videos |
+| 8 | Pneumococcal vaccine market | 肺炎鏈球菌 疫苗 藥廠 美股 | TW | 0 | 0 | 0.0% | ok_no_videos |
+| 9 | Manchester United | Manchester United MANU 美股 | CA | 2 | 37802 | 100.0% | ok |
+| 10 | European football media rights / streaming | 英超 西甲 轉播 串流 股票 | US | 0 | 0 | 0.0% | ok_no_videos |
+| 11 | College football media rights | college football 轉播 美股 | US | 0 | 0 | 0.0% | ok_no_videos |
+| 12 | U.S. naval procurement / defense stocks | Trump aircraft carrier defense stocks | CA | 184 | 4326 | 62.5% | ok |
+| 13 | Taiwan securities market | 台股 證券 投資 | TW | 39051 | 9518 | 57.1% | ok |
+| 14 | Canadian tax-advantaged investing | 加拿大 REER CELI 稅 投資 | CA | 5 | 37 | 0.0% | ok |
+| 15 | Asset allocation / wealth management | 資產配置 美股 投資 | TW | 1338 | 957 | 35.5% | ok |
 
 \* `7d videos` is YouTube API's approximate total result count for videos published in the last 7 days.

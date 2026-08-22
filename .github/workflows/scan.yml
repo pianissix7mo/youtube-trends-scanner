@@ -1,30 +1,33 @@
-name: YouTube Trend Scan
+name: Collect Raw Trends
 
 on:
   workflow_dispatch:
     inputs:
-      top_n:
-        description: Number of final unique stock/asset entities
-        required: false
-        default: "20"
       timeframe:
         description: Google Trends YouTube Search timeframe
         required: false
         default: "now 7-d"
+      raw_limit:
+        description: Maximum raw candidates written for ChatGPT review
+        required: false
+        default: "1000"
   schedule:
-    # Toronto 05:00 is 09:00 UTC during EDT and 10:00 UTC during EST.
-    # We trigger both and gate scheduled runs using America/Toronto below.
+    # Toronto 05:00 = 09:00 UTC in EDT, 10:00 UTC in EST.
+    # Trigger both, then gate using America/Toronto so DST stays correct.
     - cron: "0 9 * * *"
     - cron: "0 10 * * *"
 
+permissions:
+  contents: write
+
 concurrency:
-  group: youtube-trend-scan
+  group: collect-raw-trends
   cancel-in-progress: false
 
 jobs:
-  scan:
+  collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - name: Check Toronto schedule
         id: toronto_time
@@ -32,17 +35,15 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
-            echo "Manual run: proceeding."
             exit 0
           fi
-
           TORONTO_HOUR=$(TZ=America/Toronto date +%H)
           echo "Toronto hour: $TORONTO_HOUR"
           if [ "$TORONTO_HOUR" = "05" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
-            echo "Skipping duplicate UTC trigger; it is not 05:00 in Toronto."
+            echo "Skipping duplicate UTC trigger."
           fi
 
       - uses: actions/checkout@v4
@@ -58,51 +59,52 @@ jobs:
         if: steps.toronto_time.outputs.run == 'true'
         run: pip install -r requirements.txt
 
-      - name: Restore YouTube metrics cache
+      - name: Validate collector
         if: steps.toronto_time.outputs.run == 'true'
-        uses: actions/cache@v4
-        with:
-          path: .cache
-          key: youtube-metrics-${{ github.run_id }}
-          restore-keys: |
-            youtube-metrics-
+        run: python -m py_compile collect_trends.py
 
-      - name: Validate scanner
-        if: steps.toronto_time.outputs.run == 'true'
-        run: |
-          python -m py_compile scan.py hybrid_scan.py hybrid_cached.py entity_cached.py
-          python -m json.tool keywords.json > /dev/null
-
-      - name: Run entity-focused hybrid scanner
+      - name: Collect US CA TW raw trends
         if: steps.toronto_time.outputs.run == 'true'
         env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-          TOP_N: ${{ github.event.inputs.top_n || '20' }}
           TRENDS_TIMEFRAME: ${{ github.event.inputs.timeframe || 'now 7-d' }}
-          DISCOVERY_ANCHORS: "5"
-          TREND_BENCHMARK_GROUPS: "3"
-          TRENDS_MAX_ATTEMPTS: "1"
-          TRENDS_RETRY_WAIT: "5"
-          YOUTUBE_CACHE_TTL_HOURS: "12"
-          YOUTUBE_STALE_FALLBACK_HOURS: "48"
-          TRENDING_RSS_GEOS: "US,CA,TW,HK,SG"
+          RAW_LIMIT: ${{ github.event.inputs.raw_limit || '1000' }}
           TRENDING_RSS_HOURS: "48"
-          TRENDING_RSS_TIMEOUT: "10"
-          TRENDING_RSS_PER_GEO: "50"
-          TRENDING_PRESELECT_LIMIT: "16"
-        run: python entity_cached.py
+        run: python collect_trends.py
 
-      - name: Add report to workflow summary
+      - name: Show collection summary
         if: steps.toronto_time.outputs.run == 'true' && always()
+        shell: bash
         run: |
-          if [ -f output/latest.md ]; then
-            cat output/latest.md >> "$GITHUB_STEP_SUMMARY"
+          if [ -f data/raw_candidates.json ]; then
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          d = json.loads(Path('data/raw_candidates.json').read_text(encoding='utf-8'))
+          print(f"Raw candidates: {d.get('candidate_count')}")
+          print(f"Rows before dedupe: {d.get('row_count_before_dedupe')}")
+          print(f"Region counts: {d.get('candidate_region_counts')}")
+          print(f"Errors: {len(d.get('errors') or [])}")
+          PY
           fi
 
-      - name: Upload report artifact
+      - name: Commit raw candidates
+        if: steps.toronto_time.outputs.run == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw_candidates.json
+          if git diff --cached --quiet; then
+            echo "No raw candidate changes to commit."
+            exit 0
+          fi
+          git commit -m "Update daily raw trend candidates"
+          git push
+
+      - name: Upload raw candidate artifact
         if: steps.toronto_time.outputs.run == 'true' && always()
         uses: actions/upload-artifact@v4
         with:
-          name: youtube-trend-report
-          path: output/
+          name: raw-trend-candidates
+          path: data/raw_candidates.json
           if-no-files-found: warn

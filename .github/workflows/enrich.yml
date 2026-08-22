@@ -49,6 +49,9 @@ jobs:
           YOUTUBE_LOOKBACK_DAYS: "3"
           YOUTUBE_CACHE_TTL_HOURS: "12"
           YOUTUBE_STALE_FALLBACK_HOURS: "48"
+          SMALL_CHANNEL_MAX_SUBS: "50000"
+          SMALL_CHANNEL_HIT_VPD: "1000"
+          REJECTED_SAMPLE_SIZE: "5"
         run: python youtube_enrich.py
 
       - name: Add measurement table to summary

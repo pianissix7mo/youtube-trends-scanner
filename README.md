@@ -1,25 +1,45 @@
 # youtube-trends-scanner
 
-A small YouTube topic radar for a Chinese-language US-stock channel.
+A YouTube topic radar for a Chinese-language investing channel.
 
 ## What it does
 
-1. Uses Google Trends **YouTube Search** (`gprop="youtube"`) to discover rising related searches.
-2. Scores English and Chinese keyword tracks separately, using a shared anchor inside each track so Trends values are comparable.
-3. Optionally uses YouTube Data API v3 to estimate recent content supply and sampled video performance.
-4. Produces `output/latest.md`, `output/latest.csv`, and `output/latest.json`.
+1. Uses Google Trends **YouTube Search** (`gprop="youtube"`) with **Worldwide** geography.
+2. Searches Chinese, Traditional Chinese, and ticker-symbol queries used by Chinese-speaking investors.
+3. Discovers Rising and Top related searches from several Chinese anchors.
+4. Uses shared-anchor Google Trends comparisons for a subset of candidates, then YouTube Data API v3 for every final candidate.
+5. Produces `output/latest.md`, `output/latest.csv`, and `output/latest.json`.
 
-The current Opportunity Score combines Google Trends demand/momentum with recent YouTube supply, median views/day, and a small-channel success signal. It is a ranking heuristic, not an estimate of absolute search volume.
+The Opportunity Score combines Google Trends demand/momentum with recent YouTube content supply, median views/day, and a small-channel success signal. It is a ranking heuristic, not an estimate of absolute search volume.
 
-## Run in GitHub Actions
+## Default scan
 
-Go to **Actions → YouTube Trend Scan → Run workflow**.
+- Worldwide Chinese YouTube Search
+- 5 Google Trends discovery anchors
+- 3 exact benchmark groups (up to 12 keywords)
+- 40 final keywords sent through YouTube Data API
+- 7-day YouTube lookback
+- Workflow timeout: 20 minutes
 
-The workflow works without a YouTube API key, but then it only reports Google Trends demand signals.
+The seed list in `keywords.json` contains broad market, macro, US tech, semiconductors, AI, crypto, and Taiwan-relevant terms in both Simplified and Traditional Chinese, plus commonly searched ticker symbols.
 
-### Add YouTube Data API
+## GitHub Actions
 
-Create a YouTube Data API v3 key in Google Cloud, then add it to this repository as:
+Manual run:
+
+`Actions → YouTube Trend Scan → Run workflow`
+
+Automatic run:
+
+- once per day at **12:00 UTC**
+- **20:00 Taiwan**
+- **08:00 Toronto during EDT / 07:00 during EST**
+
+The scheduled run defaults to 40 final keywords and a 7-day Google Trends window.
+
+## YouTube Data API
+
+Add the repository secret:
 
 `Settings → Secrets and variables → Actions → New repository secret`
 
@@ -27,22 +47,25 @@ Name:
 
 `YOUTUBE_API_KEY`
 
-After that, the same workflow automatically adds:
+With the key enabled, the report adds:
 
-- estimated number of videos published in the last 7 days for each query
-- median views and median views/day from the sampled relevant videos
+- estimated number of relevant videos published in the last 7 days
+- median views and median views/day from up to 50 sampled videos
 - share of sampled videos where a channel under 50k subscribers still reached at least 1k views
 - combined Opportunity Score
 
-## Tune keywords
+## Tune the scan
 
-Edit `keywords.json`. English and Chinese are intentionally separate because Google Trends values are relative, and Chinese YouTube search behavior is much smaller/different from English search behavior.
+Edit `keywords.json` to change discovery anchors or curated seeds.
 
 Environment variables:
 
-- `TOP_N` — final result count, default `20`
+- `TOP_N` — final result count, default `40`
 - `TRENDS_TIMEFRAME` — default `now 7-d`
-- `MAX_CANDIDATES_PER_LANGUAGE` — limits Google Trends browser calls, default `16`
+- `DISCOVERY_ANCHORS` — default `5`
+- `TREND_BENCHMARK_GROUPS` — default `3`; each group measures up to 4 candidates against the shared anchor
+- `TRENDS_MAX_ATTEMPTS` — default `1`
+- `TRENDS_RETRY_WAIT` — default `5`
 - `YOUTUBE_API_KEY` — optional YouTube Data API v3 key
 
 ## Local run

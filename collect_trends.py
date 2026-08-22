@@ -15,7 +15,7 @@ import os
 import re
 import time
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
@@ -89,6 +89,22 @@ def is_rate_limited(exc: Exception) -> bool:
     return status == 429 or "429" in text or "too many requests" in text or "unusual traffic" in text
 
 
+def resolve_explore_timeframe() -> str:
+    """Translate the semantic 3-day setting into Google's exact hourly custom range.
+
+    Google Explore's preset list has 1 day and 7 days but not a native 3-day
+    preset. A custom hourly range is supported within the past week, so
+    ``now 3-d`` is expressed as an exact rolling 72-hour window instead of
+    relying on an unsupported preset string. Other caller-supplied timeframes
+    pass through unchanged.
+    """
+    if TIMEFRAME.strip().lower() != "now 3-d":
+        return TIMEFRAME
+    end = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
+    start = end - timedelta(hours=72)
+    return f"{start:%Y-%m-%dT%H} {end:%Y-%m-%dT%H}"
+
+
 def anchor_rotation() -> tuple[int, int, dict[str, list[str]], str]:
     """Choose one rotating anchor group per Toronto calendar day.
 
@@ -160,11 +176,11 @@ def fetch_rss(geo: str) -> list[dict[str, Any]]:
     return rows
 
 
-def fetch_youtube_related(geo: str, anchor: str) -> list[dict[str, Any]]:
+def fetch_youtube_related(geo: str, anchor: str, explore_timeframe: str) -> list[dict[str, Any]]:
     env = download_google_trends_explore(
         anchor,
         geo=geo,
-        timeframe=TIMEFRAME,
+        timeframe=explore_timeframe,
         gprop="youtube",
         cache="disk",
         cache_ttl=YT_CACHE_TTL_SECONDS,
@@ -243,8 +259,11 @@ def main() -> None:
     explore_attempted = 0
     explore_succeeded = 0
     explore_stopped_for_429 = False
+    explore_timeframe = resolve_explore_timeframe()
     rotation_index, rotation_groups, selected_anchors, rotation_date = anchor_rotation()
 
+    print(f"[youtube trends] configured timeframe: {TIMEFRAME}")
+    print(f"[youtube trends] Explore timeframe: {explore_timeframe}")
     print(
         f"[youtube trends] rotation {rotation_index + 1}/{rotation_groups} "
         f"for Toronto date {rotation_date}: {selected_anchors}"
@@ -276,7 +295,7 @@ def main() -> None:
             explore_attempted += 1
             print(f"[youtube trends] {geo} / {anchor!r} (logical request {explore_attempted})")
             try:
-                rows = fetch_youtube_related(geo, anchor)
+                rows = fetch_youtube_related(geo, anchor, explore_timeframe)
                 print(f"[youtube trends] {geo} / {anchor!r}: {len(rows)} rows")
                 all_rows.extend(rows)
                 explore_succeeded += 1
@@ -303,6 +322,7 @@ def main() -> None:
     payload = {
         "generated_at_utc": now.isoformat(),
         "timeframe": TIMEFRAME,
+        "explore_timeframe": explore_timeframe,
         "rss_hours": RSS_HOURS,
         "raw_limit": RAW_LIMIT,
         "regions": REGIONS,

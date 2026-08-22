@@ -19,6 +19,7 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 import requests
 from trendspyg import download_google_trends_explore
@@ -31,7 +32,8 @@ RSS_HOURS = max(4, int(os.getenv("TRENDING_RSS_HOURS", "48")))
 TIMEFRAME = os.getenv("TRENDS_TIMEFRAME", "now 3-d")
 YT_ANCHORS_PER_REGION = max(0, int(os.getenv("YT_TRENDS_ANCHORS_PER_REGION", "2")))
 YT_DELAY_SECONDS = max(0.0, float(os.getenv("YT_TRENDS_DELAY_SECONDS", "12")))
-YT_MAX_CONSECUTIVE_429 = max(1, int(os.getenv("YT_TRENDS_MAX_CONSECUTIVE_429", "2")))
+YT_CACHE_TTL_SECONDS = max(3600.0, float(os.getenv("YT_TRENDS_CACHE_TTL_SECONDS", "86400")))
+ROTATION_TZ = ZoneInfo("America/Toronto")
 
 REGIONS = {
     "US": {
@@ -83,7 +85,36 @@ def rising_strength(item: dict[str, Any]) -> tuple[str, float]:
 
 def is_rate_limited(exc: Exception) -> bool:
     status = getattr(getattr(exc, "response", None), "status_code", None)
-    return status == 429 or "429" in str(exc)
+    text = str(exc).lower()
+    return status == 429 or "429" in text or "too many requests" in text or "unusual traffic" in text
+
+
+def anchor_rotation() -> tuple[int, int, dict[str, list[str]], str]:
+    """Choose one rotating anchor group per Toronto calendar day.
+
+    With six anchors and two anchors per region this creates three daily groups,
+    covering the full anchor set once every three days while keeping each run to
+    at most six logical Explore requests across US/CA/TW.
+    """
+    today = datetime.now(ROTATION_TZ).date()
+    if YT_ANCHORS_PER_REGION <= 0:
+        return 0, 1, {geo: [] for geo in REGIONS}, today.isoformat()
+
+    max_anchor_count = max(len(cfg["anchors"]) for cfg in REGIONS.values())
+    group_count = max(1, math.ceil(max_anchor_count / YT_ANCHORS_PER_REGION))
+    group_index = today.toordinal() % group_count
+    selected: dict[str, list[str]] = {}
+
+    for geo, cfg in REGIONS.items():
+        anchors = list(cfg["anchors"])
+        if not anchors:
+            selected[geo] = []
+            continue
+        start = group_index * YT_ANCHORS_PER_REGION
+        count = min(YT_ANCHORS_PER_REGION, len(anchors))
+        selected[geo] = [anchors[(start + i) % len(anchors)] for i in range(count)]
+
+    return group_index, group_count, selected, today.isoformat()
 
 
 def fetch_rss(geo: str) -> list[dict[str, Any]]:
@@ -135,7 +166,8 @@ def fetch_youtube_related(geo: str, anchor: str) -> list[dict[str, Any]]:
         geo=geo,
         timeframe=TIMEFRAME,
         gprop="youtube",
-        cache=False,
+        cache="disk",
+        cache_ttl=YT_CACHE_TTL_SECONDS,
         cookies="disk",
         max_retries=1,
         retry_wait=4,
@@ -210,8 +242,13 @@ def main() -> None:
     errors: list[str] = []
     explore_attempted = 0
     explore_succeeded = 0
-    consecutive_429 = 0
     explore_stopped_for_429 = False
+    rotation_index, rotation_groups, selected_anchors, rotation_date = anchor_rotation()
+
+    print(
+        f"[youtube trends] rotation {rotation_index + 1}/{rotation_groups} "
+        f"for Toronto date {rotation_date}: {selected_anchors}"
+    )
 
     # Reliable broad layer first.
     for geo in REGIONS:
@@ -225,44 +262,37 @@ def main() -> None:
             print(f"[warn] {msg}")
             errors.append(msg)
 
-    # Light-touch YouTube Search layer. Round-robin regions so US/CA/TW get a
-    # fair chance before any region receives a second Explore request.
-    if YT_ANCHORS_PER_REGION > 0:
-        for anchor_index in range(YT_ANCHORS_PER_REGION):
-            for geo, cfg in REGIONS.items():
-                anchors = cfg["anchors"]
-                if anchor_index >= len(anchors):
-                    continue
-                if explore_stopped_for_429:
-                    break
+    # Light-touch YouTube Search layer. At two anchors per region this is at most
+    # six logical requests per run. The group rotates daily, so all six anchors
+    # per region are covered across the same three-day window.
+    max_rounds = max((len(v) for v in selected_anchors.values()), default=0)
+    for anchor_index in range(max_rounds):
+        for geo in REGIONS:
+            anchors = selected_anchors.get(geo) or []
+            if anchor_index >= len(anchors) or explore_stopped_for_429:
+                continue
 
-                anchor = anchors[anchor_index]
-                explore_attempted += 1
-                print(f"[youtube trends] {geo} / {anchor!r} (attempt {explore_attempted})")
-                try:
-                    rows = fetch_youtube_related(geo, anchor)
-                    print(f"[youtube trends] {geo} / {anchor!r}: {len(rows)} rows")
-                    all_rows.extend(rows)
-                    explore_succeeded += 1
-                    consecutive_429 = 0
-                except Exception as exc:
-                    msg = f"YouTube Trends {geo}/{anchor}: {exc}"
-                    print(f"[warn] {msg}")
-                    errors.append(msg)
-                    if is_rate_limited(exc):
-                        consecutive_429 += 1
-                        print(f"[rate-limit] consecutive 429s: {consecutive_429}")
-                        if consecutive_429 >= YT_MAX_CONSECUTIVE_429:
-                            explore_stopped_for_429 = True
-                            print("[rate-limit] stopping further Explore calls; RSS data will still be used")
-                    else:
-                        consecutive_429 = 0
+            anchor = anchors[anchor_index]
+            explore_attempted += 1
+            print(f"[youtube trends] {geo} / {anchor!r} (logical request {explore_attempted})")
+            try:
+                rows = fetch_youtube_related(geo, anchor)
+                print(f"[youtube trends] {geo} / {anchor!r}: {len(rows)} rows")
+                all_rows.extend(rows)
+                explore_succeeded += 1
+            except Exception as exc:
+                msg = f"YouTube Trends {geo}/{anchor}: {exc}"
+                print(f"[warn] {msg}")
+                errors.append(msg)
+                if is_rate_limited(exc):
+                    explore_stopped_for_429 = True
+                    print("[rate-limit] first 429/block detected; stopping Explore immediately and keeping RSS results")
 
-                if not explore_stopped_for_429 and YT_DELAY_SECONDS > 0:
-                    time.sleep(YT_DELAY_SECONDS)
+            if not explore_stopped_for_429 and YT_DELAY_SECONDS > 0:
+                time.sleep(YT_DELAY_SECONDS)
 
-            if explore_stopped_for_429:
-                break
+        if explore_stopped_for_429:
+            break
 
     candidates = aggregate(all_rows)
     now = datetime.now(timezone.utc)
@@ -281,8 +311,13 @@ def main() -> None:
         "candidate_region_counts": region_counts,
         "youtube_trends": {
             "anchors_per_region": YT_ANCHORS_PER_REGION,
+            "rotation_date_toronto": rotation_date,
+            "rotation_group": rotation_index + 1,
+            "rotation_group_count": rotation_groups,
+            "anchors_used": selected_anchors,
             "delay_seconds": YT_DELAY_SECONDS,
-            "calls_attempted": explore_attempted,
+            "cache_ttl_seconds": YT_CACHE_TTL_SECONDS,
+            "logical_requests_attempted": explore_attempted,
             "calls_succeeded": explore_succeeded,
             "stopped_after_429": explore_stopped_for_429,
         },

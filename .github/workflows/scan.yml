@@ -15,7 +15,7 @@ on:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -32,6 +32,10 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           TOP_N: ${{ inputs.top_n }}
           TRENDS_TIMEFRAME: ${{ inputs.timeframe }}
+          DISCOVERY_ANCHORS_PER_LANGUAGE: "2"
+          TREND_BENCHMARKS_PER_LANGUAGE: "4"
+          TRENDS_MAX_ATTEMPTS: "1"
+          TRENDS_RETRY_WAIT: "5"
         run: python scan.py
 
       - name: Add report to workflow summary

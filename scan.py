@@ -9,7 +9,7 @@ import math
 import os
 import re
 import statistics
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -20,9 +20,13 @@ from trendspyg import download_google_trends_comparison, download_google_trends_
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "output"
 YT_API = "https://www.googleapis.com/youtube/v3"
+
 TIMEFRAME = os.getenv("TRENDS_TIMEFRAME", "now 7-d")
 TOP_N = int(os.getenv("TOP_N", "20"))
-MAX_CANDIDATES_PER_LANGUAGE = int(os.getenv("MAX_CANDIDATES_PER_LANGUAGE", "16"))
+DISCOVERY_ANCHORS_PER_LANGUAGE = int(os.getenv("DISCOVERY_ANCHORS_PER_LANGUAGE", "2"))
+TREND_BENCHMARKS_PER_LANGUAGE = min(4, int(os.getenv("TREND_BENCHMARKS_PER_LANGUAGE", "4")))
+TRENDS_MAX_ATTEMPTS = max(1, int(os.getenv("TRENDS_MAX_ATTEMPTS", "1")))
+TRENDS_RETRY_WAIT = float(os.getenv("TRENDS_RETRY_WAIT", "5"))
 
 FINANCE_HINTS = {
     "stock", "stocks", "market", "nasdaq", "sp500", "s&p", "earnings", "fed", "rate", "rates",
@@ -46,6 +50,7 @@ class Candidate:
     trend_avg: float = 0.0
     anchor_avg: float = 0.0
     trend_score: float = 0.0
+    trend_measured: bool = False
     momentum_pct: float = 0.0
     recent_video_estimate: int | None = None
     median_views: int | None = None
@@ -82,87 +87,138 @@ def parse_rising(item: dict[str, Any]) -> tuple[str, float]:
     return text, 15.0
 
 
-def discover(track: dict[str, Any]) -> dict[str, Candidate]:
-    candidates: dict[str, Candidate] = {}
-    geo, lang = track["geo"], track["language"]
-    for seed in track["seeds"]:
-        candidates[seed.lower()] = Candidate(seed, lang, geo)
+def trends_explore(keyword: str, geo: str) -> dict[str, Any]:
+    return download_google_trends_explore(
+        keyword,
+        geo=geo,
+        timeframe=TIMEFRAME,
+        gprop="youtube",
+        cache=False,
+        max_retries=TRENDS_MAX_ATTEMPTS,
+        retry_wait=TRENDS_RETRY_WAIT,
+    )
 
-    for anchor in track["discovery_anchors"]:
-        print(f"[trends] Discovering related YouTube searches: {anchor!r} ({geo})")
+
+def trends_compare(keywords: list[str], geo: str) -> dict[str, Any]:
+    return download_google_trends_comparison(
+        keywords,
+        geo=geo,
+        timeframe=TIMEFRAME,
+        gprop="youtube",
+        cache=False,
+        max_retries=TRENDS_MAX_ATTEMPTS,
+        retry_wait=TRENDS_RETRY_WAIT,
+    )
+
+
+def discover(track: dict[str, Any]) -> dict[str, Candidate]:
+    """Two Explore calls per language by default; seeds guarantee fallback candidates."""
+    geo, lang = track["geo"], track["language"]
+    candidates = {
+        seed.lower(): Candidate(seed, lang, geo)
+        for seed in track["seeds"]
+    }
+
+    anchors = track["discovery_anchors"][:DISCOVERY_ANCHORS_PER_LANGUAGE]
+    for anchor in anchors:
+        print(f"[trends] Explore {anchor!r} ({geo}, YouTube Search)")
         try:
-            env = download_google_trends_explore(
-                anchor,
-                geo=geo,
-                timeframe=TIMEFRAME,
-                gprop="youtube",
-                cache=False,
-            )
+            env = trends_explore(anchor, geo)
         except Exception as exc:
-            print(f"[warn] discovery failed for {anchor!r}: {exc}")
+            print(f"[warn] Explore failed for {anchor!r}: {exc}")
             continue
+
         rising = (env.get("related_queries") or {}).get("rising") or []
-        for item in rising[:20]:
+        for item in rising[:25]:
             q = clean_query(str(item.get("query") or ""))
             if not q or not looks_finance(q):
                 continue
-            key = q.lower()
             signal, boost = parse_rising(item)
+            key = q.lower()
             old = candidates.get(key)
             if old is None:
                 candidates[key] = Candidate(q, lang, geo, "rising", signal, boost)
             elif boost > old.rising_boost:
                 old.source = "seed+rising"
-                old.rising_signal, old.rising_boost = signal, boost
+                old.rising_signal = signal
+                old.rising_boost = boost
     return candidates
 
 
-def chunks(items: list[str], n: int) -> list[list[str]]:
-    return [items[i : i + n] for i in range(0, len(items), n)]
+def preselect(track: dict[str, Any], pool: dict[str, Candidate], limit: int) -> list[Candidate]:
+    """Take the strongest Rising terms first, then fill with curated seed terms."""
+    anchor_key = track["comparison_anchor"].lower()
+    selected: list[Candidate] = []
+    seen: set[str] = set()
 
+    rising = sorted(
+        (c for c in pool.values() if c.rising_boost > 0 and c.keyword.lower() != anchor_key),
+        key=lambda c: c.rising_boost,
+        reverse=True,
+    )
+    for c in rising:
+        key = c.keyword.lower()
+        if key not in seen:
+            selected.append(c)
+            seen.add(key)
+        if len(selected) >= limit:
+            return selected
 
-def score_trends(track: dict[str, Any], pool: dict[str, Candidate]) -> list[Candidate]:
-    anchor = track["comparison_anchor"]
-    keys = list(pool.keys())
-    keys.sort(key=lambda k: (pool[k].rising_boost, pool[k].source != "seed"), reverse=True)
-    keys = keys[:MAX_CANDIDATES_PER_LANGUAGE]
-    if anchor.lower() not in keys:
-        keys.insert(0, anchor.lower())
-        pool.setdefault(anchor.lower(), Candidate(anchor, track["language"], track["geo"]))
-
-    results: list[Candidate] = []
-    terms = [pool[k].keyword for k in keys if k != anchor.lower()]
-    for group in chunks(terms, 4):
-        query = [anchor] + group
-        print(f"[trends] Comparing YouTube searches: {query}")
-        try:
-            env = download_google_trends_comparison(
-                query,
-                geo=track["geo"],
-                timeframe=TIMEFRAME,
-                gprop="youtube",
-                cache=False,
-            )
-        except Exception as exc:
-            print(f"[warn] comparison failed: {exc}")
+    for seed in track["seeds"]:
+        key = seed.lower()
+        if key == anchor_key or key in seen:
             continue
-        avgs = env.get("averages") or {}
-        series = env.get("interest_over_time") or []
-        anchor_avg = float(avgs.get(anchor, 0) or 0)
-        for term in group:
-            c = pool[term.lower()]
-            c.trend_avg = float(avgs.get(term, 0) or 0)
-            c.anchor_avg = anchor_avg
-            ratio = c.trend_avg / max(1.0, anchor_avg)
-            c.trend_score = round(100.0 * ratio / (1.0 + ratio), 1)
-            values = [float((p.get("values") or {}).get(term, 0) or 0) for p in series]
-            if len(values) >= 4:
-                w = max(1, len(values) // 4)
-                recent = statistics.fmean(values[-w:])
-                previous = statistics.fmean(values[-2 * w : -w]) if len(values) >= 2 * w else 0
-                c.momentum_pct = round(100.0 * (recent - previous) / max(1.0, previous), 1)
-            results.append(c)
-    return results
+        selected.append(pool[key])
+        seen.add(key)
+        if len(selected) >= limit:
+            break
+    return selected
+
+
+def benchmark_trends(track: dict[str, Any], rows: list[Candidate]) -> None:
+    """One shared comparison per language; unmeasured rows keep a Rising-based proxy."""
+    for c in rows:
+        c.trend_score = round(
+            min(80.0, 12.0 + 0.68 * c.rising_boost) if c.rising_boost else 12.0,
+            1,
+        )
+
+    anchor = track["comparison_anchor"]
+    benchmark = rows[:TREND_BENCHMARKS_PER_LANGUAGE]
+    if not benchmark:
+        return
+
+    query = [anchor] + [c.keyword for c in benchmark]
+    print(f"[trends] One benchmark comparison: {query}")
+    try:
+        env = trends_compare(query, track["geo"])
+    except Exception as exc:
+        print(f"[warn] Benchmark comparison failed: {exc}")
+        return
+
+    avgs = env.get("averages") or {}
+    series = env.get("interest_over_time") or []
+    anchor_avg = float(avgs.get(anchor, 0) or 0)
+
+    for c in benchmark:
+        c.trend_avg = float(avgs.get(c.keyword, 0) or 0)
+        c.anchor_avg = anchor_avg
+        ratio = c.trend_avg / max(1.0, anchor_avg)
+        c.trend_score = round(100.0 * ratio / (1.0 + ratio), 1)
+        c.trend_measured = True
+
+        values = [
+            float((p.get("values") or {}).get(c.keyword, 0) or 0)
+            for p in series
+        ]
+        if len(values) >= 4:
+            w = max(1, len(values) // 4)
+            recent = statistics.fmean(values[-w:])
+            previous = statistics.fmean(values[-2 * w:-w]) if len(values) >= 2 * w else 0
+            c.momentum_pct = round(
+                100.0 * (recent - previous) / max(1.0, previous),
+                1,
+            )
 
 
 def youtube_get(endpoint: str, key: str, **params: Any) -> dict[str, Any]:
@@ -175,12 +231,18 @@ def youtube_get(endpoint: str, key: str, **params: Any) -> dict[str, Any]:
 def youtube_competition(c: Candidate, api_key: str) -> None:
     after = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat().replace("+00:00", "Z")
     params: dict[str, Any] = {
-        "part": "snippet", "q": c.keyword, "type": "video", "maxResults": 50,
-        "publishedAfter": after, "order": "relevance", "safeSearch": "none",
-        "relevanceLanguage": "en" if c.language == "en" else "zh-Hans",
+        "part": "snippet",
+        "q": c.keyword,
+        "type": "video",
+        "maxResults": 50,
+        "publishedAfter": after,
+        "order": "relevance",
+        "safeSearch": "none",
+        "relevanceLanguage": "en" if c.language == "en" else "zh",
     }
     if len(c.geo) == 2:
         params["regionCode"] = c.geo
+
     data = youtube_get("search", api_key, **params)
     c.recent_video_estimate = int((data.get("pageInfo") or {}).get("totalResults", 0) or 0)
     items = data.get("items") or []
@@ -189,9 +251,12 @@ def youtube_competition(c: Candidate, api_key: str) -> None:
         return
 
     vids = youtube_get("videos", api_key, part="statistics,snippet", id=",".join(ids), maxResults=50)
-    views, views_per_day, channel_ids = [], [], []
     now = datetime.now(timezone.utc)
-    video_rows = []
+    views: list[int] = []
+    views_per_day: list[float] = []
+    channel_ids: list[str] = []
+    video_rows: list[tuple[int, str | None]] = []
+
     for v in vids.get("items") or []:
         stats, snip = v.get("statistics") or {}, v.get("snippet") or {}
         view = int(stats.get("viewCount", 0) or 0)
@@ -203,11 +268,18 @@ def youtube_competition(c: Candidate, api_key: str) -> None:
         if cid:
             channel_ids.append(cid)
         video_rows.append((view, cid))
+
     c.median_views = int(statistics.median(views)) if views else None
     c.median_views_per_day = int(statistics.median(views_per_day)) if views_per_day else None
 
     if channel_ids:
-        chans = youtube_get("channels", api_key, part="statistics", id=",".join(sorted(set(channel_ids))), maxResults=50)
+        chans = youtube_get(
+            "channels",
+            api_key,
+            part="statistics",
+            id=",".join(sorted(set(channel_ids))),
+            maxResults=50,
+        )
         subs = {
             x["id"]: int((x.get("statistics") or {}).get("subscriberCount", 0) or 0)
             for x in chans.get("items") or []
@@ -215,51 +287,79 @@ def youtube_competition(c: Candidate, api_key: str) -> None:
         }
         eligible = [(view, subs.get(cid)) for view, cid in video_rows if cid in subs]
         if eligible:
-            hits = sum(1 for view, sub in eligible if sub is not None and sub < 50_000 and view >= 1_000)
+            hits = sum(
+                1 for view, sub in eligible
+                if sub is not None and sub < 50_000 and view >= 1_000
+            )
             c.small_channel_hit_rate = round(100.0 * hits / len(eligible), 1)
 
 
 def final_score(c: Candidate, has_youtube: bool) -> float:
     momentum = max(-50.0, min(200.0, c.momentum_pct))
-    demand = 0.55 * c.trend_score + 0.25 * c.rising_boost + 0.20 * max(0.0, momentum) / 2
+    demand = (
+        0.55 * c.trend_score
+        + 0.25 * c.rising_boost
+        + 0.20 * max(0.0, momentum) / 2
+    )
     if not has_youtube or c.recent_video_estimate is None:
         return round(demand, 1)
+
     vpd = c.median_views_per_day or 0
     supply = max(1, c.recent_video_estimate)
     performance = min(100.0, 18.0 * math.log10(1.0 + vpd))
     scarcity = 100.0 / (1.0 + math.log10(1.0 + supply))
     small = c.small_channel_hit_rate or 0.0
-    return round(0.45 * demand + 0.25 * performance + 0.20 * scarcity + 0.10 * small, 1)
+    return round(
+        0.45 * demand
+        + 0.25 * performance
+        + 0.20 * scarcity
+        + 0.10 * small,
+        1,
+    )
 
 
 def write_outputs(rows: list[Candidate], api_enabled: bool) -> None:
     OUT.mkdir(exist_ok=True)
     rows.sort(key=lambda x: x.opportunity_score, reverse=True)
     rows = rows[:TOP_N]
-    fields = list(asdict(rows[0]).keys()) if rows else list(Candidate("", "", "").__dict__.keys())
+    fields = list(asdict(rows[0]).keys()) if rows else list(asdict(Candidate("", "", "")).keys())
+
     with open(OUT / "latest.csv", "w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=fields)
-        w.writeheader(); w.writerows(asdict(r) for r in rows)
+        w.writeheader()
+        w.writerows(asdict(r) for r in rows)
+
     with open(OUT / "latest.json", "w", encoding="utf-8") as f:
         json.dump([asdict(r) for r in rows], f, ensure_ascii=False, indent=2)
 
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     lines = [f"# YouTube Search Opportunity Radar — {stamp}", ""]
     if not api_enabled:
-        lines += ["> `YOUTUBE_API_KEY` is not set, so this run contains Google Trends demand signals only.", ""]
+        lines += [
+            "> `YOUTUBE_API_KEY` is not set, so this run contains Google Trends demand signals only.",
+            "",
+        ]
     lines += [
         "| # | Keyword | Lang | Trend | Momentum | Rising | 7d videos* | Median views/day | Small-channel hit | Score |",
         "|---:|---|:---:|---:|---:|---|---:|---:|---:|---:|",
     ]
     for i, r in enumerate(rows, 1):
+        trend = f"{r.trend_score:.1f}" if r.trend_measured else f"~{r.trend_score:.1f}"
         lines.append(
-            f"| {i} | {r.keyword} | {r.language} | {r.trend_score:.1f} | {r.momentum_pct:+.1f}% | "
-            f"{r.rising_signal or '—'} | {r.recent_video_estimate if r.recent_video_estimate is not None else '—'} | "
+            f"| {i} | {r.keyword} | {r.language} | {trend} | {r.momentum_pct:+.1f}% | "
+            f"{r.rising_signal or '—'} | "
+            f"{r.recent_video_estimate if r.recent_video_estimate is not None else '—'} | "
             f"{r.median_views_per_day if r.median_views_per_day is not None else '—'} | "
-            f"{(str(r.small_channel_hit_rate) + '%') if r.small_channel_hit_rate is not None else '—'} | {r.opportunity_score:.1f} |"
+            f"{(str(r.small_channel_hit_rate) + '%') if r.small_channel_hit_rate is not None else '—'} | "
+            f"{r.opportunity_score:.1f} |"
         )
-    lines += ["", "* YouTube `search.list` totalResults is an estimate for videos published in the last 7 days.",
-              "Trend values are normalized against a shared anchor within each language track; English and Chinese scores are opportunity signals, not absolute search volumes."]
+
+    lines += [
+        "",
+        "* YouTube `search.list` totalResults is an estimate for videos published in the last 7 days.",
+        "* `~Trend` is a Rising-based proxy. Each language uses only one 5-term benchmark comparison to keep the run fast.",
+        "* English and Chinese scores are opportunity signals, not absolute cross-language search volumes.",
+    ]
     (OUT / "latest.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n" + "\n".join(lines))
 
@@ -267,30 +367,28 @@ def write_outputs(rows: list[Candidate], api_enabled: bool) -> None:
 def main() -> None:
     config = load_config()
     api_key = os.getenv("YOUTUBE_API_KEY", "").strip()
-    all_rows: list[Candidate] = []
+    per_language = max(1, TOP_N // 2)
+    selected: list[Candidate] = []
+
     for track in config["tracks"]:
         pool = discover(track)
-        all_rows.extend(score_trends(track, pool))
+        rows = preselect(track, pool, per_language)
+        benchmark_trends(track, rows)
+        selected.extend(rows)
 
-    for c in all_rows:
+    for c in selected:
         c.opportunity_score = final_score(c, False)
-    all_rows.sort(key=lambda x: x.opportunity_score, reverse=True)
-    per_language = max(1, TOP_N // 2)
-    english = [c for c in all_rows if c.language == "en"][:per_language]
-    chinese = [c for c in all_rows if c.language == "zh"][:per_language]
-    yt_candidates = english + chinese
-    if len(yt_candidates) < TOP_N:
-        used = {id(c) for c in yt_candidates}
-        yt_candidates += [c for c in all_rows if id(c) not in used][: TOP_N - len(yt_candidates)]
+
     if api_key:
-        for i, c in enumerate(yt_candidates, 1):
-            print(f"[youtube] {i}/{len(yt_candidates)} {c.keyword!r}")
+        for i, c in enumerate(selected, 1):
+            print(f"[youtube] {i}/{len(selected)} {c.keyword!r}")
             try:
                 youtube_competition(c, api_key)
             except Exception as exc:
                 print(f"[warn] YouTube API failed for {c.keyword!r}: {exc}")
             c.opportunity_score = final_score(c, True)
-    write_outputs(yt_candidates, bool(api_key))
+
+    write_outputs(selected, bool(api_key))
 
 
 if __name__ == "__main__":

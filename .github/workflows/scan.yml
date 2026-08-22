@@ -6,7 +6,7 @@ on:
       timeframe:
         description: Google Trends YouTube Search timeframe
         required: false
-        default: "now 7-d"
+        default: "now 3-d"
       raw_limit:
         description: Maximum raw candidates written for ChatGPT review
         required: false
@@ -66,7 +66,7 @@ jobs:
       - name: Collect US CA TW raw trends
         if: steps.toronto_time.outputs.run == 'true'
         env:
-          TRENDS_TIMEFRAME: ${{ github.event.inputs.timeframe || 'now 7-d' }}
+          TRENDS_TIMEFRAME: ${{ github.event.inputs.timeframe || 'now 3-d' }}
           RAW_LIMIT: ${{ github.event.inputs.raw_limit || '1000' }}
           TRENDING_RSS_HOURS: "48"
           YT_TRENDS_ANCHORS_PER_REGION: "4"

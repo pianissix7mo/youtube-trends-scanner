@@ -9,6 +9,7 @@ import re
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
 
 import requests
@@ -16,6 +17,7 @@ import requests
 import scan
 
 
+ROOT = Path(__file__).resolve().parent
 TRENDING_RSS_URL = "https://trends.google.com/trending/rss"
 TRENDING_RSS_GEOS = [
     x.strip().upper()
@@ -27,10 +29,8 @@ TRENDING_RSS_TIMEOUT = float(os.getenv("TRENDING_RSS_TIMEOUT", "10"))
 TRENDING_RSS_PER_GEO = max(1, int(os.getenv("TRENDING_RSS_PER_GEO", "50")))
 TRENDING_PRESELECT_LIMIT = max(0, int(os.getenv("TRENDING_PRESELECT_LIMIT", "16")))
 
-# These terms are checked against both the trend title and the related news
-# headlines embedded in Google's Trending RSS. That lets a trend such as an
-# unfamiliar company name pass the filter when its news context says
-# "stock jumps after earnings".
+# Broad Google-search context filter. A trend may have an unfamiliar company name,
+# so we also inspect the related news headlines embedded in Google's RSS feed.
 BROAD_FINANCE_HINTS = {
     "stock", "stocks", "share price", "shares", "earnings", "revenue", "profit",
     "guidance", "investor", "wall street", "nasdaq", "dow jones", "s&p 500",
@@ -55,6 +55,53 @@ BROAD_FINANCE_HINTS = {
     "中美贸易", "台股", "台灣科技股", "台湾科技股", "目標價", "目标价",
     "估值",
 }
+
+# Generic channel/creator markers. These are intentionally conservative: we only
+# use obvious creator-style phrases so normal market topics are not discarded.
+CREATOR_MARKERS = {
+    "youtube channel", "youtube频道", "youtube頻道", "频道", "頻道",
+    "主播", "博主", "up主", "podcast", "播客",
+}
+CREATOR_SUFFIXES = (
+    "说美股", "說美股", "聊美股", "谈美股", "談美股", "看美股",
+    "说股票", "說股票", "聊股票", "谈股票", "談股票",
+)
+
+
+def normalize_name(text: str) -> str:
+    """Normalize creator/query names for stable comparison."""
+    return re.sub(r"[\s\-_·•|]+", "", (text or "").strip().lower())
+
+
+def load_creator_blocklist() -> set[str]:
+    path = ROOT / "creator_blocklist.txt"
+    if not path.exists():
+        return set()
+    names: set[str] = set()
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#"):
+            continue
+        names.add(normalize_name(line))
+    return names
+
+
+CREATOR_BLOCKLIST = load_creator_blocklist()
+
+
+def looks_creator_query(query: str) -> bool:
+    """Return True for likely YouTube creator/channel-name searches."""
+    raw = (query or "").strip().lower()
+    compact = normalize_name(raw)
+    if not compact:
+        return False
+    if compact in CREATOR_BLOCKLIST:
+        return True
+    if any(marker in raw for marker in CREATOR_MARKERS):
+        return True
+    if len(compact) <= 24 and compact.endswith(CREATOR_SUFFIXES):
+        return True
+    return False
 
 
 @dataclass
@@ -111,7 +158,7 @@ def fetch_trending_geo(geo: str) -> list[dict[str, Any]]:
 
     for rank, item in enumerate(root.findall(".//item")[:TRENDING_RSS_PER_GEO], 1):
         title = scan.clean_query(item.findtext("title", default=""))
-        if not title:
+        if not title or looks_creator_query(title):
             continue
 
         traffic_text = item.findtext(
@@ -187,8 +234,6 @@ def discover_broad_trends(track: dict[str, Any]) -> tuple[dict[str, scan.Candida
             geo=track["geo"],
             source="trending",
             discovery_rank=meta.rank,
-            # Keep rising_boost at zero: Google Search gets a seat in the
-            # candidate funnel but does not masquerade as YouTube Rising.
             rising_signal=meta.signal,
             rising_boost=0.0,
         )
@@ -209,11 +254,17 @@ def merge_broad(
 
         old.source = scan.add_source(old.source, "trending")
         old.discovery_rank = min(old.discovery_rank, incoming.discovery_rank)
-
-        # Preserve a real YouTube Rising signal when one exists. Otherwise show
-        # the broad Google signal in the report for transparency.
         if not old.rising_signal:
             old.rising_signal = metadata[key].signal
+
+
+def remove_creator_queries(pool: dict[str, scan.Candidate]) -> int:
+    """Remove known or obvious creator/channel-name searches before deep checks."""
+    bad_keys = [key for key, candidate in pool.items() if looks_creator_query(candidate.keyword)]
+    for key in bad_keys:
+        print(f"[filter] creator/channel query removed: {pool[key].keyword!r}")
+        pool.pop(key, None)
+    return len(bad_keys)
 
 
 def hybrid_preselect(
@@ -227,20 +278,16 @@ def hybrid_preselect(
     selected: list[scan.Candidate] = []
     seen: set[str] = set()
 
-    def take(items: list[scan.Candidate], item_limit: int | None = None) -> bool:
-        taken = 0
+    def take(items: list[scan.Candidate]) -> bool:
         for candidate in items:
             key = candidate.keyword.lower()
-            if key == anchor_key or key in seen:
+            if key == anchor_key or key in seen or looks_creator_query(candidate.keyword):
                 continue
             selected.append(candidate)
             seen.add(key)
-            taken += 1
             if len(selected) >= limit:
                 return True
-            if item_limit is not None and taken >= item_limit:
-                break
-        return len(selected) >= limit
+        return False
 
     both = sorted(
         (
@@ -276,19 +323,15 @@ def hybrid_preselect(
         ),
     )
 
-    # Keep the first exact Trends benchmark groups diverse. Six strong YouTube
-    # Rising terms and up to six broad trends usually land inside the first
-    # 12 candidates, so the broad-net ideas get genuine YouTube validation
-    # instead of only a seed-like proxy.
+    # Keep the exact Trends benchmark groups diverse: up to six YouTube Rising
+    # ideas and six broad-list ideas are placed early for genuine validation.
     if take(youtube_rising[:6]):
         return selected
     broad_head = min(6, TRENDING_PRESELECT_LIMIT)
     if broad_head and take(broad_only[:broad_head]):
         return selected
-
     if take(youtube_rising[6:]):
         return selected
-
     if TRENDING_PRESELECT_LIMIT > broad_head:
         if take(broad_only[broad_head:TRENDING_PRESELECT_LIMIT]):
             return selected
@@ -327,11 +370,11 @@ def main() -> None:
     # Existing method: YouTube Search Rising/Top + curated seeds.
     pool = scan.discover(track)
 
-    # New broad method: Google Trending list across multiple relevant regions,
-    # filtered cheaply using titles + news context, then merged into the same pool.
+    # New broad method: Google Trending list across multiple relevant regions.
     broad, broad_meta = discover_broad_trends(track)
     merge_broad(pool, broad, broad_meta)
 
+    removed_creators = remove_creator_queries(pool)
     selected = hybrid_preselect(track, pool, broad_meta, scan.TOP_N)
     exact_benchmarks = scan.benchmark_trends(track, selected)
 
@@ -349,7 +392,7 @@ def main() -> None:
 
     print(
         f"[hybrid] merged pool={len(pool)} | broad finance candidates={len(broad_meta)} "
-        f"| selected={len(selected)}"
+        f"| creator queries removed={removed_creators} | selected={len(selected)}"
     )
     scan.write_outputs(
         selected,

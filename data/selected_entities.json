@@ -1,187 +1,187 @@
 {
-  "generated_at_utc": "2026-08-22T19:00:00+00:00",
-  "source_raw_generated_at_utc": "2026-08-22T18:55:44.565226+00:00",
-  "notes": "Manual ChatGPT first-pass selection from the fixed-anchor 72-hour Google Trends YouTube Search run. Anchors remain fixed at AI, semiconductor, earnings and stocks for US/CA, and AI, 半導體, 財報 and 股票 for TW. Twelve logical Explore requests were attempted, eleven succeeded, and no 429 rate limit occurred. Duplicate long-tail queries were merged; sports, entertainment, creator names, generic beginner/how-to queries and other low-value noise were removed. Dynamic relevance_groups were added so YouTube metrics are calculated only from title-matched relevant videos.",
+  "generated_at_utc": "2026-08-23T09:46:18+00:00",
+  "source_raw_generated_at_utc": "2026-08-23T09:24:50.048647+00:00",
+  "notes": "Daily ChatGPT selection from the fresh 72-hour Google Trends YouTube Search run. 187 deduped candidates were reviewed across US, Canada and Taiwan. Twelve Explore requests were attempted, eleven succeeded; TW/財報 failed because the Explore page did not render the chart, but there was no 429 and the RSS/raw pool was otherwise fresh. Duplicate long-tail queries were merged; sports, entertainment, creator/channel names, generic how-to/evergreen queries and low-value noise were removed. Dynamic relevance_groups are intentionally recall-safe and are used only to determine whether returned YouTube titles are substantially about each selected entity/topic before metrics are calculated.",
   "selected": [
     {
-      "entity": "Semiconductor stocks",
-      "entity_type": "other",
-      "youtube_query": "semiconductor stocks AI chips",
-      "regions": ["US", "CA"],
-      "selection_reason": "Strongest cross-region investable theme in this run and directly aligned with the channel's AI/semiconductor focus.",
-      "trend_evidence": "'semiconductor stocks' ranked #1 raw overall; it was Breakout under Canada's stocks anchor and +170% under the U.S. semiconductor anchor.",
-      "relevance_groups": [["semiconductor", "semiconductors", "chip stocks", "semiconductor stocks", "半導體股票", "半导体股票"]]
-    },
-    {
-      "entity": "Apple earnings",
+      "entity": "NVIDIA earnings",
       "entity_type": "company",
-      "youtube_query": "Apple earnings AAPL",
-      "regions": ["US"],
-      "selection_reason": "Mega-cap U.S. tech equity with a clean fresh earnings breakout signal.",
-      "trend_evidence": "'aapl earnings call' was Breakout and #1 Rising under the U.S. earnings anchor.",
-      "relevance_groups": [["Apple", "AAPL", "蘋果", "苹果"], ["earnings", "results", "財報", "财报", "業績", "业绩", "quarterly"]]
-    },
-    {
-      "entity": "Canadian bank stocks",
-      "entity_type": "other",
-      "youtube_query": "Canadian bank stocks earnings",
-      "regions": ["CA"],
-      "selection_reason": "Directly investable Canadian sector with a fresh breakout and strong relevance to Canadian viewers.",
-      "trend_evidence": "'canadian bank stocks' was Breakout and #1 Rising under Canada's stocks anchor.",
-      "relevance_groups": [["Canadian bank", "Canadian banks", "RBC", "Royal Bank", "TD Bank", "BMO", "Bank of Montreal", "Scotiabank", "CIBC", "National Bank of Canada"], ["stock", "stocks", "earnings", "shares", "equity", "銀行股", "银行股", "財報", "财报"]]
-    },
-    {
-      "entity": "Tower Semiconductor",
-      "entity_type": "company",
-      "youtube_query": "Tower Semiconductor stock TSEM",
-      "regions": ["US"],
-      "selection_reason": "Specific semiconductor company with a breakout signal and likely lower creator saturation than mega-cap chip names.",
-      "trend_evidence": "'tower semiconductor' was Breakout and #1 Rising under the U.S. semiconductor anchor.",
-      "relevance_groups": [["Tower Semiconductor", "TSEM", "TowerJazz"]]
-    },
-    {
-      "entity": "Robotics stocks",
-      "entity_type": "other",
-      "youtube_query": "機器人 股票 robotics stocks",
-      "regions": ["TW"],
-      "selection_reason": "Timely physical-AI/robotics investing theme with a strong Chinese-language signal and clear U.S.-equity angles.",
-      "trend_evidence": "'機器人 股票' was Breakout and #1 Rising under Taiwan's 股票 anchor.",
-      "relevance_groups": [["robot", "robots", "robotics", "機器人", "机器人"], ["stock", "stocks", "shares", "investing", "investment", "股票", "投資", "投资"]]
-    },
-    {
-      "entity": "Webull",
-      "entity_type": "company",
-      "youtube_query": "Webull earnings BULL stock",
-      "regions": ["US"],
-      "selection_reason": "U.S.-listed retail brokerage with multiple earnings-related queries and direct exposure to retail trading activity.",
-      "trend_evidence": "'bull earnings' was Breakout and #2 Rising under U.S. earnings; 'webull earnings' separately rose +300%.",
-      "relevance_groups": [["Webull", "BULL stock", "BULL earnings", "微牛"]]
-    },
-    {
-      "entity": "Silver mining stocks",
-      "entity_type": "other",
-      "youtube_query": "silver mining stocks",
-      "regions": ["CA"],
-      "selection_reason": "Specific commodity-equity theme with a breakout signal and potentially lower YouTube competition than broad gold coverage.",
-      "trend_evidence": "'silver mining stocks' was Breakout and #2 Rising under Canada's stocks anchor; 'silver stocks' also appeared in Top queries.",
-      "relevance_groups": [["silver"], ["miner", "miners", "mining"], ["stock", "stocks", "shares", "equity", "investment", "investing"]]
-    },
-    {
-      "entity": "Alibaba earnings",
-      "entity_type": "company",
-      "youtube_query": "Alibaba earnings BABA",
-      "regions": ["US"],
-      "selection_reason": "Large U.S.-listed China tech ADR with a clean breakout earnings signal.",
-      "trend_evidence": "'alibaba earnings' was Breakout and #3 Rising under the U.S. earnings anchor.",
-      "relevance_groups": [["Alibaba", "BABA", "阿里巴巴", "阿里"], ["earnings", "results", "財報", "财报", "業績", "业绩", "quarterly"]]
-    },
-    {
-      "entity": "Strategy / MSTR",
-      "entity_type": "company",
-      "youtube_query": "MSTR 股票 Strategy Bitcoin",
-      "regions": ["TW"],
-      "selection_reason": "U.S.-listed high-beta Bitcoin proxy with a fresh Chinese-language investing breakout.",
-      "trend_evidence": "'mstr 股票' was Breakout and #3 Rising under Taiwan's 股票 anchor.",
-      "relevance_groups": [["MSTR", "MicroStrategy", "Strategy stock", "Strategy Bitcoin", "微策略"]]
+      "youtube_query": "NVIDIA NVDA 财报",
+      "regions": ["US", "TW"],
+      "selection_reason": "The clearest near-term mega-cap catalyst in the pool and directly central to AI, semiconductors and U.S. equity sentiment.",
+      "trend_evidence": "'nvda earnings prediction' was Breakout (#5 Rising) in U.S. earnings search; 'nvda earnings' rose +190%, 'nvidia' +70%, and 'nvidia earnings' +60%. Taiwan RSS also showed Jensen Huang making a brief Taiwan stop ahead of earnings.",
+      "relevance_groups": [["NVIDIA", "NVDA", "英伟达", "輝達", "辉达"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]
     },
     {
       "entity": "Walmart earnings",
       "entity_type": "company",
-      "youtube_query": "Walmart earnings WMT",
+      "youtube_query": "Walmart WMT 财报",
       "regions": ["US", "CA"],
-      "selection_reason": "Very strong repeated earnings demand across multiple query variants and two regions.",
-      "trend_evidence": "'walmart earnings release' was Breakout; 'walmart earnings call' rose +4,250%, 'walmart earnings' +3,100% in the U.S. and +110% in Canada, with several other WMT earnings variants also rising.",
-      "relevance_groups": [["Walmart", "WMT", "沃爾瑪", "沃尔玛"], ["earnings", "results", "財報", "财报", "業績", "业绩", "quarterly"]]
+      "selection_reason": "Strong cross-region earnings momentum for a U.S. mega-cap retailer and a useful consumer-health read-through for the broader market.",
+      "trend_evidence": "'walmart earnings' rose +750% in the U.S. and +160% in Canada; 'walmart earnings call' rose +1,500%, 'walmart q2 earnings' +400%, and 'wmt earnings' +250%.",
+      "relevance_groups": [["Walmart", "WMT", "沃尔玛", "沃爾瑪"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly", "Q2"]]
     },
     {
-      "entity": "NVIDIA earnings",
+      "entity": "Robinhood",
       "entity_type": "company",
-      "youtube_query": "NVIDIA earnings NVDA",
+      "youtube_query": "Robinhood HOOD 美股",
       "regions": ["US", "CA"],
-      "selection_reason": "Major AI-market catalyst with repeated rising earnings queries across the U.S. and Canada.",
-      "trend_evidence": "'nvda earnings prediction' was Breakout; 'nvidia earnings' rose +100% in Canada and +60% in the U.S.; 'nvda earnings' also rose +100%.",
-      "relevance_groups": [["NVIDIA", "NVDA", "英偉達", "英伟达", "輝達", "辉达"], ["earnings", "results", "財報", "财报", "業績", "业绩", "quarterly"]]
+      "selection_reason": "Specific U.S.-listed fintech/brokerage name with a strong fresh breakout and high relevance to retail-trading activity and crypto-linked sentiment.",
+      "trend_evidence": "'hood stocks' was Breakout in Canada and also appeared in U.S. Top related stock queries.",
+      "relevance_groups": [["Robinhood", "HOOD", "罗宾汉", "羅賓漢"]]
     },
     {
-      "entity": "Yageo",
+      "entity": "indie Semiconductor",
       "entity_type": "company",
-      "youtube_query": "國巨 Yageo 股票",
-      "regions": ["TW"],
-      "selection_reason": "Electronics-component company relevant to the global tech supply chain with unusually strong Taiwan investor interest.",
-      "trend_evidence": "'國巨' rose +800% under Taiwan's 股票 anchor and also appeared in Top queries.",
-      "relevance_groups": [["Yageo", "國巨", "国巨"]]
-    },
-    {
-      "entity": "Ross Stores earnings",
-      "entity_type": "company",
-      "youtube_query": "Ross Stores earnings ROST",
+      "youtube_query": "indie Semiconductor INDI 美股",
       "regions": ["US"],
-      "selection_reason": "Specific U.S. consumer stock with a strong fresh earnings signal and likely lower creator saturation than Walmart.",
-      "trend_evidence": "'ross earnings' rose +450% under U.S. earnings and also appeared in Top results.",
-      "relevance_groups": [["Ross Stores", "ROST", "Ross earnings"], ["earnings", "results", "財報", "财报", "業績", "业绩", "quarterly"]]
+      "selection_reason": "A specific U.S.-listed semiconductor name with the strongest company-level breakout under the U.S. semiconductor anchor.",
+      "trend_evidence": "'indie semiconductor stock' was Breakout and #1 Rising under U.S. semiconductor search; 'indie semiconductor' also appeared in Top related queries.",
+      "relevance_groups": [["indie Semiconductor", "INDI", "indie semi"]]
+    },
+    {
+      "entity": "Silver mining stocks",
+      "entity_type": "other",
+      "youtube_query": "白银 矿业 股 silver miners",
+      "regions": ["CA"],
+      "selection_reason": "A clearly investable commodity-equity theme with a breakout signal and potentially less creator saturation than broad precious-metals coverage.",
+      "trend_evidence": "'silver mining stocks' was Breakout and #1 Rising in Canada stocks search; 'silver stocks' also rose +60%.",
+      "relevance_groups": [["silver", "白银", "白銀"], ["miner", "miners", "mining", "矿业", "礦業", "矿商", "礦商"]]
+    },
+    {
+      "entity": "Tesla",
+      "entity_type": "company",
+      "youtube_query": "Tesla TSLA 美股",
+      "regions": ["US"],
+      "selection_reason": "Major U.S. growth stock with a fresh breakout under the stocks anchor; high audience relevance justifies testing despite normally heavy competition.",
+      "trend_evidence": "'tesla stocks today' was Breakout and #1 Rising in U.S. stocks search.",
+      "relevance_groups": [["Tesla", "TSLA", "特斯拉"]]
+    },
+    {
+      "entity": "IREN earnings",
+      "entity_type": "company",
+      "youtube_query": "IREN 财报 AI data center",
+      "regions": ["US"],
+      "selection_reason": "U.S.-listed AI/data-center and bitcoin-infrastructure name with a fresh earnings breakout, making it a strong niche opportunity for a smaller channel.",
+      "trend_evidence": "'iren earnings' was Breakout and #4 Rising under U.S. earnings search and also appeared in Top related queries.",
+      "relevance_groups": [["IREN", "Iris Energy"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]
+    },
+    {
+      "entity": "Navitas Semiconductor",
+      "entity_type": "company",
+      "youtube_query": "Navitas Semiconductor NVTS 美股",
+      "regions": ["US", "CA"],
+      "selection_reason": "U.S.-listed power-semiconductor name with cross-region momentum and direct exposure to AI power infrastructure and next-generation power electronics.",
+      "trend_evidence": "'navitas semiconductor stock' rose +160% in Canada, ranked #1 Top there, and also appeared in U.S. Top semiconductor queries.",
+      "relevance_groups": [["Navitas Semiconductor", "Navitas", "NVTS"]]
     },
     {
       "entity": "Evergreen Marine",
       "entity_type": "company",
-      "youtube_query": "長榮 海運 股票 Evergreen Marine",
+      "youtube_query": "长荣海运 2603 股票",
       "regions": ["TW"],
-      "selection_reason": "Shipping equity with rising Chinese-language investor interest and macro relevance through global freight/trade flows.",
-      "trend_evidence": "'長榮 海運 股票' rose +300%; '長榮 股票' also rose +90% and appeared in Top results.",
-      "relevance_groups": [["Evergreen Marine", "長榮海運", "长荣海运", "長榮航運", "长荣航运"]]
+      "selection_reason": "Taiwan-listed shipping bellwether with a breakout signal; shipping rates and global trade can have meaningful read-through for U.S. logistics, retailers and inflation expectations.",
+      "trend_evidence": "'長榮 海運 股票' was Breakout and #2 Rising in Taiwan stocks search; '長榮 股票' also rose +40% and appeared in Top related queries.",
+      "relevance_groups": [["長榮海運", "长荣海运", "Evergreen Marine", "2603", "長榮", "长荣"]]
     },
     {
-      "entity": "SpaceX",
+      "entity": "TECO Electric & Machinery",
       "entity_type": "company",
-      "youtube_query": "SpaceX 股票 投資",
+      "youtube_query": "东元 1504 股票 AI 数据中心",
       "regions": ["TW"],
-      "selection_reason": "Private company but highly relevant to listed space/AI suppliers and investor attention, with a fresh Taiwan signal.",
-      "trend_evidence": "'spacex' rose +250% under Taiwan's 股票 anchor and appeared in Top results.",
-      "relevance_groups": [["SpaceX"]]
-    },
-    {
-      "entity": "ON Semiconductor",
-      "entity_type": "company",
-      "youtube_query": "onsemi ON Semiconductor stock",
-      "regions": ["US"],
-      "selection_reason": "Specific U.S.-listed chip company with rising search demand; query is deliberately phrased with 'onsemi' to reduce ambiguity in enrichment.",
-      "trend_evidence": "'on semiconductor stock' rose +190%; 'on semiconductor' also rose +70% and ranked highly in Top results.",
-      "relevance_groups": [["ON Semiconductor", "onsemi", "ON stock"]]
+      "selection_reason": "Taiwan industrial/electrical-equipment name with a breakout signal and potential AI data-center/power-infrastructure relevance.",
+      "trend_evidence": "'東元 股票' was Breakout and #3 Rising in Taiwan stocks search.",
+      "relevance_groups": [["東元", "东元", "TECO", "1504"]]
     },
     {
       "entity": "Moderna",
       "entity_type": "company",
-      "youtube_query": "Moderna MRNA stock",
+      "youtube_query": "Moderna MRNA 美股",
       "regions": ["TW"],
-      "selection_reason": "U.S.-listed biotech name with a fresh Taiwan stock-search signal.",
-      "trend_evidence": "'mrna 股票' rose +200% under Taiwan's 股票 anchor.",
-      "relevance_groups": [["Moderna", "MRNA stock", "MRNA 股票"]]
+      "selection_reason": "Large U.S.-listed biotech with a clean breakout among Taiwan-based stock viewers; worth testing as a non-tech diversification candidate.",
+      "trend_evidence": "'mrna 股票' was Breakout and #4 Rising in Taiwan stocks search.",
+      "relevance_groups": [["Moderna", "MRNA", "莫德纳", "莫德納"]]
     },
     {
       "entity": "TSMC",
       "entity_type": "company",
-      "youtube_query": "TSMC 台積電 stock semiconductor",
+      "youtube_query": "台积电 TSMC",
       "regions": ["US", "TW"],
-      "selection_reason": "Core global semiconductor foundry and direct read-through for U.S. AI/chip equities, with signals in both English and Chinese searches.",
-      "trend_evidence": "'taiwan semiconductor stock' rose +140% in the U.S.; '台積電 股票' also appeared in Taiwan Top results.",
+      "selection_reason": "Critical semiconductor foundry for NVIDIA, AMD and Apple with rising interest in both U.S. semiconductor and Taiwan stock searches.",
+      "trend_evidence": "'台積電 股票' rose +120% in Taiwan and was Top #11; 'taiwan semiconductor' rose +40% in the U.S. and ranked Top #2; 'taiwan semiconductor stock' also appeared in U.S. Top results.",
       "relevance_groups": [["TSMC", "台積電", "台积电", "Taiwan Semiconductor"]]
     },
     {
-      "entity": "AI data centers",
-      "entity_type": "other",
-      "youtube_query": "AI data center stocks NVIDIA power",
-      "regions": ["CA"],
-      "selection_reason": "Core AI-capex infrastructure theme connecting semiconductors, networking, power and data-center beneficiaries.",
-      "trend_evidence": "'ai data center' rose +110% under Canada's AI anchor.",
-      "relevance_groups": [["AI", "artificial intelligence", "人工智能", "人工智慧"], ["data center", "data centre", "datacenter", "資料中心", "数据中心"]]
+      "entity": "ON Semiconductor",
+      "entity_type": "company",
+      "youtube_query": "ON Semiconductor ON 美股",
+      "regions": ["US"],
+      "selection_reason": "U.S.-listed power/auto semiconductor company with a fresh rising signal and direct sector relevance.",
+      "trend_evidence": "'on semiconductor' rose +80% and ranked Top #3 under U.S. semiconductor search.",
+      "relevance_groups": [["ON Semiconductor", "onsemi", "ON Semi"]]
     },
     {
-      "entity": "Target earnings",
-      "entity_type": "company",
-      "youtube_query": "Target earnings TGT",
+      "entity": "Semiconductor stocks",
+      "entity_type": "other",
+      "youtube_query": "半导体 美股 AI chips",
       "regions": ["US"],
-      "selection_reason": "Large U.S. retailer with a fresh earnings-search signal and a useful consumer-spending read-through.",
-      "trend_evidence": "'target earnings' rose +120% under the U.S. earnings anchor and ranked #9 in Top results.",
-      "relevance_groups": [["Target earnings", "Target Corporation", "Target stock", "TGT"], ["earnings", "results", "財報", "财报", "業績", "业绩", "quarterly"]]
+      "selection_reason": "Broad investable AI/semiconductor theme with active rising interest, useful as a sector-level fallback when individual names are crowded.",
+      "trend_evidence": "'semiconductor stocks' rose +110% in U.S. YouTube Search; 'semiconductor chip' +70% and broader semiconductor terms also ranked highly.",
+      "relevance_groups": [["semiconductor", "semiconductors", "chip", "chips", "半導體", "半导体"]]
+    },
+    {
+      "entity": "Nanya Plastics",
+      "entity_type": "company",
+      "youtube_query": "南亚 1303 股票",
+      "regions": ["TW"],
+      "selection_reason": "Taiwan materials/electronics supply-chain name with rising stock-search interest and potential linkage to semiconductor/material cycles.",
+      "trend_evidence": "'南亞 股票' rose +100% and ranked Top #15 in Taiwan stocks search.",
+      "relevance_groups": [["南亞", "南亚", "Nanya Plastics", "1303"]]
+    },
+    {
+      "entity": "Yang Ming Marine Transport",
+      "entity_type": "company",
+      "youtube_query": "阳明海运 2609 股票",
+      "regions": ["TW"],
+      "selection_reason": "Shipping stock with a strong Taiwan search rise and direct sensitivity to global freight rates and trade flows.",
+      "trend_evidence": "'陽明 股票' rose +110% and appeared in Taiwan Top related stock queries.",
+      "relevance_groups": [["陽明海運", "阳明海运", "Yang Ming", "2609", "陽明", "阳明"]]
+    },
+    {
+      "entity": "Canadian bank stocks",
+      "entity_type": "other",
+      "youtube_query": "加拿大 银行股 Canadian bank stocks",
+      "regions": ["CA"],
+      "selection_reason": "A defined financial-sector theme with rising interest; Canadian banks have U.S. listings and cross-border exposure, making the theme relevant enough for comparison content.",
+      "trend_evidence": "'canadian bank stocks' rose +60% and also appeared in Top related Canada stocks queries.",
+      "relevance_groups": [["Canadian bank", "Canadian banks", "加拿大银行", "加拿大銀行", "RBC", "TD Bank", "BMO", "Scotiabank", "CIBC"]]
+    },
+    {
+      "entity": "Binance Agent OS",
+      "entity_type": "other",
+      "youtube_query": "Binance Agent OS AI 交易",
+      "regions": ["CA"],
+      "selection_reason": "Fresh AI-plus-crypto catalyst with clear product news and potential implications for automated trading, exchanges and AI-agent adoption.",
+      "trend_evidence": "Google Trending RSS for 'binance trading' surfaced news that Binance launched Agent OS and an MCP trading server allowing AI agents to trade; 'binance exchange' was also trending in Canada.",
+      "relevance_groups": [["Binance", "币安", "幣安"], ["Agent OS", "AI agent", "AI agents", "MCP", "智能体", "智能體", "agent trading"]]
+    },
+    {
+      "entity": "AI agents",
+      "entity_type": "other",
+      "youtube_query": "AI Agent 美股",
+      "regions": ["US", "CA", "TW"],
+      "selection_reason": "Cross-market AI theme with direct relevance to software, cloud and platform beneficiaries; kept because interest spans all three discovery markets even without one single company catalyst.",
+      "trend_evidence": "'ai agent' appeared in Top related YouTube queries in the U.S. and Taiwan, while 'ai agents' appeared in U.S./Canada Top queries; Binance's Agent OS news provides a fresh adjacent catalyst.",
+      "relevance_groups": [["AI agent", "AI agents", "agentic AI", "智能体", "智能體", "AI代理"]]
+    },
+    {
+      "entity": "SpaceX",
+      "entity_type": "company",
+      "youtube_query": "SpaceX 美股 投资",
+      "regions": ["TW"],
+      "selection_reason": "Private company but highly relevant to public-market investor attention through suppliers, potential future listing interest and Musk-related capital allocation themes.",
+      "trend_evidence": "'spacex' rose +250% in Taiwan stocks-related YouTube Search.",
+      "relevance_groups": [["SpaceX", "太空探索科技", "太空探索"]]
     }
   ]
 }

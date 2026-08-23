@@ -1,138 +1,421 @@
 {
-  "generated_at_utc": "2026-08-22T22:50:29.546184+00:00",
+  "generated_at_utc": "2026-08-23T09:47:56.244844+00:00",
   "lookback_days": 3,
-  "selection_generated_at_utc": "2026-08-22T19:00:00+00:00",
-  "selection_notes": "Manual ChatGPT first-pass selection from the fixed-anchor 72-hour Google Trends YouTube Search run. Anchors remain fixed at AI, semiconductor, earnings and stocks for US/CA, and AI, 半導體, 財報 and 股票 for TW. Twelve logical Explore requests were attempted, eleven succeeded, and no 429 rate limit occurred. Duplicate long-tail queries were merged; sports, entertainment, creator names, generic beginner/how-to queries and other low-value noise were removed. Dynamic relevance_groups were added so YouTube metrics are calculated only from title-matched relevant videos.",
+  "selection_generated_at_utc": "2026-08-23T09:46:18+00:00",
+  "selection_notes": "Daily ChatGPT selection from the fresh 72-hour Google Trends YouTube Search run. 187 deduped candidates were reviewed across US, Canada and Taiwan. Twelve Explore requests were attempted, eleven succeeded; TW/財報 failed because the Explore page did not render the chart, but there was no 429 and the RSS/raw pool was otherwise fresh. Duplicate long-tail queries were merged; sports, entertainment, creator/channel names, generic how-to/evergreen queries and low-value noise were removed. Dynamic relevance_groups are intentionally recall-safe and are used only to determine whether returned YouTube titles are substantially about each selected entity/topic before metrics are calculated.",
   "small_channel_max_subscribers": 50000,
   "small_channel_hit_vpd_threshold": 1000,
   "rejected_sample_size": 5,
   "entities": [
     {
-      "entity": "Semiconductor stocks",
-      "entity_type": "other",
-      "youtube_query": "semiconductor stocks AI chips",
+      "entity": "NVIDIA earnings",
+      "entity_type": "company",
+      "youtube_query": "NVIDIA NVDA 财报",
       "regions": [
         "US",
-        "CA"
+        "TW"
       ],
-      "selection_reason": "Strongest cross-region investable theme in this run and directly aligned with the channel's AI/semiconductor focus.",
-      "trend_evidence": "'semiconductor stocks' ranked #1 raw overall; it was Breakout under Canada's stocks anchor and +170% under the U.S. semiconductor anchor.",
+      "selection_reason": "The clearest near-term mega-cap catalyst in the pool and directly central to AI, semiconductors and U.S. equity sentiment.",
+      "trend_evidence": "'nvda earnings prediction' was Breakout (#5 Rising) in U.S. earnings search; 'nvda earnings' rose +190%, 'nvidia' +70%, and 'nvidia earnings' +60%. Taiwan RSS also showed Jensen Huang making a brief Taiwan stop ahead of earnings.",
       "relevance_groups": [
         [
-          "semiconductor",
-          "semiconductors",
-          "chip stocks",
-          "semiconductor stocks",
-          "半導體股票",
-          "半导体股票"
-        ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": 7526,
-        "raw_recent_video_estimate": 7526,
-        "raw_sample_size": 50,
-        "relevant_sample_size": 5,
-        "relevance_ratio": 10.0,
-        "median_views": 25,
-        "median_views_per_day": 9,
-        "small_channel_sample_size": 5,
-        "small_channel_median_views_per_day": 9,
-        "small_channel_hit_rate": 0.0,
-        "top10_small_channel_share": 100.0,
-        "top10_small_channel_count": 5,
-        "top10_known_channels": 5,
-        "median_channel_subscribers": 503,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "rejected_sample_titles": [
-          "This AI Stock Selloff Could Be Your Last Chance (Micron Sandisk AMD Nvidia SK Hynix Meta)",
-          "How Much Would an AI Crash Destroy?",
-          "If You Own Credo Technology Stock...You Need to Hear This!!",
-          "How 3 Harvard dropouts built a $21 billion AI chip startup that is taking on Nvidia",
-          "Nvidia's $30B Intel Bet: Should You Buy INTC Too?"
-        ],
-        "status": "ok_low_relevance",
-        "sample_videos": [
-          {
-            "video_id": "iEHhXk2GQ1Y",
-            "title": "CNBC Today: MU Micron & NVIDIA Stock Update | Latest AI Chip & Semiconductor News",
-            "channel_id": "UCzBnivQF8AsK4iIEaKh0_9Q",
-            "published_at": "2026-08-20T13:48:52+00:00",
-            "views": 67,
-            "views_per_day": 28,
-            "channel_subscribers": 2710
-          },
-          {
-            "video_id": "YrN2wFeIejw",
-            "title": "CNBC Today: MU & NVIDIA Stock Update | NVDA and Micron Latest News, AI Chip Stocks",
-            "channel_id": "UCzBnivQF8AsK4iIEaKh0_9Q",
-            "published_at": "2026-08-20T15:22:27+00:00",
-            "views": 38,
-            "views_per_day": 16,
-            "channel_subscribers": 2710
-          },
-          {
-            "video_id": "Qd_NCxSSJPk",
-            "title": "Old Chips Got More Expensive While Chip Stocks Crashed",
-            "channel_id": "UChSSTwTuNE2AtL7J5zm5FdQ",
-            "published_at": "2026-08-20T02:20:29+00:00",
-            "views": 25,
-            "views_per_day": 9,
-            "channel_subscribers": 503
-          },
-          {
-            "video_id": "PxM4cR7OXjw",
-            "title": "Moderna Soars 177% as Chip Stocks Slide | Market Close Aug 19",
-            "channel_id": "UCtTDljzQ8kG11geD5bg4NAA",
-            "published_at": "2026-08-20T06:55:55+00:00",
-            "views": 4,
-            "views_per_day": 2,
-            "channel_subscribers": 27
-          },
-          {
-            "video_id": "i1Rl7MhPryI",
-            "title": "Y-Voices: Lam Research LRCX and the Divine Blueprint for Semiconductor Deposition Engineering",
-            "channel_id": "UC-DHrYKQB7NkgvQVJk7qYug",
-            "published_at": "2026-08-20T23:11:18+00:00",
-            "views": 1,
-            "views_per_day": 1,
-            "channel_subscribers": 346
-          }
-        ],
-        "cache_status": "fresh"
-      }
-    },
-    {
-      "entity": "Apple earnings",
-      "entity_type": "company",
-      "youtube_query": "Apple earnings AAPL",
-      "regions": [
-        "US"
-      ],
-      "selection_reason": "Mega-cap U.S. tech equity with a clean fresh earnings breakout signal.",
-      "trend_evidence": "'aapl earnings call' was Breakout and #1 Rising under the U.S. earnings anchor.",
-      "relevance_groups": [
-        [
-          "Apple",
-          "AAPL",
-          "蘋果",
-          "苹果"
+          "NVIDIA",
+          "NVDA",
+          "英伟达",
+          "輝達",
+          "辉达"
         ],
         [
           "earnings",
           "results",
-          "財報",
           "财报",
-          "業績",
+          "財報",
           "业绩",
+          "業績",
           "quarterly"
         ]
       ],
       "youtube_metrics": {
-        "recent_video_estimate": 48,
-        "raw_recent_video_estimate": 48,
-        "raw_sample_size": 48,
+        "recent_video_estimate": 66,
+        "raw_recent_video_estimate": 66,
+        "raw_sample_size": 50,
+        "relevant_sample_size": 11,
+        "relevance_ratio": 22.0,
+        "median_views": 47,
+        "median_views_per_day": 43,
+        "small_channel_sample_size": 10,
+        "small_channel_median_views_per_day": 37,
+        "small_channel_hit_rate": 20.0,
+        "top10_small_channel_share": 90.0,
+        "top10_small_channel_count": 9,
+        "top10_known_channels": 10,
+        "median_channel_subscribers": 2290,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [
+          "美股一周总结｜回调风险升温？下周3大重磅事件来袭，特斯拉该卖吗？｜#英伟达｜#特斯拉｜#美股｜#股票｜JohnLu谈股 #股票分析",
+          "NVDA 還會漲嗎？未來 5 大關鍵找到了！【方舟運算 - 大俠武林】",
+          "NVIDIA如果再創新高，為什麼投資人反而要小心？",
+          "超超超详细拆解#比特币74000 #英伟达 210关键多头阵地争夺！！🔥🔥处暑时节㊗️新老朋友秋日大丰收！ #美股趋势分析 #加密币 #比特币怎么玩 #技术分析教学 #均线 #股票當沖 #nvda",
+          "Why NVIDIA's 11.5% Growth Isn't the Bear Case You Think"
+        ],
+        "status": "ok_low_relevance",
+        "sample_videos": [
+          {
+            "video_id": "5KmwufKD_hQ",
+            "title": "CNBC & Fox Today On NVIDIA Stock, Micron Stock, SK Hynix Stock, NVIDIA Earnings NVDA Update",
+            "channel_id": "UCTPm4y283GIygUCq4a_T96Q",
+            "published_at": "2026-08-21T01:54:34+00:00",
+            "views": 19178,
+            "views_per_day": 8236,
+            "channel_subscribers": 34700
+          },
+          {
+            "video_id": "17U57zRo5M0",
+            "title": "Nvidia's August 26 Earnings Could Decide These 3 AI Stocks | Micron, SK Hynix, SanDisk - NVDA Update",
+            "channel_id": "UCkKw31s2oNLh9F4KIeyIp3A",
+            "published_at": "2026-08-20T23:48:42+00:00",
+            "views": 4355,
+            "views_per_day": 1803,
+            "channel_subscribers": 2810
+          },
+          {
+            "video_id": "QYDYS_J35Bo",
+            "title": "美股AI牛市关键节点：下周英伟达财报+杰克逊霍尔央行年会，市场将迎来巨震！#nvidia #jensenhuang #usstocks #stockmarket #bigtech #aistocks",
+            "channel_id": "UCwbwyiCXO7EcS30Zcqu_K5A",
+            "published_at": "2026-08-22T09:12:24+00:00",
+            "views": 1098,
+            "views_per_day": 1072,
+            "channel_subscribers": 189000
+          },
+          {
+            "video_id": "VeYlnHf8OyQ",
+            "title": "英伟达 8 月 26 日财报，可能只是烟雾弹：华尔街真正盯着的是这笔万亿账单",
+            "channel_id": "UCU9jl7gYkDS2UBjuJoHxNjg",
+            "published_at": "2026-08-21T12:54:43+00:00",
+            "views": 214,
+            "views_per_day": 114,
+            "channel_subscribers": 210
+          },
+          {
+            "video_id": "0Rw0O_poVzE",
+            "title": "NVDA财报前就看空！熊市价差成功获利，这笔期权为什么敢提前布局？#nvda #美股 #美股財報 #美股分析 #期权交易 #期权",
+            "channel_id": "UCy-PnUki3MJ5E_sMAyb_jpg",
+            "published_at": "2026-08-22T12:00:39+00:00",
+            "views": 95,
+            "views_per_day": 105,
+            "channel_subscribers": 5720
+          },
+          {
+            "video_id": "9JS5lcGNm4w",
+            "title": "英伟达财报撞上PCE与Warsh：AI高估值还能撑住吗？",
+            "channel_id": "UCk53Y5j0kfCwFgJpcTmzUmg",
+            "published_at": "2026-08-22T07:17:22+00:00",
+            "views": 47,
+            "views_per_day": 43,
+            "channel_subscribers": 4410
+          },
+          {
+            "video_id": "hyV0E45wR9M",
+            "title": "英伟达财报倒计时：AI牛市最后的压力测试，还是下一轮暴涨起点？#英伟达 #NVDA #AI芯片 #Blackwell #GB300 #美股财报 #科技股 #AI投资 #美股分析 #投資 #股市",
+            "channel_id": "UCiZoh052zzTtl_aIynoh3TQ",
+            "published_at": "2026-08-23T06:15:17+00:00",
+            "views": 8,
+            "views_per_day": 32,
+            "channel_subscribers": 57
+          },
+          {
+            "video_id": "HfwVw4ZTAxI",
+            "title": "Walmart暴跌，NVIDIA财报前还有机会？两只股票技术面分析 #Walmart #NVIDIA #美股 #财报 #股票",
+            "channel_id": "UCaw3OLegE1dV18cctX8FMiA",
+            "published_at": "2026-08-22T16:45:35+00:00",
+            "views": 10,
+            "views_per_day": 14,
+            "channel_subscribers": 17
+          },
+          {
+            "video_id": "vK8IkNUxqVM",
+            "title": "我敢打赌你会在辉达(NVDA)财报上亏钱！揭秘华尔街悄悄盯紧的4个利润黑洞，散户看涨必被套真相",
+            "channel_id": "UCggJb6OiD9agupMlzDC9JfQ",
+            "published_at": "2026-08-20T15:00:06+00:00",
+            "views": 32,
+            "views_per_day": 11,
+            "channel_subscribers": 2290
+          },
+          {
+            "video_id": "Fo1Nm9sBmhk",
+            "title": "英伟达财报倒计时：AI牛市最后的压力测试，还是下一轮暴涨起点？",
+            "channel_id": "UCiZoh052zzTtl_aIynoh3TQ",
+            "published_at": "2026-08-23T06:48:07+00:00",
+            "views": 2,
+            "views_per_day": 8,
+            "channel_subscribers": 57
+          }
+        ]
+      }
+    },
+    {
+      "entity": "Walmart earnings",
+      "entity_type": "company",
+      "youtube_query": "Walmart WMT 财报",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "selection_reason": "Strong cross-region earnings momentum for a U.S. mega-cap retailer and a useful consumer-health read-through for the broader market.",
+      "trend_evidence": "'walmart earnings' rose +750% in the U.S. and +160% in Canada; 'walmart earnings call' rose +1,500%, 'walmart q2 earnings' +400%, and 'wmt earnings' +250%.",
+      "relevance_groups": [
+        [
+          "Walmart",
+          "WMT",
+          "沃尔玛",
+          "沃爾瑪"
+        ],
+        [
+          "earnings",
+          "results",
+          "财报",
+          "財報",
+          "业绩",
+          "業績",
+          "quarterly",
+          "Q2"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 22,
+        "raw_recent_video_estimate": 22,
+        "raw_sample_size": 22,
+        "relevant_sample_size": 8,
+        "relevance_ratio": 36.4,
+        "median_views": 56,
+        "median_views_per_day": 27,
+        "small_channel_sample_size": 8,
+        "small_channel_median_views_per_day": 27,
+        "small_channel_hit_rate": 25.0,
+        "top10_small_channel_share": 100.0,
+        "top10_small_channel_count": 8,
+        "top10_known_channels": 8,
+        "median_channel_subscribers": 126,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [
+          "沃尔玛深度分析｜营收一千八百七十九亿美元、全年指引上调，股价却暴跌！美国消费者真的撑不住了吗？",
+          "Target深度分析｜第二季度业绩改善，零售战略调整成效如何",
+          "經濟差去 Walmart 慳錢？同店銷售創 6 年最慢、市值單日蒸發 800 億！連平價超市客人都縮手，揭秘美國消費降級背後嘅真實危機！",
+          "不是消费崩溃，是消费分层——2026年8月美国零售的分层地图",
+          "五年最强的数据，和跌了9%的沃尔玛 | 8月20日"
+        ],
+        "status": "ok",
+        "sample_videos": [
+          {
+            "video_id": "geA-c1Lmf2Y",
+            "title": "美国两大指标预示衰退将到来？英特尔GPU售价狂飙48%！迈威尔财报将靓丽看涨360？MU INTC TEM MSTR WMT NVDA MRVL！08202026 #美股 #股票 #美股分析 #投資",
+            "channel_id": "UCdyJicllXSiJnE_NScLDsSg",
+            "published_at": "2026-08-21T00:18:44+00:00",
+            "views": 5924,
+            "views_per_day": 2473,
+            "channel_subscribers": 29400
+          },
+          {
+            "video_id": "Z7rPLue3ghg",
+            "title": "沃尔玛暴跌9%！财报超预期却遭抛售？美国消费分裂的真相，90%的人只看到了衰退",
+            "channel_id": "UC5UcaSIELHcJlyvj_ACAytg",
+            "published_at": "2026-08-21T11:48:36+00:00",
+            "views": 2987,
+            "views_per_day": 1559,
+            "channel_subscribers": 8330
+          },
+          {
+            "video_id": "7DNx3CqpskE",
+            "title": "Walmart财报不差，股价为何暴跌10%？｜一分钟讲懂Incentive #Shorts",
+            "channel_id": "UCRhQ-GVeb0eGQxUm_gcIG4g",
+            "published_at": "2026-08-21T00:15:03+00:00",
+            "views": 102,
+            "views_per_day": 43,
+            "channel_subscribers": 17
+          },
+          {
+            "video_id": "vmE8RYx2voo",
+            "title": "WMT暴跌近10%！财报明明超预期，为什么华尔街还在卖？什么时候可以买？",
+            "channel_id": "UCjxYCw-jLxyHKWO6GFlYAlQ",
+            "published_at": "2026-08-20T21:17:57+00:00",
+            "views": 96,
+            "views_per_day": 38,
+            "channel_subscribers": 97
+          },
+          {
+            "video_id": "oTJNK0CLp-E",
+            "title": "沃爾瑪財報超預期卻暴跌9%！一天蒸發800億，是黃金坑還是價值陷阱？",
+            "channel_id": "UC2iXY25KplsxqcZMElrWAJA",
+            "published_at": "2026-08-22T10:00:06+00:00",
+            "views": 17,
+            "views_per_day": 17,
+            "channel_subscribers": 2670
+          },
+          {
+            "video_id": "HfwVw4ZTAxI",
+            "title": "Walmart暴跌，NVIDIA财报前还有机会？两只股票技术面分析 #Walmart #NVIDIA #美股 #财报 #股票",
+            "channel_id": "UCaw3OLegE1dV18cctX8FMiA",
+            "published_at": "2026-08-22T16:45:35+00:00",
+            "views": 10,
+            "views_per_day": 14,
+            "channel_subscribers": 17
+          },
+          {
+            "video_id": "BxOJiIMOImc",
+            "title": "沃尔玛 Walmart 2027财年第二季度财报深度拆解：零售正在平台化",
+            "channel_id": "UCcz2cG_XDDVQF9k5_RMM-bw",
+            "published_at": "2026-08-21T22:17:16+00:00",
+            "views": 5,
+            "views_per_day": 3,
+            "channel_subscribers": 156
+          },
+          {
+            "video_id": "T6euw5C_HmA",
+            "title": "為什麼費半逆勢漲？解析殖利率 4 71% 背後的估值修正，沃爾瑪財報驚現「消費力枯竭」真相！20260821",
+            "channel_id": "UCYL8Z7sMW2LTSn8GhMETlug",
+            "published_at": "2026-08-21T01:26:02+00:00",
+            "views": 0,
+            "views_per_day": 0,
+            "channel_subscribers": 20
+          }
+        ]
+      }
+    },
+    {
+      "entity": "Robinhood",
+      "entity_type": "company",
+      "youtube_query": "Robinhood HOOD 美股",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "selection_reason": "Specific U.S.-listed fintech/brokerage name with a strong fresh breakout and high relevance to retail-trading activity and crypto-linked sentiment.",
+      "trend_evidence": "'hood stocks' was Breakout in Canada and also appeared in U.S. Top related stock queries.",
+      "relevance_groups": [
+        [
+          "Robinhood",
+          "HOOD",
+          "罗宾汉",
+          "羅賓漢"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 13,
+        "raw_recent_video_estimate": 13,
+        "raw_sample_size": 13,
+        "relevant_sample_size": 7,
+        "relevance_ratio": 53.8,
+        "median_views": 96,
+        "median_views_per_day": 56,
+        "small_channel_sample_size": 7,
+        "small_channel_median_views_per_day": 56,
+        "small_channel_hit_rate": 0.0,
+        "top10_small_channel_share": 100.0,
+        "top10_small_channel_count": 7,
+        "top10_known_channels": 7,
+        "median_channel_subscribers": 3240,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [
+          "比特币单周暴涨近23%：ETF净流入19亿美元，牛市真的回来了吗？",
+          "美股八分钟 | 2026-08-21 | 比特币破79000机构进场 BABA财报暴雷 财长债券赌局弄巧成拙",
+          "悟空解资讯第157期 ：比特币突破78000、以太坊站上2500、矿企股狂飙！渣打年底看12.6万，桥水、贝莱德、摩根士丹利都在买？Ray Dalio警告美债风险 | 8月22日币圈新闻",
+          "服务业回暖推高利率预期丨美股复盘",
+          "🔥Bitcoin逼近8萬、黃金逼近4700！美股突然反彈518點，但呢個訊號有啲唔對路｜NVDA下週決戰"
+        ],
+        "status": "ok",
+        "sample_videos": [
+          {
+            "video_id": "xzuCK40tA3g",
+            "title": "美股：加密概念集体爆发！现在还能追吗？【2026-08-22】HOOD COIN MSTR CRCL MARA TSM AMAT AAOI RIOT MRVL #美股 #股市 #投資",
+            "channel_id": "UCQZtEgDDZ0OK-a0fUOk6z1g",
+            "published_at": "2026-08-22T12:46:13+00:00",
+            "views": 136,
+            "views_per_day": 155,
+            "channel_subscribers": 3710
+          },
+          {
+            "video_id": "LyDrDxIHuHk",
+            "title": "美股见底！科技股下一个新赛道是什么？英伟达财报有什么预期？买什么？ HOOD爆赚15%，月收益45%！布局下一只股票！ #stocks #投資  #直播 #stockmarket #美股 #nvda",
+            "channel_id": "UC7-N21rZSjMMfbc6XeE7GUw",
+            "published_at": "2026-08-22T00:00:10+00:00",
+            "views": 96,
+            "views_per_day": 68,
+            "channel_subscribers": 3240
+          },
+          {
+            "video_id": "C1IkX3i9w4k",
+            "title": "黄金和BTC同时暴涨，真正的主线不是降息！CRCL、COIN、MSTR、HOOD谁是最强币股？",
+            "channel_id": "UCA3ANBYHd6kVngAmjYNC0fw",
+            "published_at": "2026-08-21T10:14:30+00:00",
+            "views": 115,
+            "views_per_day": 58,
+            "channel_subscribers": 8280
+          },
+          {
+            "video_id": "r1JJKb9vyc4",
+            "title": "AI开始替你下单！Robinhood与Coinbase争夺华尔街新入口，HOOD、COIN谁先迎来重估？#Robinhood #Coinbase #HOOD #COIN #AI交易",
+            "channel_id": "UCmfq4ogiu0-Kpf8va7XJoRQ",
+            "published_at": "2026-08-20T11:28:02+00:00",
+            "views": 165,
+            "views_per_day": 56,
+            "channel_subscribers": 649
+          },
+          {
+            "video_id": "iNe0p06cVfo",
+            "title": "美国财政部加码美债，币圈突然爆发！HOOD要起飞了吗？AI  TRADE ：0821",
+            "channel_id": "UCg5NGqajx2AyLfeRi8HFd-g",
+            "published_at": "2026-08-21T21:15:45+00:00",
+            "views": 53,
+            "views_per_day": 35,
+            "channel_subscribers": 3730
+          },
+          {
+            "video_id": "gwMdVSi9uB4",
+            "title": "比特币突然暴涨！美国要给币圈“发牌照”？COIN、HOOD谁吃下这轮政策红利？",
+            "channel_id": "UC5iKGqOemNbOLuCMVK7dEmg",
+            "published_at": "2026-08-21T11:54:59+00:00",
+            "views": 40,
+            "views_per_day": 21,
+            "channel_subscribers": 31
+          },
+          {
+            "video_id": "5IieoG1DNko",
+            "title": "【美股预判/策略】币Circle CRCL Robinhood HOOD 特斯拉TSLA SpaceX SPCX 走势预判 高胜率布局入口（含时间戳，可选看）",
+            "channel_id": "UC0flvOsjLGMIujUEzOwiI2g",
+            "published_at": "2026-08-22T02:30:02+00:00",
+            "views": 9,
+            "views_per_day": 7,
+            "channel_subscribers": 47
+          }
+        ]
+      }
+    },
+    {
+      "entity": "indie Semiconductor",
+      "entity_type": "company",
+      "youtube_query": "indie Semiconductor INDI 美股",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "A specific U.S.-listed semiconductor name with the strongest company-level breakout under the U.S. semiconductor anchor.",
+      "trend_evidence": "'indie semiconductor stock' was Breakout and #1 Rising under U.S. semiconductor search; 'indie semiconductor' also appeared in Top related queries.",
+      "relevance_groups": [
+        [
+          "indie Semiconductor",
+          "INDI",
+          "indie semi"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 0,
+        "raw_recent_video_estimate": 0,
+        "raw_sample_size": 0,
         "relevant_sample_size": 0,
         "relevance_ratio": 0.0,
         "median_views": 0,
@@ -147,98 +430,740 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
-        "status": "ok_no_relevant_videos",
-        "cache_status": "fresh"
+        "rejected_sample_titles": [],
+        "status": "ok_no_videos"
       }
     },
     {
-      "entity": "Canadian bank stocks",
+      "entity": "Silver mining stocks",
       "entity_type": "other",
-      "youtube_query": "Canadian bank stocks earnings",
+      "youtube_query": "白银 矿业 股 silver miners",
       "regions": [
         "CA"
       ],
-      "selection_reason": "Directly investable Canadian sector with a fresh breakout and strong relevance to Canadian viewers.",
-      "trend_evidence": "'canadian bank stocks' was Breakout and #1 Rising under Canada's stocks anchor.",
+      "selection_reason": "A clearly investable commodity-equity theme with a breakout signal and potentially less creator saturation than broad precious-metals coverage.",
+      "trend_evidence": "'silver mining stocks' was Breakout and #1 Rising in Canada stocks search; 'silver stocks' also rose +60%.",
       "relevance_groups": [
         [
-          "Canadian bank",
-          "Canadian banks",
-          "RBC",
-          "Royal Bank",
-          "TD Bank",
-          "BMO",
-          "Bank of Montreal",
-          "Scotiabank",
-          "CIBC",
-          "National Bank of Canada"
+          "silver",
+          "白银",
+          "白銀"
         ],
         [
-          "stock",
-          "stocks",
-          "earnings",
-          "shares",
-          "equity",
-          "銀行股",
-          "银行股",
-          "財報",
-          "财报"
+          "miner",
+          "miners",
+          "mining",
+          "矿业",
+          "礦業",
+          "矿商",
+          "礦商"
         ]
       ],
       "youtube_metrics": {
-        "recent_video_estimate": 296,
-        "raw_recent_video_estimate": 296,
-        "raw_sample_size": 50,
-        "relevant_sample_size": 1,
-        "relevance_ratio": 2.0,
-        "median_views": 10,
-        "median_views_per_day": 4,
-        "small_channel_sample_size": 1,
-        "small_channel_median_views_per_day": 4,
+        "recent_video_estimate": 1,
+        "raw_recent_video_estimate": 1,
+        "raw_sample_size": 1,
+        "relevant_sample_size": 0,
+        "relevance_ratio": 0.0,
+        "median_views": 0,
+        "median_views_per_day": 0,
+        "small_channel_sample_size": 0,
+        "small_channel_median_views_per_day": 0,
         "small_channel_hit_rate": 0.0,
-        "top10_small_channel_share": 100.0,
-        "top10_small_channel_count": 1,
-        "top10_known_channels": 1,
-        "median_channel_subscribers": 962,
+        "top10_small_channel_share": 0.0,
+        "top10_small_channel_count": 0,
+        "top10_known_channels": 0,
+        "median_channel_subscribers": null,
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
         "rejected_sample_titles": [
-          "Bessent's Treasury Market Intervention, Samsung, SK Hynix Buybacks | The Opening Trade 8/20/2026",
-          "Walmart FY2027 Q2 Earnings Release",
-          "Bond Market Tests Limits of Treasury Intervention",
-          "Can You Deduct Interest When Your ETF Pays Return of Capital?",
-          "If You Have Under $500,000 - DON'T Convert Your RRSP.  Do THIS Instead!"
+          "【全集】💎陈峰遭合伙好友暗算夺走金矿，被千元打发，母亲重病受尽周遭白眼。觉醒淘金系统后不断发掘珍稀矿产，创立公司碾压各路敌人，协助警方侦破走私案件，落魄矿工蜕变为威震一方的矿业大佬#短剧 #短劇"
         ],
-        "status": "ok_low_relevance",
-        "sample_videos": [
-          {
-            "video_id": "puocGXqE9e0",
-            "title": "RBC Drops 3% After 50% Surge—Earnings Showdown Ahead! #Earnings #StockMarket",
-            "channel_id": "UC9x864bd1Eg5YFA_fKIwcjA",
-            "published_at": "2026-08-20T17:19:22+00:00",
-            "views": 10,
-            "views_per_day": 4,
-            "channel_subscribers": 962
-          }
-        ],
-        "cache_status": "fresh"
+        "status": "ok_no_relevant_videos"
       }
     },
     {
-      "entity": "Tower Semiconductor",
+      "entity": "Tesla",
       "entity_type": "company",
-      "youtube_query": "Tower Semiconductor stock TSEM",
+      "youtube_query": "Tesla TSLA 美股",
       "regions": [
         "US"
       ],
-      "selection_reason": "Specific semiconductor company with a breakout signal and likely lower creator saturation than mega-cap chip names.",
-      "trend_evidence": "'tower semiconductor' was Breakout and #1 Rising under the U.S. semiconductor anchor.",
+      "selection_reason": "Major U.S. growth stock with a fresh breakout under the stocks anchor; high audience relevance justifies testing despite normally heavy competition.",
+      "trend_evidence": "'tesla stocks today' was Breakout and #1 Rising in U.S. stocks search.",
       "relevance_groups": [
         [
-          "Tower Semiconductor",
-          "TSEM",
-          "TowerJazz"
+          "Tesla",
+          "TSLA",
+          "特斯拉"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 61,
+        "raw_recent_video_estimate": 61,
+        "raw_sample_size": 50,
+        "relevant_sample_size": 35,
+        "relevance_ratio": 70.0,
+        "median_views": 560,
+        "median_views_per_day": 409,
+        "small_channel_sample_size": 29,
+        "small_channel_median_views_per_day": 187,
+        "small_channel_hit_rate": 24.1,
+        "top10_small_channel_share": 70.0,
+        "top10_small_channel_count": 7,
+        "top10_known_channels": 10,
+        "median_channel_subscribers": 7190,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [
+          "期权|美股|美股下周能反弹么？MU强势反包，965买了！QQQ  MU  SPCX  SNDK  COIN",
+          "8月23日一周美股复盘，点名个股大爆发；周一减仓周三回补，下周风险在哪里？比特币中期买点应验，CRCL, COIN加密飙升；NOW等重点个股；半导体；MU, NVDA, SPY标普；MRNA医疗板块等",
+          "21天66.7%回报， 资金效率极高的看多期权策略， 手把手教会你！| 百万挑战 EP20",
+          "贝森特2 次救市？困局！美债还是美元？“牛来”？加密市场 ~ 黄金！",
+          "The Bull Case for SpaceX Nobody's Fully Priced In"
+        ],
+        "status": "ok",
+        "sample_videos": [
+          {
+            "video_id": "OgARiseEyXM",
+            "title": "NEW Tesla Model Launching In September | It's Finally Here",
+            "channel_id": "UCfv7-e6_6ZhvDL9-7Yw5OVA",
+            "published_at": "2026-08-20T16:00:02+00:00",
+            "views": 59922,
+            "views_per_day": 21857,
+            "channel_subscribers": 341000
+          },
+          {
+            "video_id": "h-NtDIX3eDk",
+            "title": "Full Self Hearing Is a Real Tesla Feature Now",
+            "channel_id": "UC4DBLlq1x0AKmip1QJUcbXg",
+            "published_at": "2026-08-20T13:30:08+00:00",
+            "views": 25053,
+            "views_per_day": 8804,
+            "channel_subscribers": 205000
+          },
+          {
+            "video_id": "pgd9jsT0rXE",
+            "title": "股票|美股|美股下周抄底?特斯拉再涨2天! #nvda  #amd  #sndk  # mu #tsla #mstr  #crcl    #avgo  #axti #spcx  #lite  #美股",
+            "channel_id": "UCWOgdHUVC3E5MrOT9F9jP8w",
+            "published_at": "2026-08-23T01:00:05+00:00",
+            "views": 2612,
+            "views_per_day": 7127,
+            "channel_subscribers": 7930
+          },
+          {
+            "video_id": "6C8MeNYPYqs",
+            "title": "INSANE Cybercab Upgrade: Tesla Deletes All Cross-Car Wiring",
+            "channel_id": "UC0N26wTaBU1fQc1x-eusWvA",
+            "published_at": "2026-08-20T12:00:02+00:00",
+            "views": 14749,
+            "views_per_day": 5072,
+            "channel_subscribers": 26900
+          },
+          {
+            "video_id": "KSYkkeDM4Rc",
+            "title": "Tesla Just Solved Cybercab’s Biggest Problem",
+            "channel_id": "UCyqpZ8HY9FY5jH-RoVcwlnw",
+            "published_at": "2026-08-20T13:54:54+00:00",
+            "views": 11687,
+            "views_per_day": 4132,
+            "channel_subscribers": 97900
+          },
+          {
+            "video_id": "BB3m2ZI8W8M",
+            "title": "財政部出手救美債，美股止跌是陷阱？費半破萬二、AI晶片估值爆殺！莫德納噴177%軋空大屠殺，特斯拉是下一檔暴漲的？",
+            "channel_id": "UCpuU6BS_nw5_lCGD2cocU_Q",
+            "published_at": "2026-08-20T10:20:21+00:00",
+            "views": 8795,
+            "views_per_day": 2954,
+            "channel_subscribers": 12200
+          },
+          {
+            "video_id": "7BCOw_e2BLU",
+            "title": "SPCX解禁下跌，木头姐却加仓！TSLA 资金换挡SPCX?TSLA到关键位，SPCX窗口打开？#马斯克 #特斯拉 #spcx #美股 #技术分析 #木头姐#ark#spcx解禁",
+            "channel_id": "UCrFSgZXO2lNbZMAKCQ1PkkA",
+            "published_at": "2026-08-22T22:30:19+00:00",
+            "views": 1165,
+            "views_per_day": 2476,
+            "channel_subscribers": 7190
+          },
+          {
+            "video_id": "PJutDi8OwWY",
+            "title": "美股周线超买？短期危险？特斯拉周线3连阳，长持短打？英伟达支撑214？【美股直通车】2026.08.23 #sam谈美股 #美股分析 #tsla #nvda #特斯拉 #英伟达",
+            "channel_id": "UC70ctfuYBZLMymSZpEMo0xQ",
+            "published_at": "2026-08-23T00:00:06+00:00",
+            "views": 980,
+            "views_per_day": 2401,
+            "channel_subscribers": 40800
+          },
+          {
+            "video_id": "l8kk2Y8329k",
+            "title": "特斯拉暴涨20%重回360美元！现在还能追吗？Robotaxi开始进入真正兑现期？",
+            "channel_id": "UCQMuYTg4ARi8LUfVhYrTmcw",
+            "published_at": "2026-08-22T10:30:13+00:00",
+            "views": 1794,
+            "views_per_day": 1848,
+            "channel_subscribers": 8770
+          },
+          {
+            "video_id": "-wNWJTQ1qD4",
+            "title": "特斯拉高开高走，多方开炮？【美股直通车】2026.08.22 #sam谈美股 #美股分析 #tsla #nvda #特斯拉 #英伟达",
+            "channel_id": "UC70ctfuYBZLMymSZpEMo0xQ",
+            "published_at": "2026-08-22T02:30:06+00:00",
+            "views": 1827,
+            "views_per_day": 1401,
+            "channel_subscribers": 40800
+          }
+        ]
+      }
+    },
+    {
+      "entity": "IREN earnings",
+      "entity_type": "company",
+      "youtube_query": "IREN 财报 AI data center",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "U.S.-listed AI/data-center and bitcoin-infrastructure name with a fresh earnings breakout, making it a strong niche opportunity for a smaller channel.",
+      "trend_evidence": "'iren earnings' was Breakout and #4 Rising under U.S. earnings search and also appeared in Top related queries.",
+      "relevance_groups": [
+        [
+          "IREN",
+          "Iris Energy"
+        ],
+        [
+          "earnings",
+          "results",
+          "财报",
+          "財報",
+          "业绩",
+          "業績",
+          "quarterly"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 118,
+        "raw_recent_video_estimate": 118,
+        "raw_sample_size": 50,
+        "relevant_sample_size": 0,
+        "relevance_ratio": 0.0,
+        "median_views": 0,
+        "median_views_per_day": 0,
+        "small_channel_sample_size": 0,
+        "small_channel_median_views_per_day": 0,
+        "small_channel_hit_rate": 0.0,
+        "top10_small_channel_share": 0.0,
+        "top10_small_channel_count": 0,
+        "top10_known_channels": 0,
+        "median_channel_subscribers": null,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [
+          "經濟學人 2026.08.22「商業版塊」解析：🇨🇳中國砸重金包圍全球供應鏈！AI 準備接管世界金融體系？Meta 迎來千億美金世紀大審判！企業砸錢買AI竟淪為一場空❓｜TheEconomist",
+          "“消失”的万亿债务：深扒数据中心“影子借贷”、GPU金融化与次贷风险",
+          "AI业务暴增181%！这只股票从$902跌到$600，我开始关注了. SiTime现在到底值不值得买？",
+          "【下班國際線】台股千點殺完了？台積電、聯發科誰才是贏家？艦長程正樺：這2族群成AI新黑馬！ft.程正樺 Ep.64路怡珍 @TheStormMedia",
+          "英偉達這1050億合約瘋了？揭秘 AI 盛世下隱藏的「信用騙局」！"
+        ],
+        "status": "ok_no_relevant_videos"
+      }
+    },
+    {
+      "entity": "Navitas Semiconductor",
+      "entity_type": "company",
+      "youtube_query": "Navitas Semiconductor NVTS 美股",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "selection_reason": "U.S.-listed power-semiconductor name with cross-region momentum and direct exposure to AI power infrastructure and next-generation power electronics.",
+      "trend_evidence": "'navitas semiconductor stock' rose +160% in Canada, ranked #1 Top there, and also appeared in U.S. Top semiconductor queries.",
+      "relevance_groups": [
+        [
+          "Navitas Semiconductor",
+          "Navitas",
+          "NVTS"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 0,
+        "raw_recent_video_estimate": 0,
+        "raw_sample_size": 0,
+        "relevant_sample_size": 0,
+        "relevance_ratio": 0.0,
+        "median_views": 0,
+        "median_views_per_day": 0,
+        "small_channel_sample_size": 0,
+        "small_channel_median_views_per_day": 0,
+        "small_channel_hit_rate": 0.0,
+        "top10_small_channel_share": 0.0,
+        "top10_small_channel_count": 0,
+        "top10_known_channels": 0,
+        "median_channel_subscribers": null,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
+        "status": "ok_no_videos"
+      }
+    },
+    {
+      "entity": "Evergreen Marine",
+      "entity_type": "company",
+      "youtube_query": "长荣海运 2603 股票",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "Taiwan-listed shipping bellwether with a breakout signal; shipping rates and global trade can have meaningful read-through for U.S. logistics, retailers and inflation expectations.",
+      "trend_evidence": "'長榮 海運 股票' was Breakout and #2 Rising in Taiwan stocks search; '長榮 股票' also rose +40% and appeared in Top related queries.",
+      "relevance_groups": [
+        [
+          "長榮海運",
+          "长荣海运",
+          "Evergreen Marine",
+          "2603",
+          "長榮",
+          "长荣"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 4,
+        "raw_recent_video_estimate": 4,
+        "raw_sample_size": 4,
+        "relevant_sample_size": 4,
+        "relevance_ratio": 100.0,
+        "median_views": 612,
+        "median_views_per_day": 322,
+        "small_channel_sample_size": 3,
+        "small_channel_median_views_per_day": 43,
+        "small_channel_hit_rate": 0.0,
+        "top10_small_channel_share": 75.0,
+        "top10_small_channel_count": 3,
+        "top10_known_channels": 4,
+        "median_channel_subscribers": 32,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
+        "status": "ok",
+        "sample_videos": [
+          {
+            "video_id": "pYyKLsU8G_U",
+            "title": "《SCFI高檔撐起新行情? 長榮.陽明.萬海 選誰? 》【錢線百分百】20260820-3│非凡財經新聞│",
+            "channel_id": "UCYIVkruUoN04UjV9pkBTswg",
+            "published_at": "2026-08-20T15:30:02+00:00",
+            "views": 1965,
+            "views_per_day": 711,
+            "channel_subscribers": 1230000
+          },
+          {
+            "video_id": "LF5i1sFI-2A",
+            "title": "運價飆高、萬海半年報淨利狂增 96%！別只看貨櫃三雄，拆解 40 元以下設備零組件贏家！#台股 #航運股 #萬海 #陽明 #長榮 #運價飆漲 #旺季效應 #小資理財",
+            "channel_id": "UCJZFRN6kjCJPTkrW9m1a7xw",
+            "published_at": "2026-08-21T11:05:17+00:00",
+            "views": 1171,
+            "views_per_day": 602,
+            "channel_subscribers": 5
+          },
+          {
+            "video_id": "1wo03jCF_nQ",
+            "title": "運價高檔、地緣政治干擾不斷！別只看貨櫃三雄，拆解航運冷鏈與關鍵零組件的真正贏家！#台股 #航運股 #陽明 #萬海 #長榮 #散裝航運 #冷鏈物流 #小資理財",
+            "channel_id": "UCRMJIEYDiUKIbFyx0tUqIBg",
+            "published_at": "2026-08-22T03:52:04+00:00",
+            "views": 54,
+            "views_per_day": 43,
+            "channel_subscribers": 34
+          },
+          {
+            "video_id": "X8mjowo4Kvc",
+            "title": "貨櫃三雄飆漲後怎麼選？避開航運景氣循環波動，鎖定越運越賺的船用設備贏家！#台股 #航運股 #陽明 #萬海 #長榮 #船用設備 #低基期飆股 #小資理財",
+            "channel_id": "UCFt2FlolFmM8vkiqNW5Wa8g",
+            "published_at": "2026-08-22T07:39:23+00:00",
+            "views": 19,
+            "views_per_day": 17,
+            "channel_subscribers": 30
+          }
+        ]
+      }
+    },
+    {
+      "entity": "TECO Electric & Machinery",
+      "entity_type": "company",
+      "youtube_query": "东元 1504 股票 AI 数据中心",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "Taiwan industrial/electrical-equipment name with a breakout signal and potential AI data-center/power-infrastructure relevance.",
+      "trend_evidence": "'東元 股票' was Breakout and #3 Rising in Taiwan stocks search.",
+      "relevance_groups": [
+        [
+          "東元",
+          "东元",
+          "TECO",
+          "1504"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 0,
+        "raw_recent_video_estimate": 0,
+        "raw_sample_size": 0,
+        "relevant_sample_size": 0,
+        "relevance_ratio": 0.0,
+        "median_views": 0,
+        "median_views_per_day": 0,
+        "small_channel_sample_size": 0,
+        "small_channel_median_views_per_day": 0,
+        "small_channel_hit_rate": 0.0,
+        "top10_small_channel_share": 0.0,
+        "top10_small_channel_count": 0,
+        "top10_known_channels": 0,
+        "median_channel_subscribers": null,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
+        "status": "ok_no_videos"
+      }
+    },
+    {
+      "entity": "Moderna",
+      "entity_type": "company",
+      "youtube_query": "Moderna MRNA 美股",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "Large U.S.-listed biotech with a clean breakout among Taiwan-based stock viewers; worth testing as a non-tech diversification candidate.",
+      "trend_evidence": "'mrna 股票' was Breakout and #4 Rising in Taiwan stocks search.",
+      "relevance_groups": [
+        [
+          "Moderna",
+          "MRNA",
+          "莫德纳",
+          "莫德納"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 66,
+        "raw_recent_video_estimate": 66,
+        "raw_sample_size": 50,
+        "relevant_sample_size": 41,
+        "relevance_ratio": 82.0,
+        "median_views": 43,
+        "median_views_per_day": 18,
+        "small_channel_sample_size": 39,
+        "small_channel_median_views_per_day": 16,
+        "small_channel_hit_rate": 7.7,
+        "top10_small_channel_share": 80.0,
+        "top10_small_channel_count": 8,
+        "top10_known_channels": 10,
+        "median_channel_subscribers": 1130,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [
+          "美股还能追吗？黄金、AI与中概股全面复盘｜GDX、NVDA、MU、BABA",
+          "沃森生物，一字涨停，但你要看的是股东的变化！#沃森生物 #上市公司 #减持先生 #A股",
+          "放水上漲！年底要發財，這些股票必須提前佈局！",
+          "巴倫周刊2026.8.24：AI浪潮引爆美國再工業化，精選10檔潛力股！跟隨頂尖基金經理人，建倉生技投資。了解GLP-1如何重塑食品板塊？從F1賽車商機與高息特別股中，打造最抗通膨的防禦組合。",
+          "復發和死亡率大降 49%！這項新技術將改變所有癌症病人的未來？"
+        ],
+        "status": "ok",
+        "sample_videos": [
+          {
+            "video_id": "yrfz85ngXPg",
+            "title": "AI發威！莫德納個人化癌症疫苗問世股價飆176%、背後竟是台廠生技鏈助攻！【關鍵時刻】20260820-1張炤和",
+            "channel_id": "UCKQVSNdzGBJSXaUmS4TOWww",
+            "published_at": "2026-08-20T15:17:33+00:00",
+            "views": 69569,
+            "views_per_day": 25106,
+            "channel_subscribers": 3390000
+          },
+          {
+            "video_id": "0zXxGe5Zmq8",
+            "title": "博通融资1000亿挑战英伟达！MRNA波辐定价高达366%！加密货币开启蓄谋式的逼空！SPCX TSLA MRNA CRCL AVGO AAPL SNDK！08212026 #美股 #股票 #投資",
+            "channel_id": "UCdyJicllXSiJnE_NScLDsSg",
+            "published_at": "2026-08-21T22:41:49+00:00",
+            "views": 4986,
+            "views_per_day": 3409,
+            "channel_subscribers": 29400
+          },
+          {
+            "video_id": "oSvTZ14SJzw",
+            "title": "Bitcoin黃金￼暴升如何部署？￼￼業績期之下港股重上26000是陷阱？Moderna￼癌症疫苗全面拆解｜醫藥股勢成新主線？｜100%實倉覆盤｜孫子大戶",
+            "channel_id": "UC7eJey8k6Ag7QmuLIxWmCGw",
+            "published_at": "2026-08-23T03:00:06+00:00",
+            "views": 559,
+            "views_per_day": 1974,
+            "channel_subscribers": 31300
+          },
+          {
+            "video_id": "830YnGQT23w",
+            "title": "莫德纳还能涨多久？III期癌症疫苗成功背后，一个巨大机会与三个风险 | MRNA | 摩德纳 | 肿瘤疫苗 | 癌症疫苗  | Moderna  | 摩德納  |莫德納",
+            "channel_id": "UCGmGeD2kUufZRhFUoUbQ6Sg",
+            "published_at": "2026-08-21T04:45:34+00:00",
+            "views": 4202,
+            "views_per_day": 1901,
+            "channel_subscribers": 23600
+          },
+          {
+            "video_id": "IJmDoFyCou4",
+            "title": "MRNA 突破後 TEM 狂升：不再只是 AI 醫療虛幻股？",
+            "channel_id": "UCiiEU_otcG65I9lWMz3ayjA",
+            "published_at": "2026-08-23T09:25:24+00:00",
+            "views": 440,
+            "views_per_day": 1760,
+            "channel_subscribers": 94700
+          },
+          {
+            "video_id": "l-E0qnvp6vs",
+            "title": "Moderna暴涨177%引爆AI医疗！数据护城河+AI双重驱动，这家公司有望接力，下一波别再错过！TEM,MRNA,MRK#美股 #投資 #trading #ai #医疗",
+            "channel_id": "UCCBSDCawQPv86MKd0exHh_Q",
+            "published_at": "2026-08-23T00:00:29+00:00",
+            "views": 262,
+            "views_per_day": 642,
+            "channel_subscribers": 12200
+          },
+          {
+            "video_id": "W0axYY9I8Yc",
+            "title": "Moderna一夜暴涨177%！AI医疗终于跨过最难一关，下一个十倍股会藏在哪里？ MRNA, MRK, BNTX #美股 #纳斯达克",
+            "channel_id": "UC9v0oLVrFGmbia0gfkFUU2w",
+            "published_at": "2026-08-21T11:00:08+00:00",
+            "views": 853,
+            "views_per_day": 437,
+            "channel_subscribers": 14800
+          },
+          {
+            "video_id": "zopaHaVd0QY",
+            "title": "美债、芯片、疫苗一天连爆三条大新闻!财政部真金白银回购、Google砸122亿绑定Marvell、Moderna暴涨177%「三重利好全部到齐」?可这三件事背后,竟然全部还没真正兑现?",
+            "channel_id": "UCgGF-3L85gbBeqIdBJlLbww",
+            "published_at": "2026-08-20T11:00:19+00:00",
+            "views": 677,
+            "views_per_day": 230,
+            "channel_subscribers": 2410
+          },
+          {
+            "video_id": "J_PoXeMGcQs",
+            "title": "Moderna是下一个十倍股？定制化mRNA疫苗能拿下数千亿美元的癌症治疗市场吗？",
+            "channel_id": "UC3PH29t8X6gzDt0f5DVrJiA",
+            "published_at": "2026-08-22T09:10:21+00:00",
+            "views": 213,
+            "views_per_day": 208,
+            "channel_subscribers": 4930
+          },
+          {
+            "video_id": "d8eGLdT86Lg",
+            "title": "MRNA 日线技术分析：跳空暴涨后高位换手，159.47 是延续确认位",
+            "channel_id": "UCAtlgTweom-PjtjgIOifPCg",
+            "published_at": "2026-08-22T15:36:31+00:00",
+            "views": 102,
+            "views_per_day": 135,
+            "channel_subscribers": 309
+          }
+        ]
+      }
+    },
+    {
+      "entity": "TSMC",
+      "entity_type": "company",
+      "youtube_query": "台积电 TSMC",
+      "regions": [
+        "US",
+        "TW"
+      ],
+      "selection_reason": "Critical semiconductor foundry for NVIDIA, AMD and Apple with rising interest in both U.S. semiconductor and Taiwan stock searches.",
+      "trend_evidence": "'台積電 股票' rose +120% in Taiwan and was Top #11; 'taiwan semiconductor' rose +40% in the U.S. and ranked Top #2; 'taiwan semiconductor stock' also appeared in U.S. Top results.",
+      "relevance_groups": [
+        [
+          "TSMC",
+          "台積電",
+          "台积电",
+          "Taiwan Semiconductor"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 7262,
+        "raw_recent_video_estimate": 7262,
+        "raw_sample_size": 50,
+        "relevant_sample_size": 38,
+        "relevance_ratio": 76.0,
+        "median_views": 1743,
+        "median_views_per_day": 1357,
+        "small_channel_sample_size": 10,
+        "small_channel_median_views_per_day": 430,
+        "small_channel_hit_rate": 30.0,
+        "top10_small_channel_share": 20.0,
+        "top10_small_channel_count": 2,
+        "top10_known_channels": 10,
+        "median_channel_subscribers": 697000,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [
+          "【直播｜阿榕伯即時互動】8月科技大事，阿榕伯講給你聽",
+          "生技股漲翻天！高含量ETF卻要小心翻車？｜ft.哆啦王、葉芷娟 #ETF錢滾錢 #ETF",
+          "中國沒招了！搞小動作「禁半導體光學材料出口」反加速台美日緊密結合！？ @ebcCTime #shorts",
+          "連黃仁勳女兒都「尷尬微笑」！ 大秀仿生馬.5米高機器人北京WRC變玩具展！？ @ebcCTime #shorts",
+          "《盤勢話中話》AI全民熱潮 各年齡層ETF該如何配置?!"
+        ],
+        "status": "ok",
+        "sample_videos": [
+          {
+            "video_id": "LgvQZE9-rlA",
+            "title": "【下班國際線】台股千點殺完了？台積電、聯發科誰才是贏家？艦長程正樺：這2族群成AI新黑馬！ft.程正樺 Ep.64路怡珍 @TheStormMedia",
+            "channel_id": "UCwWXGnvVmi-6Sfx2wf8S8tQ",
+            "published_at": "2026-08-22T10:00:06+00:00",
+            "views": 81519,
+            "views_per_day": 82218,
+            "channel_subscribers": 2580000
+          },
+          {
+            "video_id": "7GO9W8SpuK8",
+            "title": "黃仁勳親口揭密！台積電最恐怖的護城河根本不是技術？沈萬鈞爆：這項「無雙調度神技」全世界除台灣沒人辦得到！ @TaiwanLBJnews #shorts",
+            "channel_id": "UCHsKlGM7IXNnQqA6S8mEmBQ",
+            "published_at": "2026-08-21T03:00:07+00:00",
+            "views": 174423,
+            "views_per_day": 76396,
+            "channel_subscribers": 697000
+          },
+          {
+            "video_id": "4UYEKjYC3ZE",
+            "title": "台積電多了100萬散戶，大戶卻在減碼？你可能看錯重點了｜投資研究 #32",
+            "channel_id": "UCLAoFPI_ohPVzrdXrEwfAGw",
+            "published_at": "2026-08-21T09:00:03+00:00",
+            "views": 94876,
+            "views_per_day": 46663,
+            "channel_subscribers": 2140
+          },
+          {
+            "video_id": "xCvZbRneZIA",
+            "title": "【精彩鈔能力】退休前別ALL IN台積電？「買3檔ETF」爽賺花不完現金流！ft.嫺人｜趙慶翔 #財經鈔能力 20260817",
+            "channel_id": "UCYDaGPmMfSXViITpPYDKIcw",
+            "published_at": "2026-08-20T12:00:25+00:00",
+            "views": 65191,
+            "views_per_day": 22418,
+            "channel_subscribers": 628000
+          },
+          {
+            "video_id": "t_4RynRoNo4",
+            "title": "聯電股價蒸發70元還能買？專家曝「抄底價在這」：短線反彈可能贏過台積電 #聯電 #台積電 #股市 #台股 #陳重銘",
+            "channel_id": "UCwWXGnvVmi-6Sfx2wf8S8tQ",
+            "published_at": "2026-08-21T09:00:09+00:00",
+            "views": 38463,
+            "views_per_day": 18918,
+            "channel_subscribers": 2580000
+          },
+          {
+            "video_id": "94cQ1at2Lac",
+            "title": "【精選】黃仁勳親口揭密！台積電最恐怖的護城河根本不是技術？沈萬鈞爆：這項「無雙調度神技」全世界除台灣沒人辦得到！-《寶傑怎麼說》 劉寶傑",
+            "channel_id": "UCHsKlGM7IXNnQqA6S8mEmBQ",
+            "published_at": "2026-08-21T03:00:31+00:00",
+            "views": 39817,
+            "views_per_day": 17442,
+            "channel_subscribers": 697000
+          },
+          {
+            "video_id": "-lC7pc_kD-Y",
+            "title": "台積電黑科技再突破 埃米世代完勝三星、英特爾",
+            "channel_id": "UCuzqko_GKcj9922M1gUo__w",
+            "published_at": "2026-08-20T14:41:14+00:00",
+            "views": 33871,
+            "views_per_day": 12113,
+            "channel_subscribers": 1330000
+          },
+          {
+            "video_id": "5SBvgu-MIGQ",
+            "title": "👑 高憲容警告！散戶別再盲目追高AI！大戶默默連買三週的「這檔電力股」，台積電訂單已入袋！🚀 feat.高憲容 #理財達人秀",
+            "channel_id": "UCQvsuaih5lE0n_Ne54nNezg",
+            "published_at": "2026-08-21T06:13:07+00:00",
+            "views": 13318,
+            "views_per_day": 6197,
+            "channel_subscribers": 975000
+          },
+          {
+            "video_id": "QHJXZWdg0ek",
+            "title": "【全集】9月川習會激戰AI話語權！泡沫破裂？台積電成最大贏家？沈萬鈞：短期震盪 明後年極度樂觀！- 沈萬鈞 劉寶傑《寶傑怎麼說》2026.08.19",
+            "channel_id": "UCHsKlGM7IXNnQqA6S8mEmBQ",
+            "published_at": "2026-08-20T11:00:07+00:00",
+            "views": 18032,
+            "views_per_day": 6113,
+            "channel_subscribers": 697000
+          },
+          {
+            "video_id": "vJq-i-grAOY",
+            "title": "台積電為何突然跟Sony押注「AI眼睛」？7471億日圓布局影像感測器，2029年量產背後的真正目的 #台股 #台積電 #sony #ai #半導體 #ai供應鏈 #股票 #投資理財 #財經 #投資",
+            "channel_id": "UC3Ospwo39JWtpEsAhA1XL7g",
+            "published_at": "2026-08-21T10:14:26+00:00",
+            "views": 10277,
+            "views_per_day": 5186,
+            "channel_subscribers": 2750
+          }
+        ]
+      }
+    },
+    {
+      "entity": "ON Semiconductor",
+      "entity_type": "company",
+      "youtube_query": "ON Semiconductor ON 美股",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "U.S.-listed power/auto semiconductor company with a fresh rising signal and direct sector relevance.",
+      "trend_evidence": "'on semiconductor' rose +80% and ranked Top #3 under U.S. semiconductor search.",
+      "relevance_groups": [
+        [
+          "ON Semiconductor",
+          "onsemi",
+          "ON Semi"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 67,
+        "raw_recent_video_estimate": 67,
+        "raw_sample_size": 50,
+        "relevant_sample_size": 0,
+        "relevance_ratio": 0.0,
+        "median_views": 0,
+        "median_views_per_day": 0,
+        "small_channel_sample_size": 0,
+        "small_channel_median_views_per_day": 0,
+        "small_channel_hit_rate": 0.0,
+        "top10_small_channel_share": 0.0,
+        "top10_small_channel_count": 0,
+        "top10_known_channels": 0,
+        "median_channel_subscribers": null,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [
+          "半导体止跌！内存、光通信今天能不能抄底？#美股 #美股直播  #美股行情 #美股分析 #半导体 #科技股 #内存 #存储芯片 #光通信 #AI #AI芯片 #西部数据 #美光 #AMD",
+          "美股还能追吗？黄金、AI与中概股全面复盘｜GDX、NVDA、MU、BABA",
+          "財政部出手救美債，美股止跌是陷阱？費半破萬二、AI晶片估值爆殺！莫德納噴177%軋空大屠殺，特斯拉是下一檔暴漲的？",
+          "AI业务暴增181%！这只股票从$902跌到$600，我开始关注了. SiTime现在到底值不值得买？",
+          "SK Hynix、Micron、NVIDIA、Tesla、Apple走势解析！AI科技股开始分化？｜US Stock Market Live【美股直播】Ep.037｜26.08.2026"
+        ],
+        "status": "ok_no_relevant_videos"
+      }
+    },
+    {
+      "entity": "Semiconductor stocks",
+      "entity_type": "other",
+      "youtube_query": "半导体 美股 AI chips",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Broad investable AI/semiconductor theme with active rising interest, useful as a sector-level fallback when individual names are crowded.",
+      "trend_evidence": "'semiconductor stocks' rose +110% in U.S. YouTube Search; 'semiconductor chip' +70% and broader semiconductor terms also ranked highly.",
+      "relevance_groups": [
+        [
+          "semiconductor",
+          "semiconductors",
+          "chip",
+          "chips",
+          "半導體",
+          "半导体"
         ]
       ],
       "youtube_metrics": {
@@ -259,678 +1184,337 @@
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
-        "status": "ok_no_relevant_videos",
-        "cache_status": "fresh"
+        "rejected_sample_titles": [
+          "美股还能追吗？黄金、AI与中概股全面复盘｜GDX、NVDA、MU、BABA",
+          "財政部出手救美債，美股止跌是陷阱？費半破萬二、AI晶片估值爆殺！莫德納噴177%軋空大屠殺，特斯拉是下一檔暴漲的？",
+          "放水上漲！年底要發財，這些股票必須提前佈局！",
+          "AI晶片狂歡終結？指數大漲背後，資金竟在暗中暴逃…",
+          "芯片格局今夜改写！Moderna引爆AI医疗变局！财政部救市真相曝光，美股下一步怎么走？#美股#美股分析#莫德纳#Moderna#英伟达#博通#AI医疗#癌症疫苗#美联储#美股大跌#美股暴涨#美股散户"
+        ],
+        "status": "ok_no_relevant_videos"
       }
     },
     {
-      "entity": "Robotics stocks",
-      "entity_type": "other",
-      "youtube_query": "機器人 股票 robotics stocks",
+      "entity": "Nanya Plastics",
+      "entity_type": "company",
+      "youtube_query": "南亚 1303 股票",
       "regions": [
         "TW"
       ],
-      "selection_reason": "Timely physical-AI/robotics investing theme with a strong Chinese-language signal and clear U.S.-equity angles.",
-      "trend_evidence": "'機器人 股票' was Breakout and #1 Rising under Taiwan's 股票 anchor.",
+      "selection_reason": "Taiwan materials/electronics supply-chain name with rising stock-search interest and potential linkage to semiconductor/material cycles.",
+      "trend_evidence": "'南亞 股票' rose +100% and ranked Top #15 in Taiwan stocks search.",
       "relevance_groups": [
         [
-          "robot",
-          "robots",
-          "robotics",
-          "機器人",
-          "机器人"
-        ],
-        [
-          "stock",
-          "stocks",
-          "shares",
-          "investing",
-          "investment",
-          "股票",
-          "投資",
-          "投资"
+          "南亞",
+          "南亚",
+          "Nanya Plastics",
+          "1303"
         ]
       ],
       "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "rejected_sample_titles": [],
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_metric': 'youtube.googleapis.com/search_list', 'window_start_time': '1787382000', 'consumer': 'projects/316383767993', 'quota_limit': 'defaultSearchListPerDayPerProject', 'service': 'youtube.googleapis.com', 'quota_unit': '1/d/{project}', 'quota_location': 'global', 'quota_limit_value': '100'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
-      }
-    },
-    {
-      "entity": "Webull",
-      "entity_type": "company",
-      "youtube_query": "Webull earnings BULL stock",
-      "regions": [
-        "US"
-      ],
-      "selection_reason": "U.S.-listed retail brokerage with multiple earnings-related queries and direct exposure to retail trading activity.",
-      "trend_evidence": "'bull earnings' was Breakout and #2 Rising under U.S. earnings; 'webull earnings' separately rose +300%.",
-      "relevance_groups": [
-        [
-          "Webull",
-          "BULL stock",
-          "BULL earnings",
-          "微牛"
-        ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "rejected_sample_titles": [],
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_unit': '1/d/{project}', 'quota_limit': 'defaultSearchListPerDayPerProject', 'consumer': 'projects/316383767993', 'quota_limit_value': '100', 'quota_metric': 'youtube.googleapis.com/search_list', 'window_start_time': '1787382000', 'service': 'youtube.googleapis.com', 'quota_location': 'global'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
-      }
-    },
-    {
-      "entity": "Silver mining stocks",
-      "entity_type": "other",
-      "youtube_query": "silver mining stocks",
-      "regions": [
-        "CA"
-      ],
-      "selection_reason": "Specific commodity-equity theme with a breakout signal and potentially lower YouTube competition than broad gold coverage.",
-      "trend_evidence": "'silver mining stocks' was Breakout and #2 Rising under Canada's stocks anchor; 'silver stocks' also appeared in Top queries.",
-      "relevance_groups": [
-        [
-          "silver"
-        ],
-        [
-          "miner",
-          "miners",
-          "mining"
-        ],
-        [
-          "stock",
-          "stocks",
-          "shares",
-          "equity",
-          "investment",
-          "investing"
-        ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": 779,
-        "raw_recent_video_estimate": 779,
-        "raw_sample_size": 50,
-        "relevant_sample_size": 4,
-        "relevance_ratio": 8.0,
-        "median_views": 1682,
-        "median_views_per_day": 1349,
+        "recent_video_estimate": 8,
+        "raw_recent_video_estimate": 8,
+        "raw_sample_size": 8,
+        "relevant_sample_size": 3,
+        "relevance_ratio": 37.5,
+        "median_views": 21,
+        "median_views_per_day": 15,
         "small_channel_sample_size": 3,
-        "small_channel_median_views_per_day": 1164,
-        "small_channel_hit_rate": 66.7,
-        "top10_small_channel_share": 75.0,
+        "small_channel_median_views_per_day": 15,
+        "small_channel_hit_rate": 0.0,
+        "top10_small_channel_share": 100.0,
         "top10_small_channel_count": 3,
-        "top10_known_channels": 4,
-        "median_channel_subscribers": 15600,
+        "top10_known_channels": 3,
+        "median_channel_subscribers": 2800,
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
         "rejected_sample_titles": [
-          "Rick Rule Evaluates 8 Mining Stocks: What He Likes, What He Doesn't",
-          "THIS is BIG! 💥💥 COMMODITY BULL MARKET \"Get Long & Buckle Up!\" (Billionaire Shift) - Silver & Gold",
-          "Gold and Silver Miners: Are They Ready to Break Out?",
-          "ERIC YEUNG | Why the miners will become the new MAG-7!",
-          "Everything You Need to Know About This Silver & Gold Rally"
+          "川湖股價直逼信驊 明年獲利力拚60個股本!AI紅利帶旺 Q2財報下一批受惠股│*曾鐘玉 李冠嶔 *20260821股市周報分段版4/5.有CC字幕 @ustvbiz",
+          "五萬大關能來?反彈七千點後單腳起跳?第二隻腳? AI紅利帶旺 Q2財報亮晶晶 下一批受惠股出列│*曾鐘玉 謝明哲 李冠嶔 *股市周報20260821完整版.有CC字幕 @ustvhotstock",
+          "Q2財報挑第四季潛力股！德宏築底完成 崇越電通配現金超大方│*曾鐘玉 李冠嶔 *20260821股市周報分段版5/5.有CC字幕 @ustvbiz",
+          "台股45224收復45K！富邦金暴衝4.7%領軍金融股",
+          "主控盤實戰技巧｜KD指標突破超買區，如何精準判別「真軋空」？| 理周教育學苑 | 謝佳穎|主控盤指標研判與選股戰技"
+        ],
+        "status": "ok",
+        "sample_videos": [
+          {
+            "video_id": "jUqmb06U2mc",
+            "title": "2026/08/22(六)分享【技研補習班線上教學實況】美股/台股/神基/合機/京元電/威盛/友訊/和碩/中興電/事欣科/晶碩/智原/宜特/安國/怡利電/威剛/華邦電/晶豪科/富喬/南亞/士電/希華",
+            "channel_id": "UC03kR7FNvCdxlFWhQ-T23xg",
+            "published_at": "2026-08-22T03:16:25+00:00",
+            "views": 631,
+            "views_per_day": 496,
+            "channel_subscribers": 3720
+          },
+          {
+            "video_id": "lazSvUwUrxY",
+            "title": "1303 南亞 (快訊): 鋼鐵支撐199.5仍在，獲利籌碼占比18.4%有影嘸 (三姑六婆篇)",
+            "channel_id": "UCRRsTNLZRzQTuE-cfTPYWhg",
+            "published_at": "2026-08-22T00:31:21+00:00",
+            "views": 21,
+            "views_per_day": 15,
+            "channel_subscribers": 2800
+          },
+          {
+            "video_id": "gQe88BMdZWE",
+            "title": "1303 南亞 (完整版): 鋼鐵支撐199.5仍在，獲利籌碼占比18.4%有影嘸 (三姑六婆篇)",
+            "channel_id": "UCRRsTNLZRzQTuE-cfTPYWhg",
+            "published_at": "2026-08-22T00:01:05+00:00",
+            "views": 14,
+            "views_per_day": 10,
+            "channel_subscribers": 2800
+          }
+        ]
+      }
+    },
+    {
+      "entity": "Yang Ming Marine Transport",
+      "entity_type": "company",
+      "youtube_query": "阳明海运 2609 股票",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "Shipping stock with a strong Taiwan search rise and direct sensitivity to global freight rates and trade flows.",
+      "trend_evidence": "'陽明 股票' rose +110% and appeared in Taiwan Top related stock queries.",
+      "relevance_groups": [
+        [
+          "陽明海運",
+          "阳明海运",
+          "Yang Ming",
+          "2609",
+          "陽明",
+          "阳明"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 4,
+        "raw_recent_video_estimate": 4,
+        "raw_sample_size": 4,
+        "relevant_sample_size": 4,
+        "relevance_ratio": 100.0,
+        "median_views": 159,
+        "median_views_per_day": 121,
+        "small_channel_sample_size": 4,
+        "small_channel_median_views_per_day": 121,
+        "small_channel_hit_rate": 0.0,
+        "top10_small_channel_share": 100.0,
+        "top10_small_channel_count": 4,
+        "top10_known_channels": 4,
+        "median_channel_subscribers": 32,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [],
+        "status": "ok",
+        "sample_videos": [
+          {
+            "video_id": "LF5i1sFI-2A",
+            "title": "運價飆高、萬海半年報淨利狂增 96%！別只看貨櫃三雄，拆解 40 元以下設備零組件贏家！#台股 #航運股 #萬海 #陽明 #長榮 #運價飆漲 #旺季效應 #小資理財",
+            "channel_id": "UCJZFRN6kjCJPTkrW9m1a7xw",
+            "published_at": "2026-08-21T11:05:17+00:00",
+            "views": 1171,
+            "views_per_day": 602,
+            "channel_subscribers": 5
+          },
+          {
+            "video_id": "lAfedM5-ZLk",
+            "title": "🔥陽明爆量、萬海亮燈！航運股瘋追高？別傻了！拆解碼頭最關鍵的「鋼索吊具」隱形獲利黑馬！#台股 #航運股 #萬海 #陽明 #長榮 #港口設備 #剛性需求 #小資理財",
+            "channel_id": "UCNZZRuJ6qm817i-4ISsW2Bg",
+            "published_at": "2026-08-22T01:53:24+00:00",
+            "views": 265,
+            "views_per_day": 199,
+            "channel_subscribers": 37
+          },
+          {
+            "video_id": "1wo03jCF_nQ",
+            "title": "運價高檔、地緣政治干擾不斷！別只看貨櫃三雄，拆解航運冷鏈與關鍵零組件的真正贏家！#台股 #航運股 #陽明 #萬海 #長榮 #散裝航運 #冷鏈物流 #小資理財",
+            "channel_id": "UCRMJIEYDiUKIbFyx0tUqIBg",
+            "published_at": "2026-08-22T03:52:04+00:00",
+            "views": 54,
+            "views_per_day": 43,
+            "channel_subscribers": 34
+          },
+          {
+            "video_id": "X8mjowo4Kvc",
+            "title": "貨櫃三雄飆漲後怎麼選？避開航運景氣循環波動，鎖定越運越賺的船用設備贏家！#台股 #航運股 #陽明 #萬海 #長榮 #船用設備 #低基期飆股 #小資理財",
+            "channel_id": "UCFt2FlolFmM8vkiqNW5Wa8g",
+            "published_at": "2026-08-22T07:39:23+00:00",
+            "views": 19,
+            "views_per_day": 17,
+            "channel_subscribers": 30
+          }
+        ]
+      }
+    },
+    {
+      "entity": "Canadian bank stocks",
+      "entity_type": "other",
+      "youtube_query": "加拿大 银行股 Canadian bank stocks",
+      "regions": [
+        "CA"
+      ],
+      "selection_reason": "A defined financial-sector theme with rising interest; Canadian banks have U.S. listings and cross-border exposure, making the theme relevant enough for comparison content.",
+      "trend_evidence": "'canadian bank stocks' rose +60% and also appeared in Top related Canada stocks queries.",
+      "relevance_groups": [
+        [
+          "Canadian bank",
+          "Canadian banks",
+          "加拿大银行",
+          "加拿大銀行",
+          "RBC",
+          "TD Bank",
+          "BMO",
+          "Scotiabank",
+          "CIBC"
+        ]
+      ],
+      "youtube_metrics": {
+        "recent_video_estimate": 17,
+        "raw_recent_video_estimate": 17,
+        "raw_sample_size": 15,
+        "relevant_sample_size": 1,
+        "relevance_ratio": 6.7,
+        "median_views": 736,
+        "median_views_per_day": 320,
+        "small_channel_sample_size": 1,
+        "small_channel_median_views_per_day": 320,
+        "small_channel_hit_rate": 0.0,
+        "top10_small_channel_share": 100.0,
+        "top10_small_channel_count": 1,
+        "top10_known_channels": 1,
+        "median_channel_subscribers": 3900,
+        "small_channel_max_subscribers": 50000,
+        "small_channel_hit_vpd_threshold": 1000,
+        "relevance_filter_applied": true,
+        "rejected_sample_titles": [
+          "放水上漲！年底要發財，這些股票必須提前佈局！",
+          "U.S. economy is losing momentum: Rosenberg",
+          "连续跌跌跌跌跌！｜ 空头太强，多头无力，这是最后防线！｜ 第1838期「幂笈投资」2026 moomoo",
+          "命理師把日期講死了：九月和十二月防大震，這種點名到月份的預警，過去對過幾次？",
+          "FAULTLINE | THRILLER | Full Movie in English"
         ],
         "status": "ok_low_relevance",
         "sample_videos": [
           {
-            "video_id": "6qfFWJSHrSk",
-            "title": "Tim Knight Is Short Mining Stocks While Silver Breaks Out",
-            "channel_id": "UCLJiSMXJ9K-1AOTqIqdXJgQ",
-            "published_at": "2026-08-20T22:31:35+00:00",
-            "views": 4038,
-            "views_per_day": 2007,
-            "channel_subscribers": 491000
-          },
-          {
-            "video_id": "632hwGPqTtI",
-            "title": "These 5 Mining Stocks Are Massively Undervalued — Steppe Gold/Heliostar/Stllr/Denarius/Rio Silver",
-            "channel_id": "UCocuDNxiw0EeUJXKi-5h7TA",
-            "published_at": "2026-08-21T12:00:21+00:00",
-            "views": 2226,
-            "views_per_day": 1535,
-            "channel_subscribers": 803
-          },
-          {
-            "video_id": "aIOCvW5F0iQ",
-            "title": "Masterclass: Investing in Gold/Silver Mining Stocks (Part 4)",
-            "channel_id": "UCtSChNaSSTZiUYlo4R1yPJw",
-            "published_at": "2026-08-21T23:21:47+00:00",
-            "views": 1138,
-            "views_per_day": 1164,
-            "channel_subscribers": 15600
-          },
-          {
-            "video_id": "xStvPtnhzZ8",
-            "title": "SHOULD YOU BUY PHYSICAL SILVER OR MINING STOCKS? #stockmarket #stocks #silver #gold #wealth #money ",
-            "channel_id": "UC9TaVP8KMpExfGmWEftBdPQ",
-            "published_at": "2026-08-21T11:02:16+00:00",
-            "views": 165,
-            "views_per_day": 111,
-            "channel_subscribers": 15600
+            "video_id": "YLK37T-vFjc",
+            "title": "Bond Yields, Nvidia, Canadian Banks, & Oil - Top 3 This Week",
+            "channel_id": "UCaGIjp6alNg08a39MzoRitA",
+            "published_at": "2026-08-21T02:36:07+00:00",
+            "views": 736,
+            "views_per_day": 320,
+            "channel_subscribers": 3900
           }
-        ],
-        "cache_status": "fresh"
-      }
-    },
-    {
-      "entity": "Alibaba earnings",
-      "entity_type": "company",
-      "youtube_query": "Alibaba earnings BABA",
-      "regions": [
-        "US"
-      ],
-      "selection_reason": "Large U.S.-listed China tech ADR with a clean breakout earnings signal.",
-      "trend_evidence": "'alibaba earnings' was Breakout and #3 Rising under the U.S. earnings anchor.",
-      "relevance_groups": [
-        [
-          "Alibaba",
-          "BABA",
-          "阿里巴巴",
-          "阿里"
-        ],
-        [
-          "earnings",
-          "results",
-          "財報",
-          "财报",
-          "業績",
-          "业绩",
-          "quarterly"
         ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": 90,
-        "raw_recent_video_estimate": 90,
-        "raw_sample_size": 50,
-        "relevant_sample_size": 16,
-        "relevance_ratio": 32.0,
-        "median_views": 333,
-        "median_views_per_day": 160,
-        "small_channel_sample_size": 12,
-        "small_channel_median_views_per_day": 41,
-        "small_channel_hit_rate": 8.3,
-        "top10_small_channel_share": 60.0,
-        "top10_small_channel_count": 6,
-        "top10_known_channels": 10,
-        "median_channel_subscribers": 5755,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "status": "ok",
-        "sample_videos": [
-          {
-            "video_id": "PqsA_LUUZNg",
-            "title": "AI到底是不是泡沫？阿里一份财报，同时交出最强证据与反驳",
-            "channel_id": "UC4dyVdpmR2CGIjf3nCf5tRg",
-            "published_at": "2026-08-22T00:30:14+00:00",
-            "views": 960,
-            "views_per_day": 1044,
-            "channel_subscribers": 10600
-          },
-          {
-            "video_id": "a7r2-T0vUmU",
-            "title": "Will Alibaba Stock Ever Get Out of This Rout? (Q2 Earnings)",
-            "channel_id": "UC7gT9AKELxe038gRI1eu3TQ",
-            "published_at": "2026-08-20T15:08:29+00:00",
-            "views": 2104,
-            "views_per_day": 911,
-            "channel_subscribers": 896
-          },
-          {
-            "video_id": "bvWG1Ez52a4",
-            "title": "BABA Earnings Mixed Despite Cloud Growth: What's Next for AI Push?",
-            "channel_id": "UCqoSrYgusd8ZddtMoWhjHYA",
-            "published_at": "2026-08-20T15:30:23+00:00",
-            "views": 1797,
-            "views_per_day": 783,
-            "channel_subscribers": 334000
-          },
-          {
-            "video_id": "5MyYuVMBVvA",
-            "title": "Morning Minute: WMT & BABA Earnings, Bitcoin Surges #shorts",
-            "channel_id": "UCqoSrYgusd8ZddtMoWhjHYA",
-            "published_at": "2026-08-20T12:35:17+00:00",
-            "views": 1846,
-            "views_per_day": 764,
-            "channel_subscribers": 334000
-          },
-          {
-            "video_id": "wB8BajKgjH8",
-            "title": "Alibaba Gr Hldgs Q1 FY27 Earnings Call | $BABA | 🔴 WATCH LIVE",
-            "channel_id": "UCqQs28K2zj2dOsc5NfXUKEg",
-            "published_at": "2026-08-21T01:12:23+00:00",
-            "views": 981,
-            "views_per_day": 519,
-            "channel_subscribers": 300000
-          },
-          {
-            "video_id": "6ZFhEM74pPE",
-            "title": "Alibaba Earnings: Why BABA Is No Longer a Value Stock",
-            "channel_id": "UC91vSyd18j5qn-8qZOBpWFg",
-            "published_at": "2026-08-20T15:29:35+00:00",
-            "views": 699,
-            "views_per_day": 305,
-            "channel_subscribers": 1550
-          },
-          {
-            "video_id": "-hNs6LjgDwI",
-            "title": "Walmart Drops, Alibaba ADRs, Coty Sinks After Fourth Quarter Results | Stock Movers",
-            "channel_id": "UChF5O40UBqAc82I7-i5ig6A",
-            "published_at": "2026-08-20T15:54:28+00:00",
-            "views": 545,
-            "views_per_day": 239,
-            "channel_subscribers": 552000
-          },
-          {
-            "video_id": "aY4EnqI8k8g",
-            "title": "ROSS STORES EARNINGS LIVE 🚨 Walmart Q2 FY27 Results! | ROST WMT BABA DE AAP FLO Earnings Aug 20",
-            "channel_id": "UCbXQQXGiXgcJam6bI33p2vg",
-            "published_at": "2026-08-20T21:14:19+00:00",
-            "views": 345,
-            "views_per_day": 168,
-            "channel_subscribers": 16100
-          },
-          {
-            "video_id": "geJb_loWENo",
-            "title": "Alibaba Q1 Earnings: Cloud Surges 45% Despite Profit Drop",
-            "channel_id": "UC9ZGkLwawKeG5C0Dt9FS-lQ",
-            "published_at": "2026-08-20T19:45:02+00:00",
-            "views": 321,
-            "views_per_day": 152,
-            "channel_subscribers": 36700
-          },
-          {
-            "video_id": "yconq16F_z8",
-            "title": "BABA Stock: Alibaba June Quarter 2026 Earnings - The 92% Miss That Wasn't #Shorts",
-            "channel_id": "UC4ZDZpC0OvoN4cCGoUSofuA",
-            "published_at": "2026-08-22T13:47:29+00:00",
-            "views": 17,
-            "views_per_day": 47,
-            "channel_subscribers": 563
-          }
-        ],
-        "cache_status": "fresh"
       }
     },
     {
-      "entity": "Strategy / MSTR",
-      "entity_type": "company",
-      "youtube_query": "MSTR 股票 Strategy Bitcoin",
+      "entity": "Binance Agent OS",
+      "entity_type": "other",
+      "youtube_query": "Binance Agent OS AI 交易",
       "regions": [
-        "TW"
-      ],
-      "selection_reason": "U.S.-listed high-beta Bitcoin proxy with a fresh Chinese-language investing breakout.",
-      "trend_evidence": "'mstr 股票' was Breakout and #3 Rising under Taiwan's 股票 anchor.",
-      "relevance_groups": [
-        [
-          "MSTR",
-          "MicroStrategy",
-          "Strategy stock",
-          "Strategy Bitcoin",
-          "微策略"
-        ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "rejected_sample_titles": [],
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_metric': 'youtube.googleapis.com/search_list', 'quota_unit': '1/d/{project}', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_limit_value': '100', 'service': 'youtube.googleapis.com', 'window_start_time': '1787382000', 'consumer': 'projects/316383767993', 'quota_location': 'global'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
-      }
-    },
-    {
-      "entity": "Walmart earnings",
-      "entity_type": "company",
-      "youtube_query": "Walmart earnings WMT",
-      "regions": [
-        "US",
         "CA"
       ],
-      "selection_reason": "Very strong repeated earnings demand across multiple query variants and two regions.",
-      "trend_evidence": "'walmart earnings release' was Breakout; 'walmart earnings call' rose +4,250%, 'walmart earnings' +3,100% in the U.S. and +110% in Canada, with several other WMT earnings variants also rising.",
+      "selection_reason": "Fresh AI-plus-crypto catalyst with clear product news and potential implications for automated trading, exchanges and AI-agent adoption.",
+      "trend_evidence": "Google Trending RSS for 'binance trading' surfaced news that Binance launched Agent OS and an MCP trading server allowing AI agents to trade; 'binance exchange' was also trending in Canada.",
       "relevance_groups": [
         [
-          "Walmart",
-          "WMT",
-          "沃爾瑪",
-          "沃尔玛"
+          "Binance",
+          "币安",
+          "幣安"
         ],
         [
-          "earnings",
-          "results",
-          "財報",
-          "财报",
-          "業績",
-          "业绩",
-          "quarterly"
+          "Agent OS",
+          "AI agent",
+          "AI agents",
+          "MCP",
+          "智能体",
+          "智能體",
+          "agent trading"
         ]
       ],
       "youtube_metrics": {
-        "recent_video_estimate": 299,
-        "raw_recent_video_estimate": 299,
-        "raw_sample_size": 50,
-        "relevant_sample_size": 19,
-        "relevance_ratio": 38.0,
-        "median_views": 267,
-        "median_views_per_day": 129,
-        "small_channel_sample_size": 12,
-        "small_channel_median_views_per_day": 17,
+        "recent_video_estimate": 8,
+        "raw_recent_video_estimate": 8,
+        "raw_sample_size": 8,
+        "relevant_sample_size": 3,
+        "relevance_ratio": 37.5,
+        "median_views": 11,
+        "median_views_per_day": 5,
+        "small_channel_sample_size": 3,
+        "small_channel_median_views_per_day": 5,
         "small_channel_hit_rate": 0.0,
-        "top10_small_channel_share": 30.0,
+        "top10_small_channel_share": 100.0,
         "top10_small_channel_count": 3,
-        "top10_known_channels": 10,
-        "median_channel_subscribers": 8890,
+        "top10_known_channels": 3,
+        "median_channel_subscribers": 224,
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
+        "rejected_sample_titles": [
+          "AI真能替你下单，Binance最后一道防线是权限",
+          "AI 現在可以直接下單，虧多少你自己決定",
+          "每日速报：特朗普要Hyperliquid合规入美 | CFTC主席放话备好监管规则 野村获日本首牌 | HYPE暴涨山寨季仍悬",
+          "바이낸스가 AI 에이전트에게 코인 거래를 맡긴다 | 오늘의 AI 뉴스 #Shorts",
+          "LongCipher 2026-08-21 金融与科技早报#金融 #早报 #分析 #科技 #量化"
+        ],
         "status": "ok",
         "sample_videos": [
           {
-            "video_id": "AhNIaoVauOk",
-            "title": "Stocks Fall on Walmart Earnings as Bessent Pump Proves Temporary",
-            "channel_id": "UCYp-onWoQk6R9kCTij5KkkQ",
-            "published_at": "2026-08-20T13:56:23+00:00",
-            "views": 8931,
-            "views_per_day": 3785,
-            "channel_subscribers": 73400
+            "video_id": "56VL0oAXMoM",
+            "title": "Podcast: AI Agents Spend Real Money | Binance Agent OS | Who Is Liable",
+            "channel_id": "UCevfdCOTJCnPWOxGVaqDUJQ",
+            "published_at": "2026-08-21T15:00:24+00:00",
+            "views": 13,
+            "views_per_day": 7,
+            "channel_subscribers": 68
           },
           {
-            "video_id": "_nZccpii3T8",
-            "title": "Crypto Rallies & Tech Slumps, WMT Falls on Earnings Beat & Raise",
-            "channel_id": "UCqoSrYgusd8ZddtMoWhjHYA",
-            "published_at": "2026-08-20T12:30:33+00:00",
-            "views": 4830,
-            "views_per_day": 1997,
-            "channel_subscribers": 334000
+            "video_id": "QMEKmQMbTNA",
+            "title": "深度观察：AI代理开始真金白银交易 十亿黑客损失将成零钱 | 币安Agent OS AI代理交易与安全黑洞 | 交易量或暴增百倍",
+            "channel_id": "UC9yMC9yBNSof9OOQ3D_ibOw",
+            "published_at": "2026-08-21T03:00:26+00:00",
+            "views": 11,
+            "views_per_day": 5,
+            "channel_subscribers": 224
           },
           {
-            "video_id": "TOnIkgpvyTY",
-            "title": "Daily Trader: WMT \"Interesting\" Stock Set-Up After Earnings #shorts",
-            "channel_id": "UCqoSrYgusd8ZddtMoWhjHYA",
-            "published_at": "2026-08-20T16:15:09+00:00",
-            "views": 3667,
-            "views_per_day": 1620,
-            "channel_subscribers": 334000
-          },
-          {
-            "video_id": "YIdYgKDnH64",
-            "title": "Stock Market Today: WMT Earnings Plunge, DE Soars, Crypto Surges #shorts",
-            "channel_id": "UCqoSrYgusd8ZddtMoWhjHYA",
-            "published_at": "2026-08-20T23:00:22+00:00",
-            "views": 2553,
-            "views_per_day": 1288,
-            "channel_subscribers": 334000
-          },
-          {
-            "video_id": "mJvVjeq2eIg",
-            "title": "Retail Earnings Recap: TJX Earnings Sell-Off Opportunity & WMT Options Trade",
-            "channel_id": "UCqoSrYgusd8ZddtMoWhjHYA",
-            "published_at": "2026-08-21T16:30:28+00:00",
-            "views": 1135,
-            "views_per_day": 906,
-            "channel_subscribers": 334000
-          },
-          {
-            "video_id": "5MyYuVMBVvA",
-            "title": "Morning Minute: WMT & BABA Earnings, Bitcoin Surges #shorts",
-            "channel_id": "UCqoSrYgusd8ZddtMoWhjHYA",
-            "published_at": "2026-08-20T12:35:17+00:00",
-            "views": 1846,
-            "views_per_day": 764,
-            "channel_subscribers": 334000
-          },
-          {
-            "video_id": "WVpVtxJUNto",
-            "title": "🚨 Walmart BEAT Earnings… So Why Did WMT Stock CRASH?!",
-            "channel_id": "UCrx-0HGFnXly5NW-XzkNLFA",
-            "published_at": "2026-08-20T22:55:41+00:00",
-            "views": 1011,
-            "views_per_day": 509,
-            "channel_subscribers": 4280
-          },
-          {
-            "video_id": "3dLP0FdIp8k",
-            "title": "Sarah Henry on TGT \"Early Days\" of Turnaround & WMT Earnings Preview",
-            "channel_id": "UCqoSrYgusd8ZddtMoWhjHYA",
-            "published_at": "2026-08-20T00:00:25+00:00",
-            "views": 1351,
-            "views_per_day": 460,
-            "channel_subscribers": 334000
-          },
-          {
-            "video_id": "aY4EnqI8k8g",
-            "title": "ROSS STORES EARNINGS LIVE 🚨 Walmart Q2 FY27 Results! | ROST WMT BABA DE AAP FLO Earnings Aug 20",
-            "channel_id": "UCbXQQXGiXgcJam6bI33p2vg",
-            "published_at": "2026-08-20T21:14:19+00:00",
-            "views": 345,
-            "views_per_day": 168,
-            "channel_subscribers": 16100
-          },
-          {
-            "video_id": "pW0EKw2-ZeU",
-            "title": "Walmart Stock Tumbles 10%: Earnings Analysis and Valuation Review",
-            "channel_id": "UC9ZGkLwawKeG5C0Dt9FS-lQ",
-            "published_at": "2026-08-20T21:00:34+00:00",
-            "views": 267,
-            "views_per_day": 129,
-            "channel_subscribers": 36700
+            "video_id": "W5lwYbiJE3E",
+            "title": "深度观察：AI代理开始真金白银交易 十亿黑客损失将成零钱 | 币安Agent OS AI代理交易与安全黑洞 | 交易量或暴增百倍",
+            "channel_id": "UC9yMC9yBNSof9OOQ3D_ibOw",
+            "published_at": "2026-08-21T03:00:04+00:00",
+            "views": 4,
+            "views_per_day": 2,
+            "channel_subscribers": 224
           }
-        ],
-        "cache_status": "fresh"
+        ]
       }
     },
     {
-      "entity": "NVIDIA earnings",
-      "entity_type": "company",
-      "youtube_query": "NVIDIA earnings NVDA",
+      "entity": "AI agents",
+      "entity_type": "other",
+      "youtube_query": "AI Agent 美股",
       "regions": [
         "US",
-        "CA"
-      ],
-      "selection_reason": "Major AI-market catalyst with repeated rising earnings queries across the U.S. and Canada.",
-      "trend_evidence": "'nvda earnings prediction' was Breakout; 'nvidia earnings' rose +100% in Canada and +60% in the U.S.; 'nvda earnings' also rose +100%.",
-      "relevance_groups": [
-        [
-          "NVIDIA",
-          "NVDA",
-          "英偉達",
-          "英伟达",
-          "輝達",
-          "辉达"
-        ],
-        [
-          "earnings",
-          "results",
-          "財報",
-          "财报",
-          "業績",
-          "业绩",
-          "quarterly"
-        ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "rejected_sample_titles": [],
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/316383767993', 'quota_unit': '1/d/{project}', 'quota_location': 'global', 'service': 'youtube.googleapis.com', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_limit_value': '100', 'quota_metric': 'youtube.googleapis.com/search_list'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
-      }
-    },
-    {
-      "entity": "Yageo",
-      "entity_type": "company",
-      "youtube_query": "國巨 Yageo 股票",
-      "regions": [
+        "CA",
         "TW"
       ],
-      "selection_reason": "Electronics-component company relevant to the global tech supply chain with unusually strong Taiwan investor interest.",
-      "trend_evidence": "'國巨' rose +800% under Taiwan's 股票 anchor and also appeared in Top queries.",
+      "selection_reason": "Cross-market AI theme with direct relevance to software, cloud and platform beneficiaries; kept because interest spans all three discovery markets even without one single company catalyst.",
+      "trend_evidence": "'ai agent' appeared in Top related YouTube queries in the U.S. and Taiwan, while 'ai agents' appeared in U.S./Canada Top queries; Binance's Agent OS news provides a fresh adjacent catalyst.",
       "relevance_groups": [
         [
-          "Yageo",
-          "國巨",
-          "国巨"
+          "AI agent",
+          "AI agents",
+          "agentic AI",
+          "智能体",
+          "智能體",
+          "AI代理"
         ]
       ],
       "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "rejected_sample_titles": [],
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'window_start_time': '1787382000', 'service': 'youtube.googleapis.com', 'consumer': 'projects/316383767993', 'quota_location': 'global', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_unit': '1/d/{project}', 'quota_limit_value': '100'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
-      }
-    },
-    {
-      "entity": "Ross Stores earnings",
-      "entity_type": "company",
-      "youtube_query": "Ross Stores earnings ROST",
-      "regions": [
-        "US"
-      ],
-      "selection_reason": "Specific U.S. consumer stock with a strong fresh earnings signal and likely lower creator saturation than Walmart.",
-      "trend_evidence": "'ross earnings' rose +450% under U.S. earnings and also appeared in Top results.",
-      "relevance_groups": [
-        [
-          "Ross Stores",
-          "ROST",
-          "Ross earnings"
-        ],
-        [
-          "earnings",
-          "results",
-          "財報",
-          "财报",
-          "業績",
-          "业绩",
-          "quarterly"
-        ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "rejected_sample_titles": [],
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_limit_value': '100', 'consumer': 'projects/316383767993', 'window_start_time': '1787382000', 'quota_unit': '1/d/{project}', 'service': 'youtube.googleapis.com', 'quota_location': 'global', 'quota_metric': 'youtube.googleapis.com/search_list'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
-      }
-    },
-    {
-      "entity": "Evergreen Marine",
-      "entity_type": "company",
-      "youtube_query": "長榮 海運 股票 Evergreen Marine",
-      "regions": [
-        "TW"
-      ],
-      "selection_reason": "Shipping equity with rising Chinese-language investor interest and macro relevance through global freight/trade flows.",
-      "trend_evidence": "'長榮 海運 股票' rose +300%; '長榮 股票' also rose +90% and appeared in Top results.",
-      "relevance_groups": [
-        [
-          "Evergreen Marine",
-          "長榮海運",
-          "长荣海运",
-          "長榮航運",
-          "长荣航运"
-        ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": 3,
-        "raw_recent_video_estimate": 3,
-        "raw_sample_size": 3,
+        "recent_video_estimate": 44,
+        "raw_recent_video_estimate": 44,
+        "raw_sample_size": 42,
         "relevant_sample_size": 0,
         "relevance_ratio": 0.0,
         "median_views": 0,
@@ -946,264 +1530,149 @@
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
         "rejected_sample_titles": [
-          "運價高檔、地緣政治干擾不斷！別只看貨櫃三雄，拆解航運冷鏈與關鍵零組件的真正贏家！#台股 #航運股 #陽明 #萬海 #長榮 #散裝航運 #冷鏈物流 #小資理財",
-          "貨櫃三雄飆漲後怎麼選？避開航運景氣循環波動，鎖定越運越賺的船用設備贏家！#台股 #航運股 #陽明 #萬海 #長榮 #船用設備 #低基期飆股 #小資理財",
-          "運價飆高、萬海半年報淨利狂增 96%！別只看貨櫃三雄，拆解 40 元以下設備零組件贏家！#台股 #航運股 #萬海 #陽明 #長榮 #運價飆漲 #旺季效應 #小資理財"
+          "Michael Burry做空NBIS ，三大逻辑到底是什么？｜Neocloud基本面｜AI融资分析",
+          "【漫話美股公司】華爾街把你的股票帳戶交給了AI！24小時自動炒股狂攬超額收益，還是半夜閃崩清空錢包的終極陷阱？！AI the Keys to Your Portfolio",
+          "一次搞懂Token與API：AI到底怎麼運作、怎麼計費？Understanding Tokens and APIs: How Does AI Work and How Is It Billed?",
+          "Google发明了AI时代，却为什么没能定义AI时代？",
+          "美國財政部救美債！美股先撐不住？殖利率壓不住的風險，正在轉向美元與黃金？｜盤中速解讀 2026/08/20"
         ],
-        "status": "ok_no_relevant_videos",
-        "cache_status": "fresh"
+        "status": "ok_no_relevant_videos"
       }
     },
     {
       "entity": "SpaceX",
       "entity_type": "company",
-      "youtube_query": "SpaceX 股票 投資",
+      "youtube_query": "SpaceX 美股 投资",
       "regions": [
         "TW"
       ],
-      "selection_reason": "Private company but highly relevant to listed space/AI suppliers and investor attention, with a fresh Taiwan signal.",
-      "trend_evidence": "'spacex' rose +250% under Taiwan's 股票 anchor and appeared in Top results.",
+      "selection_reason": "Private company but highly relevant to public-market investor attention through suppliers, potential future listing interest and Musk-related capital allocation themes.",
+      "trend_evidence": "'spacex' rose +250% in Taiwan stocks-related YouTube Search.",
       "relevance_groups": [
         [
-          "SpaceX"
+          "SpaceX",
+          "太空探索科技",
+          "太空探索"
         ]
       ],
       "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
+        "recent_video_estimate": 243,
+        "raw_recent_video_estimate": 243,
+        "raw_sample_size": 50,
+        "relevant_sample_size": 33,
+        "relevance_ratio": 66.0,
+        "median_views": 365,
+        "median_views_per_day": 175,
+        "small_channel_sample_size": 30,
+        "small_channel_median_views_per_day": 132,
+        "small_channel_hit_rate": 10.0,
+        "top10_small_channel_share": 90.0,
+        "top10_small_channel_count": 9,
+        "top10_known_channels": 10,
+        "median_channel_subscribers": 4490,
         "small_channel_max_subscribers": 50000,
         "small_channel_hit_vpd_threshold": 1000,
         "relevance_filter_applied": true,
-        "rejected_sample_titles": [],
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'service': 'youtube.googleapis.com', 'quota_location': 'global', 'quota_metric': 'youtube.googleapis.com/search_list', 'consumer': 'projects/316383767993', 'window_start_time': '1787382000', 'quota_unit': '1/d/{project}', 'quota_limit_value': '100', 'quota_limit': 'defaultSearchListPerDayPerProject'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
-      }
-    },
-    {
-      "entity": "ON Semiconductor",
-      "entity_type": "company",
-      "youtube_query": "onsemi ON Semiconductor stock",
-      "regions": [
-        "US"
-      ],
-      "selection_reason": "Specific U.S.-listed chip company with rising search demand; query is deliberately phrased with 'onsemi' to reduce ambiguity in enrichment.",
-      "trend_evidence": "'on semiconductor stock' rose +190%; 'on semiconductor' also rose +70% and ranked highly in Top results.",
-      "relevance_groups": [
-        [
-          "ON Semiconductor",
-          "onsemi",
-          "ON stock"
-        ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "rejected_sample_titles": [],
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'window_start_time': '1787382000', 'service': 'youtube.googleapis.com', 'consumer': 'projects/316383767993', 'quota_location': 'global', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_unit': '1/d/{project}', 'quota_limit_value': '100'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
-      }
-    },
-    {
-      "entity": "Moderna",
-      "entity_type": "company",
-      "youtube_query": "Moderna MRNA stock",
-      "regions": [
-        "TW"
-      ],
-      "selection_reason": "U.S.-listed biotech name with a fresh Taiwan stock-search signal.",
-      "trend_evidence": "'mrna 股票' rose +200% under Taiwan's 股票 anchor.",
-      "relevance_groups": [
-        [
-          "Moderna",
-          "MRNA stock",
-          "MRNA 股票"
-        ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "rejected_sample_titles": [],
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'service': 'youtube.googleapis.com', 'quota_location': 'global', 'quota_metric': 'youtube.googleapis.com/search_list', 'consumer': 'projects/316383767993', 'window_start_time': '1787382000', 'quota_unit': '1/d/{project}', 'quota_limit_value': '100', 'quota_limit': 'defaultSearchListPerDayPerProject'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
-      }
-    },
-    {
-      "entity": "TSMC",
-      "entity_type": "company",
-      "youtube_query": "TSMC 台積電 stock semiconductor",
-      "regions": [
-        "US",
-        "TW"
-      ],
-      "selection_reason": "Core global semiconductor foundry and direct read-through for U.S. AI/chip equities, with signals in both English and Chinese searches.",
-      "trend_evidence": "'taiwan semiconductor stock' rose +140% in the U.S.; '台積電 股票' also appeared in Taiwan Top results.",
-      "relevance_groups": [
-        [
-          "TSMC",
-          "台積電",
-          "台积电",
-          "Taiwan Semiconductor"
-        ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "rejected_sample_titles": [],
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'service': 'youtube.googleapis.com', 'consumer': 'projects/316383767993', 'window_start_time': '1787382000', 'quota_location': 'global', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_limit_value': '100', 'quota_unit': '1/d/{project}', 'quota_metric': 'youtube.googleapis.com/search_list'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
-      }
-    },
-    {
-      "entity": "AI data centers",
-      "entity_type": "other",
-      "youtube_query": "AI data center stocks NVIDIA power",
-      "regions": [
-        "CA"
-      ],
-      "selection_reason": "Core AI-capex infrastructure theme connecting semiconductors, networking, power and data-center beneficiaries.",
-      "trend_evidence": "'ai data center' rose +110% under Canada's AI anchor.",
-      "relevance_groups": [
-        [
-          "AI",
-          "artificial intelligence",
-          "人工智能",
-          "人工智慧"
+        "rejected_sample_titles": [
+          "美股一周总结｜回调风险升温？下周3大重磅事件来袭，特斯拉该卖吗？｜#英伟达｜#特斯拉｜#美股｜#股票｜JohnLu谈股 #股票分析",
+          "Space X跌到131反而是机会？马斯克10GW算力计划曝光，目标直指300！SNDK为何比NVDA更容易翻倍？#美股 #股票 #股票分析 #投资 #股市  #spcx #nvda #sndk",
+          "Space X跌到131反而是机会？马斯克10GW算力计划曝光，目标直指300！SNDK为何比NVDA更容易翻倍？#美股 #股票 #股票分析 #投资 #股市 #spcx #nvda #sndk",
+          "特斯拉高开高走，多方开炮？【美股直通车】2026.08.22 #sam谈美股 #美股分析 #tsla #nvda #特斯拉 #英伟达",
+          "下半年AI投资 3只孤岛股逆势爆发"
         ],
-        [
-          "data center",
-          "data centre",
-          "datacenter",
-          "資料中心",
-          "数据中心"
+        "status": "ok",
+        "sample_videos": [
+          {
+            "video_id": "n5EhVA6mY8A",
+            "title": "🔴【每日要聞】重磅：貝森特救市，美債危機這題怎麼解？川普親自帶貨比特幣，黃金為何連續走強？谷歌牽手邁威爾，Spacex找到逆襲之路！｜小翠時政財經 20260820",
+            "channel_id": "UCOhck8oLoIwSJzmwYMXsSnQ",
+            "published_at": "2026-08-20T14:05:29+00:00",
+            "views": 43582,
+            "views_per_day": 15448,
+            "channel_subscribers": 343000
+          },
+          {
+            "video_id": "ok6596Mh_PA",
+            "title": "微软下周可能会出现做多机会，手中有现金的优先考虑微软！#纳斯达克 #道琼斯 #标普 #英伟达 #nvda   #谷歌 #股市 #美股 #微软 #spacex",
+            "channel_id": "UCP2MRR19ajlEoSfrH-zZG_g",
+            "published_at": "2026-08-22T10:00:05+00:00",
+            "views": 1315,
+            "views_per_day": 1326,
+            "channel_subscribers": 20600
+          },
+          {
+            "video_id": "AdJvEcdIImk",
+            "title": "闪迪1565盘中跌破就会出做空点！特斯拉如果涨至370，就会中期反转！#纳斯达克 #道琼斯 #标普 #英伟达 #nvda   #谷歌 #股市 #美股 #微软 #spacex",
+            "channel_id": "UCP2MRR19ajlEoSfrH-zZG_g",
+            "published_at": "2026-08-21T16:39:09+00:00",
+            "views": 1950,
+            "views_per_day": 1137,
+            "channel_subscribers": 20600
+          },
+          {
+            "video_id": "GyubxjP6TuA",
+            "title": "SPCX已出空点，位置138.89！闪迪、海力士的反弹基本已经结束，日内没有任何做多机会#纳斯达克 #道琼斯 #标普 #英伟达 #nvda   #谷歌 #股市 #美股 #微软 #spacex",
+            "channel_id": "UCP2MRR19ajlEoSfrH-zZG_g",
+            "published_at": "2026-08-20T16:39:26+00:00",
+            "views": 2792,
+            "views_per_day": 1029,
+            "channel_subscribers": 20600
+          },
+          {
+            "video_id": "vZNIouBGx_o",
+            "title": "特斯拉（TSLA）大涨多头大反攻，两只超跌科技龙头迎来补涨。#纳斯达克 #道琼斯 #标普 #英伟达 #nvda   #谷歌 #股市 #美股 #微软 #spacex",
+            "channel_id": "UCWN8q9va2kANpbkPnMmV3Bg",
+            "published_at": "2026-08-21T20:08:20+00:00",
+            "views": 1500,
+            "views_per_day": 956,
+            "channel_subscribers": 803
+          },
+          {
+            "video_id": "G3wvQ5EgagU",
+            "title": "SpaceX 股價從高點腰斬，現在究竟是長期投資人的絕佳買點，還是下跌才剛開始？",
+            "channel_id": "UC7VZ48OzZeXwSfHxiqs-yqg",
+            "published_at": "2026-08-20T13:00:11+00:00",
+            "views": 2448,
+            "views_per_day": 854,
+            "channel_subscribers": 1110
+          },
+          {
+            "video_id": "G_p396Dhdbs",
+            "title": "SPCX 3亿解禁！卖盘要变成买盘？暗藏玄机？这个信号已出现5次！#spcx #纳指#美股 #spcx解禁 #逻辑推演 #spacexstock  #spacex #走势推演 #技术分析教学 ",
+            "channel_id": "UCrFSgZXO2lNbZMAKCQ1PkkA",
+            "published_at": "2026-08-20T22:30:39+00:00",
+            "views": 1888,
+            "views_per_day": 764,
+            "channel_subscribers": 7190
+          },
+          {
+            "video_id": "W9Rvqc36iVg",
+            "title": "纳指五连阴下跌，机会还是风险，散户如何选择持续上涨的个股|美股| #TSLA#NVDA #算力#CRWV#MRNA#云计算#存储#MU#热点#RKLB#spacex #shorts #SK海力士",
+            "channel_id": "UCLdq5ucy1LW7wN0hlSU3k2g",
+            "published_at": "2026-08-22T16:10:56+00:00",
+            "views": 560,
+            "views_per_day": 763,
+            "channel_subscribers": 4490
+          },
+          {
+            "video_id": "pOmjQk0a0XM",
+            "title": "微软今天日内可能产生大的波动！海力士、闪迪、美光日内要留意做空点的行成！#纳斯达克 #道琼斯 #标普 #英伟达 #nvda   #谷歌 #股市 #美股 #微软 #spacex",
+            "channel_id": "UCP2MRR19ajlEoSfrH-zZG_g",
+            "published_at": "2026-08-21T11:22:40+00:00",
+            "views": 1274,
+            "views_per_day": 659,
+            "channel_subscribers": 20600
+          },
+          {
+            "video_id": "BoQus_sdvB0",
+            "title": "特斯拉暴涨4%！AI+机器人双重催化，还能涨多少？SpaceX减禁7%引发回调！跌破140美元就是机会？#美股 #股票 #股票分析 #投资 #股市 #spcx #tsla #mrvl",
+            "channel_id": "UC8RkEcvF-tY9yvLCexkVJBg",
+            "published_at": "2026-08-20T18:56:41+00:00",
+            "views": 1669,
+            "views_per_day": 637,
+            "channel_subscribers": 1120
+          }
         ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "rejected_sample_titles": [],
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_unit': '1/d/{project}', 'quota_limit_value': '100', 'window_start_time': '1787382000', 'service': 'youtube.googleapis.com', 'consumer': 'projects/316383767993', 'quota_metric': 'youtube.googleapis.com/search_list', 'quota_limit': 'defaultSearchListPerDayPerProject', 'quota_location': 'global'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
-      }
-    },
-    {
-      "entity": "Target earnings",
-      "entity_type": "company",
-      "youtube_query": "Target earnings TGT",
-      "regions": [
-        "US"
-      ],
-      "selection_reason": "Large U.S. retailer with a fresh earnings-search signal and a useful consumer-spending read-through.",
-      "trend_evidence": "'target earnings' rose +120% under the U.S. earnings anchor and ranked #9 in Top results.",
-      "relevance_groups": [
-        [
-          "Target earnings",
-          "Target Corporation",
-          "Target stock",
-          "TGT"
-        ],
-        [
-          "earnings",
-          "results",
-          "財報",
-          "财报",
-          "業績",
-          "业绩",
-          "quarterly"
-        ]
-      ],
-      "youtube_metrics": {
-        "recent_video_estimate": null,
-        "raw_recent_video_estimate": null,
-        "raw_sample_size": 0,
-        "relevant_sample_size": null,
-        "relevance_ratio": null,
-        "median_views": null,
-        "median_views_per_day": null,
-        "small_channel_sample_size": null,
-        "small_channel_median_views_per_day": null,
-        "small_channel_hit_rate": null,
-        "top10_small_channel_share": null,
-        "top10_small_channel_count": null,
-        "top10_known_channels": null,
-        "median_channel_subscribers": null,
-        "small_channel_max_subscribers": 50000,
-        "small_channel_hit_vpd_threshold": 1000,
-        "relevance_filter_applied": true,
-        "rejected_sample_titles": [],
-        "status": "api_failed_no_cache",
-        "api_error": "YouTube API 429: {'error': {'code': 429, 'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'errors': [{'message': \"Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per day' of service 'youtube.googleapis.com' for consumer 'project_number:316383767993'.\", 'domain': 'global', 'reason': 'rateLimitExceeded'}], 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_limit': 'defaultSearchListPerDayPerProject', 'consumer': 'projects/316383767993', 'quota_location': 'global', 'window_start_time': '1787382000', 'quota_unit': '1/d/{project}', 'quota_limit_value': '100', 'quota_metric': 'youtube.googleapis.com/search_list', 'service': 'youtube.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]}}"
       }
     }
   ]

@@ -1,31 +1,31 @@
 # YouTube Entity Enrichment
 
-Generated: **2026-08-25T09:49:29.243301+00:00**
+Generated: **2026-08-26T09:47:09.590603+00:00**
 
 This is a measurement table, not the final editorial ranking. ChatGPT reviews it after enrichment.
 
 | # | Entity | YouTube query | Relevant sample | Relevant % | Relevant median views/day | Small-channel median views/day | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---|
-| 1 | Gorilla Technology earnings | GRRR Gorilla Technology 财报 | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 2 | Semiconductor ETFs | 半导体 ETF semiconductor ETF | 2/50 | 4.0% | 730 | 730 | 50.0% | 100.0% | ok_low_relevance |
-| 3 | CrowdStrike earnings | CrowdStrike CRWD 财报 | 0/2 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 4 | U.S. semiconductor manufacturing | 美国 半导体制造 semiconductor manufacturing | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 5 | Applied Optoelectronics | AAOI 美股 | 22/41 | 53.7% | 142 | 142 | 36.4% | 100.0% | ok |
-| 6 | Disney earnings | Disney DIS 财报 | 0/2 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 7 | Amazon earnings | Amazon AMZN 财报 | 2/50 | 4.0% | 254 | 254 | 0.0% | 100.0% | ok_low_relevance |
-| 8 | Apple earnings | Apple AAPL 财报 | 1/25 | 4.0% | 0 | 0 | 0.0% | 100.0% | ok_low_relevance |
-| 9 | NVIDIA earnings | NVIDIA NVDA 财报 | 24/50 | 48.0% | 37 | 27 | 5.0% | 70.0% | ok |
-| 10 | IREN earnings | IREN 财报 AI data center | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 11 | Meta earnings | Meta META 财报 | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 12 | Memory stocks | 存储芯片 memory stocks HBM | 1/5 | 20.0% | 72 | 72 | 0.0% | 100.0% | ok_low_relevance |
-| 13 | United Microelectronics | 联电 UMC 美股 半导体 | 1/2 | 50.0% | 25867 | 0 | 0.0% | 0.0% | ok |
-| 14 | SpaceX | SpaceX 股票 投资 | 29/50 | 58.0% | 187 | 91 | 16.7% | 70.0% | ok |
-| 15 | AI agents | AI Agent 美股 投资 | 0/48 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 16 | TSMC | 台积电 TSMC 美股 | 17/48 | 35.4% | 1167 | 599 | 50.0% | 60.0% | ok |
-| 17 | ON Semiconductor | ON Semiconductor ON 美股 | 0/48 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 18 | Navitas Semiconductor | Navitas NVTS 美股 半导体 | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 19 | Walmart earnings | Walmart WMT 财报 | 3/6 | 50.0% | 18 | 15 | 0.0% | 66.7% | ok |
-| 20 | H-1B visa fee policy | H1B 签证 费用 科技股 | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 1 | NVIDIA earnings | NVIDIA NVDA 财报 輝達 | 21/42 | 50.0% | 95 | 73 | 5.3% | 80.0% | ok |
+| 2 | Intuit earnings | Intuit INTU 财报 | 0/3 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 3 | Semiconductor ETFs | 半导体 ETF semiconductor ETF SMH SOXX | 1/3 | 33.3% | 537 | 537 | 0.0% | 100.0% | ok |
+| 4 | U.S. semiconductor manufacturing | 美国 半导体制造 芯片 manufacturing | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 5 | CrowdStrike earnings | CrowdStrike CRWD 财报 | 0/2 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 6 | Bank of Nova Scotia earnings | Scotiabank BNS 财报 | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 7 | Dick's Sporting Goods earnings | Dick's Sporting Goods DKS 财报 | 0/4 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 8 | Zoom earnings | Zoom ZM 财报 | 1/2 | 50.0% | 64 | 64 | 0.0% | 100.0% | ok |
+| 9 | Circle Internet Group | Circle CRCL 美股 USDC | 5/5 | 100.0% | 13 | 13 | 0.0% | 100.0% | ok |
+| 10 | AU Optronics | 友达 AUO 面板 股票 | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 11 | Semiconductor supply chain | 半导体 供应链 semiconductor supply chain | 6/50 | 12.0% | 170 | 170 | 16.7% | 100.0% | ok_low_relevance |
+| 12 | Defense stocks | 美国 军工股 defense stocks | 0/5 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 13 | Gold mining stocks | 黄金矿业股 gold mining stocks | 2/15 | 13.3% | 22 | 22 | 0.0% | 100.0% | ok_low_relevance |
+| 14 | Silver mining stocks | 白银矿业股 silver mining stocks | 0/1 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 15 | AI agents | AI Agent 智能体 美股 | 0/14 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 16 | Claude AI / Anthropic | Claude AI Anthropic 美股 | 1/9 | 11.1% | 32 | 32 | 0.0% | 100.0% | ok_low_relevance |
+| 17 | ON Semiconductor | ON Semiconductor ON 美股 芯片 | 0/26 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 18 | TSMC | 台积电 TSMC 半导体 | 33/50 | 66.0% | 725 | 410 | 29.4% | 20.0% | ok |
+| 19 | Navitas Semiconductor | Navitas NVTS 美股 半导体 | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 20 | Power semiconductors | 功率半导体 power semiconductor 美股 | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.
@@ -36,84 +36,81 @@ This is a measurement table, not the final editorial ranking. ChatGPT reviews it
 
 ## Relevance filter diagnostics
 
-### Semiconductor ETFs — ok_low_relevance
-Relevance groups: `[["semiconductor ETF", "semiconductor ETFs", "SOXX", "SMH", "半导体ETF", "半導體ETF"]]`
-- Rejected: 90%買ETF都在這犯錯!重返4萬5最後逃命波 ft. 林正峰【 小宇宙大爆發 】
-- Rejected: "PBR 1.5배 밑? 미친 겁니다" 지금 삼성전자·SK하이닉스 주워 담으세요
-- Rejected: 【金融市場】20260825#台股大盤跌破支撐
-- Rejected: 엔비디아 주가는 7거래일 내내 떨어지는데 메모리 가격은 오르는 이유
-- Rejected: SK하이닉스 ETF레버리지  ETF인버스 매매 #주식 #주식투자  #다롬컴
+### Intuit earnings — ok_no_relevant_videos
+Relevance groups: `[["Intuit", "INTU", "QuickBooks", "TurboTax"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]`
+- Rejected: 【美股】财捷暴跌11%只是开始？800→250美元！财报越好股价越跌，AI正在掏空它的护城河？250美元到底能不能抄底？#美股 #美股分析 #财捷 #intc #财报 #暴跌 #裁员 #科技股
+- Rejected: 2026/08/26(三) 美債空頭回補，科技股警報解除？
+- Rejected: 中东局势骤变油价跳水，芯片股绝地大反击！DKS暴跌30%敲响消费警钟，还有哪些公司要被AI砸盘？#turbotax #quickbooks #dks
+
+### U.S. semiconductor manufacturing — ok_no_relevant_videos
+Relevance groups: `[["semiconductor", "semiconductors", "chip", "chips", "半导体", "半導體"], ["manufacturing", "fab", "fabs", "foundry", "foundries", "制造", "製造", "晶圆厂", "晶圓廠", "reshoring"]]`
+- Rejected: Chip Design से Artificial Intelligence तक, कैसे Future-Ready बन रहे हैं भारत के युवा? #NextGenBharat
+- Rejected: How a Computer Chip Is Made: From Sand to Billions of Transistors #shorts #chip
+- Rejected: Musk Is Betting Against 40 Years of Chip History
+- Rejected: U.S. Turns Korea’s Chip Cluster Into Leverage #Semiconductors #SouthKorea
+- Rejected: The US Just Blacklisted BYD, Alibaba, and Baidu
 
 ### CrowdStrike earnings — ok_no_relevant_videos
 Relevance groups: `[["CrowdStrike", "CRWD"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]`
 - Rejected: 黃師傅是日選股：中國心連心化肥(1866) | 主權及長線基金對阿里配售投信任票 | DeepSeek周末半價 Minimax、智誥首當其衝 | 25-8-2026
 - Rejected: 黃師傅是日選股：中國心連心化肥(1866) | 主權及長線基金對阿里配售投信任票 | DeepSeek周末半價 Minimax、智誥首當其衝 | 25-8-2026 (普)
 
-### U.S. semiconductor manufacturing — ok_no_relevant_videos
-Relevance groups: `[["semiconductor", "semiconductors", "chip", "chips", "半导体", "半導體"], ["manufacturing", "fabrication", "fab", "fabs", "制造", "製造", "生产", "生產"]]`
-- Rejected: 機器亮紅燈沒人修？中國晶片廠最怕成真#中國晶片 #ASML #中美科技戰 #半導體 #湖口老盧
-- Rejected: The US Just Blacklisted BYD, Alibaba, and Baidu
-- Rejected: 小米不只做手機！3nm晶片殺進AI自駕 | 小米自己做晶片！台積電3nm量產 | 手機AI汽車全包！小米打造晶片帝國 | 小米砸30億美元！3顆自研晶片一起來 | O3只是開始！小米自駕晶片全面出手
-- Rejected: 毛利率衝上31%，上銀真正的成長引擎，已經不只是滾珠螺桿？
-- Rejected: The Chip Map: Which Countries Really Control Semiconductors?
+### Dick's Sporting Goods earnings — ok_no_relevant_videos
+Relevance groups: `[["Dick's Sporting Goods", "DICK'S", "DKS"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]`
+- Rejected: 中东局势骤变油价跳水，芯片股绝地大反击！DKS暴跌30%敲响消费警钟，还有哪些公司要被AI砸盘？#turbotax #quickbooks #dks
+- Rejected: 芯片全线反弹，最惨的却是一家卖运动鞋的
+- Rejected: [GI TW 晚盤] 2026-08-25 今晚美股偏科技反彈但震盪加劇，低殖利率撐起半導體買盤，財報與通膨數據仍壓抑追價。
+- Rejected: 油价跌→利率降→成长股涨 英伟达止跌+2.19%  8月25日美股复盘
 
-### Disney earnings — ok_no_relevant_videos
-Relevance groups: `[["Disney", "DIS", "迪士尼"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]`
-- Rejected: 【漫話美股公司】迪士尼靠《動物方城市2》拯救樂園？！動物王國急補「胡蘿蔔眼鏡」新角色，是頂級IP飛輪還是炒冷飯遮掩資本開支？！
-- Rejected: 巴倫周刊2026.8.24：AI浪潮引爆美國再工業化，精選10檔潛力股！跟隨頂尖基金經理人，建倉生技投資。了解GLP-1如何重塑食品板塊？從F1賽車商機與高息特別股中，打造最抗通膨的防禦組合。
+### Semiconductor supply chain — ok_low_relevance
+Relevance groups: `[["semiconductor", "semiconductors", "chip", "chips", "半导体", "半導體"], ["supply chain", "供应链", "供應鏈"]]`
+- Rejected: The Helium Chokepoint: How a Party Balloon Gas Control the Tech War
+- Rejected: 日月光一家就砸了 3,300 億... 封測五雄狂燒 4,600 億是在搶什麼大單？｜2026/08/24 (一)
+- Rejected: 機器人崛起｜張振驊ft.工研院南分院執行長 周大鑫｜#shorts｜台灣大時代｜2026.08.29｜
+- Rejected: 88核对决256核，还有一家交不出时间表：Nvidia、AMD、Intel争的根本不是核数
+- Rejected: ST’s Third 2026 Price Hike Warns on Power Chips #Semiconductors #SupplyChain
 
-### Amazon earnings — ok_low_relevance
-Relevance groups: `[["Amazon", "AMZN", "亚马逊", "亞馬遜"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]`
-- Rejected: 美股 华尔街力挺NVDA：低估它了！MU警告：HBM远远供不应求！华尔街预测黄金目标价？SPCX多头还有戏吗？TSLA空头很强吗？SKHY、INTC、AVGO、GOOG、AAPL
-- Rejected: Meta 跌跌不休! 还有救吗? 四巨头估值更新!【美股分析】
-- Rejected: ENG为什么我说chanel,dior等大牌还会继续涨价？
-- Rejected: 英伟达财报前夜：最危险的不是AMD，是客户开始变脸
-- Rejected: 巴菲特重仓Google！AI砸下2050亿美元，暴跌后反而迎来黄金坑？          #纳斯达克 #特斯拉 #英伟达 #谷歌 #tsla #nvda #crcl #avgo #美股 #美股技术分析
+### Defense stocks — ok_no_relevant_videos
+Relevance groups: `[["defense", "defence", "aerospace and defense", "军工", "軍工", "国防", "國防"]]`
+- Rejected: 美國首次重稀土商用認證！利好不斷卻腰斬一半？Energy Fuels (UUUU) 完整深度拆解
+- Rejected: 【完结】與高冷校花意外一夜後她懷孕了！豪門父母百般刁難，殊不知我覺醒全能係統，化身投資之神逆襲暴富，跨越階層迎娶白富美，走上人生巔峰！#minidrama  #中國短劇#精彩大陸短劇
+- Rejected: 【精選】 習近平30年前求台商投資歷史重演！美國人名片「改印繁體」再偉大只能靠台灣？！ -《寶傑怎麼說》 劉寶傑
+- Rejected: 印尼KF-21毫無羞恥地再次要求降價，若這次讓步一次，其他國家肯定也會以此為先例
+- Rejected: 日本一鬆手，中國高階製造就停擺：五軸工具機全世界只有3個國家做得出來，卡了中國20年
 
-### Apple earnings — ok_low_relevance
-Relevance groups: `[["Apple", "AAPL", "苹果", "蘋果"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly", "earnings call"]]`
-- Rejected: 美股 华尔街力挺NVDA：低估它了！MU警告：HBM远远供不应求！华尔街预测黄金目标价？SPCX多头还有戏吗？TSLA空头很强吗？SKHY、INTC、AVGO、GOOG、AAPL
-- Rejected: 超級數據周砸盤？SK海力士/LITE/APPL應對邏輯，算力板塊是洗盤還是轉折？
-- Rejected: 美股 跌跌何时休？英伟达AI服务器迎15%涨幅！AAPL聚焦AI与新设备！MU又要下跌？Anthropic即将登陆华尔街！TSLA、SPCX、AVGO、AMD、SOXX、SNDK、NFLX、MRVL
-- Rejected: AI科技股领跌，新一轮调整行情开启了吗？8月24日盘前策略：做空AAPL，MU，SPCX #美股 #美股盘前 #美股行情 #美股分析 #盘前策略#aapl #mu#spcx
-- Rejected: NVDA财报前就看空！熊市价差成功获利，这笔期权为什么敢提前布局？#nvda #美股 #美股財報 #美股分析 #期权交易 #期权
+### Gold mining stocks — ok_low_relevance
+Relevance groups: `[["gold", "黄金", "黃金"], ["miner", "miners", "mining", "矿业", "礦業", "矿商", "礦商", "矿股", "礦股"]]`
+- Rejected: Gold price — this is my next buying level
+- Rejected: Newmont Mining #stock NEM hit a new high and here is why it matters for the #goldprice and you
+- Rejected: Why Most Mining Speculators Fail
+- Rejected: Copper Equivalent: What Does 100m at 1% REALLY Mean ⁉️
+- Rejected: FEG Idenburg Study: 390Koz @ 9.2g/t Gold Confirmed
 
-### IREN earnings — ok_no_relevant_videos
-Relevance groups: `[["IREN", "Iris Energy"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]`
-- Rejected: 【下班國際線】台股千點殺完了？台積電、聯發科誰才是贏家？艦長程正樺：這2族群成AI新黑馬！ft.程正樺 Ep.64路怡珍 @TheStormMedia
-- Rejected: What Happens When the AI Boom Stops?
-- Rejected: 財報好也可能跌？英偉達之後真正要看的，是這 3 個訊號！
-- Rejected: Why This Bitcoin Rally is going MUCH Higher!
-- Rejected: 全家跪舔養子逼他交出科研成果，還將他扔進火海燒成毀盡！不料他重活一世看清這惡心的親情，重回豪門誓讓仇人全部陪葬！#短劇 #逆襲 #推薦 #movie
-
-### Meta earnings — ok_no_relevant_videos
-Relevance groups: `[["Meta", "Facebook", "脸书", "臉書"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]`
-- Rejected: Meta 跌跌不休! 还有救吗? 四巨头估值更新!【美股分析】
-- Rejected: 🚨踢爆華爾街潛規則！Meta用7層空殼藏匿250億債務？五大科技巨頭「消失的2.1萬億」驚天秘密！AI狂潮背後的次貸危機？
-- Rejected: Meta一場夢蒸發6000億？暴跌70%後，點靠AI 絕地反彈？朱克伯格豪賭元宇宙到認錯，公司要賺錢，管理層有幾關鍵？【施傅教學】#Zuckerberg #公司故事
-- Rejected: 川普頻繁股市交易惹議 輝達財報叫好聲四起.AI伺服器明年傳漲15% 大立光晉升輝達FAU供鏈 3年多首見!矽晶圓漲價10%｜主播鄧凱銘｜【非凡Morning Call】20260824｜非凡財經新聞
-- Rejected: NVDA财报前就看空！熊市价差成功获利，这笔期权为什么敢提前布局？#nvda #美股 #美股財報 #美股分析 #期权交易 #期权
-
-### Memory stocks — ok_low_relevance
-Relevance groups: `[["memory", "DRAM", "NAND", "HBM", "存储", "存儲", "内存", "記憶體", "记忆体"]]`
-- Rejected: 30年美债冲上5.23%！谷歌微软加速自研，亚马逊甲骨文却被现金流卡住#谷歌 #微软 #亚马逊 #甲骨文 #美债收益率
-- Rejected: EP448｜希音估值缩水七成，东方甄选少发4亿薪酬：2026开始拼系统
-- Rejected: Китай готовится завалить рынок собственной оперативной памятью
-- Rejected: 长鑫上市后暴涨，国产DUV真交付了吗？三条证据拆开市场叙事
+### Silver mining stocks — ok_no_relevant_videos
+Relevance groups: `[["silver", "白银", "白銀"], ["miner", "miners", "mining", "矿业", "礦業", "矿商", "礦商", "矿股", "礦股"]]`
+- Rejected: MultiSUB🔥合伙开矿被兄弟背刺，一千块打发走！觉醒淘金系统疯狂挖矿，从穷光蛋逆袭成矿业巨头！
 
 ### AI agents — ok_no_relevant_videos
 Relevance groups: `[["AI agent", "AI agents", "agentic AI", "智能体", "智能體", "AI代理", "AI代理人"]]`
-- Rejected: 【股票】晶片巨頭搶著綁定！產能狂缺到2028，AI下半場供應鏈黑馬是他！ft.阮慕驊、廖婉婷｜下班經濟學769｜謝哲青、張珈瑄
-- Rejected: Meta 跌跌不休! 还有救吗? 四巨头估值更新!【美股分析】
+- Rejected: OpenAI联手博通造推理芯片，英伟达垄断地位危险了？#nvidia #openai #broadcom #tsmc #semiconductor #aichips #gpu #asics
+- Rejected: 輝達下一季指引多少才算驚喜？卡位AI存儲入口、鎖定算力供應鏈、開放小模型，三條新護城河能否讓NVDA再重估？
+- Rejected: 美股英伟达7连跌，AI硬件很便宜，PE 跌到18倍是黄金坑还是陷阱？#nvidia #nvda #jensenhuang #usstocks #stockmarket #semiconductor
+- Rejected: 英伟达财报有2810亿波动? AMD将超越英特尔再涨40%? 卖220亿算力META飙升52%? NVDA SMCI SNDK BE MRVL! 08252026 #美股 #股票 #美股分析 #投資
 - Rejected: OpenAI 驚爆倒閉危機？背後 8000 億美金資金鏈恐全面崩潰！🚨 AI 泡沫終局到了？
-- Rejected: 2026 AI算力芯片格局与投资机会（从GPU、CPU、云厂自研芯片到软件生态）
-- Rejected: TSLA暴涨5%！马斯克AI算力计划曝光，特斯拉机器人行情要启动了？英伟达涨价15%引爆AI产业链！#美股 #股票 #股票分析 #投资 #股市  #tsla #nvda #spcx #amd
+
+### Claude AI / Anthropic — ok_low_relevance
+Relevance groups: `[["Claude", "Claude AI", "Anthropic"]]`
+- Rejected: 美股MSFT（微软）是一台无敌的复利机器么？持仓214天复盘
+- Rejected: OpenAI 驚爆倒閉危機？背後 8000 億美金資金鏈恐全面崩潰！🚨 AI 泡沫終局到了？
+- Rejected: 為什麼會有開源和閉源之爭? 背後有什麼陰謀? 主權AI成為最新投資趨勢! 黃仁勳為什麼要高舉開源?《投資唔講廢話》Ep304【阿樂】
+- Rejected: 【AI大考】輝達連跌7天！財報再好也沒用？ #鐵板神授 謝晨彥分析師
+- Rejected: 阿里難敵AI燒錢？現金流變負數要配股？投資越來越危險？【邵博看新聞】［AI字幕］#am730 #邵志堯 #阿里巴巴 #配股 #ai #港股
 
 ### ON Semiconductor — ok_no_relevant_videos
-Relevance groups: `[["ON Semiconductor", "onsemi", "安森美"]]`
-- Rejected: 輝達連跌5天！特斯拉卻逆勢噴發？美股本週三大重磅事件，達利歐預言「三年大危機」！哪一檔股票能追？
-- Rejected: Meta 跌跌不休! 还有救吗? 四巨头估值更新!【美股分析】
-- Rejected: 全网都在吹英伟达，我讲它唯一的弱点 | 软肋系列EP01
-- Rejected: Intel vs AMD：AI行情谁更有爆发力？我更看好这只！ #AMD #Intel #AI #美股 #科技股 #股票
-- Rejected: 美股AI牛市关键节点：PCE+英伟达财报+杰克逊霍尔沃什首秀，三大调价器各个凶险！#usstocks #bigtech #bondmarket #kevinwarsh #inflation
+Relevance groups: `[["ON Semiconductor", "onsemi", "ON Semi"]]`
+- Rejected: OpenAI联手博通造推理芯片，英伟达垄断地位危险了？#nvidia #openai #broadcom #tsmc #semiconductor #aichips #gpu #asics
+- Rejected: 美股V型反弹！半导体、内存今天还能不能抄底？#美股 #美股直播 #美股行情 #科技股 #半导体 #内存 #光通信 #半导体ETF #AI芯片
+- Rejected: 美股英伟达7连跌，AI硬件很便宜，PE 跌到18倍是黄金坑还是陷阱？#nvidia #nvda #jensenhuang #usstocks #stockmarket #semiconductor
+- Rejected: 需求明明還在，美光與費半為什麼一直跌？機構正在悄悄切換定價邏輯！英偉達財報前必看！
+- Rejected: 秃瓢0824盘后 | 芯片重挫 | 美加摩擦 | 伊朗制裁 | 后市怎么走 | 明天怎么布局
 

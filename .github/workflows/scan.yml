@@ -12,10 +12,10 @@ on:
         required: false
         default: "1000"
   schedule:
-    # Toronto 05:00 = 09:00 UTC in EDT, 10:00 UTC in EST.
+    # Toronto 05:07 = 09:07 UTC in EDT, 10:07 UTC in EST.
     # Trigger both, then gate using America/Toronto so DST stays correct.
-    - cron: "0 9 * * *"
-    - cron: "0 10 * * *"
+    - cron: "7 9 * * *"
+    - cron: "7 10 * * *"
 
 permissions:
   contents: write

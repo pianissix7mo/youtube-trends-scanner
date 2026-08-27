@@ -1,187 +1,422 @@
 {
-  "generated_at_utc": "2026-08-26T09:44:55+00:00",
-  "source_raw_generated_at_utc": "2026-08-26T09:37:04.661690+00:00",
-  "notes": "Daily ChatGPT selection from the fresh 72-hour Google Trends YouTube Search run. 195 deduped candidates were reviewed across US, Canada and Taiwan. Of 12 planned Explore requests, 11 succeeded; Canada/semiconductor failed because the Explore interest-over-time chart did not render, not because of 429 rate limiting. Fresh RSS and the other successful Explore data were retained. Duplicate long-tail queries were merged; sports, entertainment, creator/channel names, generic how-to/evergreen queries and low-value noise were removed. Dynamic relevance_groups are intentionally recall-safe and are used only to determine whether returned YouTube titles are substantially about each selected entity/topic before metrics are calculated.",
+  "generated_at_utc": "2026-08-27T12:50:00+00:00",
+  "source_raw_generated_at_utc": "2026-08-27T12:44:57.837580+00:00",
+  "notes": "Daily ChatGPT selection from the fresh 72-hour Trends run. 187 deduped candidates were reviewed across US, Canada and Taiwan. NVIDIA earnings variants were collapsed into one entity; creator/channel names, generic beginner/how-to queries, sports/entertainment/weather noise, and non-investable AI-content queries were removed. The list favors actionable company, earnings, semiconductor, macro and sector themes while keeping some Taiwan/Canada signal diversity.",
   "selected": [
     {
       "entity": "NVIDIA earnings",
       "entity_type": "company",
-      "youtube_query": "NVIDIA NVDA 财报 輝達",
-      "regions": ["US", "CA", "TW"],
-      "selection_reason": "The dominant cross-region earnings story in the pool and directly relevant to AI, semiconductors and the broader U.S. equity market.",
-      "trend_evidence": "Multiple NVIDIA earnings variants were Breakout in the U.S. and Canada, with 'nvda earnings' Breakout and #1 Rising in Canada, 'nvidia earnings live' Breakout in both U.S. and Canada, and 'nvidia 財報' Breakout and #1 Rising in Taiwan.",
-      "relevance_groups": [["NVIDIA", "NVDA", "英伟达", "英偉達", "輝達", "辉达"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]
-    },
-    {
-      "entity": "Intuit earnings",
-      "entity_type": "company",
-      "youtube_query": "Intuit INTU 财报",
-      "regions": ["US", "CA"],
-      "selection_reason": "A major U.S. software/fintech company showing unusually strong fresh earnings demand in both North American discovery markets.",
-      "trend_evidence": "'intuit earnings' was Breakout and #4 Rising in Canada and +300% in the U.S.; 'intu earnings' was also Breakout in the U.S.",
-      "relevance_groups": [["Intuit", "INTU", "QuickBooks", "TurboTax"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]
-    },
-    {
-      "entity": "Semiconductor ETFs",
-      "entity_type": "asset",
-      "youtube_query": "半导体 ETF semiconductor ETF SMH SOXX",
-      "regions": ["US"],
-      "selection_reason": "A directly investable semiconductor theme with a Breakout signal, useful for viewers choosing broad AI-chip exposure rather than a single stock.",
-      "trend_evidence": "'semiconductor etfs' was Breakout and #1 Rising in U.S. YouTube Search under the semiconductor anchor; singular 'semiconductor etf' also rose +110%.",
-      "relevance_groups": [["semiconductor ETF", "semiconductor ETFs", "chip ETF", "chip ETFs", "半导体ETF", "半導體ETF", "SMH", "SOXX", "XSD"]]
-    },
-    {
-      "entity": "U.S. semiconductor manufacturing",
-      "entity_type": "other",
-      "youtube_query": "美国 半导体制造 芯片 manufacturing",
-      "regions": ["US"],
-      "selection_reason": "A policy-and-capex theme tied to fabs, reshoring, CHIPS-related investment and the U.S. semiconductor supply chain.",
-      "trend_evidence": "'us semiconductor manufacturing' was Breakout and #2 Rising in U.S. YouTube Search; 'semiconductor manufacturing' and 'semiconductor manufacturing process' also appeared in Top queries.",
-      "relevance_groups": [["semiconductor", "semiconductors", "chip", "chips", "半导体", "半導體"], ["manufacturing", "fab", "fabs", "foundry", "foundries", "制造", "製造", "晶圆厂", "晶圓廠", "reshoring"]]
+      "youtube_query": "NVIDIA NVDA earnings 财报 輝達",
+      "regions": [
+        "US",
+        "TW"
+      ],
+      "selection_reason": "Dominant post-earnings search cluster across the U.S. and Taiwan; directly relevant to AI chips and the broader market.",
+      "trend_evidence": "US:youtube_rising:Breakout:via=stocks:rank=1; US:youtube_rising:+1,000%:via=earnings:rank=17; US:youtube_top:Top:via=earnings:rank=2; TW:youtube_rising:Breakout:via=財報:rank=1; TW:youtube_top:Top:via=財報:rank=1; US:youtube_rising:Breakout:via=earnings:rank=2; US:youtube_top:Top:via=earnings:rank=14; TW:youtube_rising:Breakout:via=財報:rank=2; TW:youtube_top:Top:via=財報:rank=2; TW:youtube_rising:Breakout:via=財報:rank=3; TW:youtube_top:Top:via=財報:rank=3; US:youtube_rising:+2,450%:via=earnings:rank=14; US:youtube_top:Top:via=earnings:rank=6; US:youtube_rising:+1,000%:via=earnings:rank=16; US:youtube_rising:+160%:via=stocks:rank=4; US:youtube_top:Top:via=earnings:rank=1",
+      "relevance_groups": [
+        [
+          "NVIDIA",
+          "NVDA",
+          "輝達",
+          "英偉達",
+          "英伟达"
+        ],
+        [
+          "earnings",
+          "results",
+          "财报",
+          "財報",
+          "earnings call"
+        ]
+      ]
     },
     {
       "entity": "CrowdStrike earnings",
       "entity_type": "company",
-      "youtube_query": "CrowdStrike CRWD 财报",
-      "regions": ["US"],
-      "selection_reason": "A large U.S. cybersecurity name with a fresh earnings breakout and strong relevance to software, cloud and AI-security investors.",
-      "trend_evidence": "'crwd earnings' was Breakout and #7 Rising in U.S. YouTube Search under the earnings anchor and also appeared in Top related queries.",
-      "relevance_groups": [["CrowdStrike", "CRWD"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]
+      "youtube_query": "CrowdStrike CRWD earnings 财报",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Fresh cybersecurity earnings breakout with direct software/AI-security investor relevance.",
+      "trend_evidence": "US:youtube_rising:Breakout:via=earnings:rank=5; US:youtube_top:Top:via=earnings:rank=18",
+      "relevance_groups": [
+        [
+          "CrowdStrike",
+          "CRWD"
+        ],
+        [
+          "earnings",
+          "results",
+          "财报",
+          "財報"
+        ]
+      ]
     },
     {
-      "entity": "Bank of Nova Scotia earnings",
+      "entity": "Salesforce earnings",
       "entity_type": "company",
-      "youtube_query": "Scotiabank BNS 财报",
-      "regions": ["CA"],
-      "selection_reason": "A large North American bank listed in both Canada and the U.S., with fresh earnings interest that can also illuminate Canadian credit and rate conditions.",
-      "trend_evidence": "'bns earnings' was Breakout and #3 Rising in Canada and appeared in Top related queries; 'canadian banks earnings' was also Breakout.",
-      "relevance_groups": [["Bank of Nova Scotia", "Scotiabank", "BNS"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]
+      "youtube_query": "Salesforce CRM earnings call 财报",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Fresh earnings-call breakout in a major enterprise software name with AI monetization relevance.",
+      "trend_evidence": "US:youtube_rising:Breakout:via=earnings:rank=6; US:youtube_top:Top:via=earnings:rank=19",
+      "relevance_groups": [
+        [
+          "Salesforce",
+          "CRM"
+        ],
+        [
+          "earnings",
+          "results",
+          "earnings call",
+          "财报",
+          "財報"
+        ]
+      ]
     },
     {
       "entity": "Dick's Sporting Goods earnings",
       "entity_type": "company",
-      "youtube_query": "Dick's Sporting Goods DKS 财报",
-      "regions": ["US"],
-      "selection_reason": "A U.S.-listed consumer name with a clean earnings breakout that can provide a differentiated consumer-spending angle outside technology.",
-      "trend_evidence": "'dks earnings' was Breakout and #3 Rising in U.S. YouTube Search; 'dicks sporting good earnings' was also Breakout and #8 Rising.",
-      "relevance_groups": [["Dick's Sporting Goods", "DICK'S", "DKS"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]
+      "youtube_query": "Dick's Sporting Goods DKS earnings",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Clean consumer earnings breakout useful as a non-tech demand read.",
+      "trend_evidence": "US:youtube_rising:Breakout:via=earnings:rank=11; US:youtube_top:Top:via=earnings:rank=24",
+      "relevance_groups": [
+        [
+          "Dick's Sporting Goods",
+          "DKS"
+        ],
+        [
+          "earnings",
+          "results",
+          "财报",
+          "財報"
+        ]
+      ]
     },
     {
-      "entity": "Zoom earnings",
+      "entity": "Intuit earnings",
       "entity_type": "company",
-      "youtube_query": "Zoom ZM 财报",
-      "regions": ["US"],
-      "selection_reason": "A recognizable U.S. software stock with a fresh earnings breakout and potential AI-product/enterprise-demand angle.",
-      "trend_evidence": "'zoom stock earnings' was Breakout and #9 Rising in U.S. YouTube Search under the earnings anchor.",
-      "relevance_groups": [["Zoom", "Zoom Video", "ZM"], ["earnings", "results", "财报", "財報", "业绩", "業績", "quarterly"]]
+      "youtube_query": "Intuit INTU earnings 财报",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Recognizable fintech/software earnings topic with fresh YouTube search acceleration.",
+      "trend_evidence": "US:youtube_rising:+110%:via=earnings:rank=22; US:youtube_top:Top:via=earnings:rank=15",
+      "relevance_groups": [
+        [
+          "Intuit",
+          "INTU",
+          "QuickBooks",
+          "TurboTax"
+        ],
+        [
+          "earnings",
+          "results",
+          "财报",
+          "財報"
+        ]
+      ]
     },
     {
-      "entity": "Circle Internet Group",
+      "entity": "Lattice Semiconductor",
       "entity_type": "company",
-      "youtube_query": "Circle CRCL 美股 USDC",
-      "regions": ["TW"],
-      "selection_reason": "A U.S.-listed crypto/fintech growth stock with specific Chinese-language investor demand and strong relevance to stablecoins and digital-asset regulation.",
-      "trend_evidence": "'circle 股票' was Breakout and #5 Rising in Taiwan YouTube Search under the stocks anchor and also appeared in Top related queries.",
-      "relevance_groups": [["Circle Internet Group", "Circle", "CRCL", "USDC"]]
-    },
-    {
-      "entity": "AU Optronics",
-      "entity_type": "company",
-      "youtube_query": "友达 AUO 面板 股票",
-      "regions": ["TW"],
-      "selection_reason": "A major Taiwan display supplier with a strong local breakout that can matter to global electronics, PC and device supply-chain investors.",
-      "trend_evidence": "'友達 股票' was Breakout and #3 Rising in Taiwan YouTube Search and also appeared in Top related queries.",
-      "relevance_groups": [["AU Optronics", "AUO", "友達", "友达"]]
+      "youtube_query": "Lattice Semiconductor LSCC stock",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Top breakout semiconductor query and a differentiated edge-AI/FPGA stock angle.",
+      "trend_evidence": "US:youtube_rising:Breakout:via=semiconductor:rank=1; US:youtube_top:Top:via=semiconductor:rank=17",
+      "relevance_groups": [
+        [
+          "Lattice Semiconductor",
+          "Lattice",
+          "LSCC"
+        ]
+      ]
     },
     {
       "entity": "Semiconductor supply chain",
       "entity_type": "other",
-      "youtube_query": "半导体 供应链 semiconductor supply chain",
-      "regions": ["TW"],
-      "selection_reason": "A broad but highly investable AI-hardware theme connecting foundries, equipment, packaging, memory and U.S.-listed chip companies.",
-      "trend_evidence": "'半導體 供應 鏈' rose +300% and ranked #1 Rising in Taiwan YouTube Search under the semiconductor anchor, while also appearing near the top of related queries.",
-      "relevance_groups": [["semiconductor", "semiconductors", "chip", "chips", "半导体", "半導體"], ["supply chain", "供应链", "供應鏈"]]
+      "youtube_query": "semiconductor supply chain AI chips 半导体 供应链",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Strong rising hardware theme connecting foundry, memory, equipment and packaging names.",
+      "trend_evidence": "US:youtube_rising:+250%:via=semiconductor:rank=3; US:youtube_top:Top:via=semiconductor:rank=13",
+      "relevance_groups": [
+        [
+          "semiconductor",
+          "semiconductors",
+          "chip",
+          "chips",
+          "半导体",
+          "半導體"
+        ],
+        [
+          "supply chain",
+          "供应链",
+          "供應鏈"
+        ]
+      ]
     },
     {
-      "entity": "Defense stocks",
+      "entity": "Semiconductor ETFs",
       "entity_type": "asset",
-      "youtube_query": "美国 军工股 defense stocks",
-      "regions": ["US"],
-      "selection_reason": "A directly investable sector theme that can benefit from geopolitical and defense-spending catalysts and provides diversification from AI-only coverage.",
-      "trend_evidence": "'defence stocks' rose +250% and ranked #1 Rising in U.S. YouTube Search under the stocks anchor.",
-      "relevance_groups": [["defense", "defence", "aerospace and defense", "军工", "軍工", "国防", "國防"]]
+      "youtube_query": "semiconductor ETF SMH SOXX XSD",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Directly investable chip theme with a sharp rise in search interest.",
+      "trend_evidence": "US:youtube_rising:+200%:via=semiconductor:rank=4; US:youtube_top:Top:via=semiconductor:rank=12",
+      "relevance_groups": [
+        [
+          "semiconductor ETF",
+          "chip ETF",
+          "SMH",
+          "SOXX",
+          "XSD"
+        ]
+      ]
     },
     {
-      "entity": "Gold mining stocks",
-      "entity_type": "asset",
-      "youtube_query": "黄金矿业股 gold mining stocks",
-      "regions": ["US", "CA"],
-      "selection_reason": "An investable commodity-equity theme with rising U.S. demand and supporting Canadian Top-query interest, suitable for a rates/inflation/risk-off angle.",
-      "trend_evidence": "'gold stocks to buy' rose +120% in U.S. YouTube Search; 'gold stocks' also appeared in Canada's Top related stock queries.",
-      "relevance_groups": [["gold", "黄金", "黃金"], ["miner", "miners", "mining", "矿业", "礦業", "矿商", "礦商", "矿股", "礦股"]]
-    },
-    {
-      "entity": "Silver mining stocks",
-      "entity_type": "asset",
-      "youtube_query": "白银矿业股 silver mining stocks",
-      "regions": ["CA"],
-      "selection_reason": "A smaller but actionable precious-metals equity niche that can offer less crowded content than broad gold while retaining macro sensitivity.",
-      "trend_evidence": "'silver stocks' rose +50% in Canada YouTube Search and also appeared in Top related stock queries.",
-      "relevance_groups": [["silver", "白银", "白銀"], ["miner", "miners", "mining", "矿业", "礦業", "矿商", "礦商", "矿股", "礦股"]]
-    },
-    {
-      "entity": "AI agents",
+      "entity": "U.S. semiconductor manufacturing",
       "entity_type": "other",
-      "youtube_query": "AI Agent 智能体 美股",
-      "regions": ["US", "CA", "TW"],
-      "selection_reason": "A cross-region AI theme with potential listed beneficiaries across cloud, software and automation, making it useful for a broader market narrative.",
-      "trend_evidence": "'ai agent' appeared in Top YouTube Search related queries across the U.S., Canada and Taiwan; plural 'ai agents' also appeared in both North American markets.",
-      "relevance_groups": [["AI agent", "AI agents", "agentic AI", "智能体", "智能體", "AI代理", "AI代理人"]]
-    },
-    {
-      "entity": "Claude AI / Anthropic",
-      "entity_type": "other",
-      "youtube_query": "Claude AI Anthropic 美股",
-      "regions": ["US", "CA"],
-      "selection_reason": "A major frontier-model competitor whose product and funding developments can affect cloud, AI software and listed partners despite Anthropic being private.",
-      "trend_evidence": "'claude ai tutorial' rose +40% in Canada, while 'claude ai' appeared in Top AI-related YouTube Search queries in both Canada and the U.S.",
-      "relevance_groups": [["Claude", "Claude AI", "Anthropic"]]
-    },
-    {
-      "entity": "ON Semiconductor",
-      "entity_type": "company",
-      "youtube_query": "ON Semiconductor ON 美股 芯片",
-      "regions": ["US"],
-      "selection_reason": "A U.S.-listed power/automotive semiconductor company appearing near the top of current semiconductor-related YouTube searches.",
-      "trend_evidence": "'on semiconductor' ranked #2 among U.S. Top related queries under the semiconductor anchor.",
-      "relevance_groups": [["ON Semiconductor", "onsemi", "ON Semi"]]
-    },
-    {
-      "entity": "TSMC",
-      "entity_type": "company",
-      "youtube_query": "台积电 TSMC 半导体",
-      "regions": ["US"],
-      "selection_reason": "The world's leading foundry is directly tied to NVIDIA, AMD, Apple and the AI supply chain, and remains highly relevant to U.S. equity investors.",
-      "trend_evidence": "'taiwan semiconductor' appeared #4 among U.S. Top related YouTube Search queries under the semiconductor anchor.",
-      "relevance_groups": [["TSMC", "Taiwan Semiconductor", "台積電", "台积电"]]
+      "youtube_query": "US semiconductor manufacturing fabs CHIPS",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Breakout reshoring/fab theme tied to capex, equipment and policy.",
+      "trend_evidence": "US:youtube_rising:Breakout:via=semiconductor:rank=2; US:youtube_top:Top:via=semiconductor:rank=18; US:youtube_top:Top:via=semiconductor:rank=1",
+      "relevance_groups": [
+        [
+          "semiconductor",
+          "chip",
+          "fab",
+          "foundry"
+        ],
+        [
+          "US",
+          "U.S.",
+          "manufacturing",
+          "reshoring",
+          "CHIPS"
+        ]
+      ]
     },
     {
       "entity": "Navitas Semiconductor",
       "entity_type": "company",
-      "youtube_query": "Navitas NVTS 美股 半导体",
-      "regions": ["US"],
-      "selection_reason": "A smaller U.S.-listed power-semiconductor name that may offer a higher-upside niche if YouTube supply is limited.",
-      "trend_evidence": "'navitas semiconductor stock' appeared in U.S. Top related queries under the semiconductor anchor.",
-      "relevance_groups": [["Navitas Semiconductor", "Navitas", "NVTS"]]
+      "youtube_query": "Navitas Semiconductor NVTS stock",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Smaller power-semiconductor name with both rising and top-query presence.",
+      "trend_evidence": "US:youtube_rising:+70%:via=semiconductor:rank=8; US:youtube_top:Top:via=semiconductor:rank=8; US:youtube_rising:+60%:via=semiconductor:rank=9; US:youtube_top:Top:via=semiconductor:rank=7",
+      "relevance_groups": [
+        [
+          "Navitas Semiconductor",
+          "Navitas",
+          "NVTS"
+        ]
+      ]
+    },
+    {
+      "entity": "ON Semiconductor",
+      "entity_type": "company",
+      "youtube_query": "ON Semiconductor onsemi ON stock",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Large U.S.-listed power/auto semiconductor name sitting near the top of current chip searches.",
+      "trend_evidence": "US:youtube_top:Top:via=semiconductor:rank=2",
+      "relevance_groups": [
+        [
+          "ON Semiconductor",
+          "onsemi",
+          "ON Semi"
+        ]
+      ]
+    },
+    {
+      "entity": "TSMC",
+      "entity_type": "company",
+      "youtube_query": "TSMC TSM Taiwan Semiconductor 台积电 台積電",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Foundry leader remains a high-signal AI supply-chain topic in U.S. semiconductor searches.",
+      "trend_evidence": "US:youtube_top:Top:via=semiconductor:rank=3",
+      "relevance_groups": [
+        [
+          "TSMC",
+          "TSM",
+          "Taiwan Semiconductor",
+          "台积电",
+          "台積電"
+        ]
+      ]
+    },
+    {
+      "entity": "indie Semiconductor",
+      "entity_type": "company",
+      "youtube_query": "indie Semiconductor INDI stock",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Specific small-cap semiconductor stock with unusually strong rising interest.",
+      "trend_evidence": "US:youtube_rising:+190%:via=semiconductor:rank=5; US:youtube_top:Top:via=semiconductor:rank=15; US:youtube_top:Top:via=semiconductor:rank=4",
+      "relevance_groups": [
+        [
+          "indie Semiconductor",
+          "INDI"
+        ]
+      ]
+    },
+    {
+      "entity": "Taiwan drone / defense stocks",
+      "entity_type": "asset",
+      "youtube_query": "雷虎 世紀 無人機 軍工股 台股",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "Fresh Taiwan Google Trends spike around drone legislation and multiple defense-stock limit-up moves.",
+      "trend_evidence": "TW:google_trending:GTrend 500+:rank=6; TW:youtube_rising:+70%:via=股票:rank=7; TW:youtube_top:Top:via=股票:rank=10",
+      "relevance_groups": [
+        [
+          "雷虎",
+          "世紀",
+          "漢翔",
+          "无人机",
+          "無人機",
+          "軍工",
+          "军工"
+        ]
+      ]
+    },
+    {
+      "entity": "AU Optronics",
+      "entity_type": "company",
+      "youtube_query": "友達 AUO 股票 display",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "Major Taiwan display supplier with clear rising local stock-search interest.",
+      "trend_evidence": "TW:youtube_rising:+70%:via=股票:rank=8; TW:youtube_top:Top:via=股票:rank=20",
+      "relevance_groups": [
+        [
+          "AU Optronics",
+          "AUO",
+          "友達",
+          "友达"
+        ]
+      ]
+    },
+    {
+      "entity": "Copper stocks",
+      "entity_type": "asset",
+      "youtube_query": "copper stocks copper miners 铜矿股",
+      "regions": [
+        "CA"
+      ],
+      "selection_reason": "Commodity-equity theme rising in Canada and potentially useful for electrification/data-center capex narratives.",
+      "trend_evidence": "CA:youtube_rising:+40%:via=stocks:rank=12",
+      "relevance_groups": [
+        [
+          "copper",
+          "铜",
+          "銅"
+        ],
+        [
+          "stock",
+          "stocks",
+          "miner",
+          "miners",
+          "mining"
+        ]
+      ]
+    },
+    {
+      "entity": "AI agents",
+      "entity_type": "other",
+      "youtube_query": "AI agents agentic AI stocks 智能体",
+      "regions": [
+        "CA",
+        "TW"
+      ],
+      "selection_reason": "Cross-market AI software theme with direct relevance to listed cloud and automation beneficiaries.",
+      "trend_evidence": "TW:youtube_top:Top:via=AI:rank=2; CA:youtube_top:Top:via=AI:rank=15; CA:youtube_top:Top:via=AI:rank=16",
+      "relevance_groups": [
+        [
+          "AI agent",
+          "AI agents",
+          "agentic AI",
+          "智能体",
+          "智能體"
+        ]
+      ]
+    },
+    {
+      "entity": "Claude / Anthropic",
+      "entity_type": "other",
+      "youtube_query": "Claude AI Anthropic stocks",
+      "regions": [
+        "CA"
+      ],
+      "selection_reason": "Major frontier-model competitor with persistent top/rising interest and listed-cloud read-through.",
+      "trend_evidence": "CA:youtube_rising:+70%:via=AI:rank=6; CA:youtube_top:Top:via=AI:rank=9",
+      "relevance_groups": [
+        [
+          "Claude",
+          "Claude AI",
+          "Anthropic"
+        ]
+      ]
+    },
+    {
+      "entity": "Canada-U.S. retaliatory tariffs",
+      "entity_type": "macro",
+      "youtube_query": "Canada US retaliatory tariffs trade stocks",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Large fresh macro trend with direct implications for inflation, cross-border supply chains and exposed equities.",
+      "trend_evidence": "US:google_trending:GTrend 10000+:rank=1",
+      "relevance_groups": [
+        [
+          "Canada",
+          "Canadian"
+        ],
+        [
+          "tariff",
+          "tariffs",
+          "trade",
+          "retaliatory"
+        ]
+      ]
     },
     {
       "entity": "Power semiconductors",
       "entity_type": "other",
-      "youtube_query": "功率半导体 power semiconductor 美股",
-      "regions": ["TW"],
-      "selection_reason": "A focused hardware theme spanning EVs, data centers and power efficiency that can map to U.S.-listed names such as onsemi, Wolfspeed and Navitas.",
-      "trend_evidence": "'功率 半導體' ranked #3 among Taiwan Top related YouTube Search queries under the semiconductor anchor.",
-      "relevance_groups": [["power semiconductor", "power semiconductors", "功率半导体", "功率半導體", "SiC", "silicon carbide", "GaN", "gallium nitride"]]
+      "youtube_query": "power semiconductor SiC GaN 功率半導體",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "Focused chip theme spanning EVs, data centers and power efficiency with multiple U.S.-listed beneficiaries.",
+      "trend_evidence": "TW:youtube_rising:+70%:via=半導體:rank=2; TW:youtube_top:Top:via=半導體:rank=1",
+      "relevance_groups": [
+        [
+          "power semiconductor",
+          "power semiconductors",
+          "功率半导体",
+          "功率半導體",
+          "SiC",
+          "GaN"
+        ]
+      ]
     }
   ]
 }

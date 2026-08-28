@@ -1,31 +1,31 @@
 # YouTube Entity Enrichment
 
-Generated: **2026-08-27T13:03:49.891819+00:00**
+Generated: **2026-08-28T12:31:09.376953+00:00**
 
 This is a measurement table, not the final editorial ranking. ChatGPT reviews it after enrichment.
 
 | # | Entity | YouTube query | Relevant sample | Relevant % | Relevant median views/day | Small-channel median views/day | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---|
-| 1 | NVIDIA earnings | NVIDIA NVDA earnings 财报 輝達 | 18/31 | 58.1% | 93 | 34 | 7.1% | 60.0% | ok |
-| 2 | CrowdStrike earnings | CrowdStrike CRWD earnings 财报 | 1/2 | 50.0% | 43 | 43 | 0.0% | 100.0% | ok |
-| 3 | Salesforce earnings | Salesforce CRM earnings call 财报 | 1/1 | 100.0% | 43 | 43 | 0.0% | 100.0% | ok |
-| 4 | Dick's Sporting Goods earnings | Dick's Sporting Goods DKS earnings | 5/50 | 10.0% | 49 | 49 | 0.0% | 100.0% | ok_low_relevance |
-| 5 | Intuit earnings | Intuit INTU earnings 财报 | 1/6 | 16.7% | 9 | 9 | 0.0% | 100.0% | ok_low_relevance |
-| 6 | Lattice Semiconductor | Lattice Semiconductor LSCC stock | 1/1 | 100.0% | 4 | 4 | 0.0% | 100.0% | ok |
-| 7 | Semiconductor supply chain | semiconductor supply chain AI chips 半导体 供应链 | 1/41 | 2.4% | 752 | 752 | 0.0% | 100.0% | ok_low_relevance |
-| 8 | Semiconductor ETFs | semiconductor ETF SMH SOXX XSD | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 9 | U.S. semiconductor manufacturing | US semiconductor manufacturing fabs CHIPS | 2/50 | 4.0% | 77 | 77 | 0.0% | 100.0% | ok_low_relevance |
-| 10 | Navitas Semiconductor | Navitas Semiconductor NVTS stock | 5/8 | 62.5% | 30 | 30 | 0.0% | 100.0% | ok |
-| 11 | ON Semiconductor | ON Semiconductor onsemi ON stock | 0/1 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 12 | TSMC | TSMC TSM Taiwan Semiconductor 台积电 台積電 | 6/9 | 66.7% | 42 | 42 | 16.7% | 100.0% | ok |
-| 13 | indie Semiconductor | indie Semiconductor INDI stock | 0/1 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 14 | Taiwan drone / defense stocks | 雷虎 世紀 無人機 軍工股 台股 | 2/3 | 66.7% | 2436 | 0 | 0.0% | 0.0% | ok |
-| 15 | AU Optronics | 友達 AUO 股票 display | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 16 | Copper stocks | copper stocks copper miners 铜矿股 | 0/16 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 17 | AI agents | AI agents agentic AI stocks 智能体 | 19/50 | 38.0% | 20 | 20 | 0.0% | 100.0% | ok |
-| 18 | Claude / Anthropic | Claude AI Anthropic stocks | 26/50 | 52.0% | 145 | 43 | 0.0% | 20.0% | ok |
-| 19 | Canada-U.S. retaliatory tariffs | Canada US retaliatory tariffs trade stocks | 37/50 | 74.0% | 8677 | 697 | 33.3% | 10.0% | ok |
-| 20 | Power semiconductors | power semiconductor SiC GaN 功率半導體 | 3/4 | 75.0% | 9 | 9 | 0.0% | 100.0% | ok |
+| 1 | NVIDIA earnings | NVIDIA NVDA earnings 财报 輝達 | 15/27 | 55.6% | 130 | 42 | 16.7% | 70.0% | ok |
+| 2 | Marvell earnings | Marvell MRVL earnings guidance | 9/39 | 23.1% | 393 | 325 | 28.6% | 77.8% | ok_low_relevance |
+| 3 | IREN earnings | IREN earnings AI data center | 7/50 | 14.0% | 1102 | 628 | 50.0% | 85.7% | ok_low_relevance |
+| 4 | Salesforce earnings | Salesforce CRM earnings call | 16/50 | 32.0% | 1743 | 197 | 14.3% | 20.0% | ok |
+| 5 | Intuit earnings | Intuit INTU earnings | 23/50 | 46.0% | 72 | 39 | 5.9% | 40.0% | ok |
+| 6 | Royal Bank / Canadian bank earnings | RBC RY Canadian bank earnings | 2/3 | 66.7% | 28 | 28 | 0.0% | 100.0% | ok |
+| 7 | Lattice Semiconductor | Lattice Semiconductor LSCC stock | 1/1 | 100.0% | 2 | 2 | 0.0% | 100.0% | ok |
+| 8 | VanEck Semiconductor ETF | VanEck Semiconductor ETF SMH | 0/2 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 9 | Taiwan drone / defense stocks | 台灣 無人機 軍工股 雷虎 世紀 | 3/4 | 75.0% | 4717 | 0 | 0.0% | 0.0% | ok |
+| 10 | Coinbase | Coinbase COIN stock crypto | 7/50 | 14.0% | 49 | 10 | 0.0% | 71.4% | ok_low_relevance |
+| 11 | Utility stocks | utility stocks power AI data centers | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 12 | Semiconductor packaging | semiconductor packaging advanced packaging AI chips | 2/50 | 4.0% | 6 | 6 | 0.0% | 100.0% | ok_low_relevance |
+| 13 | AI agents | AI agents agentic AI stocks | 19/50 | 38.0% | 50 | 49 | 11.1% | 90.0% | ok |
+| 14 | Saudi Arabia nuclear deal | Saudi Arabia US nuclear deal stocks uranium | 1/9 | 11.1% | 396 | 0 | 0.0% | 0.0% | ok_low_relevance |
+| 15 | Strait of Hormuz / oil | Strait of Hormuz oil Iran shipping stocks | 24/50 | 48.0% | 685 | 76 | 9.1% | 10.0% | ok |
+| 16 | Navitas Semiconductor | Navitas Semiconductor NVTS stock | 7/10 | 70.0% | 42 | 42 | 0.0% | 100.0% | ok |
+| 17 | TSMC | TSMC TSM Taiwan Semiconductor 台積電 | 3/5 | 60.0% | 718 | 718 | 33.3% | 100.0% | ok |
+| 18 | ON Semiconductor | ON Semiconductor onsemi stock | 1/2 | 50.0% | 18 | 18 | 0.0% | 100.0% | ok |
+| 19 | indie Semiconductor | indie Semiconductor INDI stock | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 20 | Power semiconductors | power semiconductor SiC GaN 功率半導體 | 2/4 | 50.0% | 53 | 53 | 0.0% | 100.0% | ok |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.
@@ -36,51 +36,56 @@ This is a measurement table, not the final editorial ranking. ChatGPT reviews it
 
 ## Relevance filter diagnostics
 
-### Dick's Sporting Goods earnings — ok_low_relevance
-Relevance groups: `[["Dick's Sporting Goods", "DKS"], ["earnings", "results", "财报", "財報"]]`
-- Rejected: Dick's Sporting Goods Stock Is Down -50%. Is It A Buy Yet? $DKS
-- Rejected: DICKS STOCK FALLS 28%! IS THIS STOCK A BUY? DICKS SPORTING GOODS STOCK ANALYSIS
-- Rejected: DKS Fumbles: Double Miss & Lowered Guidance Plunges Stock
-- Rejected: Why Is DKS Stock Down? $DKS Stock Crashed 30.6% — Full Breakdown
-- Rejected: DICK’S Sporting Goods (DKS) Stock CRASHES! Is This a MASSIVE Buying Opportunity?
+### Marvell earnings — ok_low_relevance
+Relevance groups: `[["Marvell", "MRVL"], ["earnings", "results", "guidance", "財報", "财报"]]`
+- Rejected: Options Trades in CME & MRVL as NVDA Lifts Tech Sector
+- Rejected: Marvell Earning Falls and NVDA Is a Better Buy!
+- Rejected: Marvell Just Had a Record Quarter — and the Stock Fell Anyway
+- Rejected: Ghabour: September Will Create Buy Opportunity, MU & MRVL Strong Outlook
+- Rejected: MRVL Stock: How Hyperscalers Fuel Custom Silicon Demand
 
-### Intuit earnings — ok_low_relevance
-Relevance groups: `[["Intuit", "INTU", "QuickBooks", "TurboTax"], ["earnings", "results", "财报", "財報"]]`
-- Rejected: 最佳卖出时机 vs 最完美的买入？| Your $$$ Is Ready To Move! | HelloYFi
-- Rejected: Intuit财捷集团深度分析｜收入增长14%却裁员17%，股价从高点腰斩！AI正在摧毁TurboTax，还是逼出40年软件巨头的第二次转型？
-- Rejected: 2026/08/26(三) 美債空頭回補，科技股警報解除？
-- Rejected: 中东局势骤变油价跳水，芯片股绝地大反击！DKS暴跌30%敲响消费警钟，还有哪些公司要被AI砸盘？#turbotax #quickbooks #dks
-- Rejected: NVIDIA $96.2B Q2 Revenue & Salesforce Anthropic Claudeforce Rotation [Aug 26, 2026]
+### IREN earnings — ok_low_relevance
+Relevance groups: `[["IREN", "Iris Energy"], ["earnings", "results", "AI", "data center"]]`
+- Rejected: Stock update: $IREN | Ornn H100 Volatility Index | Moonshot Approaches Hyperscalers for Kimi K#
+- Rejected: Ep. 54: $NVDA Earnings, New $AAPL Macs, $MU CEO Interview, $META Settlement
+- Rejected: Nvidia Earnings Call: 5 Biggest Takeaways + My Strategy
+- Rejected: BLOWOUT Earnings, Marvel, AI Stock Picking & FED Talk | 8.27 | One Lucky Dog
+- Rejected: Buy EVERY Share You Can: THIS $9 Stock Is at the Center of the AI Buildout
 
-### Semiconductor supply chain — ok_low_relevance
-Relevance groups: `[["semiconductor", "semiconductors", "chip", "chips", "半导体", "半導體"], ["supply chain", "供应链", "供應鏈"]]`
-- Rejected: 一顆晶片都不給賣！華為搶進埃及AI標案 川普急Call輝達組聯盟火線攔截【關鍵時刻】張炤和 ⁨@ebcCTime⁩
-- Rejected: 機器人崛起｜張振驊ft.工研院南分院執行長 周大鑫｜#shorts｜台灣大時代｜2026.08.29｜
-- Rejected: ST’s Third 2026 Price Hike Warns on Power Chips #Semiconductors #SupplyChain
-- Rejected: 台股科技脈動｜AI算力衝向太空！從液冷散熱、CPO矽光子到SpaceX星際台廠供應鏈全解析 (2026-08-26)
-- Rejected: 需求明明還在，美光與費半為什麼一直跌？機構正在悄悄切換定價邏輯！英偉達財報前必看！
+### VanEck Semiconductor ETF — ok_no_relevant_videos
+Relevance groups: `[["VanEck Semiconductor", "SMH", "semiconductor ETF", "chip ETF"]]`
+- Rejected: SOXS: What the Expense Ratio Costs Over a Full Cycle
+- Rejected: comment ‘stocks’ for me to send everything 💸🥂#investingforbeginners #investing #finance
 
-### U.S. semiconductor manufacturing — ok_low_relevance
-Relevance groups: `[["semiconductor", "chip", "fab", "foundry"], ["US", "U.S.", "manufacturing", "reshoring", "CHIPS"]]`
-- Rejected: Musk Is Betting Against 40 Years of Chip History
-- Rejected: Dylan Patel – Two labs will soon control most of the world's workforce
-- Rejected: OpenAI Says New Jalapeno Chips Outperformed Nvidia in Testing
-- Rejected: Nvidia Earnings, Apple’s AI Macs and OpenAI’s Chip Push | Bloomberg Tech 8/25/2026
-- Rejected: Why 1 Chip Can Stop Cars? ​#Shorts #Semiconductor
+### Coinbase — ok_low_relevance
+Relevance groups: `[["Coinbase", "COIN"], ["stock", "股票", "crypto", "Bitcoin"]]`
+- Rejected: The Man Behind Coinbase: Interview with Brian Armstrong | KMP Ep.52
+- Rejected: Top 7 Crypto Coins that will 7x in 30 days!?
+- Rejected: Breakout Alert: $215 Level Targets $400!
+- Rejected: Is This What the Future of Crypto Investing Looks Like? Shyft Finance
+- Rejected: Coinbase Surges 4.3% on $2B Tokenized Stocks Shock—Is More Upside Ahead? #Cryptocurrency #NASDAQCOIN
 
-### ON Semiconductor — ok_no_relevant_videos
-Relevance groups: `[["ON Semiconductor", "onsemi", "ON Semi"]]`
-- Rejected: Semiconductor Stocks Drop 20%: Should Investors Be Worried? | Weekly Market Update
+### Utility stocks — ok_no_relevant_videos
+Relevance groups: `[["utility stocks", "utilities", "power stocks"], ["AI", "data center", "rates"]]`
+- Rejected: $1.4 Trillion Power Grid Boom - Which AI Stock Wins?
+- Rejected: JPMorgan's Kevin Curtin on AI backlash: There's always risk with financing infrastructure projects
+- Rejected: Tech Stocks Gain on AI Optimism as Nvidia Jumps | The Pulse 8/27/2026
+- Rejected: Nvidia Fuels AI Trade, Warsh Countdown | Bloomberg Businessweek Daily 8/27/2026
+- Rejected: Nvidia Ignites AI Rally Ahead of Jackson Hole | Open Interest 8/27/2026
 
-### indie Semiconductor — ok_no_relevant_videos
-Relevance groups: `[["indie Semiconductor", "INDI"]]`
-- Rejected: Best Penny Stocks Under $4 to Buy Right Now (Day 4 Challenge)
+### Semiconductor packaging — ok_low_relevance
+Relevance groups: `[["semiconductor packaging", "advanced packaging", "CoWoS", "packaging"], ["AI", "chips", "HBM"]]`
+- Rejected: AI Is Breaking Down Japan’s Invisible Barrier in Semiconductor Materials
+- Rejected: Beyond Silicon: The Materials That Could Build Trillion-Transistor Chips
+- Rejected: NVIDIA Just Sent a Massive Signal to the Chip Industry 🚨 #semiconductors
+- Rejected: China Beats the Chip Blockade? How Beijing Is Closing the Tech Gap | Statecraft With Geeta Mohan
+- Rejected: SK hynix holds groundbreaking ceremony for HBM production base in U.S.
 
-### Copper stocks — ok_no_relevant_videos
-Relevance groups: `[["copper", "铜", "銅"], ["stock", "stocks", "miner", "miners", "mining"]]`
-- Rejected: 窮學生被大哥供養出國十年，歸鄉當天卻發現哥哥為搶救新娘，被仇人用電棍打到瀕死！他當場亮出無冕之王身份，一分鐘凍結煤老闆全部資產，再拿一百億元重查父母礦難
-- Rejected: 穷小伙被女上司抢功羞辱踢出局，怎料项目离了他直接自毁，公司瞬间蒸发百亿！原来他竟是第一黑客，女总裁亲自上门高薪挖人，逆袭开启！ #短剧 #男频 #爽剧 #逆袭 | 我的功劳，你夺不走
-- Rejected: 女孩回歸豪門卻被親生父母再一次拋棄，重生後她直接回到養父母家，憑借預知能力帶著全家發家致富！#family #face #drama #cute #逆襲 #親情 #都市
-- Rejected: [FULL]玄门废柴少女被逼献祭神明，她却当场卸下伪装撕碎上古禁制，掀翻祭坛展露无敌实力，献祭大典让心机仇人跪地求饶【低調廢柴其實超神】
-- Rejected: 最新爽文逆袭动漫来袭！穷小伙觉醒情报系统强势反杀各路强敌！剧情越看越上头，快来一起围观吧！ #修仙 #动漫
+### Saudi Arabia nuclear deal — ok_low_relevance
+Relevance groups: `[["Saudi Arabia", "Saudi"], ["nuclear", "civil nuclear", "Congress", "uranium"]]`
+- Rejected: 川普被「40兆國債」逼瘋了！強佔中東石油不成 轉頭勒索盟友1.5兆 狂印鈔將「引爆全球恐慌」！｜#獨家觀點 #寰宇全視界 #寰宇新聞@globalvisiontalk
+- Rejected: 加拿大不當美附屬品！150萬戶電力、九成進口鉀肥全成反擊王牌！荷蘭斷供反逼安世自立門戶 12吋晶圓硬闖成功！國產化狂飆近100%【#環球大戰線】20260827-完整版 葉思敏 賴岳謙 楊永明 栗正傑
+- Rejected: 美農民40年來最慘危機！630億美元蒸發、中國抽走大豆、加拿大卡住化肥！中印俄抱團反擊！川普打中、制印、封俄 反逼三國聯手【#環球大戰線】20260826-完整版 葉思敏 侯漢廷 苑舉正 彭華幹
+- Rejected: 加拿大反殺川普紅州！化肥告急農民崩盤 川普50%關稅再補一刀：福特通用先中槍！殲-16再拿飆風祭旗 40架殲-10CE殺進北非！【#環球大戰線】20260825-完整版 葉思敏 介文汲 王尚智 張延廷
+- Rejected: 川普被「40兆國債」逼瘋了！強佔中東石油不成 轉頭勒索盟友1.5兆 狂印鈔將「引爆全球恐慌」！｜#獨家觀點 #寰宇全視界@globalvisiontalk
 

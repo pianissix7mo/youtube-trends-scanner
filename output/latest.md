@@ -1,31 +1,31 @@
 # YouTube Entity Enrichment
 
-Generated: **2026-08-29T12:19:23.338424+00:00**
+Generated: **2026-08-30T11:02:21.429664+00:00**
 
 This is a measurement table, not the final editorial ranking. ChatGPT reviews it after enrichment.
 
 | # | Entity | YouTube query | Relevant sample | Relevant % | Relevant median views/day | Small-channel median views/day | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---|
-| 1 | NVIDIA earnings | NVIDIA NVDA earnings 财报 輝達 | 13/24 | 54.2% | 82 | 41 | 10.0% | 70.0% | ok |
-| 2 | IREN earnings | IREN stock earnings | 17/50 | 34.0% | 3196 | 657 | 44.4% | 30.0% | ok |
-| 3 | Salesforce earnings | Salesforce CRM earnings | 18/50 | 36.0% | 598 | 146 | 12.5% | 10.0% | ok |
-| 4 | Marvell earnings | Marvell MRVL earnings 財報 | 2/10 | 20.0% | 619 | 135 | 0.0% | 50.0% | ok_low_relevance |
-| 5 | Workday earnings | Workday WDAY earnings | 9/26 | 34.6% | 26 | 8 | 0.0% | 66.7% | ok |
-| 6 | Okta earnings | Okta OKTA earnings | 15/50 | 30.0% | 312 | 31 | 8.3% | 70.0% | ok |
-| 7 | CrowdStrike earnings | CrowdStrike CRWD earnings | 21/50 | 42.0% | 122 | 63 | 6.7% | 40.0% | ok |
-| 8 | Royal Bank earnings | RBC RY earnings Canadian banks | 2/4 | 50.0% | 19 | 19 | 0.0% | 100.0% | ok |
-| 9 | Sunrise / Sino-American Silicon semiconductor | 昇陽半導體 8028 stock | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 10 | Memory stocks | memory stocks DRAM HBM 記憶體 股票 | 7/14 | 50.0% | 2211 | 886 | 50.0% | 57.1% | ok |
-| 11 | Gold & silver miners | gold silver mining stocks miners | 7/50 | 14.0% | 1159 | 1159 | 60.0% | 71.4% | ok_low_relevance |
-| 12 | iShares Semiconductor ETF | iShares Semiconductor ETF SOXX | 1/5 | 20.0% | 1011 | 1011 | 100.0% | 100.0% | ok_low_relevance |
-| 13 | Utility stocks | utility stocks power AI data centers | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 14 | Semiconductor tariffs | semiconductor tariffs Trump chip tariffs 半導體 關稅 | 2/17 | 11.8% | 33 | 33 | 0.0% | 100.0% | ok_low_relevance |
-| 15 | Rocket Lab | Rocket Lab RKLB stock | 24/40 | 60.0% | 68 | 57 | 9.1% | 80.0% | ok |
-| 16 | MSI | MSI 微星 stock | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 17 | Nanya Technology | Nanya Technology 南亞科技 stock memory | 0/2 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 18 | TSMC | TSMC TSM Taiwan Semiconductor 台積電 | 3/4 | 75.0% | 433 | 433 | 0.0% | 100.0% | ok |
-| 19 | Uranium stocks | uranium stocks Cameco CCJ UUUU | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 20 | PharmaEssentia | PharmaEssentia 藥華藥 stock FDA | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 1 | IREN earnings | IREN stock earnings | 15/50 | 30.0% | 2855 | 1081 | 57.1% | 30.0% | ok |
+| 2 | Marvell earnings | Marvell MRVL earnings | 24/50 | 48.0% | 499 | 100 | 13.3% | 20.0% | ok |
+| 3 | Workday earnings | Workday WDAY earnings | 12/32 | 37.5% | 21 | 12 | 0.0% | 70.0% | ok |
+| 4 | Trump semiconductor tariff | Trump semiconductor tariff | 9/50 | 18.0% | 293 | 115 | 0.0% | 66.7% | ok_low_relevance |
+| 5 | Dell earnings | Dell DELL earnings | 3/50 | 6.0% | 904 | 0 | 0.0% | 33.3% | ok_low_relevance |
+| 6 | Canadian bank earnings | Canadian bank earnings RBC TD BMO | 1/5 | 20.0% | 2224 | 2224 | 100.0% | 100.0% | ok_low_relevance |
+| 7 | Gap earnings | Gap GAP earnings | 11/50 | 22.0% | 127 | 10 | 0.0% | 20.0% | ok_low_relevance |
+| 8 | Hormel earnings | Hormel HRL earnings | 2/8 | 25.0% | 7 | 7 | 0.0% | 100.0% | ok_low_relevance |
+| 9 | Rocket Lab | Rocket Lab RKLB stock | 19/33 | 57.6% | 79 | 75 | 5.9% | 80.0% | ok |
+| 10 | Lattice Semiconductor | Lattice Semiconductor LSCC stock | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 11 | Strategy / MSTR | Strategy MSTR Bitcoin stock | 28/50 | 56.0% | 70 | 70 | 25.0% | 100.0% | ok |
+| 12 | TSMC | TSMC TSM stock | 11/30 | 36.7% | 34 | 34 | 18.2% | 100.0% | ok |
+| 13 | NVIDIA earnings | NVIDIA NVDA earnings | 32/50 | 64.0% | 257 | 138 | 15.8% | 10.0% | ok |
+| 14 | Salesforce earnings | Salesforce CRM earnings | 14/50 | 28.0% | 294 | 72 | 0.0% | 40.0% | ok_low_relevance |
+| 15 | iShares Semiconductor ETF | SOXX iShares Semiconductor ETF | 1/3 | 33.3% | 543 | 543 | 0.0% | 100.0% | ok |
+| 16 | Utility stocks | utility stocks AI data center power | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 17 | Gold stocks | gold stocks miners | 7/50 | 14.0% | 1369 | 1369 | 80.0% | 71.4% | ok_low_relevance |
+| 18 | Mining stocks | mining stocks Canada US | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 19 | Navitas Semiconductor | Navitas Semiconductor NVTS stock | 8/10 | 80.0% | 54 | 54 | 0.0% | 100.0% | ok |
+| 20 | Apple iPhone 18 | Apple AAPL iPhone 18 | 48/50 | 96.0% | 34987 | 23449 | 100.0% | 40.0% | ok |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.
@@ -36,47 +36,74 @@ This is a measurement table, not the final editorial ranking. ChatGPT reviews it
 
 ## Relevance filter diagnostics
 
-### Marvell earnings — ok_low_relevance
-Relevance groups: `[["Marvell", "MRVL"], ["earnings", "earnings call", "財報", "财报"]]`
-- Rejected: 2026/08/28(五) 輝達能撐住AI股嗎？軟體股大反彈 #CRM #CRWD #MRVL
-- Rejected: Marvell FY2027 Q2：AI 互联开始兑现，定制 ASIC 仍待收入验证
-- Rejected: Marvell營收暴增46%，定制芯片開始搶走哪塊市場？
-- Rejected: NVDA, MRVL, CRWD — Conversion before exposure | Morning Market Brief 2026-08-28
-- Rejected: 秃瓢盘前 | #gap 盘前大涨15% | #pypl 盘前重挫14% | #mrvl 绩后大跌 | Kevin Warsh 美东十点讲话
+### Trump semiconductor tariff — ok_low_relevance
+Relevance groups: `[["Trump", "tariff", "tariffs", "关税", "關稅"], ["semiconductor", "chip", "半導體", "半导体"]]`
+- Rejected: 川普再出招？電子代工五大龍頭恐面暴擊 #川普 #關稅 #電子代工 #台灣 #代工
+- Rejected: Trump Targets Semiconductors As Nvidia Surges
+- Rejected: 트럼프 관세 협박이 삼전닉스에 안 통하는 이유
+- Rejected: 트럼프가 반도체 관세 때려도 한국 기업이 타격 없는 이유
+- Rejected: 주주환원에도 못가는 삼전닉스, 트럼프 '관세폭탄'까지 터지나?
 
-### Gold & silver miners — ok_low_relevance
-Relevance groups: `[["gold", "silver"], ["mining stocks", "miners", "mining"]]`
-- Rejected: SILVER Stocks Set to Go Berserk - 'These Companies Are Printing Cash': John Feneck
-- Rejected: SILVER Price ALERT!🚨 3 Big Names Said THIS! 🦍🦍 You Best Hear It - (Gold too)
-- Rejected: METALS INVESTOR! 📈 Market Reality: 5 Reasons Not to Worry About Friday's Price Slam - Gold & Silver
-- Rejected: Gold Just Broke the 200-Day — Don't Panic Yet
-- Rejected: FLORIAN GRUMMES | the miners are now in a period where every pullback is a buying opportunity!
+### Dell earnings — ok_low_relevance
+Relevance groups: `[["Dell"], ["earnings", "results"]]`
+- Rejected: World Cup Trading Champion Warns: Is the Market About to Roll Over? (NVDA, DELL, CRDO, MAGS)
+- Rejected: HPE vs Dell  AI Value Play
+- Rejected: Dell Ripped 262%, Broadcom 6%. Both Report Next Week. #shorts #DELL #AVGO #stocks
+- Rejected: 5 Stories Moving Markets This Week Jobs Broadcom Dell Gold & Treasury
+- Rejected: Should You Buy This Dell Tower? — Dell 2026 Edition Tower Computers Desktop Computer — Review
 
-### iShares Semiconductor ETF — ok_low_relevance
-Relevance groups: `[["iShares Semiconductor", "SOXX", "semiconductor ETF", "chip ETF"]]`
-- Rejected: 🚨 Trade Alert: Direxion Daily Semiconductor Bull 3X Shares (SOXL)
-- Rejected: The AI Bubble Is Cracking – While "Boring" Businesses Are Quietly Printing Cash
-- Rejected: กองทุนหุ้นชิปเอไอ กองนี้ KKP SEMICON-H เกียรตินาคิน เป็นไง?
-- Rejected: SOXL 원금 되찾으려면 171%가 올라야 합니다 #SOXL #서학개미 #레버리지ETF #3배레버리지 #반도체ETF #디렉시온 #미국주식 #ETF투자 #변동성손실
+### Canadian bank earnings — ok_low_relevance
+Relevance groups: `[["RBC", "Royal Bank", "TD", "BMO", "Scotiabank", "CIBC", "Canadian bank"], ["earnings", "results", "earnings call"]]`
+- Rejected: JUST IN: 100,000 Jobs On The Line — Why Trump’s Trade War Just Triggered A Recession Warning
+- Rejected: IT'S HAPPENING: CANADA OUTSMARTS USA As Carney EXPOSES Trump's VENEZUELA Oil Scam
+- Rejected: Big Banks Post Surprising Profits as Mortgage Stress Builds
+- Rejected: AI Earnings Test with NVIDIA, Marvell, CrowdStrike, Salesforce, and More
+
+### Gap earnings — ok_low_relevance
+Relevance groups: `[["Gap"], ["earnings", "results"]]`
+- Rejected: Work to do at Old Navy, but Gap is hanging in there, says top retail analyst Dana Telsey
+- Rejected: Gap shares jump after company names new Old Navy CEO to revive struggling brand
+- Rejected: Every Earnings Winner Reversed Today
+- Rejected: Wealth Gap Growing: Corporate profits at record high as worker paychecks wilt
+- Rejected: GAP Just Jumped 18% — The EV Signal Nobody’s Watching Yet
+
+### Hormel earnings — ok_low_relevance
+Relevance groups: `[["Hormel", "HRL"], ["earnings", "results"]]`
+- Rejected: HRL Under Pressure: Why HRL's 10.2% matters more than it looks
+- Rejected: Market Recap Live | Best Buy Earnings | August 27, 2026
+- Rejected: Salesforce Soars 23% on Anthropic Deal as S&P 500 Ekes Out Gain | S&P 500 (2026-08-27)
+- Rejected: Week of Aug 28 | Software +5.9% vs Chips -2.2% — Warsh Hawkish Shock Triggers Massive Tech Rotation
+- Rejected: Okta Soared 28% in a Day and the VIX Just Fell Asleep | Aug 27, 2026 #Shorts
+
+### Salesforce earnings — ok_low_relevance
+Relevance groups: `[["Salesforce", "CRM"], ["earnings", "results"]]`
+- Rejected: Bull Market SURGE As Nvidia, Salesforce and Crowdstrike BLAST! Watch For This Mega Money Rotation
+- Rejected: Salesforce Eases Investor Fears
+- Rejected: Nvidia’s AI Boom, Salesforce’s Anthropic Bet | Bloomberg Tech 8/27/2026
+- Rejected: This Month at Salesforce | Ep 3 – Xero, Legora, and Replit
+- Rejected: The Stock Market Just Went Ballistic on Major Stock Earnings
 
 ### Utility stocks — ok_no_relevant_videos
-Relevance groups: `[["utility stocks", "utilities", "power stocks"], ["AI", "data center", "rates"]]`
-- Rejected: AI Factory Ep.2.3: $1.4 Trillion Power Grid Boom - Which AI Stock Wins?
+Relevance groups: `[["utility stocks", "utilities"], ["AI", "data center", "power", "electricity", "grid"]]`
+- Rejected: 3 Energy Stocks Set to Double From the AI Data Center Boom
+- Rejected: Nano Nuclear Energy (NNE) CEO on Role in Data Centers, Power Partnerships
 - Rejected: AI Singularity Is Here: AI Infra, $100K Bets, & The 10-Year Supercycle 🚀
-- Rejected: The Bridge Ep. 19: The Boring Way to Invest in AI
-- Rejected: Tech Stocks Gain on AI Optimism as Nvidia Jumps | The Pulse 8/27/2026
 - Rejected: Nvidia’s AI Boom, Salesforce’s Anthropic Bet | Bloomberg Tech 8/27/2026
+- Rejected: Nvidia Ignites AI Rally Ahead of Jackson Hole | Open Interest 8/27/2026
 
-### Semiconductor tariffs — ok_low_relevance
-Relevance groups: `[["semiconductor", "chip", "半導體", "半导体"], ["tariff", "tariffs", "關稅", "关税"]]`
-- Rejected: 台灣當心! 川普關稅不只揮晶片 筆電.伺服器恐遭殃美加貿易戰升溫 川普再出招! 安大略湖變"美國湖"｜三立財經iNEWS
-- Rejected: 【美洲速報】川普政府擬徵新晶片關稅　筆電、遊戲機恐中招｜#鏡新聞
-- Rejected: 台灣靠AI.半導體「首度超越中國」躍居新加坡最大貿易夥伴！？欣興電子涉洗產地「中國製變MIT」觸怒老美雷區？！【關鍵時刻】每日懶人包 20260828
-- Rejected: 美農民40年來最慘危機！630億美元蒸發、中國抽走大豆、加拿大卡住化肥！中印俄抱團反擊！川普打中、制印、封俄 反逼三國聯手【#環球大戰線】20260826-完整版 葉思敏 侯漢廷 苑舉正 彭華幹
-- Rejected: 트럼프 반도체 관세 폭탄, 한국에 직격탄일까? #반도체 #관세 #트럼프
+### Gold stocks — ok_low_relevance
+Relevance groups: `[["gold stocks", "gold miners", "gold mining"]]`
+- Rejected: Gold & Silver Stocks: 5 Miners Riding the Treasury Buyback
+- Rejected: Finding The Next 10X Gold Stock
+- Rejected: Gold Bull Run Or Fakeout? Miners The Best Swing Short
+- Rejected: Gold Just Broke the 200-Day — Don't Panic Yet
+- Rejected: $6000 Gold by Next Year: Long-Term Playbook for Gold and Silver Mining Stocks with Jeff Clark
 
-### Nanya Technology — ok_no_relevant_videos
-Relevance groups: `[["Nanya Technology", "南亞", "南亞科", "南亞科技"], ["memory", "DRAM"]]`
-- Rejected: 南亞科被動買盤來了！但真正的考驗不是 MSCI
-- Rejected: 巨無霸咖哩飯台灣最速完食紀錄🔥來評評理!咖哩要拌還是不要拌?｜【小慧就愛吃  シャオホイ】大食い｜food challenge｜mukbang｜먹방｜eating show
+### Mining stocks — ok_no_relevant_videos
+Relevance groups: `[["mining stocks", "miners", "mining companies"]]`
+- Rejected: Stocks, Bonds Waver Ahead of Warsh Speech | Bloomberg Brief 08/28/2026
+- Rejected: Canada-U.S. Trade War could CRIPPLE American Metal Market
+- Rejected: Warsh Speech from Jackson Hole on Deck | Opening Trade 8/28/2026
+- Rejected: CANADA DELIVERS DEVASTATING WAKE UP CALL as Trump's Trade War Backfires In His Face
+- Rejected: 川普50%關稅逼加拿大翻臉！能源、美債到中國市場 卡尼準備打持久戰！一條海峽讓川普贏不了！伊朗扣住全球能源命脈【#寰宇全視界】20260829-完整版 謝忠岳 介文汲 林郁方 戴志言
 

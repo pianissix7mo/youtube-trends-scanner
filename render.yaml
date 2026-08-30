@@ -1,0 +1,14 @@
+services:
+  - type: cron
+    name: scanner-ab-trigger
+    runtime: python
+    region: virginia
+    plan: 0.5c-512mb
+    rootDir: ops/render-trigger
+    buildCommand: python -m py_compile dispatch.py
+    startCommand: python dispatch.py
+    schedule: "7 9,10 * * *"
+    autoDeployTrigger: commit
+    envVars:
+      - key: GITHUB_TOKEN
+        sync: false

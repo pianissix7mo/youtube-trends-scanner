@@ -12,10 +12,11 @@ on:
         required: false
         default: "1000"
   schedule:
-    # Toronto 05:07 = 09:07 UTC in EDT, 10:07 UTC in EST.
-    # Trigger both, then gate using America/Toronto so DST stays correct.
-    - cron: "7 9 * * *"
-    - cron: "7 10 * * *"
+    # Toronto 02:15 = 06:15 UTC in EDT, 07:15 UTC in EST.
+    # Trigger both, then select by Toronto's current UTC offset so DST stays correct.
+    # Use github.event.schedule rather than actual start time because GitHub scheduled runs can be delayed.
+    - cron: "15 6 * * *"
+    - cron: "15 7 * * *"
 
 permissions:
   contents: write
@@ -37,9 +38,14 @@ jobs:
             echo "run=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          TORONTO_HOUR=$(TZ=America/Toronto date +%H)
-          echo "Toronto hour: $TORONTO_HOUR"
-          if [ "$TORONTO_HOUR" = "05" ]; then
+
+          TORONTO_OFFSET=$(TZ=America/Toronto date +%z)
+          SCHEDULE="${{ github.event.schedule }}"
+
+          # EDT (UTC-4): 02:15 Toronto == 06:15 UTC.
+          # EST (UTC-5): 02:15 Toronto == 07:15 UTC.
+          if { [ "$TORONTO_OFFSET" = "-0400" ] && [ "$SCHEDULE" = "15 6 * * *" ]; } || \
+             { [ "$TORONTO_OFFSET" = "-0500" ] && [ "$SCHEDULE" = "15 7 * * *" ]; }; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"

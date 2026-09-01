@@ -40,15 +40,15 @@ ROTATION_TZ = ZoneInfo("America/Toronto")
 REGIONS = {
     "US": {
         "name": "United States",
-        "anchors": ["stock market", "AI", "semiconductor", "earnings", "bitcoin", "stocks"],
+        "anchors": ["AI", "semiconductor", "earnings", "stocks"],
     },
     "CA": {
         "name": "Canada",
-        "anchors": ["stock market", "AI", "semiconductor", "earnings", "bitcoin", "stocks"],
+        "anchors": ["AI", "semiconductor", "earnings", "stocks"],
     },
     "TW": {
         "name": "Taiwan",
-        "anchors": ["美股", "AI", "半導體", "財報", "比特幣", "股票"],
+        "anchors": ["AI", "半導體", "財報", "股票"],
     },
 }
 

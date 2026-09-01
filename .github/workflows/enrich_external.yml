@@ -40,12 +40,25 @@ jobs:
             youtube-metrics-external-
             youtube-metrics-
 
+      - name: Check external selection
+        id: selected
+        shell: bash
+        run: |
+          if [ -f data/selected_external.json ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "No data/selected_external.json yet; nothing to enrich."
+          fi
+
       - name: Validate external selection
+        if: steps.selected.outputs.run == 'true'
         run: |
           python -m py_compile youtube_enrich.py youtube_enrich_external.py
           python -m json.tool data/selected_external.json > /dev/null
 
       - name: Run Scanner C and D YouTube enrichment
+        if: steps.selected.outputs.run == 'true'
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           YOUTUBE_LOOKBACK_DAYS: "3"
@@ -68,7 +81,7 @@ jobs:
           done
 
       - name: Commit external enrichment output
-        if: success()
+        if: steps.selected.outputs.run == 'true' && success()
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -79,7 +92,16 @@ jobs:
             exit 0
           fi
           git commit -m "Update Scanner C and D YouTube enrichment"
-          git push
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push; then
+              exit 0
+            fi
+            echo "Push race detected; retrying ($attempt/3)..."
+            sleep 5
+          done
+          echo "Failed to push after retries."
+          exit 1
 
       - name: Upload external enrichment artifact
         if: always()

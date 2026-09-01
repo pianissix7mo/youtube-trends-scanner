@@ -1,0 +1,286 @@
+name: Enrich Scanner A + B + C + D
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "data/selected_entities.json"
+      - "scanner_b/data/selected_events.json"
+      - "data/selected_external.json"
+      - "youtube_enrich.py"
+      - "scanner_b/youtube_enrich.py"
+      - "youtube_enrich_external.py"
+
+permissions:
+  contents: write
+
+jobs:
+  changes:
+    name: Detect enrichment targets
+    runs-on: ubuntu-latest
+    outputs:
+      a: ${{ steps.detect.outputs.a }}
+      b: ${{ steps.detect.outputs.b }}
+      cd: ${{ steps.detect.outputs.cd }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect changed selection
+        id: detect
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "a=true" >> "$GITHUB_OUTPUT"
+            echo "b=true" >> "$GITHUB_OUTPUT"
+            echo "cd=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+          if [ -n "$BEFORE" ] && ! echo "$BEFORE" | grep -Eq '^0+$'; then
+            FILES=$(git diff --name-only "$BEFORE" "$AFTER" || true)
+          else
+            FILES=$(git show --pretty="" --name-only "$AFTER" || true)
+          fi
+          echo "$FILES"
+
+          A=false
+          B=false
+          CD=false
+
+          if echo "$FILES" | grep -Eq '^(data/selected_entities\.json|youtube_enrich\.py)$'; then A=true; fi
+          if echo "$FILES" | grep -Eq '^(scanner_b/data/selected_events\.json|scanner_b/youtube_enrich\.py)$'; then B=true; fi
+          if echo "$FILES" | grep -Eq '^(data/selected_external\.json|youtube_enrich_external\.py|youtube_enrich\.py)$'; then CD=true; fi
+
+          echo "a=$A" >> "$GITHUB_OUTPUT"
+          echo "b=$B" >> "$GITHUB_OUTPUT"
+          echo "cd=$CD" >> "$GITHUB_OUTPUT"
+
+  scanner_a:
+    name: Scanner A - YouTube Enrichment
+    needs: changes
+    if: needs.changes.outputs.a == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore YouTube metrics cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: youtube-metrics-a-${{ github.run_id }}
+          restore-keys: |
+            youtube-metrics-a-
+            youtube-metrics-
+
+      - name: Validate Scanner A selection
+        run: |
+          python -m py_compile youtube_enrich.py
+          python -m json.tool data/selected_entities.json > /dev/null
+
+      - name: Run Scanner A enrichment
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_LOOKBACK_DAYS: "3"
+          YOUTUBE_CACHE_TTL_HOURS: "12"
+          YOUTUBE_STALE_FALLBACK_HOURS: "48"
+          SMALL_CHANNEL_MAX_SUBS: "50000"
+          SMALL_CHANNEL_HIT_VPD: "1000"
+          REJECTED_SAMPLE_SIZE: "5"
+        run: python youtube_enrich.py
+
+      - name: Commit Scanner A output
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/latest.json output/latest.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update Scanner A YouTube enrichment"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push; then exit 0; fi
+            sleep 5
+          done
+          exit 1
+
+      - name: Upload Scanner A artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scanner-a-enrichment-latest
+          path: |
+            data/selected_entities.json
+            output/latest.json
+            output/latest.md
+          if-no-files-found: warn
+          retention-days: 14
+
+  scanner_b:
+    name: Scanner B - YouTube Enrichment
+    needs: changes
+    if: needs.changes.outputs.b == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scanner_b/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scanner_b/requirements.txt
+
+      - name: Validate Judge B selection
+        working-directory: scanner_b
+        run: |
+          python -m py_compile scanner_common.py youtube_enrich.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('data/selected_events.json')
+          if not p.exists():
+              raise SystemExit('data/selected_events.json missing')
+          data = json.loads(p.read_text(encoding='utf-8'))
+          if data.get('judge_version') != 'B_V1':
+              raise SystemExit('selected_events.json was not produced by Judge B V1')
+          events = data.get('events') or []
+          if len(events) > 20:
+              raise SystemExit(f'Judge B selected {len(events)} events; hard limit is 20')
+          for row in events:
+              if row.get('entity_accuracy') != 'pass':
+                  raise SystemExit('Judge B output contains entity_accuracy != pass')
+              if float(row.get('judge_score') or 0) < 58:
+                  raise SystemExit('Judge B output contains judge_score below 58')
+          print(f'Validated {len(events)} Judge B events')
+          PY
+
+      - name: Run Scanner B enrichment
+        working-directory: scanner_b
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python youtube_enrich.py
+
+      - name: Commit Scanner B output
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scanner_b/output/latest.json scanner_b/output/latest.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update Scanner B YouTube enrichment"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push; then exit 0; fi
+            sleep 5
+          done
+          exit 1
+
+      - name: Upload Scanner B artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scanner-b-enrichment-latest
+          path: |
+            scanner_b/data/selected_events.json
+            scanner_b/output/latest.json
+            scanner_b/output/latest.md
+          if-no-files-found: warn
+          retention-days: 14
+
+  scanner_cd:
+    name: Scanner C + D - YouTube Enrichment
+    needs: changes
+    if: needs.changes.outputs.cd == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore YouTube metrics cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: youtube-metrics-cd-${{ github.run_id }}
+          restore-keys: |
+            youtube-metrics-cd-
+            youtube-metrics-
+
+      - name: Check and validate C/D selection
+        id: selected
+        shell: bash
+        run: |
+          if [ ! -f data/selected_external.json ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "No data/selected_external.json yet; C/D enrichment skipped."
+            exit 0
+          fi
+          python -m py_compile youtube_enrich.py youtube_enrich_external.py
+          python -m json.tool data/selected_external.json > /dev/null
+          echo "run=true" >> "$GITHUB_OUTPUT"
+
+      - name: Run Scanner C/D enrichment
+        if: steps.selected.outputs.run == 'true'
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_LOOKBACK_DAYS: "3"
+          YOUTUBE_CACHE_TTL_HOURS: "12"
+          YOUTUBE_STALE_FALLBACK_HOURS: "48"
+          SMALL_CHANNEL_MAX_SUBS: "50000"
+          SMALL_CHANNEL_HIT_VPD: "1000"
+          REJECTED_SAMPLE_SIZE: "5"
+        run: python youtube_enrich_external.py
+
+      - name: Commit Scanner C/D output
+        if: steps.selected.outputs.run == 'true' && success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/latest_c.json output/latest_c.md output/latest_d.json output/latest_d.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update Scanner C and D YouTube enrichment"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push; then exit 0; fi
+            sleep 5
+          done
+          exit 1
+
+      - name: Upload Scanner C/D artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scanner-cd-enrichment-latest
+          path: |
+            data/selected_external.json
+            output/latest_c.json
+            output/latest_c.md
+            output/latest_d.json
+            output/latest_d.md
+          if-no-files-found: warn
+          retention-days: 14

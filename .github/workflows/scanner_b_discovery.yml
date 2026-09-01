@@ -1,0 +1,114 @@
+name: Scanner B - Discovery (Unified Repo)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Toronto 02:15 = 06:15 UTC in EDT, 07:15 UTC in EST.
+    - cron: "15 6 * * *"
+    - cron: "15 7 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "scanner_b/*.py"
+      - "scanner_b/config.json"
+      - "scanner_b/requirements.txt"
+      - "scanner_b/docs/**"
+      - ".github/workflows/scanner_b_discovery.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scanner-b-discovery-unified-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Toronto schedule guard
+        id: guard
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          TORONTO_OFFSET=$(TZ=America/Toronto date +%z)
+          SCHEDULE="${{ github.event.schedule }}"
+          if { [ "$TORONTO_OFFSET" = "-0400" ] && [ "$SCHEDULE" = "15 6 * * *" ]; } || \
+             { [ "$TORONTO_OFFSET" = "-0500" ] && [ "$SCHEDULE" = "15 7 * * *" ]; }; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scanner_b/requirements.txt
+
+      - name: Install dependencies
+        if: steps.guard.outputs.run == 'true'
+        run: pip install -r scanner_b/requirements.txt
+
+      - name: Syntax check
+        if: steps.guard.outputs.run == 'true'
+        working-directory: scanner_b
+        run: python -m py_compile scanner_common.py collect_external.py collect_external_safe.py news_rss.py collect_rss.py clean_events.py rank_candidates.py rank_rss.py rank_for_judge.py make_judge_review.py youtube_enrich.py
+
+      - name: Collect external catalysts
+        if: steps.guard.outputs.run == 'true'
+        working-directory: scanner_b
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT || 'youtube-trends-scanner/scanner-b 70549770+pianissix7mo@users.noreply.github.com' }}
+        run: python collect_rss.py
+
+      - name: Clean and disambiguate events
+        if: steps.guard.outputs.run == 'true'
+        working-directory: scanner_b
+        run: python clean_events.py
+
+      - name: Build baseline and prepare Judge B candidates
+        if: steps.guard.outputs.run == 'true'
+        working-directory: scanner_b
+        run: python rank_for_judge.py
+
+      - name: Build compact Judge B review file
+        if: steps.guard.outputs.run == 'true'
+        working-directory: scanner_b
+        run: python make_judge_review.py
+
+      - name: Commit discovery state
+        if: steps.guard.outputs.run == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scanner_b/data/raw_events.json scanner_b/data/judge_candidates.json scanner_b/data/judge_review.jsonl scanner_b/data/baseline_history.json
+          if git diff --cached --quiet; then
+            echo "No Scanner B discovery changes to commit"
+            exit 0
+          fi
+          git commit -m "Update Scanner B discovery candidates"
+          git push
+
+      - name: Upload discovery artifact
+        if: steps.guard.outputs.run == 'true' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scanner-b-discovery-latest
+          path: |
+            scanner_b/data/raw_events.json
+            scanner_b/data/judge_candidates.json
+            scanner_b/data/judge_review.jsonl
+            scanner_b/data/baseline_history.json
+          retention-days: 14

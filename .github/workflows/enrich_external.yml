@@ -1,0 +1,96 @@
+name: Enrich Scanner C and D
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/selected_external.json"
+      - "youtube_enrich_external.py"
+      - ".github/workflows/enrich_external.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: enrich-scanner-cd
+  cancel-in-progress: true
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore YouTube metrics cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: youtube-metrics-external-${{ github.run_id }}
+          restore-keys: |
+            youtube-metrics-external-
+            youtube-metrics-
+
+      - name: Validate external selection
+        run: |
+          python -m py_compile youtube_enrich.py youtube_enrich_external.py
+          python -m json.tool data/selected_external.json > /dev/null
+
+      - name: Run Scanner C and D YouTube enrichment
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_LOOKBACK_DAYS: "3"
+          YOUTUBE_CACHE_TTL_HOURS: "12"
+          YOUTUBE_STALE_FALLBACK_HOURS: "48"
+          SMALL_CHANNEL_MAX_SUBS: "50000"
+          SMALL_CHANNEL_HIT_VPD: "1000"
+          REJECTED_SAMPLE_SIZE: "5"
+        run: python youtube_enrich_external.py
+
+      - name: Add summaries
+        if: always()
+        shell: bash
+        run: |
+          for f in output/latest_c.md output/latest_d.md; do
+            if [ -f "$f" ]; then
+              cat "$f" >> "$GITHUB_STEP_SUMMARY"
+              echo "" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+
+      - name: Commit external enrichment output
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/latest_c.json output/latest_c.md output/latest_d.json output/latest_d.md
+          if git diff --cached --quiet; then
+            echo "No external enrichment changes to commit."
+            exit 0
+          fi
+          git commit -m "Update Scanner C and D YouTube enrichment"
+          git push
+
+      - name: Upload external enrichment artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scanner-cd-enrichment
+          path: |
+            data/selected_external.json
+            output/latest_c.json
+            output/latest_c.md
+            output/latest_d.json
+            output/latest_d.md
+          if-no-files-found: warn
+          retention-days: 14

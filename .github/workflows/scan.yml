@@ -137,7 +137,16 @@ jobs:
             exit 0
           fi
           git commit -m "Update daily raw trend candidates"
-          git push
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push; then
+              exit 0
+            fi
+            echo "Push race detected; retrying ($attempt/3)..."
+            sleep 5
+          done
+          echo "Failed to push after retries."
+          exit 1
 
       - name: Upload raw candidate artifact
         if: steps.toronto_time.outputs.run == 'true' && always()

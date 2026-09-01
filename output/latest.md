@@ -1,6 +1,6 @@
 # YouTube Entity Enrichment
 
-Generated: **2026-09-01T11:44:42.586404+00:00**
+Generated: **2026-09-01T23:09:51.750333+00:00**
 
 This is a measurement table, not the final editorial ranking. ChatGPT reviews it after enrichment.
 

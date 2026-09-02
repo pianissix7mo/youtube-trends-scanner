@@ -1,28 +1,24 @@
 # Scanner B — Catalyst Opportunities
 
-Generated: **2026-09-01T23:10:05.761487+00:00**
+Generated: **2026-09-02T11:35:19.523048+00:00**
 
-YouTube search calls used: **20 / 20**
+YouTube search calls used: **16 / 20**
 
 | # | Event | Ticker | Judge | Discovery | Burst | Sources | YT gap | B final |
 |---:|---|---|---:|---:|---:|---:|---:|---:|
-| 1 | Medtronic Stock Rises on Better-Than-Expected Earnings and $700 Million Investment in a Robot Surgeon | MDT | 94 | 69.5 | 68.8 | 38 | 100.0 | 87.8 |
-| 2 | News Content Hub - Tidewater completes acquisition of Brazil’s Wilson Sons | TDW | 93 | 70.9 | 63.4 | 55 | 100.0 | 87.8 |
-| 3 | Euro zone inflation rises above 3%, cementing ECB rate hike bets | — | 94 | 65 | 51.6 | 55 | 85.0 | 83.5 |
-| 4 | Iran war could keep inflation high, ECB policymaker Rehn warns, FT reports | — | 96 | 45.7 | 0 | 55 | 100.0 | 81.7 |
-| 5 | UK regulator suspends Amgen's Tavneos for new patients over unreliable data | AMGN | 92 | 48.8 | 26.6 | 20 | 100.0 | 80.6 |
-| 6 | NextEra Energy (NEE) Pushes Back On 60 Day Merger Review Delay | NEE | 83 | 55 | 39.6 | 20 | 100.0 | 78.0 |
-| 7 | Lockheed Martin, General Dynamics get framework deals to surge Patriot, THAAD production | GD | 89 | 43.6 | 37.4 | 20 | 100.0 | 77.6 |
-| 8 | Royal Bank of Canada (RY) Posts Record Profit as Tariffs Loom | RY | 79 | 59.7 | 55.3 | 20 | 100.0 | 77.4 |
-| 9 | NeoVolta, SK On Sign $1B Battery Deal for U.S. Energy Storage | NEOV | 86 | 47.6 | 46 | 20 | 100.0 | 77.3 |
-| 10 | Broadcom Announces VMware AI Factory, Enabling Faster Time to Production AI and Greater Control Over AI Tokenomics | AVGO | 90 | 39.7 | 26.3 | 20 | 100.0 | 76.9 |
-| 11 | Exclusive | Anthropic Signs $35 Billion Cloud Deal Backed by Nvidia | — | 97 | 36.6 | 11.1 | 20 | 85.0 | 76.5 |
-| 12 | Trump's 50% tariffs hit $20B in Canadian exports as Harvard's Ken Rogoff warns trade war is a 'bar fight' | — | 88 | 44.8 | 4.7 | 38 | 95.0 | 76.4 |
-| 13 | AUSTRAC opens AML/CTF probe into Western Union Australia | WU | 82 | 48.8 | 34.3 | 20 | 100.0 | 75.6 |
-| 14 | Global Bond Yields Surge as Oil Prices Fuel Inflation Worries | — | 98 | 54.8 | 0 | 72 | 50.0 | 75.4 |
-| 15 | US-Korea AI: Inside SK hynix’s Indiana HBM Production Base | — | 86 | 40.9 | 1.3 | 38 | 95.0 | 74.3 |
-| 16 | In Micron lawsuit, DOJ's filing raises a question: Does national security trump state environmental law? | MU | 77 | 47.5 | 29.7 | 20 | 100.0 | 72.8 |
-| 17 | NIO ($NIO) Releases Q2 2026 Earnings | NIO | 85 | 46 | 19.8 | 20 | 70.0 | 70.3 |
-| 18 | Amazon secretly inflated ad prices, the FTC and 22 states allege in a lawsuit | AMZN | 98 | 49.5 | 34.7 | 38 | 30.0 | 69.8 |
-| 19 | Bitcoin ETFs see biggest weekly inflow since 20... | — | 80 | 52.6 | 0 | 88 | 70.0 | 69.8 |
-| 20 | OpenAI Hits Back at Apple Lawsuit Claiming It Stole Trade Secrets | — | 88 | 46.6 | 5.7 | 38 | 50.0 | 68.0 |
+| 1 | Palo Alto Networks Reports Strong Earnings. The Stock Is Up. | PANW | 97 | 69.7 | 56.5 | 55.0 | 100.0 | 89.4 |
+| 2 | Chevron will expand Venezuela operations, more than doubling production through $7B investment | CVX | 94 | 62.7 | 68.1 | 20.0 | 100.0 | 85.8 |
+| 3 | GitLab Stock Soars 21% After Earnings. It’s Still Not a Buy. | GTLB | 88 | 60.1 | 56.5 | 20.0 | 100.0 | 82.0 |
+| 4 | Treasury yields rise as global bond sell-off continues | — | 91 | 54.2 | 42.7 | 20.0 | 85.0 | 78.8 |
+| 5 | GoPro shares jump after $285M Starman Optical merger deal | GPRO | 88 | 48.6 | 38.5 | 20.0 | 100.0 | 78.6 |
+| 6 | Medtronic’s Q1 Earnings Blew Past Estimates. Then It Made a $700 Million Bet Against Its Own Robot. | MDT | 85 | 48.5 | 27.0 | 20.0 | 100.0 | 77.0 |
+| 7 | Credo's Post-Earnings Selloff Creates Strong Buying Opportunity (Review) (NASDAQ:CRDO) | CRDO | 74 | 63.4 | 66.0 | 20.0 | 100.0 | 76.0 |
+| 8 | LG Energy Solution Buys 80,000 Tonnes of Arkansas Lithium in Ten-Year Deal | LTUM | 84 | 48.0 | 12.7 | 55.0 | 95.0 | 75.4 |
+| 9 | TSMC to Keep Microbump for HBM Packaging for Now, Tasks Suppliers with 5μm Challenge | TSM | 73 | 60.8 | 84.8 | 20.0 | 100.0 | 74.7 |
+| 10 | Australia clears Kimberly-Clark’s acquisition of Kenvue but requires Carefree, Stayfree divestment | KVUE | 80 | 47.0 | 13.3 | 38.0 | 100.0 | 74.1 |
+| 11 | Marvell Beat and Raised Guidance. Why Its Google Deal Still Spooked Investors | MRVL | 86 | 46.8 | 15.2 | 20.0 | 85.0 | 74.0 |
+| 12 | Shell doubles down on US retail with Tri Star Energy acquisition | SHEL | 80 | 46.2 | 7.0 | 38.0 | 100.0 | 73.9 |
+| 13 | Led by redemptions from Fidelity, net outflows from Bitcoin ETFs exceeded $35 million in a single day. | — | 75 | 50.4 | 22.1 | 55.0 | 100.0 | 72.6 |
+| 14 | Bessent urges other G20 countries to use tariffs | — | 87 | 53.9 | 38.4 | 38.0 | 50.0 | 69.7 |
+| 15 | Taiwan: Semicon Network Summit 2026 drives global semiconductor partnerships | — | 82 | 47.9 | 11.6 | 55.0 | 70.0 | 69.4 |
+| 16 | Beyond HBM: Samsung, SK hynix target AI data center storage | — | 73 | 33.2 | 0.0 | 20.0 | 100.0 | 66.5 |

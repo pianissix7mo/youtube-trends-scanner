@@ -147,6 +147,14 @@ jobs:
       - name: Install dependencies
         run: pip install -r scanner_b/requirements.txt
 
+      - name: Restore Scanner B YouTube metrics cache
+        uses: actions/cache@v4
+        with:
+          path: scanner_b/.cache
+          key: youtube-metrics-b-${{ github.run_id }}
+          restore-keys: |
+            youtube-metrics-b-
+
       - name: Validate Judge B selection
         working-directory: scanner_b
         run: |

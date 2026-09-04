@@ -1,21 +1,21 @@
 # Scanner C — Editorial News + YouTube Enrichment
 
-Generated: **2026-09-03T11:34:03.745422+00:00**
-Selection generated: **2026-09-03T11:35:00+00:00**
+Generated: **2026-09-04T11:35:51.994446+00:00**
+Selection generated: **2026-09-04T11:37:00+00:00**
 YouTube search calls used: **10**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | Broadcom | AVGO | Broadcom AVGO AI chip forecast earnings | 17/42 | 80 | 7.1% | 70.0% | ok |
-| 2 | Snowflake | SNOW | Snowflake SNOW earnings AI outlook | 5/16 | 58 | 0.0% | 60.0% | ok |
-| 3 | Dell Technologies | DELL | Dell DELL AI server forecast earnings | 19/50 | 27 | 0.0% | 40.0% | ok |
-| 4 | Hewlett Packard Enterprise | HPE | HPE Oracle AI data center earnings | 1/28 | 0 | 0.0% | 0.0% | ok_low_relevance |
-| 5 | Moonshot AI / Kimi | — | Moonshot Kimi Hong Kong IPO Microsoft Amazon Google | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 6 | Vertiv | VRT | Vertiv VRT Utility Innovation Group acquisition microgrid | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 7 | Taiwan semiconductor supply chain | — | Taiwan $20B US AI semiconductor investment TSMC | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 8 | Solvay | SOLB.BR | Solvay Taiwan semiconductor peroxide TSMC capacity | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 9 | Samsung Electronics / SK hynix power infrastructure | 005930.KS / 000660.KS | Samsung SK hynix KEPCO power $15B semiconductor | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 10 | Japan yen / BOJ policy | — | Japan yen BOJ rate hike intervention Mimura | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 1 | NVIDIA / Hugging Face | NVDA | NVIDIA NVDA Hugging Face acquisition | 24/44 | 42 | 15.8% | 50.0% | ok |
+| 2 | Lululemon Athletica | LULU | Lululemon LULU outlook earnings shares | 8/15 | 106 | 0.0% | 87.5% | ok |
+| 3 | U.S. labor market / Federal Reserve | — | US jobs report nonfarm payrolls Fed September | 1/50 | 37 | 0.0% | 100.0% | ok_low_relevance |
+| 4 | South Korea semiconductor investment / U.S. tariffs | — | Samsung SK hynix US chip investment tariffs | 0/20 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 5 | Volkswagen | VOW3.DE | Volkswagen VW 50000 job cuts turnaround | 2/5 | 0 | 0.0% | 0.0% | ok |
+| 6 | Apple | AAPL | AAPL Apple UK app tracking lawsuit | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 7 | Japan yen / Bank of Japan | — | yen BOJ rate hike carry trade | 3/45 | 68 | 0.0% | 66.7% | ok_low_relevance |
+| 8 | Shein | 0625.HK | Shein Hong Kong IPO Everlane acquisition | 2/2 | 0 | 0.0% | 0.0% | ok |
+| 9 | Apollo Global / Cumberland Farms | APO | Apollo APO Cumberland Farms IPO investment | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 10 | Fed Waller / global bond market | — | Fed Waller inflation rates Treasury yields | 7/50 | 16 | 20.0% | 71.4% | ok_low_relevance |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

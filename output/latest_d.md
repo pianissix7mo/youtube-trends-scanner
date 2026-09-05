@@ -1,21 +1,21 @@
 # Scanner D — Reddit Attention + YouTube Enrichment
 
-Generated: **2026-09-04T11:35:58.331746+00:00**
-Selection generated: **2026-09-04T11:37:00+00:00**
+Generated: **2026-09-05T11:37:42.553365+00:00**
+Selection generated: **2026-09-05T11:37:00+00:00**
 YouTube search calls used: **10**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | Lululemon | LULU | Lululemon LULU stock | 45/50 | 81 | 15.0% | 60.0% | ok |
-| 2 | NVIDIA | NVDA | NVIDIA NVDA stock | 44/50 | 24 | 25.8% | 30.0% | ok |
-| 3 | GameStop | GME | GameStop GME stock | 36/50 | 228 | 26.5% | 100.0% | ok |
-| 4 | Tesla | TSLA | Tesla TSLA stock | 47/50 | 92 | 36.0% | 10.0% | ok |
-| 5 | Broadcom | AVGO | Broadcom AVGO stock | 48/50 | 116 | 25.8% | 20.0% | ok |
-| 6 | Alphabet / Google | GOOG | Google GOOG stock | 25/50 | 40 | 11.1% | 0.0% | ok |
-| 7 | Micron | MU | Micron MU stock | 30/50 | 83 | 24.0% | 70.0% | ok |
-| 8 | Nike | NKE | Nike NKE stock | 18/28 | 51 | 11.1% | 100.0% | ok |
-| 9 | Microsoft | MSFT | Microsoft MSFT stock | 29/50 | 15 | 4.5% | 40.0% | ok |
-| 10 | Meta Platforms | META | Meta META stock | 39/50 | 54 | 15.6% | 60.0% | ok |
+| 1 | NVIDIA | NVDA | NVIDIA NVDA stock | 47/50 | 32 | 20.7% | 10.0% | ok |
+| 2 | GameStop | GME | GameStop GME stock | 36/50 | 300 | 26.5% | 100.0% | ok |
+| 3 | Micron Technology | MU | Micron MU stock | 38/50 | 146 | 31.4% | 80.0% | ok |
+| 4 | Tesla | TSLA | Tesla TSLA stock | 43/50 | 237 | 31.2% | 0.0% | ok |
+| 5 | Lululemon | LULU | Lululemon LULU stock | 50/50 | 174 | 26.5% | 50.0% | ok |
+| 6 | SanDisk | SNDK | SanDisk SNDK stock | 30/50 | 105 | 23.3% | 100.0% | ok |
+| 7 | Google | GOOG | Google GOOG stock | 21/50 | 41 | 0.0% | 0.0% | ok |
+| 8 | Robinhood | HOOD | Robinhood HOOD stock | 39/50 | 99 | 25.0% | 20.0% | ok |
+| 9 | Nike | NKE | Nike NKE stock | 21/28 | 38 | 14.3% | 100.0% | ok |
+| 10 | GoPro | GPRO | GoPro GPRO stock | 46/50 | 86 | 13.9% | 30.0% | ok |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

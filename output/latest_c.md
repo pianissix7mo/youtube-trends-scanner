@@ -1,21 +1,21 @@
 # Scanner C — Editorial News + YouTube Enrichment
 
-Generated: **2026-09-04T11:35:51.994446+00:00**
-Selection generated: **2026-09-04T11:37:00+00:00**
+Generated: **2026-09-05T11:37:34.978150+00:00**
+Selection generated: **2026-09-05T11:37:00+00:00**
 YouTube search calls used: **10**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | NVIDIA / Hugging Face | NVDA | NVIDIA NVDA Hugging Face acquisition | 24/44 | 42 | 15.8% | 50.0% | ok |
-| 2 | Lululemon Athletica | LULU | Lululemon LULU outlook earnings shares | 8/15 | 106 | 0.0% | 87.5% | ok |
-| 3 | U.S. labor market / Federal Reserve | — | US jobs report nonfarm payrolls Fed September | 1/50 | 37 | 0.0% | 100.0% | ok_low_relevance |
-| 4 | South Korea semiconductor investment / U.S. tariffs | — | Samsung SK hynix US chip investment tariffs | 0/20 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 5 | Volkswagen | VOW3.DE | Volkswagen VW 50000 job cuts turnaround | 2/5 | 0 | 0.0% | 0.0% | ok |
-| 6 | Apple | AAPL | AAPL Apple UK app tracking lawsuit | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 7 | Japan yen / Bank of Japan | — | yen BOJ rate hike carry trade | 3/45 | 68 | 0.0% | 66.7% | ok_low_relevance |
-| 8 | Shein | 0625.HK | Shein Hong Kong IPO Everlane acquisition | 2/2 | 0 | 0.0% | 0.0% | ok |
-| 9 | Apollo Global / Cumberland Farms | APO | Apollo APO Cumberland Farms IPO investment | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 10 | Fed Waller / global bond market | — | Fed Waller inflation rates Treasury yields | 7/50 | 16 | 20.0% | 71.4% | ok_low_relevance |
+| 1 | U.S. labor market / Federal Reserve | — | US jobs report payrolls Fed rate hike | 7/50 | 11 | 0.0% | 28.6% | ok_low_relevance |
+| 2 | Foxconn / Hon Hai | 2317.TW | Foxconn Hon Hai AI server revenue | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 3 | Nscale / NVIDIA | NVDA | Nscale Nvidia $3.5B pre IPO funding | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 4 | Anthropic | — | Anthropic IPO October $15B credit facility | 0/2 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 5 | Tesla Cybercab | TSLA | TSLA Cybercab NHTSA probe robotaxi | 7/25 | 16 | 0.0% | 100.0% | ok_low_relevance |
+| 6 | South Korea semiconductor exports | — | South Korea AI semiconductor exports Samsung SK hynix | 1/22 | 15 | 0.0% | 100.0% | ok_low_relevance |
+| 7 | U.S.-China AI policy | — | US China AI safety talks Nvidia export controls | 0/25 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 8 | U.S. semiconductor industrial policy | — | US chip tariffs Tennessee semiconductor supply chain | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 9 | OpenAI / Microsoft | MSFT | Microsoft MSFT OpenAI copyright lawsuit newspapers | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 10 | China-U.S. business relations | — | Xi US visit CEO delegation China US stocks | 0/32 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

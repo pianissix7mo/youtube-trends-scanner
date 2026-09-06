@@ -1,21 +1,20 @@
 # Scanner C — Editorial News + YouTube Enrichment
 
-Generated: **2026-09-05T11:37:34.978150+00:00**
-Selection generated: **2026-09-05T11:37:00+00:00**
-YouTube search calls used: **10**
+Generated: **2026-09-06T11:38:10.957313+00:00**
+Selection generated: **2026-09-06T11:47:00+00:00**
+YouTube search calls used: **9**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | U.S. labor market / Federal Reserve | — | US jobs report payrolls Fed rate hike | 7/50 | 11 | 0.0% | 28.6% | ok_low_relevance |
-| 2 | Foxconn / Hon Hai | 2317.TW | Foxconn Hon Hai AI server revenue | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 3 | Nscale / NVIDIA | NVDA | Nscale Nvidia $3.5B pre IPO funding | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 4 | Anthropic | — | Anthropic IPO October $15B credit facility | 0/2 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 5 | Tesla Cybercab | TSLA | TSLA Cybercab NHTSA probe robotaxi | 7/25 | 16 | 0.0% | 100.0% | ok_low_relevance |
-| 6 | South Korea semiconductor exports | — | South Korea AI semiconductor exports Samsung SK hynix | 1/22 | 15 | 0.0% | 100.0% | ok_low_relevance |
-| 7 | U.S.-China AI policy | — | US China AI safety talks Nvidia export controls | 0/25 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 8 | U.S. semiconductor industrial policy | — | US chip tariffs Tennessee semiconductor supply chain | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 9 | OpenAI / Microsoft | MSFT | Microsoft MSFT OpenAI copyright lawsuit newspapers | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 10 | China-U.S. business relations | — | Xi US visit CEO delegation China US stocks | 0/32 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 1 | Tata Consultancy Services / HyperVault AI Data Center | TCS.NS | TCS 7.4 billion AI data center 1GW | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 2 | South Korea semiconductor exports | — | South Korea record exports AI semiconductor HBM | 2/19 | 31 | 0.0% | 100.0% | ok_low_relevance |
+| 3 | S&P Dow Jones Indices quarterly rebalance | — | S&P 500 inclusion Bloom Energy Illumina Everpure S&P 100 Dell Palo Alto Arista SanDisk | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 4 | OpenAI | — | OpenAI wiki incident AI agents transparency | 10/20 | 13 | 0.0% | 100.0% | ok |
+| 5 | Isar Aerospace | — | Isar Aerospace Spectrum orbit Rocket Lab SpaceX | 0/2 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 6 | U.S.-Iran oil conflict | — | US Iran crude oil carriers strikes oil prices | 34/50 | 1406 | 66.7% | 0.0% | ok |
+| 7 | U.S. gasoline / oil inflation | — | US record gasoline prices Labor Day inflation Fed oil | 2/50 | 3324 | 100.0% | 50.0% | ok_low_relevance |
+| 8 | Zaporizhzhia nuclear power plant | — | Zaporizhzhia nuclear plant ceasefire repairs energy | 1/13 | 0 | 0.0% | 0.0% | ok_low_relevance |
+| 9 | Russia-Ukraine peace talks | — | Russia Ukraine peace talks Witkoff Kushner Putin markets | 13/41 | 19 | 0.0% | 0.0% | ok |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

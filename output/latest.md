@@ -1,31 +1,31 @@
 # YouTube Entity Enrichment
 
-Generated: **2026-09-05T11:34:08.510028+00:00**
+Generated: **2026-09-06T11:35:02.746974+00:00**
 
 This is a measurement table, not the final editorial ranking. ChatGPT reviews it after enrichment.
 
 | # | Entity | YouTube query | Relevant sample | Relevant % | Relevant median views/day | Small-channel median views/day | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---|
-| 1 | Broadcom earnings | Broadcom AVGO earnings AI guidance | 23/50 | 46.0% | 754 | 45 | 6.7% | 20.0% | ok |
-| 2 | Lululemon earnings | Lululemon LULU earnings outlook | 16/50 | 32.0% | 230 | 175 | 8.3% | 60.0% | ok |
-| 3 | Planet Labs earnings | Planet Labs PL earnings | 5/50 | 10.0% | 325 | 76 | 0.0% | 60.0% | ok_low_relevance |
-| 4 | VanEck Semiconductor ETF / SMH | SMH VanEck Semiconductor ETF | 3/6 | 50.0% | 17 | 17 | 0.0% | 100.0% | ok |
-| 5 | U.S. semiconductor tariffs | US semiconductor tariffs chip stocks | 3/50 | 6.0% | 1262 | 1262 | 100.0% | 33.3% | ok_low_relevance |
-| 6 | UiPath earnings | UiPath PATH earnings AI automation | 12/24 | 50.0% | 235 | 184 | 9.1% | 90.0% | ok |
-| 7 | Snowflake earnings | Snowflake SNOW earnings AI guidance | 29/50 | 58.0% | 24 | 14 | 4.2% | 50.0% | ok |
-| 8 | Zscaler earnings | Zscaler ZS earnings | 20/43 | 46.5% | 162 | 68 | 6.7% | 50.0% | ok |
-| 9 | Hewlett Packard Enterprise earnings | HPE earnings AI data center | 6/37 | 16.2% | 1067 | 576 | 0.0% | 16.7% | ok_low_relevance |
-| 10 | Quantum computing stocks | quantum computing stocks US | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 11 | Foxconn / Hon Hai | Foxconn Hon Hai AI servers stock | 1/1 | 100.0% | 3081 | 0 | 0.0% | 0.0% | ok |
-| 12 | Robinhood tokenized stocks | Robinhood HOOD tokenized stocks | 2/33 | 6.1% | 19887 | 0 | 0.0% | 0.0% | ok_low_relevance |
-| 13 | Meta AI glasses | Meta META AI glasses | 20/50 | 40.0% | 601 | 59 | 23.1% | 50.0% | ok |
-| 14 | Oil stocks | oil stocks crude oil US equities | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 15 | Uranium stocks | uranium stocks nuclear power US | 0/26 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 16 | Apple iPhone 18 launch | Apple AAPL iPhone 18 launch | 38/50 | 76.0% | 3455 | 682 | 36.8% | 10.0% | ok |
-| 17 | TSMC | TSMC TSM stock AI semiconductor | 6/21 | 28.6% | 7 | 3 | 20.0% | 83.3% | ok_low_relevance |
-| 18 | Memory stocks | memory stocks DRAM NAND HBM | 8/36 | 22.2% | 686 | 674 | 28.6% | 87.5% | ok_low_relevance |
-| 19 | Samsara earnings | Samsara IOT earnings | 6/18 | 33.3% | 31 | 31 | 0.0% | 100.0% | ok |
-| 20 | OpenAI Astra | OpenAI Astra AI model | 33/50 | 66.0% | 12446 | 3159 | 66.7% | 20.0% | ok |
+| 1 | Lululemon | Lululemon LULU earnings guidance | 19/50 | 38.0% | 136 | 63 | 6.7% | 60.0% | ok |
+| 2 | Navitas Semiconductor | Navitas NVTS semiconductor stock | 11/14 | 78.6% | 31 | 31 | 0.0% | 100.0% | ok |
+| 3 | OpenAI Astra | OpenAI Astra AI model | 49/50 | 98.0% | 31833 | 21600 | 83.3% | 0.0% | ok |
+| 4 | UiPath | UiPath PATH earnings AI automation | 11/25 | 44.0% | 197 | 156 | 10.0% | 90.0% | ok |
+| 5 | Zscaler | Zscaler ZS earnings cybersecurity | 13/28 | 46.4% | 122 | 45 | 12.5% | 50.0% | ok |
+| 6 | Foxconn / Hon Hai | Foxconn Hon Hai 2317 AI server | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 7 | U.S. semiconductor tariffs | US semiconductor tariffs chip tariffs | 10/50 | 20.0% | 321 | 5 | 20.0% | 50.0% | ok_low_relevance |
+| 8 | Broadcom | Broadcom AVGO earnings AI chips | 16/50 | 32.0% | 42 | 36 | 15.4% | 70.0% | ok |
+| 9 | Planet Labs | Planet Labs PL earnings defense guidance | 5/50 | 10.0% | 223 | 47 | 0.0% | 60.0% | ok_low_relevance |
+| 10 | Samsara | Samsara IOT earnings call | 5/31 | 16.1% | 19 | 19 | 0.0% | 100.0% | ok_low_relevance |
+| 11 | Tesla | Tesla TSLA earnings | 4/50 | 8.0% | 2305 | 11 | 0.0% | 25.0% | ok_low_relevance |
+| 12 | Memory stocks | memory stocks HBM DRAM Micron | 16/50 | 32.0% | 211 | 155 | 33.3% | 90.0% | ok |
+| 13 | SEMICON Taiwan 2026 | SEMICON Taiwan 2026 semiconductor | 18/50 | 36.0% | 627 | 167 | 27.3% | 50.0% | ok |
+| 14 | TSMC | TSMC Taiwan Semiconductor TSM stock | 10/15 | 66.7% | 17 | 17 | 10.0% | 100.0% | ok |
+| 15 | Semiconductor ETFs | semiconductor ETF SMH SOXX | 2/5 | 40.0% | 15 | 15 | 0.0% | 100.0% | ok |
+| 16 | ON Semiconductor | ON Semiconductor ON stock | 6/50 | 12.0% | 6492 | 736 | 33.3% | 50.0% | ok_low_relevance |
+| 17 | indie Semiconductor | indie Semiconductor INDI stock | 0/1 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 18 | Magnachip Semiconductor | Magnachip MX semiconductor stock | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 19 | Robinhood | Robinhood HOOD stock | 39/50 | 78.0% | 241 | 64 | 22.2% | 20.0% | ok |
+| 20 | iPhone 18 / Apple | Apple AAPL iPhone 18 launch | 40/50 | 80.0% | 6066 | 1732 | 61.9% | 20.0% | ok |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.
@@ -36,75 +36,47 @@ This is a measurement table, not the final editorial ranking. ChatGPT reviews it
 
 ## Relevance filter diagnostics
 
-### Planet Labs earnings — ok_low_relevance
-Relevance groups: `[["Planet Labs", "PL"], ["earnings", "results", "财报", "財報"]]`
-- Rejected: $PL Double Bottom Pattern Forming #planetlabs #pl #investing #stocks #money
-- Rejected: $PL Undervalued--Stock Analysis! #planetlabs #pl #investing #stocks #ai #money
-- Rejected: Planet Labs Contradicting Stories #planetlabs #pl #investing #ai #money
-- Rejected: $19 Make or Break Point #planetlabs #pl #investing #stocks #ai #money
-- Rejected: $PL: Posts Record Q2 FY27 Revenue Building on Previously Disclosed Record Quarterly Performance
-
 ### U.S. semiconductor tariffs — ok_low_relevance
-Relevance groups: `[["semiconductor", "chip", "半导体", "半導體"], ["tariff", "tariffs", "关税", "關稅"]]`
-- Rejected: Trump Sees Iran Strikes Short-Lived as Oil, Dollar Fall | Daybreak Europe 9/3/2026
-- Rejected: US and Iran Renew Fighting, Global Bond Rout Deepens
-- Rejected: Stocks Steady Ahead of Jobs Report; US Retail Diesel Hits Record High | Bloomberg Brief 09/04/2026
-- Rejected: Oil Stabilizes As Trump Says Iran Strikes To Be Short | The Opening Trade 9/3/2026
-- Rejected: Commerce Secretary Lutnick on AI, Anthropic and Canada Talks
+Relevance groups: `[["semiconductor", "chip", "半導體"], ["tariff", "tariffs", "關稅", "关税"]]`
+- Rejected: US Tariffs: The Secret Chipmaking Loophole Revealed!
+- Rejected: US Tariffs Force Samsung & SK hynix: Build or Pay Big?
+- Rejected: How the US-China Tech Split Is Reshaping Taiwan’s Chip Supply Chain | feat. Rocky Wu & Adam Ma
+- Rejected: #LIVE【關我什麼事】川普再揮"晶片關稅"大刀! 不在美國設廠...直接砍向你?恐怖晶片關稅海嘯來襲! 台積電憑"免死金牌"全身而退?!｜陳斐娟 主持｜20260903
+- Rejected: Lutnick: Taiwan To Bring 40% of Semiconductor Production to US｜TaiwanPlus News
 
-### Hewlett Packard Enterprise earnings — ok_low_relevance
-Relevance groups: `[["HPE", "Hewlett Packard Enterprise"], ["earnings", "AI data center", "guidance", "财报", "財報"]]`
-- Rejected: AI Spending Ripples Across Tech Stack; Nvidia Acquires Hugging Face | Bloomberg Tech 9/03/2026
-- Rejected: Earnings Confirm the AI Memory Shortage Is Getting Worse!
-- Rejected: HPE CFO on Company "Drinking Its Own Champagne" Thanks to AI Demand
-- Rejected: HPE Stock -11.2% | hp enterprise server $12.2 B revenue vs 11.2% stock plunge #Shorts
-- Rejected: $HPE: Dips Owing to Data Centre Networking Revenue Weakness.
+### Planet Labs — ok_low_relevance
+Relevance groups: `[["Planet Labs", "PL"], ["earnings", "guidance", "defense", "defence"]]`
+- Rejected: $PL: Posts Record Q2 FY27 Revenue Building on Previously Disclosed Record Quarterly Performance
+- Rejected: 【決算速報】PLプラネット・ラボ2027年Q2は売上高58%増も、防衛特需と粗利益率低下の持続性をどう見るか？
+- Rejected: The largest enhanced-geothermal PPA announced to date will feed AI - TCR 09/03/26
+- Rejected: Field Hearing – Industrial Base and Workforce Development for Skilled Trades
+- Rejected: Blowout Jobs Report Jolts Markets | Open Interest 9/4/2026
 
-### Quantum computing stocks — ok_no_relevant_videos
-Relevance groups: `[["quantum computing stocks", "quantum stocks", "量子计算股", "量子計算股"]]`
-- Rejected: D-Wave Stock Could EXPLODE 5x After This Massive Quantum Breakthrough
-- Rejected: IONQ Stock Analysis: Don't Buy Until You See This
-- Rejected: LAES Reveals How Its $24.5M Quantum Strategy Could Generate Revenue
-- Rejected: RGTI Revenue Soars 183%, Is It Time to Buy This Quantum Stock! RGTI Stock Analysis
-- Rejected: 6 ETFs to Know in 2026 | VDY, VOO, XEQT, ZSP, QTUM & SPSM Compared
+### Samsara — ok_low_relevance
+Relevance groups: `[["Samsara", "IOT"], ["earnings", "guidance", "财报", "財報"]]`
+- Rejected: Samsara (IOT) Q2 FY2027: Massive Growth & GAAP Profitability
+- Rejected: I Ran Samsara’s Numbers Through My Model — Here’s What It Spit Out for IOT
+- Rejected: Samsara Hits $2.1B ARR: Growth vs Cash Flow Reality
+- Rejected: Lulu Dives; Adobe New CEO; Samsara Higher | Stock Movers
+- Rejected: 【決算速報】サムサラ（IOT）2027年度第2四半期は30％増収で予想超過も株価は小幅高にとどまる理由とは？
 
-### Robinhood tokenized stocks — ok_low_relevance
-Relevance groups: `[["Robinhood", "HOOD"], ["tokenized stocks", "tokenized equities", "代币化股票", "代幣化股票"]]`
-- Rejected: Solana vs Robinhood Chain💥The Bull-Run Tokens To Watch🚀
-- Rejected: ROBINHOOD JUST SAVED CRYPTO 🚨 ARBITRUM EXPLODES 30%  🚨 $111M RWA VOLUME + $1.92M REVENUE!
-- Rejected: I Put $1000 Into 7 Robinhood Chain Tokens! PONS, $AI, CASHCAT, STONKBROKER & More
-- Rejected: 🚨 Robinhood Meme Coins I'm Buying Right Now with Huge Potential...
-- Rejected: Robinhood Just Created Crypto's BIGGEST Bull Market
+### Tesla — ok_low_relevance
+Relevance groups: `[["Tesla", "TSLA"], ["earnings", "guidance", "财报", "財報"]]`
+- Rejected: Why Traders Are Buying TSLA Calls Before the Cybercab Event
+- Rejected: Tesla Incentive Update
+- Rejected: Tesla Transformative CyberCab Launch (TSLA Stock)
+- Rejected: TSLA After the Quiet Launch | When Does Cybercab Actually Print Profit?
+- Rejected: Is Tesla Stock A Buy After The BIG NEWS?
 
-### Oil stocks — ok_no_relevant_videos
-Relevance groups: `[["oil stocks", "energy stocks", "石油股", "原油股"]]`
-- Rejected: Fed Comments & $93 Crude Oil Creates Mixed Rate Picture, NVDA Buys Hugging Face
-- Rejected: Gas prices volatile after crude oil hits $97 per barrel
-- Rejected: The Stock Market Is About To Go Crazy: Crude Oil Approaches $100
-- Rejected: 🔴 Final Trade Live Updates: Stock Market Update | Crude Oil | Latest Business News | CNBC Awaaz
-- Rejected: 🔴 Final Trade Live Updates: Stock Market Update | Crude Oil | Latest Business News | CNBC Awaaz
+### ON Semiconductor — ok_low_relevance
+Relevance groups: `[["ON Semiconductor", "onsemi", "ON"]]`
+- Rejected: 3 AI Semiconductor Stocks To Love After Their Post-Earnings Sell-Off!!
+- Rejected: Best Semiconductor Stock to Buy: Marvell Stock or Qualcomm Stock? | MRVL Stock vs. QCOM Stock
+- Rejected: NVIDIA Stuns Wall Street | Buy 3 AI Semiconductor Stocks Now | WFE DRAM NAND
+- Rejected: NVTS Stock CRASH 🚨 Is Navitas Semiconductor the Next AI Power Winner?
+- Rejected: IA13: Which Memory Stock To Buy? 🧠 SK Hynix vs Samsung vs Micron
 
-### Uranium stocks — ok_no_relevant_videos
-Relevance groups: `[["uranium stocks", "uranium miners", "铀矿股", "鈾礦股"]]`
-- Rejected: "The $1 Trillion AI Power Play: 5 Stocks That Won't Overheat"
-- Rejected: Why Energy Fuels Is the Most Underestimated Critical Minerals Play! UUUU Stock Analysis
-- Rejected: UUUU: Can Energy Fuels Handle a $1.8B Bet After a Brutal Q2! UUUU Stock Analysis
-- Rejected: AI Is Winning. But Are AI Stocks Too Expensive?
-- Rejected: Peter Boockvar & Dana Lyons - Commodities Hit 14-Year Highs as the 40-Year Bond Bull Dies
-
-### TSMC — ok_low_relevance
-Relevance groups: `[["TSMC", "TSM", "Taiwan Semiconductor", "台積電", "台积电"]]`
-- Rejected: Is One of the World's Best AI Stocks Cheap? Two Experts Can't Agree
-- Rejected: NVIDIA vs. Google's Chips: The Fight Everyone Gets Wrong
-- Rejected: EP.49: Why the AI Boom Is Still Early with Daniel Pilling from Sands Capital
-- Rejected: GPT-6 Astra: Why OpenAI’s 99.9% Score Triggers a Silicon Run (NVDA, AVGO)
-- Rejected: 5 FUTURE STOCKS to Hold for 10 YEARS 5 FUTURE STOCKS to Hold for 10 YEAR future stocks for long term
-
-### Memory stocks — ok_low_relevance
-Relevance groups: `[["memory stocks", "DRAM", "NAND", "HBM", "記憶體", "存储"]]`
-- Rejected: The Memory War Just Entered Its Next Phase!
-- Rejected: Earnings Confirm the AI Memory Shortage Is Getting Worse!
-- Rejected: Micron's Back! The Hidden Pattern That Wall Street Missed
-- Rejected: AI Memory Explained: Why AI Is Starving for RAM (HBM4, GDDR7, SRAM & PagedAttention)
-- Rejected: Seoul's Silicon Trap: Why Korea's $173B Chip Boom Could Crash [Sources in description]
+### indie Semiconductor — ok_no_relevant_videos
+Relevance groups: `[["indie Semiconductor", "INDI"]]`
+- Rejected: अंटार्कटिका में माइनस 50 डिग्री पर विदेशी साजिश-भारत के आवारा लड़के ने ऐसे किया बेनकाब! | Story
 

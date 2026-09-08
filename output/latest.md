@@ -1,31 +1,31 @@
 # YouTube Entity Enrichment
 
-Generated: **2026-09-07T11:39:38.820685+00:00**
+Generated: **2026-09-08T11:32:25.356827+00:00**
 
 This is a measurement table, not the final editorial ranking. ChatGPT reviews it after enrichment.
 
 | # | Entity | YouTube query | Relevant sample | Relevant % | Relevant median views/day | Small-channel median views/day | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---|
-| 1 | Tower Semiconductor | Tower Semiconductor TSEM stock | 1/1 | 100.0% | 11 | 11 | 0.0% | 100.0% | ok |
-| 2 | Pinterest | Pinterest PINS earnings | 1/50 | 2.0% | 5 | 5 | 0.0% | 100.0% | ok_low_relevance |
-| 3 | OpenAI Astra | OpenAI Astra AI model | 49/50 | 98.0% | 12836 | 10411 | 80.0% | 0.0% | ok |
-| 4 | China financial-sector recapitalization | China $54 billion banks insurers recapitalization stocks | 0/4 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 5 | Tesla | Tesla TSLA stock Cybercab | 44/50 | 88.0% | 2193 | 69 | 22.2% | 0.0% | ok |
-| 6 | Amazon | Amazon AMZN earnings | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 7 | DoorDash | DoorDash DASH earnings | 2/21 | 9.5% | 43 | 43 | 0.0% | 100.0% | ok_low_relevance |
-| 8 | Lululemon | Lululemon LULU earnings guidance | 11/44 | 25.0% | 11 | 7 | 0.0% | 80.0% | ok_low_relevance |
-| 9 | Canada-U.S. trade war / retaliatory tariffs | Canada US retaliatory tariffs trade war | 12/50 | 24.0% | 1237 | 192 | 20.0% | 30.0% | ok_low_relevance |
-| 10 | SEMICON Taiwan 2026 | SEMICON Taiwan 2026 semiconductor | 7/50 | 14.0% | 680 | 74 | 25.0% | 57.1% | ok_low_relevance |
-| 11 | Semiconductor ETFs | SMH SOXX semiconductor ETF | 1/6 | 16.7% | 32 | 32 | 0.0% | 100.0% | ok_low_relevance |
-| 12 | TSMC | TSMC TSM Taiwan Semiconductor | 8/11 | 72.7% | 16 | 16 | 0.0% | 100.0% | ok |
-| 13 | ON Semiconductor | ON Semiconductor onsemi ON stock | 0/1 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 14 | Navitas Semiconductor | Navitas NVTS semiconductor stock | 8/9 | 88.9% | 35 | 35 | 0.0% | 100.0% | ok |
-| 15 | Magnachip Semiconductor | Magnachip MX semiconductor stock | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 16 | Valens Semiconductor | Valens Semiconductor VLN stock | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 17 | Robinhood | Robinhood HOOD stock | 35/50 | 70.0% | 184 | 54 | 29.2% | 40.0% | ok |
-| 18 | NVIDIA | NVIDIA NVDA earnings AI chips | 7/50 | 14.0% | 92 | 63 | 0.0% | 85.7% | ok_low_relevance |
-| 19 | Power semiconductors | power semiconductor stocks GaN SiC | 0/8 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 20 | Anthropic / Claude | Anthropic Claude AI | 45/50 | 90.0% | 110 | 99 | 15.0% | 70.0% | ok |
+| 1 | Pinterest | Pinterest PINS earnings | 2/50 | 4.0% | 28 | 28 | 0.0% | 100.0% | ok_low_relevance |
+| 2 | Lululemon | Lululemon LULU stock earnings | 30/39 | 76.9% | 22 | 22 | 3.3% | 100.0% | ok |
+| 3 | CoreWeave | CoreWeave CRWV earnings AI cloud | 1/4 | 25.0% | 22 | 22 | 0.0% | 100.0% | ok_low_relevance |
+| 4 | Magnachip Semiconductor | Magnachip MX semiconductor stock | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 5 | TSMC | TSMC TSM Taiwan Semiconductor | 5/9 | 55.6% | 13 | 13 | 0.0% | 100.0% | ok |
+| 6 | ON Semiconductor | ON Semiconductor onsemi ON stock | 0/2 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 7 | OpenAI Astra | OpenAI Astra AI model agents | 50/50 | 100.0% | 7462 | 3189 | 60.7% | 10.0% | ok |
+| 8 | Indie Semiconductor | Indie Semiconductor INDI stock | 0/1 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 9 | Fubon Semiconductor ETF 00892 | 00892 富邦半導體 ETF | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 10 | Navitas Semiconductor | Navitas NVTS semiconductor stock | 6/7 | 85.7% | 28 | 28 | 0.0% | 100.0% | ok |
+| 11 | Oracle | Oracle ORCL earnings AI cloud | 13/26 | 50.0% | 10 | 10 | 0.0% | 90.0% | ok |
+| 12 | NVIDIA | NVIDIA NVDA earnings AI chips | 25/50 | 50.0% | 36 | 35 | 12.5% | 90.0% | ok |
+| 13 | Micron Technology | Micron MU stock HBM memory | 8/40 | 20.0% | 49 | 38 | 14.3% | 87.5% | ok_low_relevance |
+| 14 | Nanya Technology | Nanya Technology 南亞科 DRAM memory | 0/1 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 15 | AI agents | AI agents enterprise software stocks | 6/50 | 12.0% | 33 | 33 | 0.0% | 100.0% | ok_low_relevance |
+| 16 | Robinhood | Robinhood HOOD stock | 25/50 | 50.0% | 74 | 31 | 22.2% | 50.0% | ok |
+| 17 | Foxconn / Hon Hai | Foxconn Hon Hai 鴻海 AI server stock | 1/1 | 100.0% | 0 | 0 | 0.0% | 100.0% | ok |
+| 18 | Power semiconductors | power semiconductor stocks GaN SiC | 0/7 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 19 | Advanced semiconductor packaging | advanced semiconductor packaging CoWoS HBM | 2/12 | 16.7% | 9 | 9 | 0.0% | 100.0% | ok_low_relevance |
+| 20 | Oil stocks / crude oil | oil stocks crude oil WTI Brent | 15/50 | 30.0% | 208 | 63 | 0.0% | 60.0% | ok |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.
@@ -38,84 +38,60 @@ This is a measurement table, not the final editorial ranking. ChatGPT reviews it
 
 ### Pinterest — ok_low_relevance
 Relevance groups: `[["Pinterest", "PINS"], ["earnings", "results", "guidance", "财报", "財報"]]`
-- Rejected: Walmart Affiliate Program: How to Join & Create Pinterest Pins That Sell with AI
-- Rejected: How I Earn Selling Digital Products On Pinterest in 2026 (HOW TO START NOW)
+- Rejected: How to Make Money with Pinterest in 2026 | Affiliate Marketing
 - Rejected: How I Built My Pinterest Digital Product Funnel in 2 Hours (No Website, No Followers)
-- Rejected: The Pinterest Affiliate Marketing Strategy That Actually Works in 2026
-- Rejected: Get Paid to Manage Pinterest 💰 | Earn $500–$3,000 Per Client | Day 74 of 100
+- Rejected: How a Random Pinterest Pin Made Me $500 (Digital Product Strategy)
+- Rejected: Get Sales on Shopify - Easy Pinterest Marketing (Automated)
+- Rejected: How to Make Money with Pinterest in 2026 | Affiliate Marketing
 
-### China financial-sector recapitalization — ok_no_relevant_videos
-Relevance groups: `[["China", "中国", "中國"], ["bank", "banks", "insurer", "insurance", "recapitalization", "capital injection", "银行", "銀行", "保险", "保險"]]`
-- Rejected: Investors Turn to Emerging Market Debt Amid Yield Volatility | Insight with Haslinda Amin 9/7/2026
-- Rejected: Iran, US Trade Tanker Attacks, Strong US Payrolls Fuel Fed Hike Bets | The Asia Trade 9/7/2026
-- Rejected: China का SMART कदम⚠️$54 Billion बचाएगा अपने डूबते बैंक और इंश्योरेंस कंपनियां | Global Shock #stock
-- Rejected: German Far Right Surges in Vote, Iran & US Trade Tanker Attacks | The Opening Trade 9/7/2026
-
-### Amazon — ok_no_relevant_videos
-Relevance groups: `[["Amazon", "AMZN"], ["earnings", "results", "guidance", "财报", "財報"]]`
-- Rejected: Amazon Stock Technical Analysis: Breakout or Rejection? | AMZN 📈 #trading
-- Rejected: There Is NO Reason You Shouldnt Be Making Money On Amazon In 2026 Selling Books/CDs/DVDs! #go2lister
-- Rejected: Understanding Amazon Com’s Balance Sheet #AMZN (period: 2026-06-30)
-- Rejected: AMZN Stock Analysis: 30 Red Flags
-- Rejected: How Much Income Can You Make w a Cybercab
-
-### DoorDash — ok_low_relevance
-Relevance groups: `[["DoorDash", "DASH"], ["earnings", "results", "guidance", "财报", "財報"]]`
-- Rejected: How Much I Made Doing DoorDash #doordash #sidehustle #makemoneyonline
-- Rejected: Shmoney Talk✨ Want to Make Shmoney With DoorDash? 💵 Here’s How to Start!🦋
-- Rejected: DoorDash Just Invited Customers to Become Your Competition
-- Rejected: 16 | Dashing My Way To Retirement
-- Rejected: Would You Take It?
-
-### Lululemon — ok_low_relevance
-Relevance groups: `[["Lululemon", "LULU"], ["earnings", "results", "guidance", "财报", "財報"]]`
-- Rejected: Lululemon Stock Just Collapsed—Is It Finally Cheap Enough?
-- Rejected: Lululemon Athletica (LULU): 🍋 The Fallen Athleisure Titan & Michael Burry's Sub-100-Dollar Dip Buy
-- Rejected: DISASTER FOR LULULEMON! Or Buying Opportunity?🚨
-- Rejected: Lululemon Stock: Buy the Dip or Catch a Falling Knife?
-- Rejected: Semis Break Out, NVIDIA Eyes New Highs, Lululemon Craters
-
-### Canada-U.S. trade war / retaliatory tariffs — ok_low_relevance
-Relevance groups: `[["Canada", "Canadian", "加拿大"], ["US", "U.S.", "United States", "美国", "美國"], ["tariff", "tariffs", "trade war", "关税", "關稅"]]`
-- Rejected: Canada readies $28B in tariffs | CTV News Ottawa at Six for September 6, 2026
-- Rejected: U.S Might Not be Ready for Canada's Retaliatory Tariffs Strategy | U.S-Canada Trade War | N18G | 4K
-- Rejected: The $459 Billion Secret: Canada’s Hidden Weapon in the Trade War
-- Rejected: Majority of Canadians Back Retaliatory Tariffs Against U.S. Trade War Poll | DWS News | AF14
-- Rejected: Canada To Lose 90,000 Jobs From Trade War: Brace For 'Economic Pain' | Trevor Tombe
-
-### SEMICON Taiwan 2026 — ok_low_relevance
-Relevance groups: `[["SEMICON Taiwan", "2026 半導體 展", "台灣 半導體 展", "國際 半導體 展", "台湾半导体展", "国际半导体展"]]`
-- Rejected: 直擊2026國際半導體展，揭密AI真正贏家，CPO、先進封裝爆發，拆解AI浪潮關鍵產業升級趨勢！鎖定投資最錢線。
-- Rejected: Arizona courts Taiwan tech firms beyond semiconductors #晶片 #半導合作
-- Rejected: Memory on Top of the GPU: Samsung’s zHBM Vision
-- Rejected: How Taiwan built a chip city  #business
-- Rejected: 那些年的噩夢都瞬間回來了，沉浸式的Dream Fab無塵室體驗【2026國際半導體展系列專題#1】 #國際半導體展 #Semicontaiwan #semiconductor
-
-### Semiconductor ETFs — ok_low_relevance
-Relevance groups: `[["SMH", "SOXX", "semiconductor ETF", "半导体 ETF", "半導體 ETF"]]`
-- Rejected: SEME ETF: The Global Semiconductor Fund Most American Investors Have Never Heard Of
-- Rejected: Korea’s Market Is Being Held Up by Buybacks !?!
-- Rejected: Holanda saca su oro de EE.UU., Dell explota con servidores de IA y Uber apuesta a robotaxis
-- Rejected: DRAM: O PRIMEIRO ETF DE MEMÓRIA CRIADO PARA A ERA DA IA
-- Rejected: 162,000 Jobs. The Long Bond Didn't Buy the Boom. | September 4
+### CoreWeave — ok_low_relevance
+Relevance groups: `[["CoreWeave", "CRWV"], ["earnings", "results", "guidance", "AI", "cloud"]]`
+- Rejected: CRWV Revenue Doubled to $2.58B with $104B Backlog, Best Stock to Buy! CRWV Stock Analysis
+- Rejected: IREN has absurd upside and absurd downside. Both hosts stepped aside.
+- Rejected: Nvidia's CEO just told you exactly where to invest. Here are the 5 layers and the stocks in each.
 
 ### ON Semiconductor — ok_no_relevant_videos
 Relevance groups: `[["ON Semiconductor", "onsemi", "ON"]]`
+- Rejected: NVTS Stock: The AI Power Revolution Is Just Beginning
 - Rejected: China Pours Billions Into Mega Banks and Insurers | The China Show | 9/7/2026
 
-### NVIDIA — ok_low_relevance
-Relevance groups: `[["NVIDIA", "NVDA"], ["earnings", "results", "guidance", "财报", "財報"]]`
-- Rejected: Nvidia's $30 Billion AI Bet: 3 Stocks to Buy Before Wall Street Catches On
-- Rejected: NVIDIA DEMAND: Buyers are SNAPPING UP its chips, market expert says
-- Rejected: NVIDIA Just Made a MASSIVE AI Bet — NVDA Investors Need to See This
-- Rejected: The Big 3: AAPL, NVDA, CVX
+### Indie Semiconductor — ok_no_relevant_videos
+Relevance groups: `[["Indie Semiconductor", "INDI"]]`
+- Rejected: अंटार्कटिका में माइनस 50 डिग्री पर विदेशी साजिश-भारत के आवारा लड़के ने ऐसे किया बेनकाब! | Story
+
+### Micron Technology — ok_low_relevance
+Relevance groups: `[["Micron", "MU", "美光"], ["HBM", "memory", "DRAM", "NAND", "存储", "記憶體"]]`
+- Rejected: Micron technology analysis by Muffett investments #stockanalysis #investing #ai
+- Rejected: I Investigated the Memory Trade - Here Is What I Found!
+- Rejected: A New Threat Just Hit Samsung & SK Hynix!
+- Rejected: MU - 04 - Micron's New High Margin Business Unit is Driving Stability and Massive Profitability #MU
+- Rejected: The AI Stock You Need to Watch Right Now (It's Not Nvidia)
+
+### Nanya Technology — ok_no_relevant_videos
+Relevance groups: `[["Nanya Technology", "南亞科", "南亚科"], ["DRAM", "memory", "記憶體", "存储"]]`
+- Rejected: 記憶體股票最後的機會，錯過，99%的人將要買在山頂。
+
+### AI agents — ok_low_relevance
+Relevance groups: `[["AI agent", "AI agents", "agentic AI", "智能体", "代理"]]`
 - Rejected: NVDA Stock: $13B Hugging Face Deal — What Happens Next?
+- Rejected: Foxconn Just Sent Nvidia Investors a Powerful AI Signal
+- Rejected: AI and software can 'live together in harmony': Jefferies’ Brent Thill
+- Rejected: ServiceNow (NOW) Stock: Buy After the +53% Rally, or Huge Valuation Trap?
+- Rejected: REZOLVE AI: SOMETHING BIG IS HAPPENING THIS WEEK! | RZLV Stock
 
 ### Power semiconductors — ok_no_relevant_videos
 Relevance groups: `[["power semiconductor", "power semiconductors", "功率 半導體", "功率半导体", "GaN", "SiC"]]`
 - Rejected: NVTS Stock: The AI Power Revolution Is Just Beginning
-- Rejected: [주식추천] 실리콘 시대 끝납니다ㅣ차세대 전력반도체 대장주 3선
+- Rejected: 🔴【FULL】开朗少女为父报仇嫁进豪门，冷酷少爷竟是她苦寻多年的旧爱！两人开启隐婚生活，一边斗嘴撒糖，一边偷偷调查，没想到真凶竟是身边人！
+- Rejected: [FULL]穿书嫁恋爱脑霸总，谁知他能听见我心声，我嘴上乖巧扮贤妻心里疯狂吐槽想跑路，他看穿我所有小心思疯狂吃醋强制偏爱【婚約讀心大亂鬥】
 - Rejected: 【短劇全集】說好只做兩年隱婚夫妻，她卻被便宜老公越寵越心動，全然不知他竟是隱藏總裁！消失五年她帶娃歸來，男人紅著眼求婚：老婆孩子，這次都別走！【今我來思】
-- Rejected: 美女總裁車內舊疾突發，混混圍車砸窗，窮小子路過一針救命，再反手將數十混混全放倒，女主醒後倒貼求嫁！
-- Rejected: 【FULL】I Hid My Billionaire Identity as a Blacksmith… Until My Wife Chose Money Over Me😈
+- Rejected: 窮小伙被雷劈後覺醒天生神力，全村笑他傻人有傻福，殊不知美女們深夜排隊上門示好，他反手一巴掌打飛村霸，一夜暴富成傳奇!
+
+### Advanced semiconductor packaging — ok_low_relevance
+Relevance groups: `[["advanced packaging", "semiconductor packaging", "半導體 封裝", "半导体封装", "CoWoS"]]`
+- Rejected: TSMC SoIC Explained: Hybrid Bonding and the Vertical Architecture of AI Compute
+- Rejected: Why AI Chips Are So Hard to Build
+- Rejected: The Entire AI Memory Industry Explained: Why the Fastest Chips Are Starving
+- Rejected: 輝達還能漲多久？台積電推遲封裝訂單，手裡有AI股票到底該賣還是該扛？
+- Rejected: The AI Dividend Stock Behind Nvidia, Micron & AMD
 

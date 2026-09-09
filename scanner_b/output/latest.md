@@ -1,20 +1,19 @@
 # Scanner B — Catalyst Opportunities
 
-Generated: **2026-09-08T11:35:30.731276+00:00**
+Generated: **2026-09-09T11:31:43.957874+00:00**
 
-YouTube fresh search calls used: **11 / 20**
+YouTube fresh search calls used: **10 / 20**
 Cache hits: **0**; stale fallbacks: **0**; API failures: **0**
 
 | # | Event | Ticker | Judge | Discovery | Burst | Sources | YT gap | B final |
 |---:|---|---|---:|---:|---:|---:|---:|---:|
-| 1 | Boston Scientific says cyberattack makes 2026 guidance unlikely | BSX | 97 | 72.4 | 63.2 | 55.0 | 100.0 | 90.2 |
-| 2 | Intel and ASML push High-NA EUV toward wider production use | ASML | 94 | 68.3 | 69.2 | 55.0 | 100.0 | 87.5 |
-| 3 | Key drug from Novartis' $12B Avidity acquisition fails phase 3 test | NVS | 91 | 71.5 | 94.6 | 20.0 | 100.0 | 87.0 |
-| 4 | Nvidia-backed Firmus signs multi-year OpenAI deal for Malaysian AI data-center capacity | — | 97 | 53.8 | 18.0 | 55.0 | 100.0 | 84.6 |
-| 5 | Dell boosts fiscal-year outlook by $25 billion as server revenue surges | DELL | 97 | 45.6 | 15.2 | 20.0 | 100.0 | 82.2 |
-| 6 | XPeng starts humanoid robot mass production and says margins could exceed EVs | XPEV | 89 | 56.9 | 43.7 | 38.0 | 100.0 | 81.6 |
-| 7 | Grindr pays £26 million to settle UK privacy lawsuit | GRND | 82 | 56.7 | 55.1 | 38.0 | 100.0 | 78.0 |
-| 8 | Canada’s new retaliatory tariffs on U.S. goods take effect | — | 100 | 71.5 | 35.2 | 100.0 | 30.0 | 77.5 |
-| 9 | FTC files lawsuit alleging Amazon deceived advertisers | AMZN | 90 | 41.8 | 9.9 | 20.0 | 100.0 | 77.5 |
-| 10 | Anthropic walks away from roughly $6B Decart acquisition | — | 89 | 38.0 | 1.3 | 20.0 | 100.0 | 75.9 |
-| 11 | Tesla Cybercab launch draws U.S. regulatory probe | TSLA | 91 | 43.5 | 7.0 | 38.0 | 85.0 | 75.5 |
+| 1 | Independence Realty Trust and Centerspace Agree to $8.1 Billion Merger | IRT | 92 | 76.7 | 98.3 | 20.0 | 100.0 | 89.0 |
+| 2 | Braze shares fall 11% as third-quarter earnings guidance misses estimates | BRZE | 89 | 65.9 | 69.8 | 20.0 | 100.0 | 84.3 |
+| 3 | GameStop now generates more revenue from collectibles than video games | GME | 91 | 50.5 | 29.2 | 20.0 | 95.0 | 79.7 |
+| 4 | Korn Ferry Q1 Revenue Rises 7% to $764.6 Million | KFY | 77 | 70.1 | 85.1 | 20.0 | 100.0 | 79.5 |
+| 5 | Qualcomm and Amazon team up on AI chip development, optical networking | AMZN | 99 | 61.4 | 14.8 | 88.0 | 50.0 | 77.9 |
+| 6 | ASML starts 350,000-square-meter campus to expand semiconductor equipment production | ASML | 85 | 49.2 | 51.8 | 20.0 | 100.0 | 77.3 |
+| 7 | Anthropic cancels $6B acquisition of Israeli AI start-up Decart following due diligence | — | 82 | 49.8 | 38.7 | 20.0 | 85.0 | 72.9 |
+| 8 | Canada’s retaliatory tariffs take effect as U.S. auto trade risks escalate | — | 97 | 60.5 | 14.0 | 100.0 | 30.0 | 72.7 |
+| 9 | POSCO is investing $359 million in the construction of a new automotive steel plant | PKX | 74 | 51.0 | 26.8 | 38.0 | 100.0 | 72.3 |
+| 10 | Kioxia Denies SK hynix Joint Production Talks, Seeks NAND Price Stability to Sustain AI Investment | — | 78 | 38.5 | 9.9 | 20.0 | 100.0 | 70.5 |

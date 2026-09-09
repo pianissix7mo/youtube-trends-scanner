@@ -1,21 +1,21 @@
 # Scanner C — Editorial News + YouTube Enrichment
 
-Generated: **2026-09-08T11:37:12.812334+00:00**
-Selection generated: **2026-09-08T11:38:00+00:00**
+Generated: **2026-09-09T11:33:02.390796+00:00**
+Selection generated: **2026-09-09T11:38:00+00:00**
 YouTube search calls used: **10**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | Saudi energy infrastructure / crude oil | — | Saudi Houthi oil attack Brent WTI | 1/6 | 564 | 0.0% | 100.0% | ok_low_relevance |
-| 2 | ASML / High-NA EUV | ASML | ASML High NA EUV Intel TSMC Samsung AI chips | 0/4 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 3 | OpenAI / Firmus | NVDA | OpenAI Firmus Malaysia Nvidia data center deal | 2/3 | 23 | 0.0% | 100.0% | ok |
-| 4 | Mistral AI | — | Mistral AI $24 billion valuation Samsung funding | 6/10 | 0 | 0.0% | 83.3% | ok |
-| 5 | Boston Scientific | BSX | BSX Boston Scientific cyberattack guidance stock | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 6 | Canada-U.S. trade war | — | Canada US retaliatory tariffs $20 billion | 21/50 | 48 | 0.0% | 0.0% | ok |
-| 7 | Bank of Japan / Japanese yen | — | yen BOJ rate hike carry trade September 2026 | 1/24 | 0 | 0.0% | 0.0% | ok_low_relevance |
-| 8 | Longsys Electronics | 301308.SZ | Longsys AI memory IPO Micron SanDisk | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 9 | Anthropic / Decart AI | — | Anthropic Decart $6 billion acquisition | 0/3 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 10 | Huawei / Xiaomi foldables | AAPL | Huawei Mate XT2 Xiaomi 18 Fold Apple China chips | 5/5 | 47 | 0.0% | 80.0% | ok |
+| 1 | Qualcomm / Amazon | QCOM | Qualcomm QCOM Amazon AI chip deal | 5/45 | 56 | 0.0% | 100.0% | ok_low_relevance |
+| 2 | Alphabet / Google Finland AI infrastructure | GOOGL | GOOGL Google Finland AI data center nuclear power | 1/1 | 132 | 0.0% | 100.0% | ok |
+| 3 | OpenAI / Samsung | 005930.KS | OpenAI Samsung next generation chip Stargate memory | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 4 | DeepSeek | — | DeepSeek CITIC STAR Market IPO | 1/3 | 4 | 0.0% | 100.0% | ok |
+| 5 | China humanoid robotics IPO policy | — | China humanoid robot IPO Unitree regulation | 1/5 | 14 | 0.0% | 100.0% | ok_low_relevance |
+| 6 | Crude oil / Middle East | — | Brent $100 Iran Saudi oil Fed stocks | 5/33 | 27 | 0.0% | 20.0% | ok_low_relevance |
+| 7 | Chime Financial | CHYM | Chime CHYM Stride Bank acquisition charter | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 8 | GameStop | GME | GME GameStop earnings collectibles EBITDA | 2/2 | 70 | 0.0% | 100.0% | ok |
+| 9 | Japan manufacturers / semiconductor demand | — | Japan semiconductor data center demand Reuters Tankan | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 10 | ASML | ASML | ASML new campus EUV capacity AI chips | 1/19 | 9 | 0.0% | 100.0% | ok_low_relevance |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

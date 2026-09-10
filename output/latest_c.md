@@ -1,21 +1,21 @@
 # Scanner C — Editorial News + YouTube Enrichment
 
-Generated: **2026-09-09T11:33:02.390796+00:00**
-Selection generated: **2026-09-09T11:38:00+00:00**
+Generated: **2026-09-10T11:35:11.211151+00:00**
+Selection generated: **2026-09-10T11:38:00+00:00**
 YouTube search calls used: **10**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | Qualcomm / Amazon | QCOM | Qualcomm QCOM Amazon AI chip deal | 5/45 | 56 | 0.0% | 100.0% | ok_low_relevance |
-| 2 | Alphabet / Google Finland AI infrastructure | GOOGL | GOOGL Google Finland AI data center nuclear power | 1/1 | 132 | 0.0% | 100.0% | ok |
-| 3 | OpenAI / Samsung | 005930.KS | OpenAI Samsung next generation chip Stargate memory | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 4 | DeepSeek | — | DeepSeek CITIC STAR Market IPO | 1/3 | 4 | 0.0% | 100.0% | ok |
-| 5 | China humanoid robotics IPO policy | — | China humanoid robot IPO Unitree regulation | 1/5 | 14 | 0.0% | 100.0% | ok_low_relevance |
-| 6 | Crude oil / Middle East | — | Brent $100 Iran Saudi oil Fed stocks | 5/33 | 27 | 0.0% | 20.0% | ok_low_relevance |
-| 7 | Chime Financial | CHYM | Chime CHYM Stride Bank acquisition charter | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 8 | GameStop | GME | GME GameStop earnings collectibles EBITDA | 2/2 | 70 | 0.0% | 100.0% | ok |
-| 9 | Japan manufacturers / semiconductor demand | — | Japan semiconductor data center demand Reuters Tankan | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 10 | ASML | ASML | ASML new campus EUV capacity AI chips | 1/19 | 9 | 0.0% | 100.0% | ok_low_relevance |
+| 1 | TSMC | TSM | TSMC TSM August revenue AI demand | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 2 | China AI chip / HBM supply chain | — | China AI chips HBM shortage Huawei Micron | 0/6 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 3 | NVIDIA | NVDA | NVDA Nvidia Australia 2GW AI data center | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 4 | South Korea U.S. AI infrastructure investment | — | South Korea $100B US AI infrastructure nuclear | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 5 | OpenAI | — | OpenAI Hugging Face Senate probe AI agents | 0/5 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 6 | Analog Devices | ADI | ADI Analog Devices Alif Semiconductor acquisition | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 7 | Samsung Electronics / Mistral AI | — | Samsung Mistral AI semiconductor manufacturing | 11/50 | 7 | 0.0% | 80.0% | ok_low_relevance |
+| 8 | OpenAI / Samsung Electronics | — | OpenAI Samsung next generation chips | 8/49 | 117 | 12.5% | 100.0% | ok_low_relevance |
+| 9 | Salesforce | CRM | Salesforce CRM Listen Labs acquisition AI | 7/14 | 0 | 0.0% | 100.0% | ok |
+| 10 | Enflame Technology | — | Enflame IPO Tencent China AI chip | 0/5 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

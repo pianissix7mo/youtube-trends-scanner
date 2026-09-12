@@ -1,21 +1,21 @@
 # Scanner C — Editorial News + YouTube Enrichment
 
-Generated: **2026-09-11T11:36:07.132956+00:00**
-Selection generated: **2026-09-11T11:38:00+00:00**
+Generated: **2026-09-12T11:35:20.191783+00:00**
+Selection generated: **2026-09-12T11:34:00+00:00**
 YouTube search calls used: **10**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | Oracle | ORCL | Oracle ORCL earnings AI cloud backlog | 29/39 | 83 | 8.3% | 60.0% | ok |
-| 2 | Enflame Technology | — | Enflame China AI chip IPO Nvidia | 0/10 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 3 | Microsoft | MSFT | Microsoft MSFT 38GW data center AI capacity | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 4 | Global oil / IEA | — | IEA oil supply Gulf Iran inflation stocks | 0/4 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 5 | Adobe | ADBE | Adobe ADBE earnings AI ARR guidance | 5/8 | 92 | 20.0% | 100.0% | ok |
-| 6 | Copart / ACV Auctions | CPRT / ACVA | Copart CPRT ACV ACVA acquisition $1.9B | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 7 | OpenAI | — | OpenAI ChatGPT Financial Services Morgan Stanley LSEG | 1/8 | 89 | 0.0% | 100.0% | ok_low_relevance |
-| 8 | d-Matrix / Nvidia | NVDA | Nvidia NVDA d-Matrix NVLink Fusion inference | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 9 | Z.AI | — | Z.AI China AI $5B financing Hong Kong | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 10 | Electronic Arts / Savvy Games | EA | EA Saudi PIF Savvy Games merger | 0/3 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 1 | Anthropic / Nvidia | NVDA | Anthropic IPO Nvidia NVDA $100B | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 2 | Federal Reserve / U.S. inflation | — | Fed rate hike inflation CPI stocks | 19/50 | 12 | 10.0% | 10.0% | ok |
+| 3 | Oracle | ORCL | Oracle ORCL AI spending cash flow debt | 7/10 | 9 | 0.0% | 42.9% | ok |
+| 4 | Micron Technology | MU | Micron MU Taiwan strike HBM workers bonus | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 5 | Global oil shipping / Middle East | — | oil tanker rates Hormuz Iran inflation stocks | 1/50 | 0 | 0.0% | 0.0% | ok_low_relevance |
+| 6 | Trump / Chinese automakers | — | Trump Chinese EV factories US Tesla GM Ford | 1/2 | 34 | 0.0% | 100.0% | ok |
+| 7 | TeamSystem / KKR / Francisco Partners | KKR | KKR TeamSystem software valuation AI | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 8 | U.S. consumer sentiment | — | Michigan consumer sentiment inflation expectations stocks | 0/30 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 9 | Mizuho / Radiant World | — | Mizuho Radiant World $100M Glencore invoices | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 10 | Shanghai crude-oil futures | — | Shanghai crude oil futures limits Iran oil prices | 0/10 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

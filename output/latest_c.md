@@ -1,21 +1,17 @@
 # Scanner C — Editorial News + YouTube Enrichment
 
-Generated: **2026-09-12T11:35:20.191783+00:00**
-Selection generated: **2026-09-12T11:34:00+00:00**
-YouTube search calls used: **10**
+Generated: **2026-09-13T11:31:08.369178+00:00**
+Selection generated: **2026-09-13T11:28:57+00:00**
+YouTube search calls used: **6**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | Anthropic / Nvidia | NVDA | Anthropic IPO Nvidia NVDA $100B | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 2 | Federal Reserve / U.S. inflation | — | Fed rate hike inflation CPI stocks | 19/50 | 12 | 10.0% | 10.0% | ok |
-| 3 | Oracle | ORCL | Oracle ORCL AI spending cash flow debt | 7/10 | 9 | 0.0% | 42.9% | ok |
-| 4 | Micron Technology | MU | Micron MU Taiwan strike HBM workers bonus | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 5 | Global oil shipping / Middle East | — | oil tanker rates Hormuz Iran inflation stocks | 1/50 | 0 | 0.0% | 0.0% | ok_low_relevance |
-| 6 | Trump / Chinese automakers | — | Trump Chinese EV factories US Tesla GM Ford | 1/2 | 34 | 0.0% | 100.0% | ok |
-| 7 | TeamSystem / KKR / Francisco Partners | KKR | KKR TeamSystem software valuation AI | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 8 | U.S. consumer sentiment | — | Michigan consumer sentiment inflation expectations stocks | 0/30 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 9 | Mizuho / Radiant World | — | Mizuho Radiant World $100M Glencore invoices | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 10 | Shanghai crude-oil futures | — | Shanghai crude oil futures limits Iran oil prices | 0/10 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 1 | Strait of Hormuz / global oil shipping | — | Hormuz oil attack inflation stocks | 0/50 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 2 | OpenAI | — | OpenAI IPO delayed 2026 Altman | 24/49 | 7 | 0.0% | 100.0% | ok |
+| 3 | Oracle | ORCL | Oracle ORCL Larry Ellison share sale cancelled | 0/3 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 4 | Equinix | EQIX | Equinix EQIX Cape Town data center power water | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 5 | Federal Reserve / global central banks | — | Fed rate hike Warsh BOJ BOE inflation | 1/3 | 0 | 0.0% | 0.0% | ok |
+| 6 | PwC | — | PwC India AI consulting restructuring | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

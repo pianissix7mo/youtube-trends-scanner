@@ -1,18 +1,19 @@
 # Scanner B — Catalyst Opportunities
 
-Generated: **2026-09-13T12:07:47.100498+00:00**
+Generated: **2026-09-14T12:01:56.978314+00:00**
 
-YouTube fresh search calls used: **9 / 20**
+YouTube fresh search calls used: **10 / 20**
 Cache hits: **0**; stale fallbacks: **0**; API failures: **0**
 
 | # | Event | Ticker | Judge | Discovery | Burst | Sources | YT gap | B final |
 |---:|---|---|---:|---:|---:|---:|---:|---:|
-| 1 | South Korea expands espionage law to crack down on AI chip tech theft | — | 93 | 40.8 | 2.9 | 38.0 | 100.0 | 78.7 |
-| 2 | Fujitsu to Sell AI CPU 'Monaka' Globally in 2027, TSMC to Handle 2nm Production | TSM | 86 | 46.7 | 18.0 | 38.0 | 100.0 | 77.0 |
-| 3 | Google Completes Talent Acquisition Deal with AI Coding Startup Mechanize, Bolstering DeepMind's Reasoning Capabilities | GOOGL | 85 | 47.2 | 20.9 | 20.0 | 100.0 | 76.7 |
-| 4 | Paramount Skydance Argues Antitrust Lawsuit Isn't 'Sound Economic Analysis' | PSKY | 81 | 39.1 | 3.6 | 38.0 | 100.0 | 72.2 |
-| 5 | Boeing and engineers' union reach tentative contract agreement | BA | 83 | 32.7 | 0.0 | 20.0 | 100.0 | 71.3 |
-| 6 | Firm Inflation Reading Pushes Fed Closer to a Rate Increase | — | 97 | 50.7 | 18.0 | 38.0 | 30.0 | 69.7 |
-| 7 | India's semiconductor sector draws $1.4 billion funding, half of it since 2025 | — | 73 | 40.8 | 2.9 | 38.0 | 100.0 | 68.7 |
-| 8 | Bitcoin ETFs see $462M outflows amid price dip; Ethereum ETFs gain $216M inflows in contrast. | — | 81 | 35.4 | 0.0 | 38.0 | 85.0 | 68.1 |
-| 9 | Chinese breakthrough in chip material aims to clear hurdle for next-gen memory | — | 74 | 36.9 | 2.9 | 20.0 | 100.0 | 68.1 |
+| 1 | Fed Rate Hike Looms as Inflation Puts Trump and Kevin Warsh on a Collision Course | — | 100 | 70.5 | 48.2 | 72.0 | 95.0 | 90.2 |
+| 2 | Kyndryl completes Healthcare IT Leaders acquisition for $350M | KD | 83 | 66.7 | 47.0 | 55.0 | 100.0 | 81.5 |
+| 3 | Hain Celestial (NASDAQ:HAIN) Misses Q2 CY2026 Revenue Estimates, But Stock Soars 9% | HAIN | 76 | 71.0 | 87.7 | 20.0 | 100.0 | 79.3 |
+| 4 | ASML extends chipmaking dominance as customers embrace High NA | ASML | 94 | 38.6 | 7.0 | 20.0 | 95.0 | 77.6 |
+| 5 | Global semiconductor revenue hits record $425 billion | — | 88 | 39.8 | 0.0 | 38.0 | 100.0 | 75.9 |
+| 6 | Bitcoin ETFs shed $463M in weekly reversal as Ether ETFs gain $197M | — | 80 | 50.5 | 18.0 | 55.0 | 100.0 | 75.2 |
+| 7 | Workday Shares Rise 2.8% as Silver Lake Takeover Report Remains in Focus | WDAY | 79 | 52.3 | 28.5 | 20.0 | 100.0 | 75.2 |
+| 8 | Fujitsu set to launch global sales of Japan-made AI chip 'Monaka' | — | 87 | 38.6 | 0.0 | 38.0 | 100.0 | 75.1 |
+| 9 | Lockheed Martin expands Vectis stealth combat drone production with four more aircraft for future U.S. and allied air operations | LMT | 76 | 48.7 | 31.4 | 20.0 | 100.0 | 72.6 |
+| 10 | Why Are Some Companies Bringing Manufacturing Back to China Despite US Tariffs? | — | 75 | 43.2 | 0.0 | 38.0 | 100.0 | 70.5 |

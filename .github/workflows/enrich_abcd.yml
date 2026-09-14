@@ -11,6 +11,7 @@ on:
       - "youtube_enrich.py"
       - "scanner_b/youtube_enrich.py"
       - "youtube_enrich_external.py"
+      - ".github/workflows/enrich_abcd.yml"
 
 permissions:
   contents: write
@@ -52,6 +53,11 @@ jobs:
           B=false
           CD=false
 
+          if echo "$FILES" | grep -Eq '^\.github/workflows/enrich_abcd\.yml$'; then
+            A=true
+            B=true
+            CD=true
+          fi
           if echo "$FILES" | grep -Eq '^(data/selected_entities\.json|youtube_enrich\.py)$'; then A=true; fi
           if echo "$FILES" | grep -Eq '^(scanner_b/data/selected_events\.json|scanner_b/youtube_enrich\.py)$'; then B=true; fi
           if echo "$FILES" | grep -Eq '^(data/selected_external\.json|youtube_enrich_external\.py|youtube_enrich\.py)$'; then CD=true; fi

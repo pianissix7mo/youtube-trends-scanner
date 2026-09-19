@@ -1,19 +1,21 @@
 # Scanner C — Editorial News + YouTube Enrichment
 
-Generated: **2026-09-18T11:34:03.933073+00:00**
-Selection generated: **2026-09-18T11:32:29+00:00**
-YouTube search calls used: **8**
+Generated: **2026-09-19T11:31:08.227433+00:00**
+Selection generated: **2026-09-19T11:33:00+00:00**
+YouTube search calls used: **10**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | CXMT / China memory industry | — | CXMT NAND Micron Samsung AI memory shortage | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 2 | SK Hynix / Solidigm | — | SK Hynix Solidigm US NAND fab New York | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 3 | Federal Reserve / U.S. rates | — | Fed rate hike September 2026 Treasury 10 year 5 percent | 5/50 | 480 | 0.0% | 40.0% | ok_low_relevance |
-| 4 | CoreWeave | CRWV | CoreWeave CRWV $3 billion convertible debt AI cloud | 0/3 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 5 | Nexperia / Tata Electronics | — | Nexperia Tata India semiconductor Wingtech | 1/2 | 3192 | 100.0% | 100.0% | ok |
-| 6 | Bank of Japan / Yen | — | Bank of Japan rate hike yen September 2026 | 10/50 | 24 | 0.0% | 90.0% | ok_low_relevance |
-| 7 | Trump-Xi U.S.-China summit | — | Trump Xi Washington trade AI semiconductors September 2026 | 2/19 | 8 | 0.0% | 100.0% | ok_low_relevance |
-| 8 | Global equity fund flows | — | US equity fund outflows technology inflows Fed hike September 2026 | 0/7 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 1 | Anthropic | — | Anthropic new AI model IPO GPT-6 Astra | 7/22 | 54 | 0.0% | 71.4% | ok |
+| 2 | Alibaba / Meituan | BABA | Alibaba BABA Meituan China antitrust | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 3 | Oracle | ORCL | Oracle ORCL $18 billion data center debt Project Jupiter | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 4 | US-China LNG trade | — | US China LNG tariffs Xi Venture Global Cheniere | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 5 | FedEx / InPost | FDX | FedEx FDX InPost takeover Advent | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 6 | U.S. Treasury / Oil / Equities | — | 10 year Treasury 5% oil stocks stagflation | 0/9 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 7 | European AI / Mistral | — | Mistral Europe AI OpenAI Anthropic slowdown regulation | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 8 | ECB / European rates | — | ECB Lagarde rate hikes energy inflation | 1/11 | 0 | 0.0% | 0.0% | ok_low_relevance |
+| 9 | EU banks | — | EU bank mergers US banks AI technology spending | 0/50 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 10 | China economy / AI | — | China AI supply demand imbalance PBOC Huang Yiping | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

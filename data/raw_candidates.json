@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-09-18T11:15:49.871626+00:00",
+  "generated_at_utc": "2026-09-19T11:00:07.704231+00:00",
   "timeframe": "now 3-d",
-  "explore_timeframe": "2026-09-15T11 2026-09-18T11",
+  "explore_timeframe": "2026-09-16T10 2026-09-19T10",
   "rss_hours": 48,
   "raw_limit": 1000,
   "regions": {
@@ -33,16 +33,16 @@
       ]
     }
   },
-  "row_count_before_dedupe": 298,
-  "candidate_count": 200,
+  "row_count_before_dedupe": 244,
+  "candidate_count": 173,
   "candidate_region_counts": {
-    "US": 108,
-    "CA": 77,
-    "TW": 55
+    "US": 105,
+    "CA": 43,
+    "TW": 53
   },
   "youtube_trends": {
     "anchors_per_region": 4,
-    "rotation_date_toronto": "2026-09-18",
+    "rotation_date_toronto": "2026-09-19",
     "rotation_group": 1,
     "rotation_group_count": 1,
     "anchors_used": {
@@ -72,12 +72,13 @@
     "cache_ttl_seconds": 86400.0,
     "logical_requests_planned": 12,
     "logical_requests_attempted": 12,
-    "calls_succeeded": 10,
+    "calls_succeeded": 9,
     "stopped_after_429": false
   },
   "errors": [
-    "YouTube Trends CA/semiconductor: Google Trends Explore did not render the interest-over-time chart, and no rate-limit message was shown — the page structure may have changed.\n\nThis usually means Google updated the Explore UI. Solutions:\n• Update trendspyg: pip install --upgrade trendspyg\n• Run with headless=False (CLI: --visible) to see the page\n• Report it: https://github.com/flack0x/trendspyg/issues\n\nKeyword: 'semiconductor' | Geo: CA | Timeframe: 2026-09-15T11 2026-09-18T11",
-    "YouTube Trends TW/財報: Google Trends Explore did not render the interest-over-time chart, and no rate-limit message was shown — the page structure may have changed.\n\nThis usually means Google updated the Explore UI. Solutions:\n• Update trendspyg: pip install --upgrade trendspyg\n• Run with headless=False (CLI: --visible) to see the page\n• Report it: https://github.com/flack0x/trendspyg/issues\n\nKeyword: '財報' | Geo: TW | Timeframe: 2026-09-15T11 2026-09-18T11"
+    "YouTube Trends CA/semiconductor: Google Trends Explore did not render the interest-over-time chart, and no rate-limit message was shown — the page structure may have changed.\n\nThis usually means Google updated the Explore UI. Solutions:\n• Update trendspyg: pip install --upgrade trendspyg\n• Run with headless=False (CLI: --visible) to see the page\n• Report it: https://github.com/flack0x/trendspyg/issues\n\nKeyword: 'semiconductor' | Geo: CA | Timeframe: 2026-09-16T10 2026-09-19T10",
+    "YouTube Trends CA/earnings: Google rate-limited the Explore data request; stop and back off.",
+    "YouTube Trends CA/stocks: Google rate-limited the Explore data request; stop and back off."
   ],
   "selection_guidance": {
     "geo": "Treat US, Canada, and Taiwan as near-equal discovery markets; Taiwan may be only slightly higher, not dominant.",
@@ -99,16 +100,16 @@
           "source": "youtube_rising",
           "anchor": "AI",
           "rank": 1,
-          "signal": "Breakout",
-          "strength": 111.6
+          "signal": "+1,300%",
+          "strength": 85.65
         },
         {
           "region": "CA",
           "source": "youtube_rising",
           "anchor": "AI",
           "rank": 1,
-          "signal": "Breakout",
-          "strength": 111.6
+          "signal": "+900%",
+          "strength": 82.78
         },
         {
           "region": "TW",
@@ -122,42 +123,14 @@
           "region": "TW",
           "source": "youtube_top",
           "anchor": "AI",
-          "rank": 10,
+          "rank": 11,
           "signal": "Top",
-          "strength": 27.0
+          "strength": 26.2
         }
       ],
       "news_titles": [],
       "max_strength": 111.6,
       "raw_priority": 127.6
-    },
-    {
-      "query": "typesafe ai",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 3,
-          "signal": "Breakout",
-          "strength": 110.8
-        },
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 2,
-          "signal": "Breakout",
-          "strength": 111.2
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 111.2,
-      "raw_priority": 119.2
     },
     {
       "query": "00830 國泰 費城 半導體",
@@ -177,36 +150,9 @@
           "region": "TW",
           "source": "youtube_top",
           "anchor": "半導體",
-          "rank": 5,
+          "rank": 3,
           "signal": "Top",
-          "strength": 31.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 111.6,
-      "raw_priority": 111.6
-    },
-    {
-      "query": "dollarama earnings",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "earnings",
-          "rank": 1,
-          "signal": "Breakout",
-          "strength": 111.6
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "earnings",
-          "rank": 1,
-          "signal": "Top",
-          "strength": 34.2
+          "strength": 32.6
         }
       ],
       "news_titles": [],
@@ -231,9 +177,9 @@
           "region": "US",
           "source": "youtube_top",
           "anchor": "semiconductor",
-          "rank": 10,
+          "rank": 7,
           "signal": "Top",
-          "strength": 27.0
+          "strength": 29.4
         }
       ],
       "news_titles": [],
@@ -241,26 +187,26 @@
       "raw_priority": 111.6
     },
     {
-      "query": "lennar earnings call",
+      "query": "m31 股票",
       "regions": [
-        "US"
+        "TW"
       ],
       "signals": [
         {
-          "region": "US",
+          "region": "TW",
           "source": "youtube_rising",
-          "anchor": "earnings",
+          "anchor": "股票",
           "rank": 1,
           "signal": "Breakout",
           "strength": 111.6
         },
         {
-          "region": "US",
+          "region": "TW",
           "source": "youtube_top",
-          "anchor": "earnings",
-          "rank": 16,
+          "anchor": "股票",
+          "rank": 18,
           "signal": "Top",
-          "strength": 22.2
+          "strength": 20.6
         }
       ],
       "news_titles": [],
@@ -287,61 +233,7 @@
       "raw_priority": 111.6
     },
     {
-      "query": "what stocks to buy now",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 1,
-          "signal": "Breakout",
-          "strength": 111.6
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 22,
-          "signal": "Top",
-          "strength": 17.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 111.6,
-      "raw_priority": 111.6
-    },
-    {
-      "query": "鴻海 股票",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_rising",
-          "anchor": "股票",
-          "rank": 1,
-          "signal": "Breakout",
-          "strength": 111.6
-        },
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "股票",
-          "rank": 21,
-          "signal": "Top",
-          "strength": 18.2
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 111.6,
-      "raw_priority": 111.6
-    },
-    {
-      "query": "holly rowe ai video",
+      "query": "take two earnings call",
       "regions": [
         "US"
       ],
@@ -349,10 +241,45 @@
         {
           "region": "US",
           "source": "youtube_rising",
-          "anchor": "AI",
+          "anchor": "earnings",
+          "rank": 1,
+          "signal": "Breakout",
+          "strength": 111.6
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
+          "rank": 15,
+          "signal": "Top",
+          "strength": 23.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.6,
+      "raw_priority": 111.6
+    },
+    {
+      "query": "semiconductor engineering",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "semiconductor",
           "rank": 2,
           "signal": "Breakout",
           "strength": 111.2
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "semiconductor",
+          "rank": 12,
+          "signal": "Top",
+          "strength": 25.4
         }
       ],
       "news_titles": [],
@@ -360,7 +287,7 @@
       "raw_priority": 111.2
     },
     {
-      "query": "nvidia earnings 2024",
+      "query": "take 2 earnings call",
       "regions": [
         "US"
       ],
@@ -387,225 +314,6 @@
       "raw_priority": 111.2
     },
     {
-      "query": "semiconductor basics",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "semiconductor",
-          "rank": 2,
-          "signal": "Breakout",
-          "strength": 111.2
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "semiconductor",
-          "rank": 15,
-          "signal": "Top",
-          "strength": 23.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 111.2,
-      "raw_priority": 111.2
-    },
-    {
-      "query": "stocks to watch today",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 2,
-          "signal": "Breakout",
-          "strength": 111.2
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 111.2,
-      "raw_priority": 111.2
-    },
-    {
-      "query": "tsx stocks to buy now",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 2,
-          "signal": "Breakout",
-          "strength": 111.2
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 24,
-          "signal": "Top",
-          "strength": 15.8
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 111.2,
-      "raw_priority": 111.2
-    },
-    {
-      "query": "友達",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_rising",
-          "anchor": "股票",
-          "rank": 2,
-          "signal": "Breakout",
-          "strength": 111.2
-        },
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "股票",
-          "rank": 22,
-          "signal": "Top",
-          "strength": 17.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 111.2,
-      "raw_priority": 111.2
-    },
-    {
-      "query": "日本 半導體",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_rising",
-          "anchor": "半導體",
-          "rank": 2,
-          "signal": "Breakout",
-          "strength": 111.2
-        },
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "半導體",
-          "rank": 7,
-          "signal": "Top",
-          "strength": 29.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 111.2,
-      "raw_priority": 111.2
-    },
-    {
-      "query": "grab 股票",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_rising",
-          "anchor": "股票",
-          "rank": 3,
-          "signal": "Breakout",
-          "strength": 110.8
-        },
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "股票",
-          "rank": 23,
-          "signal": "Top",
-          "strength": 16.6
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 110.8,
-      "raw_priority": 110.8
-    },
-    {
-      "query": "micro cap stocks",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 3,
-          "signal": "Breakout",
-          "strength": 110.8
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 25,
-          "signal": "Top",
-          "strength": 15.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 110.8,
-      "raw_priority": 110.8
-    },
-    {
-      "query": "arch manning ai video",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 4,
-          "signal": "Breakout",
-          "strength": 110.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 110.4,
-      "raw_priority": 110.4
-    },
-    {
-      "query": "oil stocks today",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 4,
-          "signal": "Breakout",
-          "strength": 110.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 110.4,
-      "raw_priority": 110.4
-    },
-    {
       "query": "股票 貸款",
       "regions": [
         "TW"
@@ -615,6 +323,141 @@
           "region": "TW",
           "source": "youtube_rising",
           "anchor": "股票",
+          "rank": 2,
+          "signal": "Breakout",
+          "strength": 111.2
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 20,
+          "signal": "Top",
+          "strength": 19.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 111.2,
+      "raw_priority": 111.2
+    },
+    {
+      "query": "nvidia earnings 2024",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "earnings",
+          "rank": 3,
+          "signal": "Breakout",
+          "strength": 110.8
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
+          "rank": 21,
+          "signal": "Top",
+          "strength": 18.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 110.8,
+      "raw_priority": 110.8
+    },
+    {
+      "query": "on semiconductor stock",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "semiconductor",
+          "rank": 3,
+          "signal": "Breakout",
+          "strength": 110.8
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "semiconductor",
+          "rank": 13,
+          "signal": "Top",
+          "strength": 24.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 110.8,
+      "raw_priority": 110.8
+    },
+    {
+      "query": "股票 行情 分析",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "股票",
+          "rank": 3,
+          "signal": "Breakout",
+          "strength": 110.8
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 21,
+          "signal": "Top",
+          "strength": 18.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 110.8,
+      "raw_priority": 110.8
+    },
+    {
+      "query": "hood earnings",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "earnings",
+          "rank": 4,
+          "signal": "Breakout",
+          "strength": 110.4
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
+          "rank": 22,
+          "signal": "Top",
+          "strength": 17.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 110.4,
+      "raw_priority": 110.4
+    },
+    {
+      "query": "鴻海 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "股票",
           "rank": 4,
           "signal": "Breakout",
           "strength": 110.4
@@ -631,6 +474,33 @@
       "news_titles": [],
       "max_strength": 110.4,
       "raw_priority": 110.4
+    },
+    {
+      "query": "amzn earnings live",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "earnings",
+          "rank": 5,
+          "signal": "Breakout",
+          "strength": 110.0
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
+          "rank": 23,
+          "signal": "Top",
+          "strength": 16.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 110.0,
+      "raw_priority": 110.0
     },
     {
       "query": "金橋 股票",
@@ -650,6 +520,33 @@
       "news_titles": [],
       "max_strength": 110.0,
       "raw_priority": 110.0
+    },
+    {
+      "query": "moist critical earnings",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "earnings",
+          "rank": 6,
+          "signal": "Breakout",
+          "strength": 109.6
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
+          "rank": 24,
+          "signal": "Top",
+          "strength": 15.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 109.6,
+      "raw_priority": 109.6
     },
     {
       "query": "ai video",
@@ -680,8 +577,8 @@
           "source": "youtube_rising",
           "anchor": "AI",
           "rank": 2,
-          "signal": "+850%",
-          "strength": 81.93
+          "signal": "+1,200%",
+          "strength": 84.63
         },
         {
           "region": "TW",
@@ -693,11 +590,11 @@
         }
       ],
       "news_titles": [],
-      "max_strength": 81.93,
-      "raw_priority": 97.93
+      "max_strength": 84.63,
+      "raw_priority": 100.63
     },
     {
-      "query": "holly rowe ai",
+      "query": "james stocks",
       "regions": [
         "US"
       ],
@@ -705,48 +602,123 @@
         {
           "region": "US",
           "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 5,
-          "signal": "+4,100%",
-          "strength": 93.03
+          "anchor": "stocks",
+          "rank": 2,
+          "signal": "+3,300%",
+          "strength": 92.53
         },
         {
           "region": "US",
           "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 6,
+          "anchor": "stocks",
+          "rank": 25,
           "signal": "Top",
-          "strength": 30.2
+          "strength": 15.0
         }
       ],
       "news_titles": [],
-      "max_strength": 93.03,
-      "raw_priority": 93.03
+      "max_strength": 92.53,
+      "raw_priority": 92.53
     },
     {
-      "query": "ios 27 siri ai",
+      "query": "most volatile stocks",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 3,
+          "signal": "+3,100%",
+          "strength": 91.64
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 91.64,
+      "raw_priority": 91.64
+    },
+    {
+      "query": "photonics stocks",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 4,
+          "signal": "+2,800%",
+          "strength": 90.45
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 90.45,
+      "raw_priority": 90.45
+    },
+    {
+      "query": "typesafe ai",
       "regions": [
         "US",
-        "CA",
-        "TW"
+        "CA"
       ],
       "signals": [
         {
           "region": "US",
           "source": "youtube_rising",
           "anchor": "AI",
-          "rank": 9,
-          "signal": "+40%",
-          "strength": 55.24
+          "rank": 2,
+          "signal": "+450%",
+          "strength": 76.96
         },
         {
           "region": "CA",
           "source": "youtube_rising",
           "anchor": "AI",
-          "rank": 16,
-          "signal": "+40%",
-          "strength": 52.44
+          "rank": 2,
+          "signal": "+750%",
+          "strength": 80.95
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 80.95,
+      "raw_priority": 88.95
+    },
+    {
+      "query": "lennar earnings call",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "earnings",
+          "rank": 7,
+          "signal": "+500%",
+          "strength": 75.78
         },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
+          "rank": 12,
+          "signal": "Top",
+          "strength": 25.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 75.78,
+      "raw_priority": 75.78
+    },
+    {
+      "query": "ai 女友",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
         {
           "region": "TW",
           "source": "youtube_rising",
@@ -759,103 +731,41 @@
           "region": "TW",
           "source": "youtube_top",
           "anchor": "AI",
-          "rank": 11,
+          "rank": 8,
           "signal": "Top",
-          "strength": 26.2
+          "strength": 28.6
         }
       ],
       "news_titles": [],
       "max_strength": 74.59,
-      "raw_priority": 90.59
+      "raw_priority": 74.59
     },
     {
-      "query": "siri ai",
+      "query": "yahoo finance earnings",
       "regions": [
-        "US",
-        "CA",
-        "TW"
+        "US"
       ],
       "signals": [
         {
           "region": "US",
           "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 7,
-          "signal": "+100%",
-          "strength": 63.2
+          "anchor": "earnings",
+          "rank": 8,
+          "signal": "+450%",
+          "strength": 74.56
         },
         {
           "region": "US",
           "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 13,
+          "anchor": "earnings",
+          "rank": 19,
           "signal": "Top",
-          "strength": 24.6
-        },
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 4,
-          "signal": "+100%",
-          "strength": 64.4
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 10,
-          "signal": "Top",
-          "strength": 27.0
-        },
-        {
-          "region": "TW",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 4,
-          "signal": "+140%",
-          "strength": 67.03
-        },
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 3,
-          "signal": "Top",
-          "strength": 32.6
+          "strength": 19.8
         }
       ],
       "news_titles": [],
-      "max_strength": 67.03,
-      "raw_priority": 83.03
-    },
-    {
-      "query": "siri ai waitlist",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 6,
-          "signal": "+200%",
-          "strength": 69.02
-        },
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 13,
-          "signal": "+40%",
-          "strength": 53.64
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 69.02,
-      "raw_priority": 77.02
+      "max_strength": 74.56,
+      "raw_priority": 74.56
     },
     {
       "query": "mrvl earnings call",
@@ -867,69 +777,25 @@
           "region": "US",
           "source": "youtube_rising",
           "anchor": "earnings",
-          "rank": 3,
-          "signal": "+300%",
-          "strength": 73.39
+          "rank": 9,
+          "signal": "+400%",
+          "strength": 73.24
         },
         {
           "region": "US",
           "source": "youtube_top",
           "anchor": "earnings",
-          "rank": 15,
+          "rank": 16,
           "signal": "Top",
-          "strength": 23.0
+          "strength": 22.2
         }
       ],
       "news_titles": [],
-      "max_strength": 73.39,
-      "raw_priority": 73.39
+      "max_strength": 73.24,
+      "raw_priority": 73.24
     },
     {
-      "query": "stocks with josh",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 3,
-          "signal": "+100%",
-          "strength": 64.8
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 6,
-          "signal": "Top",
-          "strength": 30.2
-        },
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 6,
-          "signal": "+80%",
-          "strength": 61.86
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 4,
-          "signal": "Top",
-          "strength": 31.8
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 64.8,
-      "raw_priority": 72.8
-    },
-    {
-      "query": "股票 出借",
+      "query": "大同 股票",
       "regions": [
         "TW"
       ],
@@ -939,51 +805,51 @@
           "source": "youtube_rising",
           "anchor": "股票",
           "rank": 6,
-          "signal": "+250%",
-          "strength": 70.76
+          "signal": "+300%",
+          "strength": 72.19
         },
         {
           "region": "TW",
           "source": "youtube_top",
           "anchor": "股票",
-          "rank": 24,
+          "rank": 22,
           "signal": "Top",
-          "strength": 15.8
+          "strength": 17.4
         }
       ],
       "news_titles": [],
-      "max_strength": 70.76,
-      "raw_priority": 70.76
+      "max_strength": 72.19,
+      "raw_priority": 72.19
     },
     {
-      "query": "tsla earnings call",
+      "query": "財報 分析",
       "regions": [
-        "US"
+        "TW"
       ],
       "signals": [
         {
-          "region": "US",
+          "region": "TW",
           "source": "youtube_rising",
-          "anchor": "earnings",
-          "rank": 4,
+          "anchor": "財報",
+          "rank": 1,
           "signal": "+200%",
-          "strength": 69.82
+          "strength": 71.02
         },
         {
-          "region": "US",
+          "region": "TW",
           "source": "youtube_top",
-          "anchor": "earnings",
-          "rank": 18,
+          "anchor": "財報",
+          "rank": 1,
           "signal": "Top",
-          "strength": 20.6
+          "strength": 34.2
         }
       ],
       "news_titles": [],
-      "max_strength": 69.82,
-      "raw_priority": 69.82
+      "max_strength": 71.02,
+      "raw_priority": 71.02
     },
     {
-      "query": "wicked stocks",
+      "query": "muse ai",
       "regions": [
         "US",
         "CA"
@@ -992,151 +858,26 @@
         {
           "region": "US",
           "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 8,
+          "anchor": "AI",
+          "rank": 4,
           "signal": "+50%",
-          "strength": 57.38
+          "strength": 58.98
         },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 21,
-          "signal": "Top",
-          "strength": 18.2
-        },
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 7,
-          "signal": "+80%",
-          "strength": 61.46
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 10,
-          "signal": "Top",
-          "strength": 27.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 61.46,
-      "raw_priority": 69.46
-    },
-    {
-      "query": "streamer earnings",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "earnings",
-          "rank": 5,
-          "signal": "+200%",
-          "strength": 69.42
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "earnings",
-          "rank": 19,
-          "signal": "Top",
-          "strength": 19.8
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 69.42,
-      "raw_priority": 69.42
-    },
-    {
-      "query": "ai swarm",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
         {
           "region": "CA",
           "source": "youtube_rising",
           "anchor": "AI",
-          "rank": 3,
-          "signal": "+170%",
-          "strength": 68.95
+          "rank": 5,
+          "signal": "+80%",
+          "strength": 62.26
         }
       ],
       "news_titles": [],
-      "max_strength": 68.95,
-      "raw_priority": 68.95
+      "max_strength": 62.26,
+      "raw_priority": 70.26
     },
     {
-      "query": "記憶 體 股票",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_rising",
-          "anchor": "股票",
-          "rank": 7,
-          "signal": "+200%",
-          "strength": 68.62
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 68.62,
-      "raw_priority": 68.62
-    },
-    {
-      "query": "how to trade stocks",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 6,
-          "signal": "+60%",
-          "strength": 59.61
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 19,
-          "signal": "Top",
-          "strength": 19.8
-        },
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 8,
-          "signal": "+70%",
-          "strength": 60.01
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 13,
-          "signal": "Top",
-          "strength": 24.6
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 60.01,
-      "raw_priority": 68.01
-    },
-    {
-      "query": "semiconductor stocks",
+      "query": "semiconductor packaging",
       "regions": [
         "US"
       ],
@@ -1145,52 +886,25 @@
           "region": "US",
           "source": "youtube_rising",
           "anchor": "semiconductor",
-          "rank": 3,
-          "signal": "+140%",
-          "strength": 67.43
+          "rank": 4,
+          "signal": "+180%",
+          "strength": 68.99
         },
         {
           "region": "US",
           "source": "youtube_top",
           "anchor": "semiconductor",
-          "rank": 6,
+          "rank": 9,
           "signal": "Top",
-          "strength": 30.2
+          "strength": 27.8
         }
       ],
       "news_titles": [],
-      "max_strength": 67.43,
-      "raw_priority": 67.43
+      "max_strength": 68.99,
+      "raw_priority": 68.99
     },
     {
-      "query": "investing in stocks for beginners",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 5,
-          "signal": "+150%",
-          "strength": 67.17
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 23,
-          "signal": "Top",
-          "strength": 16.6
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 67.17,
-      "raw_priority": 67.17
-    },
-    {
-      "query": "uber eats earnings",
+      "query": "youtube shorts earnings",
       "regions": [
         "US"
       ],
@@ -1199,9 +913,9 @@
           "region": "US",
           "source": "youtube_rising",
           "anchor": "earnings",
-          "rank": 6,
-          "signal": "+150%",
-          "strength": 66.77
+          "rank": 10,
+          "signal": "+190%",
+          "strength": 67.02
         },
         {
           "region": "US",
@@ -1213,11 +927,11 @@
         }
       ],
       "news_titles": [],
-      "max_strength": 66.77,
-      "raw_priority": 66.77
+      "max_strength": 67.02,
+      "raw_priority": 67.02
     },
     {
-      "query": "nvda earnings call",
+      "query": "amd earnings call",
       "regions": [
         "US"
       ],
@@ -1226,9 +940,9 @@
           "region": "US",
           "source": "youtube_rising",
           "anchor": "earnings",
-          "rank": 7,
-          "signal": "+130%",
-          "strength": 65.25
+          "rank": 11,
+          "signal": "+190%",
+          "strength": 66.62
         },
         {
           "region": "US",
@@ -1240,65 +954,11 @@
         }
       ],
       "news_titles": [],
-      "max_strength": 65.25,
-      "raw_priority": 65.25
+      "max_strength": 66.62,
+      "raw_priority": 66.62
     },
     {
-      "query": "8028 昇 陽 半導體",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_rising",
-          "anchor": "半導體",
-          "rank": 3,
-          "signal": "+100%",
-          "strength": 64.8
-        },
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "半導體",
-          "rank": 4,
-          "signal": "Top",
-          "strength": 31.8
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 64.8,
-      "raw_priority": 64.8
-    },
-    {
-      "query": "amzn earnings call",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "earnings",
-          "rank": 8,
-          "signal": "+110%",
-          "strength": 63.55
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "earnings",
-          "rank": 12,
-          "signal": "Top",
-          "strength": 25.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 63.55,
-      "raw_priority": 63.55
-    },
-    {
-      "query": "ai hugging face incident",
+      "query": "ai bl drama",
       "regions": [
         "CA"
       ],
@@ -1307,44 +967,17 @@
           "region": "CA",
           "source": "youtube_rising",
           "anchor": "AI",
-          "rank": 5,
-          "signal": "+90%",
-          "strength": 63.18
+          "rank": 3,
+          "signal": "+120%",
+          "strength": 66.23
         }
       ],
       "news_titles": [],
-      "max_strength": 63.18,
-      "raw_priority": 63.18
+      "max_strength": 66.23,
+      "raw_priority": 66.23
     },
     {
-      "query": "googl earnings call",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "earnings",
-          "rank": 9,
-          "signal": "+110%",
-          "strength": 63.15
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "earnings",
-          "rank": 11,
-          "signal": "Top",
-          "strength": 26.2
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 63.15,
-      "raw_priority": 63.15
-    },
-    {
-      "query": "股票 抽籤",
+      "query": "國巨 股票",
       "regions": [
         "TW"
       ],
@@ -1353,25 +986,79 @@
           "region": "TW",
           "source": "youtube_rising",
           "anchor": "股票",
-          "rank": 8,
-          "signal": "+100%",
-          "strength": 62.8
+          "rank": 7,
+          "signal": "+140%",
+          "strength": 65.83
         },
         {
           "region": "TW",
           "source": "youtube_top",
           "anchor": "股票",
+          "rank": 19,
+          "signal": "Top",
+          "strength": 19.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 65.83,
+      "raw_priority": 65.83
+    },
+    {
+      "query": "statement of retained earnings",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "earnings",
+          "rank": 12,
+          "signal": "+160%",
+          "strength": 64.87
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
+          "rank": 18,
+          "signal": "Top",
+          "strength": 20.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 64.87,
+      "raw_priority": 64.87
+    },
+    {
+      "query": "uber earnings",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "earnings",
           "rank": 13,
+          "signal": "+160%",
+          "strength": 64.47
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
+          "rank": 2,
           "signal": "Top",
-          "strength": 24.6
+          "strength": 33.4
         }
       ],
       "news_titles": [],
-      "max_strength": 62.8,
-      "raw_priority": 62.8
+      "max_strength": 64.47,
+      "raw_priority": 64.47
     },
     {
-      "query": "怎麼 買 股票",
+      "query": "grab 股票",
       "regions": [
         "TW"
       ],
@@ -1380,116 +1067,22 @@
           "region": "TW",
           "source": "youtube_rising",
           "anchor": "股票",
-          "rank": 9,
-          "signal": "+100%",
-          "strength": 62.4
+          "rank": 8,
+          "signal": "+120%",
+          "strength": 64.23
         },
         {
           "region": "TW",
           "source": "youtube_top",
           "anchor": "股票",
-          "rank": 20,
+          "rank": 24,
           "signal": "Top",
-          "strength": 19.0
+          "strength": 15.8
         }
       ],
       "news_titles": [],
-      "max_strength": 62.4,
-      "raw_priority": 62.4
-    },
-    {
-      "query": "how does ai work",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 6,
-          "signal": "+80%",
-          "strength": 61.86
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 61.86,
-      "raw_priority": 61.86
-    },
-    {
-      "query": "costco food court",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "google_trending",
-          "rank": 1,
-          "signal": "GTrend 5000+",
-          "strength": 61.84,
-          "traffic": 5000,
-          "published_at": "2026-09-18T10:50:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "Costco Fans Are Celebrating the Return Of This Beloved Menu Item",
-        "Costco teases return of popular food court item in U.S.",
-        "Costco teases return of popular food court item. What could it be?"
-      ],
-      "max_strength": 61.84,
-      "raw_priority": 61.84
-    },
-    {
-      "query": "what is a semiconductor",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "semiconductor",
-          "rank": 4,
-          "signal": "+70%",
-          "strength": 61.61
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "semiconductor",
-          "rank": 12,
-          "signal": "Top",
-          "strength": 25.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 61.61,
-      "raw_priority": 61.61
-    },
-    {
-      "query": "big brother",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "google_trending",
-          "rank": 3,
-          "signal": "GTrend 5000+",
-          "strength": 61.54,
-          "traffic": 5000,
-          "published_at": "2026-09-18T10:40:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "‘Big Brother’ Season 28, Week 10 Results: Double Eviction Night Reveals Final 5",
-        "'Big Brother' spoilers 2026, who got evicted and who won HOH",
-        "Big Brother Sends Two Jurors Packing In Double Eviction Episode — Who Left The House?"
-      ],
-      "max_strength": 61.54,
-      "raw_priority": 61.54
+      "max_strength": 64.23,
+      "raw_priority": 64.23
     },
     {
       "query": "semiconductor manufacturing process",
@@ -1502,24 +1095,143 @@
           "source": "youtube_rising",
           "anchor": "semiconductor",
           "rank": 5,
-          "signal": "+70%",
-          "strength": 61.21
+          "signal": "+100%",
+          "strength": 64.0
         },
         {
           "region": "US",
           "source": "youtube_top",
           "anchor": "semiconductor",
-          "rank": 2,
+          "rank": 3,
           "signal": "Top",
-          "strength": 33.4
+          "strength": 32.6
         }
       ],
       "news_titles": [],
-      "max_strength": 61.21,
-      "raw_priority": 61.21
+      "max_strength": 64.0,
+      "raw_priority": 64.0
     },
     {
-      "query": "張震 股票",
+      "query": "ai actress",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "AI",
+          "rank": 4,
+          "signal": "+80%",
+          "strength": 62.66
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 62.66,
+      "raw_priority": 62.66
+    },
+    {
+      "query": "stocks with josh",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "stocks",
+          "rank": 5,
+          "signal": "+80%",
+          "strength": 62.26
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 6,
+          "signal": "Top",
+          "strength": 30.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 62.26,
+      "raw_priority": 62.26
+    },
+    {
+      "query": "arch manning ai video",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "AI",
+          "rank": 3,
+          "signal": "+70%",
+          "strength": 62.01
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 62.01,
+      "raw_priority": 62.01
+    },
+    {
+      "query": "nvda earnings call",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "earnings",
+          "rank": 14,
+          "signal": "+120%",
+          "strength": 61.83
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
+          "rank": 8,
+          "signal": "Top",
+          "strength": 28.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 61.83,
+      "raw_priority": 61.83
+    },
+    {
+      "query": "股票 學習",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_rising",
+          "anchor": "股票",
+          "rank": 9,
+          "signal": "+90%",
+          "strength": 61.58
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 17,
+          "signal": "Top",
+          "strength": 21.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 61.58,
+      "raw_priority": 61.58
+    },
+    {
+      "query": "世紀 股票",
       "regions": [
         "TW"
       ],
@@ -1536,9 +1248,9 @@
           "region": "TW",
           "source": "youtube_top",
           "anchor": "股票",
-          "rank": 16,
+          "rank": 11,
           "signal": "Top",
-          "strength": 22.2
+          "strength": 26.2
         }
       ],
       "news_titles": [],
@@ -1546,139 +1258,26 @@
       "raw_priority": 61.18
     },
     {
-      "query": "warren buffett",
+      "query": "suno ai",
       "regions": [
-        "US"
+        "CA"
       ],
       "signals": [
         {
-          "region": "US",
-          "source": "google_trending",
-          "rank": 7,
-          "signal": "GTrend 5000+",
-          "strength": 60.94,
-          "traffic": 5000,
-          "published_at": "2026-09-18T10:10:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "Warren Buffett Steps Down as Berkshire Chairman, Names Son to Replace Him",
-        "Warren Buffett steps down as chairman of Berkshire Hathaway",
-        "Buffett Replaced by Son Howard as Berkshire Hathaway Chairman"
-      ],
-      "max_strength": 60.94,
-      "raw_priority": 60.94
-    },
-    {
-      "query": "stocks live",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
+          "region": "CA",
           "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 4,
-          "signal": "+60%",
-          "strength": 60.41
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 18,
-          "signal": "Top",
-          "strength": 20.6
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 60.41,
-      "raw_priority": 60.41
-    },
-    {
-      "query": "nvidia earnings",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "earnings",
-          "rank": 10,
-          "signal": "+80%",
-          "strength": 60.26
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "earnings",
+          "anchor": "AI",
           "rank": 6,
-          "signal": "Top",
-          "strength": 30.2
+          "signal": "+70%",
+          "strength": 60.81
         }
       ],
       "news_titles": [],
-      "max_strength": 60.26,
-      "raw_priority": 60.26
+      "max_strength": 60.81,
+      "raw_priority": 60.81
     },
     {
-      "query": "stocks today",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 5,
-          "signal": "+60%",
-          "strength": 60.01
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 14,
-          "signal": "Top",
-          "strength": 23.8
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 60.01,
-      "raw_priority": 60.01
-    },
-    {
-      "query": "tesla earnings call",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "earnings",
-          "rank": 11,
-          "signal": "+80%",
-          "strength": 59.86
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "earnings",
-          "rank": 7,
-          "signal": "Top",
-          "strength": 29.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 59.86,
-      "raw_priority": 59.86
-    },
-    {
-      "query": "股票 市場",
+      "query": "友達 股票",
       "regions": [
         "TW"
       ],
@@ -1695,9 +1294,9 @@
           "region": "TW",
           "source": "youtube_top",
           "anchor": "股票",
-          "rank": 9,
+          "rank": 16,
           "signal": "Top",
-          "strength": 27.8
+          "strength": 22.2
         }
       ],
       "news_titles": [],
@@ -1722,9 +1321,9 @@
           "region": "US",
           "source": "youtube_top",
           "anchor": "semiconductor",
-          "rank": 8,
+          "rank": 4,
           "signal": "Top",
-          "strength": 28.6
+          "strength": 31.8
         }
       ],
       "news_titles": [],
@@ -1732,83 +1331,26 @@
       "raw_priority": 59.61
     },
     {
-      "query": "hugging face",
+      "query": "股票 質押",
       "regions": [
-        "CA"
+        "TW"
       ],
       "signals": [
         {
-          "region": "CA",
+          "region": "TW",
           "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 7,
-          "signal": "+60%",
-          "strength": 59.21
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 59.21,
-      "raw_priority": 59.21
-    },
-    {
-      "query": "open ai hugging face",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 8,
-          "signal": "+60%",
-          "strength": 58.81
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 58.81,
-      "raw_priority": 58.81
-    },
-    {
-      "query": "pocket ai",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 9,
-          "signal": "+60%",
-          "strength": 58.41
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 58.41,
-      "raw_priority": 58.41
-    },
-    {
-      "query": "retained earnings",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "earnings",
+          "anchor": "股票",
           "rank": 12,
           "signal": "+70%",
           "strength": 58.41
         },
         {
-          "region": "US",
+          "region": "TW",
           "source": "youtube_top",
-          "anchor": "earnings",
-          "rank": 4,
+          "anchor": "股票",
+          "rank": 13,
           "signal": "Top",
-          "strength": 31.8
+          "strength": 24.6
         }
       ],
       "news_titles": [],
@@ -1816,34 +1358,7 @@
       "raw_priority": 58.41
     },
     {
-      "query": "tickle stocks",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 9,
-          "signal": "+60%",
-          "strength": 58.41
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 20,
-          "signal": "Top",
-          "strength": 19.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 58.41,
-      "raw_priority": 58.41
-    },
-    {
-      "query": "what are stocks",
+      "query": "tesla earnings call",
       "regions": [
         "US"
       ],
@@ -1851,7 +1366,34 @@
         {
           "region": "US",
           "source": "youtube_rising",
-          "anchor": "stocks",
+          "anchor": "earnings",
+          "rank": 15,
+          "signal": "+80%",
+          "strength": 58.26
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
+          "rank": 6,
+          "signal": "Top",
+          "strength": 30.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 58.26,
+      "raw_priority": 58.26
+    },
+    {
+      "query": "ai dropshipping",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_rising",
+          "anchor": "AI",
           "rank": 7,
           "signal": "+50%",
           "strength": 57.78
@@ -1862,58 +1404,58 @@
       "raw_priority": 57.78
     },
     {
-      "query": "nfl scores",
+      "query": "navitas semiconductor",
       "regions": [
-        "CA"
+        "US"
       ],
       "signals": [
         {
-          "region": "CA",
-          "source": "google_trending",
-          "rank": 3,
-          "signal": "GTrend 2000+",
-          "strength": 57.56,
-          "traffic": 2000,
-          "published_at": "2026-09-18T09:40:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "NFL Fantasy 2026 Start 'Em, Sit 'Em: Quarterbacks for Week 2",
-        "Bad game or bad sign: Which players should you be concerned about entering Week 2?",
-        "2026 Trade Value Charts — Justin Boone's fantasy football quarterback breakdown for Week 2"
-      ],
-      "max_strength": 57.56,
-      "raw_priority": 57.56
-    },
-    {
-      "query": "半導體 物理",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
+          "region": "US",
           "source": "youtube_rising",
-          "anchor": "半導體",
-          "rank": 4,
-          "signal": "+40%",
-          "strength": 57.24
+          "anchor": "semiconductor",
+          "rank": 7,
+          "signal": "+50%",
+          "strength": 57.78
         },
         {
-          "region": "TW",
+          "region": "US",
           "source": "youtube_top",
-          "anchor": "半導體",
+          "anchor": "semiconductor",
           "rank": 2,
           "signal": "Top",
           "strength": 33.4
         }
       ],
       "news_titles": [],
-      "max_strength": 57.24,
-      "raw_priority": 57.24
+      "max_strength": 57.78,
+      "raw_priority": 57.78
     },
     {
-      "query": "友達 股票",
+      "query": "xsmb",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "google_trending",
+          "rank": 3,
+          "signal": "GTrend 2000+",
+          "strength": 57.56,
+          "traffic": 2000,
+          "published_at": "2026-09-19T09:20:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "XSMN 19/9 - Kết quả xổ số miền Nam hôm nay 19/9/2026 - XSMN ngày 19 tháng 9",
+        "Kết quả xổ số TPHCM ngày 19.9",
+        "Xổ số miền Nam ngày 19 tháng 9: Cây vé trúng 39,2 tỉ đồng xuất hiện sớm"
+      ],
+      "max_strength": 57.56,
+      "raw_priority": 57.56
+    },
+    {
+      "query": "長榮 股票",
       "regions": [
         "TW"
       ],
@@ -1922,217 +1464,58 @@
           "region": "TW",
           "source": "youtube_rising",
           "anchor": "股票",
-          "rank": 12,
+          "rank": 13,
           "signal": "+60%",
-          "strength": 57.21
+          "strength": 56.81
         },
         {
           "region": "TW",
           "source": "youtube_top",
           "anchor": "股票",
-          "rank": 19,
+          "rank": 23,
           "signal": "Top",
-          "strength": 19.8
+          "strength": 16.6
         }
       ],
       "news_titles": [],
-      "max_strength": 57.21,
-      "raw_priority": 57.21
+      "max_strength": 56.81,
+      "raw_priority": 56.81
     },
     {
-      "query": "退休",
+      "query": "stocks today",
       "regions": [
-        "TW"
+        "US"
       ],
       "signals": [
         {
-          "region": "TW",
-          "source": "google_trending",
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "stocks",
           "rank": 6,
-          "signal": "GTrend 2000+",
-          "strength": 57.11,
-          "traffic": 2000,
-          "published_at": "2026-09-18T10:10:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "退休坐擁1275萬還有年金！70歲夫妻爽玩2年 回頭一算嚇傻：金錢感覺麻痺了",
-        "存款5500萬卻不敢花！日退休族「這筆錢」 寧可放著也不用",
-        "快改過來！5大理財地雷習慣 讓你退休越過越窮"
-      ],
-      "max_strength": 57.11,
-      "raw_priority": 57.11
-    },
-    {
-      "query": "australia vs zimbabwe",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "google_trending",
-          "rank": 7,
-          "signal": "GTrend 2000+",
-          "strength": 56.96,
-          "traffic": 2000,
-          "published_at": "2026-09-18T08:40:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "Australia beat Zimbabwe to take ODI lead",
-        "'No better time': Khawaja backs Renshaw for Test runs",
-        "ZIM vs AUS 2nd ODI 2026 live scorecard, toss winner, winning probability, result and highlights from Harare"
-      ],
-      "max_strength": 56.96,
-      "raw_priority": 56.96
-    },
-    {
-      "query": "nvda earnings",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "earnings",
-          "rank": 13,
-          "signal": "+60%",
-          "strength": 56.81
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "earnings",
-          "rank": 5,
-          "signal": "Top",
-          "strength": 31.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 56.81,
-      "raw_priority": 56.81
-    },
-    {
-      "query": "東森 股票",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_rising",
-          "anchor": "股票",
-          "rank": 13,
-          "signal": "+60%",
-          "strength": 56.81
-        },
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "股票",
-          "rank": 7,
-          "signal": "Top",
-          "strength": 29.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 56.81,
-      "raw_priority": 56.81
-    },
-    {
-      "query": "suno ai",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 10,
-          "signal": "+50%",
-          "strength": 56.58
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 56.58,
-      "raw_priority": 56.58
-    },
-    {
-      "query": "generative ai",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 11,
-          "signal": "+50%",
-          "strength": 56.18
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 56.18,
-      "raw_priority": 56.18
-    },
-    {
-      "query": "semiconductor industry",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "semiconductor",
-          "rank": 7,
           "signal": "+40%",
-          "strength": 56.04
+          "strength": 56.44
         },
         {
           "region": "US",
           "source": "youtube_top",
-          "anchor": "semiconductor",
-          "rank": 5,
+          "anchor": "stocks",
+          "rank": 15,
           "signal": "Top",
-          "strength": 31.0
+          "strength": 23.0
         }
       ],
       "news_titles": [],
-      "max_strength": 56.04,
-      "raw_priority": 56.04
+      "max_strength": 56.44,
+      "raw_priority": 56.44
     },
     {
-      "query": "ai whistleblower",
+      "query": "ai dua em ve",
       "regions": [
         "CA"
       ],
       "signals": [
         {
           "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 12,
-          "signal": "+50%",
-          "strength": 55.78
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 55.78,
-      "raw_priority": 55.78
-    },
-    {
-      "query": "muse ai",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
           "source": "youtube_rising",
           "anchor": "AI",
           "rank": 8,
@@ -2145,303 +1528,127 @@
       "raw_priority": 55.64
     },
     {
-      "query": "how to do stocks",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 9,
-          "signal": "+40%",
-          "strength": 55.24
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 55.24,
-      "raw_priority": 55.24
-    },
-    {
-      "query": "canadian stocks",
+      "query": "ctv news",
       "regions": [
         "CA"
       ],
       "signals": [
         {
           "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "stocks",
-          "rank": 10,
-          "signal": "+40%",
-          "strength": 54.84
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 3,
-          "signal": "Top",
-          "strength": 32.6
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 54.84,
-      "raw_priority": 54.84
-    },
-    {
-      "query": "蘭陽號巡防艦",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "google_trending",
-          "rank": 4,
-          "signal": "GTrend 1000+",
-          "strength": 54.4,
-          "traffic": 1000,
-          "published_at": "2026-09-18T10:40:00+00:00"
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 54.4,
-      "raw_priority": 54.4
-    },
-    {
-      "query": "棒球",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "google_trending",
-          "rank": 9,
-          "signal": "GTrend 1000+",
-          "strength": 53.65,
-          "traffic": 1000,
-          "published_at": "2026-09-18T10:00:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "亞運棒球／南韓提前抵達卻沒場地可練！韓媒怒批：日本真的太過分了| 名古屋亞運| 運動",
-        "亞運中華隊今啟程赴日！劉基鴻心繫母隊 「斜坡推石」盼過低潮",
-        "19金77獎牌寫下黃金年代！回味1998曼谷亞運盛況 | 我只想寫寫體育"
-      ],
-      "max_strength": 53.65,
-      "raw_priority": 53.65
-    },
-    {
-      "query": "michigan state police",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "google_trending",
-          "rank": 10,
-          "signal": "GTrend 1000+",
-          "strength": 53.5,
-          "traffic": 1000,
-          "published_at": "2026-09-18T09:40:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "Michigan State Police urge families to create emergency plan",
-        "Michiganders advised to build kits for potential floods and winter storms",
-        "1 arrested after shooting on NB I-75 near Ortonville Road"
-      ],
-      "max_strength": 53.5,
-      "raw_priority": 53.5
-    },
-    {
-      "query": "doordash earnings",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_rising",
-          "anchor": "earnings",
-          "rank": 14,
-          "signal": "+40%",
-          "strength": 53.24
-        },
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "earnings",
-          "rank": 10,
-          "signal": "Top",
-          "strength": 27.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 53.24,
-      "raw_priority": 53.24
-    },
-    {
-      "query": "minecraft ai",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 14,
-          "signal": "+40%",
-          "strength": 53.24
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 53.24,
-      "raw_priority": 53.24
-    },
-    {
-      "query": "agentic ai",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_rising",
-          "anchor": "AI",
-          "rank": 15,
-          "signal": "+40%",
-          "strength": 52.84
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 52.84,
-      "raw_priority": 52.84
-    },
-    {
-      "query": "貓",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
           "source": "google_trending",
           "rank": 1,
+          "signal": "GTrend 1000+",
+          "strength": 54.85,
+          "traffic": 1000,
+          "published_at": "2026-09-19T10:10:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "Liberals looking to give minister explicit authority to end strikes: sources",
+        "Feds could introduce new labour legislation as soon as next week: sources",
+        "Ottawa will not interfere with workers’ right to strike, Hajdu says"
+      ],
+      "max_strength": 54.85,
+      "raw_priority": 54.85
+    },
+    {
+      "query": "mlb scores",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "google_trending",
+          "rank": 2,
+          "signal": "GTrend 1000+",
+          "strength": 54.7,
+          "traffic": 1000,
+          "published_at": "2026-09-19T09:50:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "MLB Gameday: White Sox 3, Guardians 6 Final Score (09/16/2026)",
+        "MLB Gameday: Red Sox 2, Rangers 4 Final Score (09/15/2026)",
+        "MLB Gameday: Brewers 4, Pirates 7 Final Score (09/17/2026)"
+      ],
+      "max_strength": 54.7,
+      "raw_priority": 54.7
+    },
+    {
+      "query": "msft earnings call",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_rising",
+          "anchor": "earnings",
+          "rank": 16,
+          "signal": "+50%",
+          "strength": 54.18
+        },
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
+          "rank": 11,
+          "signal": "Top",
+          "strength": 26.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 54.18,
+      "raw_priority": 54.18
+    },
+    {
+      "query": "sports",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "google_trending",
+          "rank": 7,
+          "signal": "GTrend 1000+",
+          "strength": 53.95,
+          "traffic": 1000,
+          "published_at": "2026-09-19T06:10:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "William Watson: Pro sports will save the idea of globalization",
+        "More people are seeking emergency care for gambling, a new study says — and it's mostly men and boys",
+        "Opinion: Canada opened the door to private sports betting years ago, and then walked away"
+      ],
+      "max_strength": 53.95,
+      "raw_priority": 53.95
+    },
+    {
+      "query": "news science",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "google_trending",
+          "rank": 3,
           "signal": "GTrend 500+",
-          "strength": 51.84,
+          "strength": 51.54,
           "traffic": 500,
-          "published_at": "2026-09-18T10:50:00+00:00"
+          "published_at": "2026-09-19T10:10:00+00:00"
         }
       ],
       "news_titles": [
         "Meet the First New Cat Species Discovered in 100 Years",
-        "Bolivia: New cat species discovered by scientists",
-        "Spotted wildcat from Bolivian forest revealed as new species"
+        "Spotted wildcat from Bolivian forest revealed as new species",
+        "New wild cat species discovered after hiding in plain sight for more than a century"
       ],
-      "max_strength": 51.84,
-      "raw_priority": 51.84
-    },
-    {
-      "query": "bankruptcy",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "google_trending",
-          "rank": 4,
-          "signal": "GTrend 500+",
-          "strength": 51.39,
-          "traffic": 500,
-          "published_at": "2026-09-18T09:40:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "AirBaltic files for Chapter 11 bankruptcy as Iran war costs bite",
-        "Major European airline with flights from London files for bankruptcy",
-        "airBaltic: from A220 model operator to potential cancellation of 40 aircraft"
-      ],
-      "max_strength": 51.39,
-      "raw_priority": 51.39
-    },
-    {
-      "query": "景美夜市",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "google_trending",
-          "rank": 8,
-          "signal": "GTrend 500+",
-          "strength": 50.79,
-          "traffic": 500,
-          "published_at": "2026-09-18T10:10:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "最新台北市長選戰調查！ 「這人」竟領先近三成碾壓對手...",
-        "開場前2小時就在等沈伯洋？ 網驚：這是深藍文山區？",
-        "「洋流」是真的還是台派自嗨？作家一句話給答案 沈伯洋還有1關要過"
-      ],
-      "max_strength": 50.79,
-      "raw_priority": 50.79
-    },
-    {
-      "query": "dewalt prime big deal days",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "google_trending",
-          "rank": 9,
-          "signal": "GTrend 500+",
-          "strength": 50.64,
-          "traffic": 500,
-          "published_at": "2026-09-18T09:50:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "Amazon is clearing out DEWALT tools during its early Prime Big Deal Days clearance sale",
-        "This DeWalt deal is worth cutting into: 25% off Oscillating Tool Kit",
-        "Lowe’s Is Still Selling a Bunch of DeWalt Power Tools at a Deep Discount"
-      ],
-      "max_strength": 50.64,
-      "raw_priority": 50.64
-    },
-    {
-      "query": "across",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "google_trending",
-          "rank": 10,
-          "signal": "GTrend 500+",
-          "strength": 50.49,
-          "traffic": 500,
-          "published_at": "2026-09-18T08:10:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "911 service restored after outage hits multiple Canadian communities",
-        "911 lines back up and running in GTA after widespread outages across Ontario, other parts of Canada",
-        "911 service restored in Windsor amid outages across parts of the country"
-      ],
-      "max_strength": 50.49,
-      "raw_priority": 50.49
+      "max_strength": 51.54,
+      "raw_priority": 51.54
     },
     {
       "query": "ai music",
@@ -2471,9 +1678,9 @@
           "region": "TW",
           "source": "youtube_top",
           "anchor": "AI",
-          "rank": 8,
+          "rank": 10,
           "signal": "Top",
-          "strength": 28.6
+          "strength": 27.0
         }
       ],
       "news_titles": [],
@@ -2481,41 +1688,24 @@
       "raw_priority": 49.4
     },
     {
-      "query": "ai agent",
+      "query": "539",
       "regions": [
-        "US",
-        "CA",
         "TW"
       ],
       "signals": [
         {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 14,
-          "signal": "Top",
-          "strength": 23.8
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 14,
-          "signal": "Top",
-          "strength": 23.8
-        },
-        {
           "region": "TW",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 4,
-          "signal": "Top",
-          "strength": 31.8
+          "source": "google_trending",
+          "rank": 1,
+          "signal": "GTrend 200+",
+          "strength": 47.86,
+          "traffic": 200,
+          "published_at": "2026-09-19T10:40:00+00:00"
         }
       ],
       "news_titles": [],
-      "max_strength": 31.8,
-      "raw_priority": 47.8
+      "max_strength": 47.86,
+      "raw_priority": 47.86
     },
     {
       "query": "ai drama",
@@ -2529,9 +1719,9 @@
           "region": "US",
           "source": "youtube_top",
           "anchor": "AI",
-          "rank": 8,
+          "rank": 6,
           "signal": "Top",
-          "strength": 28.6
+          "strength": 30.2
         },
         {
           "region": "CA",
@@ -2545,9 +1735,9 @@
           "region": "TW",
           "source": "youtube_top",
           "anchor": "AI",
-          "rank": 6,
+          "rank": 7,
           "signal": "Top",
-          "strength": 30.2
+          "strength": 29.4
         }
       ],
       "news_titles": [],
@@ -2555,55 +1745,31 @@
       "raw_priority": 47.8
     },
     {
-      "query": "cctv5",
+      "query": "cpbl",
       "regions": [
-        "US"
+        "TW"
       ],
       "signals": [
         {
-          "region": "US",
+          "region": "TW",
           "source": "google_trending",
           "rank": 2,
           "signal": "GTrend 200+",
           "strength": 47.71,
           "traffic": 200,
-          "published_at": "2026-09-18T10:40:00+00:00"
+          "published_at": "2026-09-19T10:30:00+00:00"
         }
       ],
       "news_titles": [
-        "叫板王楚钦，发挥50%-60%实力就能赢中国队，松岛辉空发声，目标4金",
-        "三个裁判都是熟人！中国男篮胜今晚算几何？",
-        "首节战报：日本单节5记三分，中国男篮15-28落后日本"
+        "CPBL官方授權《2026中職王牌GO!》雙平台熱血開打！中職球星集結上陣 - 中職 - 棒球",
+        "個股：CPBL授權《2026中職王牌GO!》雙平台上市，智冠旗下智凡迪行銷衝動能",
+        "《中職王牌GO！》雙平台開打中職球星集結上陣開服送3,300 張球員招募券- 股市爆料同學會"
       ],
       "max_strength": 47.71,
       "raw_priority": 47.71
     },
     {
-      "query": "irán",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "google_trending",
-          "rank": 4,
-          "signal": "GTrend 200+",
-          "strength": 47.41,
-          "traffic": 200,
-          "published_at": "2026-09-18T10:30:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "Trump ve poco probable que los precios del crudo bajen antes de las elecciones legislativas",
-        "“Ojalá estemos cerca del final de la guerra”: Trump dice que funcionarios iraníes se pusieron en contacto con EE.UU. para negociar un acuerdo de paz",
-        "(Multimedia) Nos aproximamos a una coyuntura crítica en guerra con Irán, dice Trump"
-      ],
-      "max_strength": 47.41,
-      "raw_priority": 47.41
-    },
-    {
-      "query": "uber",
+      "query": "vocm",
       "regions": [
         "CA"
       ],
@@ -2611,71 +1777,84 @@
         {
           "region": "CA",
           "source": "google_trending",
+          "rank": 3,
+          "signal": "GTrend 200+",
+          "strength": 47.56,
+          "traffic": 200,
+          "published_at": "2026-09-19T09:30:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "Daily Fuel Prices for Saturday, September 19, 2026",
+        "Daily Fuel Prices for Tuesday, September 15, 2026",
+        "Woman in Custody after Brazil Street Stabbing"
+      ],
+      "max_strength": 47.56,
+      "raw_priority": 47.56
+    },
+    {
+      "query": "ai agent",
+      "regions": [
+        "US",
+        "CA",
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "AI",
+          "rank": 10,
+          "signal": "Top",
+          "strength": 27.0
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "AI",
+          "rank": 11,
+          "signal": "Top",
+          "strength": 26.2
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "AI",
           "rank": 5,
-          "signal": "GTrend 200+",
-          "strength": 47.26,
-          "traffic": 200,
-          "published_at": "2026-09-18T09:00:00+00:00"
+          "signal": "Top",
+          "strength": 31.0
         }
       ],
-      "news_titles": [
-        "Woman was killed on freeway after Uber driver ordered her out of car. Uber must pay $40 million",
-        "Parents of UCLA grad Emily Normandin-Parker awarded $40M after daughter died when Uber driver left her on freeway",
-        "Uber ordered to pay $40M to parents of Emily Normandin-Parker, woman fatally struck after being left on Orange County freeway"
-      ],
-      "max_strength": 47.26,
-      "raw_priority": 47.26
+      "news_titles": [],
+      "max_strength": 31.0,
+      "raw_priority": 47.0
     },
     {
-      "query": "after",
+      "query": "陳鏞基",
       "regions": [
-        "CA"
+        "TW"
       ],
       "signals": [
         {
-          "region": "CA",
+          "region": "TW",
           "source": "google_trending",
-          "rank": 6,
+          "rank": 7,
           "signal": "GTrend 200+",
-          "strength": 47.11,
+          "strength": 46.96,
           "traffic": 200,
-          "published_at": "2026-09-18T08:50:00+00:00"
+          "published_at": "2026-09-19T06:20:00+00:00"
         }
       ],
       "news_titles": [
-        "Tuchel explains Palmer & Alexander-Arnold's return to England squad",
-        "Palmer and Alexander-Arnold recalled after England World Cup snub",
-        "England squad: Will Cole Palmer, Phil Foden and Trent Alexander-Arnold be left out again after World Cup snubs?"
+        "中職／陳鏞基「鏞不止步」先發5棒DH 林岳平透露引退系列賽計畫",
+        "中職》去年引退的胡金龍 送陳鏞基退休禮物加愛的抱抱",
+        "中職》陳鏞基台南引退系列賽首日先發5棒DH 郭嚴文、「雞龍貓」3人組送花籃"
       ],
-      "max_strength": 47.11,
-      "raw_priority": 47.11
+      "max_strength": 46.96,
+      "raw_priority": 46.96
     },
     {
-      "query": "jenna ortega",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "google_trending",
-          "rank": 8,
-          "signal": "GTrend 200+",
-          "strength": 46.81,
-          "traffic": 200,
-          "published_at": "2026-09-18T10:00:00+00:00"
-        }
-      ],
-      "news_titles": [
-        "Keke Palmer Was Announced as an Emmy Presenter, Then She Never Appeared",
-        "Keke Palmer is a no-show at Emmys after being announced as presenter",
-        "Which Stars Skipped the 2026 Emmy Awards — and Why? Jeremy Allen White, Taylor Swift and More"
-      ],
-      "max_strength": 46.81,
-      "raw_priority": 46.81
-    },
-    {
-      "query": "strait of hormuz news",
+      "query": "draftkings",
       "regions": [
         "CA"
       ],
@@ -2687,19 +1866,19 @@
           "signal": "GTrend 200+",
           "strength": 46.81,
           "traffic": 200,
-          "published_at": "2026-09-18T08:40:00+00:00"
+          "published_at": "2026-09-19T05:40:00+00:00"
         }
       ],
       "news_titles": [
-        "Iran war live: Tanker hit in Hormuz, Trump weighs ‘big decision’ on Iran",
-        "Oil tanker explodes after colliding with mines in Hormuz, Iran's Fars reports",
-        "Iran’s IRGC says it struck Togo-flagged tanker in Strait of Hormuz"
+        "Analysts Offer Insights on Consumer Cyclical Companies: DraftKings (DKNG) and Yeti Holdings (YETI)",
+        "UBS cuts DraftKings stock price target on revenue normalization By Investing.com",
+        "What’s Driving DraftKings (NASDAQ:DKNG) Into A New Phase?"
       ],
       "max_strength": 46.81,
       "raw_priority": 46.81
     },
     {
-      "query": "against",
+      "query": "draftkings bonus",
       "regions": [
         "CA"
       ],
@@ -2711,43 +1890,152 @@
           "signal": "GTrend 200+",
           "strength": 46.66,
           "traffic": 200,
-          "published_at": "2026-09-18T08:40:00+00:00"
+          "published_at": "2026-09-19T05:40:00+00:00"
         }
       ],
       "news_titles": [
-        "She pressed charges against a Mountie for sex assault, but says court delays robbed her of justice",
-        "Appeal filed in RCMP officer's sexual assault acquittal",
-        "Crown appealing Nova Scotia Mountie's acquittal on sexual assault charges"
+        "DraftKings Pick 6 Promo: Get $50 in Bonus Picks for NFL, MLB & More",
+        "DraftKings promo code: Get $200 in bonus bets for Cowboys vs. Giants, NFL Week 1 Sunday Night Football",
+        "DraftKings Promo Code: Get $200 in Bonus Bets for Broncos vs Chiefs"
       ],
       "max_strength": 46.66,
       "raw_priority": 46.66
     },
     {
-      "query": "actualité",
+      "query": "李清娥",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "google_trending",
+          "rank": 9,
+          "signal": "GTrend 200+",
+          "strength": 46.66,
+          "traffic": 200,
+          "published_at": "2026-09-19T05:10:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "大咖女星驚傳車禍傷勢惡化 忍痛宣布「辭演新劇」",
+        "李清娥因車禍健康惡化... 討論退出拍攝中的新劇《溫順的殺手》！",
+        "大咖女星驚傳車禍腰傷惡化 恐退出新劇拍攝"
+      ],
+      "max_strength": 46.66,
+      "raw_priority": 46.66
+    },
+    {
+      "query": "betmgm sportsbook",
       "regions": [
         "CA"
       ],
       "signals": [
         {
           "region": "CA",
+          "source": "google_trending",
+          "rank": 10,
+          "signal": "GTrend 200+",
+          "strength": 46.51,
+          "traffic": 200,
+          "published_at": "2026-09-19T05:40:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "NFL Sunday & sports betting: The impact of online gambling",
+        "BetVictor Sportsbook is Live in Alberta! Sign Up With BetVictor Sportsbook",
+        "BetMGM Alberta Sportsbook Review September 2026"
+      ],
+      "max_strength": 46.51,
+      "raw_priority": 46.51
+    },
+    {
+      "query": "siri ai",
+      "regions": [
+        "US",
+        "CA",
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "AI",
+          "rank": 19,
+          "signal": "Top",
+          "strength": 19.8
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "AI",
+          "rank": 13,
+          "signal": "Top",
+          "strength": 24.6
+        },
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "AI",
+          "rank": 6,
+          "signal": "Top",
+          "strength": 30.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 30.2,
+      "raw_priority": 46.2
+    },
+    {
+      "query": "chicago weather",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
           "source": "google_trending",
           "rank": 1,
           "signal": "GTrend 100+",
           "strength": 44.85,
           "traffic": 100,
-          "published_at": "2026-09-18T10:50:00+00:00"
+          "published_at": "2026-09-19T10:30:00+00:00"
         }
       ],
       "news_titles": [
-        "Collision avec un poids lourd sur la route 138: un automobiliste lutte pour sa vie",
-        "Ce qu’on suit ce vendredi | Campagne électorale, Parti libéral du Canada, Cour suprême du Canada",
-        "Les élus libéraux réunis pour préparer la rentrée et accueillir leurs trois recrues"
+        "Chicago weather forecast Saturday includes Flood Watch for area, severe threat for south suburbs, NW Indiana",
+        "Flood watch in effect: Soggy Saturday ahead",
+        "‘Soaking wet:' Stormy, rainy weekend ahead for Chicago area; severe weather possible"
       ],
       "max_strength": 44.85,
       "raw_priority": 44.85
     },
     {
-      "query": "tva sports",
+      "query": "savings",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "google_trending",
+          "rank": 2,
+          "signal": "GTrend 100+",
+          "strength": 44.7,
+          "traffic": 100,
+          "published_at": "2026-09-19T10:20:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "Amex launches high-yield savings account to complement business checking",
+        "American Express Expands Banking Offerings for Businesses with New High-Yield Savings Account",
+        "American Express taps Gusto for embedded payroll"
+      ],
+      "max_strength": 44.7,
+      "raw_priority": 44.7
+    },
+    {
+      "query": "loto quebec",
       "regions": [
         "CA"
       ],
@@ -2755,23 +2043,47 @@
         {
           "region": "CA",
           "source": "google_trending",
-          "rank": 2,
+          "rank": 4,
           "signal": "GTrend 100+",
-          "strength": 44.7,
+          "strength": 44.4,
           "traffic": 100,
-          "published_at": "2026-09-18T10:30:00+00:00"
+          "published_at": "2026-09-19T09:20:00+00:00"
         }
       ],
       "news_titles": [
-        "Mais qui diable est Alexander Legkov, ce magicien russe sorti d'une des ligues les plus obscures en Amérique du Nord?",
-        "Le Canadien | Le doyen, le joyau et les autres",
-        "WPG-MTL : Résumé du match | Défi des espoirs"
+        "Premier trimestre | Loto-Québec augmente son bénéfice de 3,6 % à 398 millions",
+        "Les casinos demeurent la locomotive de Loto-Québec",
+        "Loto-Québec poursuit sa croissance et son engagement envers la collectivité"
       ],
-      "max_strength": 44.7,
-      "raw_priority": 44.7
+      "max_strength": 44.4,
+      "raw_priority": 44.4
     },
     {
-      "query": "垃圾",
+      "query": "planet weather",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "google_trending",
+          "rank": 4,
+          "signal": "GTrend 100+",
+          "strength": 44.4,
+          "traffic": 100,
+          "published_at": "2026-09-19T10:10:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "Researchers Develop a Way to Check the Weather on a Exoplanet",
+        "A world 20 light-years away reveals surprisingly organized, Jupiter-like weather",
+        "Tracking weather patterns on distant planets"
+      ],
+      "max_strength": 44.4,
+      "raw_priority": 44.4
+    },
+    {
+      "query": "下週油價",
       "regions": [
         "TW"
       ],
@@ -2779,42 +2091,47 @@
         {
           "region": "TW",
           "source": "google_trending",
-          "rank": 2,
+          "rank": 4,
           "signal": "GTrend 100+",
-          "strength": 44.7,
+          "strength": 44.4,
           "traffic": 100,
-          "published_at": "2026-09-18T10:50:00+00:00"
+          "published_at": "2026-09-19T09:20:00+00:00"
         }
       ],
       "news_titles": [
-        "倒垃圾潛伏許多危險 嘉市環保局呼籲家長切勿讓孩童單獨靠近垃圾車",
-        "纽约市学习韩国的97%食品垃圾回收模式"
+        "不敢漲了？中油宣布下周油價凍漲 汽油每公升政府豪氣吸收13元",
+        "下週油價出爐了！政府震撼宣布「繼續補貼」 已累積吸收219.2億元",
+        "國際油價上漲 維持亞鄰最低價 擴大汽、柴油吸收13.0及13.4元 9/21-9/27國內汽、柴油價格皆不調整"
       ],
-      "max_strength": 44.7,
-      "raw_priority": 44.7
+      "max_strength": 44.4,
+      "raw_priority": 44.4
     },
     {
-      "query": "亞倫·賈吉",
+      "query": "cp24",
       "regions": [
-        "TW"
+        "CA"
       ],
       "signals": [
         {
-          "region": "TW",
+          "region": "CA",
           "source": "google_trending",
-          "rank": 3,
+          "rank": 5,
           "signal": "GTrend 100+",
-          "strength": 44.55,
+          "strength": 44.25,
           "traffic": 100,
-          "published_at": "2026-09-18T10:50:00+00:00"
+          "published_at": "2026-09-19T07:40:00+00:00"
         }
       ],
-      "news_titles": [],
-      "max_strength": 44.55,
-      "raw_priority": 44.55
+      "news_titles": [
+        "Motorcyclist dead after crash on Hwy. 407 in Vaughan",
+        "Motorcyclist, 74, dies after single-vehicle crash in Vaughan",
+        "Motorcyclist seriously injured in crash on Hwy. 407 in Vaughan"
+      ],
+      "max_strength": 44.25,
+      "raw_priority": 44.25
     },
     {
-      "query": "hudson williams heated rivalry season 2",
+      "query": "weather study",
       "regions": [
         "US"
       ],
@@ -2826,19 +2143,19 @@
           "signal": "GTrend 100+",
           "strength": 44.25,
           "traffic": 100,
-          "published_at": "2026-09-18T10:30:00+00:00"
+          "published_at": "2026-09-19T10:10:00+00:00"
         }
       ],
       "news_titles": [
-        "‘Heated Rivalry’ Star Hudson Williams Sparks TIFF Chaos, Teases Season 2",
-        "TIFF 2026: ‘YAGA’ Episodes 1-2 Crafts An Exciting Mystery That Will Leave You Hanging",
-        "YAGA - Official Sneak Peek Clip"
+        "Rapid Warming in the Himalaya Exacerbates Geohazard Cascades Beyond Adaptation Limits",
+        "Here’s what one team of scientists thinks happened in Nepal’s deadly flood wave",
+        "The Nepal floods question: When the Himalayas collapse, who gets warned?"
       ],
       "max_strength": 44.25,
       "raw_priority": 44.25
     },
     {
-      "query": "高雄市",
+      "query": "黃金價格",
       "regions": [
         "TW"
       ],
@@ -2850,19 +2167,19 @@
           "signal": "GTrend 100+",
           "strength": 44.25,
           "traffic": 100,
-          "published_at": "2026-09-18T10:40:00+00:00"
+          "published_at": "2026-09-19T09:10:00+00:00"
         }
       ],
       "news_titles": [
-        "輔導會職訓中心企業廠商說明會 共創退除役官兵就業契機 | 青年日報",
-        "軍民轉銜結合AI面試 臺北榮服處助屆退官兵接軌職場",
-        "新北秋季就博會近千人求職 初媒合率亮眼達52.19%"
+        "美國聯準會官員施密德：通膨過高 貨幣政策應聚焦物價穩定",
+        "10年期美債殖利率回落至4.93% 分析師：最劇烈賣壓已過",
+        "聯準會12比0抗命！川普氣炸，卻動不了最鷹華許"
       ],
       "max_strength": 44.25,
       "raw_priority": 44.25
     },
     {
-      "query": "princess charlene",
+      "query": "camping news",
       "regions": [
         "US"
       ],
@@ -2874,19 +2191,43 @@
           "signal": "GTrend 100+",
           "strength": 44.1,
           "traffic": 100,
-          "published_at": "2026-09-18T10:20:00+00:00"
+          "published_at": "2026-09-19T10:00:00+00:00"
         }
       ],
       "news_titles": [
-        "Princess Charlene turns heads in striking asymmetrical dress for palace appearance with Prince Albert",
-        "Prince Albert II and Princess Charlene welcome Red Cross National Society representatives to Monaco",
-        "Prince Albert II and Princess Charlene Attend Red Cross Meeting in Monaco"
+        "Council approves camping, bodily obstruction ordinances",
+        "4-min turbo-inflatable cubic camp castle is now available in the USA",
+        "U.S. Forest Service confirms it works with ICE agents"
       ],
       "max_strength": 44.1,
       "raw_priority": 44.1
     },
     {
-      "query": "排名",
+      "query": "fox news",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "google_trending",
+          "rank": 6,
+          "signal": "GTrend 100+",
+          "strength": 44.1,
+          "traffic": 100,
+          "published_at": "2026-09-19T07:10:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "Ingraham: Some Republicans would be ‘relieved’ to lose congressional majority",
+        "Fox News’ Laura Ingraham Makes Stunning Claim About GOP & Trump",
+        "Laura Ingraham Serves Stunning Midterm Prediction That Might Make Trump's Blood Boil"
+      ],
+      "max_strength": 44.1,
+      "raw_priority": 44.1
+    },
+    {
+      "query": "金價",
       "regions": [
         "TW"
       ],
@@ -2894,23 +2235,139 @@
         {
           "region": "TW",
           "source": "google_trending",
+          "rank": 6,
+          "signal": "GTrend 100+",
+          "strength": 44.1,
+          "traffic": 100,
+          "published_at": "2026-09-19T09:10:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "黃金突然大漲！衝上1週高點 關鍵推手曝光",
+        "黃金是對抗通膨以及財政政策惡化的保險工具",
+        "〈貴金屬盤後〉油價下跌緩解通膨擔憂 金價周線上漲4周來首見"
+      ],
+      "max_strength": 44.1,
+      "raw_priority": 44.1
+    },
+    {
+      "query": "weather game",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "google_trending",
           "rank": 7,
           "signal": "GTrend 100+",
           "strength": 43.95,
           "traffic": 100,
-          "published_at": "2026-09-18T10:10:00+00:00"
+          "published_at": "2026-09-19T10:00:00+00:00"
         }
       ],
       "news_titles": [
-        "全臺僅4校入榜！臺北大學首登QS Global MBA 世界排名 | 產學研訓 | 商情",
-        "QS全球MBA排名台灣4校上榜政大最高、台北大學首入列- 生活",
-        "全國僅4校入榜！台北大學首登QS Global MBA世界排名"
+        "Game Day forecast: Will the weather affect UTSA's Saturday night matchup with Texas?",
+        "Texas State fans flee sun as 100-degree heat blazes against UTSA",
+        "Fans urged to prepare for extreme heat at UTSA-Texas State football game in San Marcos"
       ],
       "max_strength": 43.95,
       "raw_priority": 43.95
     },
     {
-      "query": "高屏大橋",
+      "query": "smartphone market",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "google_trending",
+          "rank": 8,
+          "signal": "GTrend 100+",
+          "strength": 43.8,
+          "traffic": 100,
+          "published_at": "2026-09-19T10:00:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "Online sales of mobiles & laptops hit a rough patch on weaker entry-level demand, fewer online discounts",
+        "Amazon India signals softer electronics volumes ahead of festival season as prices rise",
+        "Why budget phones are disappearing just when they are needed most"
+      ],
+      "max_strength": 43.8,
+      "raw_priority": 43.8
+    },
+    {
+      "query": "張瀚元",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "google_trending",
+          "rank": 8,
+          "signal": "GTrend 100+",
+          "strength": 43.8,
+          "traffic": 100,
+          "published_at": "2026-09-19T06:10:00+00:00"
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 43.8,
+      "raw_priority": 43.8
+    },
+    {
+      "query": "startup news",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "google_trending",
+          "rank": 9,
+          "signal": "GTrend 100+",
+          "strength": 43.65,
+          "traffic": 100,
+          "published_at": "2026-09-19T09:50:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "A startup that builds other startups raised $100M and is all-in on physical AI",
+        "Exclusive | Silversmith Backs Vantora to Turn Enterprise Pain Points Into AI Ventures",
+        "Vantora Secures More Than $100 Million From Silversmith Capital Partners to Build AI-Native Operating Companies Inside Industrial Enterprises"
+      ],
+      "max_strength": 43.65,
+      "raw_priority": 43.65
+    },
+    {
+      "query": "sleep news",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "google_trending",
+          "rank": 10,
+          "signal": "GTrend 100+",
+          "strength": 43.5,
+          "traffic": 100,
+          "published_at": "2026-09-19T09:50:00+00:00"
+        }
+      ],
+      "news_titles": [
+        "Sleep like a pro",
+        "Sleep supplements: How does magnesium compare to melatonin?",
+        "Magnesium mocktails: Sleep improver and stress reducer? Or is it made up?"
+      ],
+      "max_strength": 43.5,
+      "raw_priority": 43.5
+    },
+    {
+      "query": "顧立雄",
       "regions": [
         "TW"
       ],
@@ -2922,68 +2379,12 @@
           "signal": "GTrend 100+",
           "strength": 43.5,
           "traffic": 100,
-          "published_at": "2026-09-18T10:00:00+00:00"
+          "published_at": "2026-09-19T05:10:00+00:00"
         }
       ],
       "news_titles": [],
       "max_strength": 43.5,
       "raw_priority": 43.5
-    },
-    {
-      "query": "penny stocks",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 1,
-          "signal": "Top",
-          "strength": 34.2
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 9,
-          "signal": "Top",
-          "strength": 27.8
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 34.2,
-      "raw_priority": 42.2
-    },
-    {
-      "query": "stocks to buy",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 3,
-          "signal": "Top",
-          "strength": 32.6
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 1,
-          "signal": "Top",
-          "strength": 34.2
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 34.2,
-      "raw_priority": 42.2
     },
     {
       "query": "ai song",
@@ -3007,62 +2408,6 @@
           "rank": 2,
           "signal": "Top",
           "strength": 33.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 33.4,
-      "raw_priority": 41.4
-    },
-    {
-      "query": "stocks to buy now",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 8,
-          "signal": "Top",
-          "strength": 28.6
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 2,
-          "signal": "Top",
-          "strength": 33.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 33.4,
-      "raw_priority": 41.4
-    },
-    {
-      "query": "top stocks",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 2,
-          "signal": "Top",
-          "strength": 33.4
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 8,
-          "signal": "Top",
-          "strength": 28.6
         }
       ],
       "news_titles": [],
@@ -3126,62 +2471,6 @@
       "raw_priority": 39.0
     },
     {
-      "query": "ai stocks",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 17,
-          "signal": "Top",
-          "strength": 21.4
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 5,
-          "signal": "Top",
-          "strength": 31.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 31.0,
-      "raw_priority": 39.0
-    },
-    {
-      "query": "trading stocks",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 9,
-          "signal": "Top",
-          "strength": 27.8
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 6,
-          "signal": "Top",
-          "strength": 30.2
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 30.2,
-      "raw_priority": 38.2
-    },
-    {
       "query": "ai news",
       "regions": [
         "US",
@@ -3210,7 +2499,7 @@
       "raw_priority": 37.4
     },
     {
-      "query": "best stocks to buy now",
+      "query": "ai movies",
       "regions": [
         "US",
         "CA"
@@ -3219,26 +2508,26 @@
         {
           "region": "US",
           "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 20,
+          "anchor": "AI",
+          "rank": 8,
           "signal": "Top",
-          "strength": 19.0
+          "strength": 28.6
         },
         {
           "region": "CA",
           "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 7,
+          "anchor": "AI",
+          "rank": 8,
           "signal": "Top",
-          "strength": 29.4
+          "strength": 28.6
         }
       ],
       "news_titles": [],
-      "max_strength": 29.4,
-      "raw_priority": 37.4
+      "max_strength": 28.6,
+      "raw_priority": 36.6
     },
     {
-      "query": "ai movies",
+      "query": "funny ai",
       "regions": [
         "US",
         "CA"
@@ -3256,17 +2545,17 @@
           "region": "CA",
           "source": "youtube_top",
           "anchor": "AI",
-          "rank": 8,
+          "rank": 17,
           "signal": "Top",
-          "strength": 28.6
+          "strength": 21.4
         }
       ],
       "news_titles": [],
-      "max_strength": 28.6,
-      "raw_priority": 36.6
+      "max_strength": 27.8,
+      "raw_priority": 35.8
     },
     {
-      "query": "hood stocks",
+      "query": "ai songs",
       "regions": [
         "US",
         "CA"
@@ -3275,18 +2564,18 @@
         {
           "region": "US",
           "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 10,
+          "anchor": "AI",
+          "rank": 13,
           "signal": "Top",
-          "strength": 27.0
+          "strength": 24.6
         },
         {
           "region": "CA",
           "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 14,
+          "anchor": "AI",
+          "rank": 10,
           "signal": "Top",
-          "strength": 23.8
+          "strength": 27.0
         }
       ],
       "news_titles": [],
@@ -3312,37 +2601,9 @@
           "region": "CA",
           "source": "youtube_top",
           "anchor": "AI",
-          "rank": 13,
+          "rank": 14,
           "signal": "Top",
-          "strength": 24.6
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 26.2,
-      "raw_priority": 34.2
-    },
-    {
-      "query": "claude ai",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 18,
-          "signal": "Top",
-          "strength": 20.6
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 11,
-          "signal": "Top",
-          "strength": 26.2
+          "strength": 23.8
         }
       ],
       "news_titles": [],
@@ -3359,6 +2620,25 @@
           "region": "US",
           "source": "youtube_top",
           "anchor": "earnings",
+          "rank": 1,
+          "signal": "Top",
+          "strength": 34.2
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 34.2,
+      "raw_priority": 34.2
+    },
+    {
+      "query": "penny stocks",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
           "rank": 1,
           "signal": "Top",
           "strength": 34.2
@@ -3407,7 +2687,7 @@
       "raw_priority": 34.2
     },
     {
-      "query": "股票 直播",
+      "query": "股票 分析",
       "regions": [
         "TW"
       ],
@@ -3454,35 +2734,7 @@
       "raw_priority": 33.4
     },
     {
-      "query": "how to invest in stocks",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 13,
-          "signal": "Top",
-          "strength": 24.6
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 12,
-          "signal": "Top",
-          "strength": 25.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 25.4,
-      "raw_priority": 33.4
-    },
-    {
-      "query": "ai 影片",
+      "query": "ai 動漫",
       "regions": [
         "TW"
       ],
@@ -3501,7 +2753,7 @@
       "raw_priority": 33.4
     },
     {
-      "query": "fortnite earnings",
+      "query": "stocks to buy",
       "regions": [
         "US"
       ],
@@ -3509,7 +2761,7 @@
         {
           "region": "US",
           "source": "youtube_top",
-          "anchor": "earnings",
+          "anchor": "stocks",
           "rank": 2,
           "signal": "Top",
           "strength": 33.4
@@ -3518,63 +2770,6 @@
       "news_titles": [],
       "max_strength": 33.4,
       "raw_priority": 33.4
-    },
-    {
-      "query": "分析 股票",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "股票",
-          "rank": 2,
-          "signal": "Top",
-          "strength": 33.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 33.4,
-      "raw_priority": 33.4
-    },
-    {
-      "query": "on semiconductor",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "semiconductor",
-          "rank": 3,
-          "signal": "Top",
-          "strength": 32.6
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 32.6,
-      "raw_priority": 32.6
-    },
-    {
-      "query": "youtube earnings",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "earnings",
-          "rank": 3,
-          "signal": "Top",
-          "strength": 32.6
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 32.6,
-      "raw_priority": 32.6
     },
     {
       "query": "半導體 元件",
@@ -3586,6 +2781,44 @@
           "region": "TW",
           "source": "youtube_top",
           "anchor": "半導體",
+          "rank": 2,
+          "signal": "Top",
+          "strength": 33.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 33.4,
+      "raw_priority": 33.4
+    },
+    {
+      "query": "股票 教學",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 2,
+          "signal": "Top",
+          "strength": 33.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 33.4,
+      "raw_priority": 33.4
+    },
+    {
+      "query": "ai 影片",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "AI",
           "rank": 3,
           "signal": "Top",
           "strength": 32.6
@@ -3596,15 +2829,15 @@
       "raw_priority": 32.6
     },
     {
-      "query": "股票 新聞",
+      "query": "fortnite earnings",
       "regions": [
-        "TW"
+        "US"
       ],
       "signals": [
         {
-          "region": "TW",
+          "region": "US",
           "source": "youtube_top",
-          "anchor": "股票",
+          "anchor": "earnings",
           "rank": 3,
           "signal": "Top",
           "strength": 32.6
@@ -3624,6 +2857,44 @@
           "region": "US",
           "source": "youtube_top",
           "anchor": "stocks",
+          "rank": 3,
+          "signal": "Top",
+          "strength": 32.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 32.6,
+      "raw_priority": 32.6
+    },
+    {
+      "query": "股票 入門",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 3,
+          "signal": "Top",
+          "strength": 32.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 32.6,
+      "raw_priority": 32.6
+    },
+    {
+      "query": "8028 昇 陽 半導體",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "半導體",
           "rank": 4,
           "signal": "Top",
           "strength": 31.8
@@ -3634,7 +2905,7 @@
       "raw_priority": 31.8
     },
     {
-      "query": "taiwan semiconductor",
+      "query": "best stocks",
       "regions": [
         "US"
       ],
@@ -3642,7 +2913,7 @@
         {
           "region": "US",
           "source": "youtube_top",
-          "anchor": "semiconductor",
+          "anchor": "stocks",
           "rank": 4,
           "signal": "Top",
           "strength": 31.8
@@ -3653,7 +2924,45 @@
       "raw_priority": 31.8
     },
     {
-      "query": "股票 入門",
+      "query": "bl ai",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "AI",
+          "rank": 4,
+          "signal": "Top",
+          "strength": 31.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 31.8,
+      "raw_priority": 31.8
+    },
+    {
+      "query": "retained earnings",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
+          "rank": 4,
+          "signal": "Top",
+          "strength": 31.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 31.8,
+      "raw_priority": 31.8
+    },
+    {
+      "query": "股票 分析 師",
       "regions": [
         "TW"
       ],
@@ -3672,7 +2981,7 @@
       "raw_priority": 31.8
     },
     {
-      "query": "ai songs",
+      "query": "claude ai",
       "regions": [
         "US",
         "CA"
@@ -3682,9 +2991,9 @@
           "region": "US",
           "source": "youtube_top",
           "anchor": "AI",
-          "rank": 19,
+          "rank": 15,
           "signal": "Top",
-          "strength": 19.8
+          "strength": 23.0
         },
         {
           "region": "CA",
@@ -3700,26 +3009,7 @@
       "raw_priority": 31.0
     },
     {
-      "query": "ai bl",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 5,
-          "signal": "Top",
-          "strength": 31.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 31.0,
-      "raw_priority": 31.0
-    },
-    {
-      "query": "best stocks",
+      "query": "stock",
       "regions": [
         "US"
       ],
@@ -3738,15 +3028,34 @@
       "raw_priority": 31.0
     },
     {
-      "query": "股票 教學",
+      "query": "taiwan semiconductor",
       "regions": [
-        "TW"
+        "US"
       ],
       "signals": [
         {
-          "region": "TW",
+          "region": "US",
           "source": "youtube_top",
-          "anchor": "股票",
+          "anchor": "semiconductor",
+          "rank": 5,
+          "signal": "Top",
+          "strength": 31.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 31.0,
+      "raw_priority": 31.0
+    },
+    {
+      "query": "youtube earnings",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
           "rank": 5,
           "signal": "Top",
           "strength": 31.0
@@ -3766,6 +3075,44 @@
           "region": "TW",
           "source": "youtube_top",
           "anchor": "半導體",
+          "rank": 5,
+          "signal": "Top",
+          "strength": 31.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 31.0,
+      "raw_priority": 31.0
+    },
+    {
+      "query": "股票 新聞",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 5,
+          "signal": "Top",
+          "strength": 31.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 31.0,
+      "raw_priority": 31.0
+    },
+    {
+      "query": "on semiconductor",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "semiconductor",
           "rank": 6,
           "signal": "Top",
           "strength": 30.2
@@ -3776,7 +3123,7 @@
       "raw_priority": 30.2
     },
     {
-      "query": "股票 分析 師",
+      "query": "股票 新手",
       "regions": [
         "TW"
       ],
@@ -3805,17 +3152,17 @@
           "region": "US",
           "source": "youtube_top",
           "anchor": "AI",
-          "rank": 22,
+          "rank": 17,
           "signal": "Top",
-          "strength": 17.4
+          "strength": 21.4
         },
         {
           "region": "CA",
           "source": "youtube_top",
           "anchor": "AI",
-          "rank": 17,
+          "rank": 18,
           "signal": "Top",
-          "strength": 21.4
+          "strength": 20.6
         }
       ],
       "news_titles": [],
@@ -3842,26 +3189,7 @@
       "raw_priority": 29.4
     },
     {
-      "query": "ai 歌手",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 7,
-          "signal": "Top",
-          "strength": 29.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 29.4,
-      "raw_priority": 29.4
-    },
-    {
-      "query": "navitas semiconductor",
+      "query": "price earnings",
       "regions": [
         "US"
       ],
@@ -3869,7 +3197,7 @@
         {
           "region": "US",
           "source": "youtube_top",
-          "anchor": "semiconductor",
+          "anchor": "earnings",
           "rank": 7,
           "signal": "Top",
           "strength": 29.4
@@ -3899,7 +3227,26 @@
       "raw_priority": 29.4
     },
     {
-      "query": "price earnings",
+      "query": "投資 股票",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 7,
+          "signal": "Top",
+          "strength": 29.4
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 29.4,
+      "raw_priority": 29.4
+    },
+    {
+      "query": "semiconductor stocks",
       "regions": [
         "US"
       ],
@@ -3907,7 +3254,7 @@
         {
           "region": "US",
           "source": "youtube_top",
-          "anchor": "earnings",
+          "anchor": "semiconductor",
           "rank": 8,
           "signal": "Top",
           "strength": 28.6
@@ -3918,7 +3265,26 @@
       "raw_priority": 28.6
     },
     {
-      "query": "股票 新手",
+      "query": "stocks to buy now",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 8,
+          "signal": "Top",
+          "strength": 28.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 28.6,
+      "raw_priority": 28.6
+    },
+    {
+      "query": "東森 股票",
       "regions": [
         "TW"
       ],
@@ -3935,53 +3301,6 @@
       "news_titles": [],
       "max_strength": 28.6,
       "raw_priority": 28.6
-    },
-    {
-      "query": "how to invest in stocks for beginners",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 24,
-          "signal": "Top",
-          "strength": 15.8
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 19,
-          "signal": "Top",
-          "strength": 19.8
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 19.8,
-      "raw_priority": 27.8
-    },
-    {
-      "query": "indie semiconductor",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "semiconductor",
-          "rank": 9,
-          "signal": "Top",
-          "strength": 27.8
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 27.8,
-      "raw_priority": 27.8
     },
     {
       "query": "phim ai",
@@ -4003,35 +3322,7 @@
       "raw_priority": 27.8
     },
     {
-      "query": "ai podcast",
-      "regions": [
-        "US",
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 24,
-          "signal": "Top",
-          "strength": 15.8
-        },
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 20,
-          "signal": "Top",
-          "strength": 19.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 19.0,
-      "raw_priority": 27.0
-    },
-    {
-      "query": "ai interview",
+      "query": "trading stocks",
       "regions": [
         "US"
       ],
@@ -4039,7 +3330,45 @@
         {
           "region": "US",
           "source": "youtube_top",
-          "anchor": "AI",
+          "anchor": "stocks",
+          "rank": 9,
+          "signal": "Top",
+          "strength": 27.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 27.8,
+      "raw_priority": 27.8
+    },
+    {
+      "query": "股票 ai",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
+          "rank": 9,
+          "signal": "Top",
+          "strength": 27.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 27.8,
+      "raw_priority": 27.8
+    },
+    {
+      "query": "doordash earnings",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "earnings",
           "rank": 10,
           "signal": "Top",
           "strength": 27.0
@@ -4050,7 +3379,45 @@
       "raw_priority": 27.0
     },
     {
-      "query": "股票 ai",
+      "query": "hood stocks",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 10,
+          "signal": "Top",
+          "strength": 27.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 27.0,
+      "raw_priority": 27.0
+    },
+    {
+      "query": "semiconductor industry",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "semiconductor",
+          "rank": 10,
+          "signal": "Top",
+          "strength": 27.0
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 27.0,
+      "raw_priority": 27.0
+    },
+    {
+      "query": "股票 市場",
       "regions": [
         "TW"
       ],
@@ -4069,26 +3436,35 @@
       "raw_priority": 27.0
     },
     {
-      "query": "gold stocks",
+      "query": "ai cat",
       "regions": [
+        "US",
         "CA"
       ],
       "signals": [
         {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "AI",
+          "rank": 21,
+          "signal": "Top",
+          "strength": 18.2
+        },
+        {
           "region": "CA",
           "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 11,
+          "anchor": "AI",
+          "rank": 21,
           "signal": "Top",
-          "strength": 26.2
+          "strength": 18.2
         }
       ],
       "news_titles": [],
-      "max_strength": 26.2,
+      "max_strength": 18.2,
       "raw_priority": 26.2
     },
     {
-      "query": "magnachip semiconductor",
+      "query": "indie semiconductor",
       "regions": [
         "US"
       ],
@@ -4126,26 +3502,35 @@
       "raw_priority": 26.2
     },
     {
-      "query": "台灣 股票",
+      "query": "ai podcast",
       "regions": [
-        "TW"
+        "US",
+        "CA"
       ],
       "signals": [
         {
-          "region": "TW",
+          "region": "US",
           "source": "youtube_top",
-          "anchor": "股票",
-          "rank": 11,
+          "anchor": "AI",
+          "rank": 23,
           "signal": "Top",
-          "strength": 26.2
+          "strength": 16.6
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "AI",
+          "rank": 22,
+          "signal": "Top",
+          "strength": 17.4
         }
       ],
       "news_titles": [],
-      "max_strength": 26.2,
-      "raw_priority": 26.2
+      "max_strength": 17.4,
+      "raw_priority": 25.4
     },
     {
-      "query": "ai funny",
+      "query": "ai baby",
       "regions": [
         "US"
       ],
@@ -4183,7 +3568,7 @@
       "raw_priority": 25.4
     },
     {
-      "query": "世紀 股票",
+      "query": "台灣 股票",
       "regions": [
         "TW"
       ],
@@ -4200,6 +3585,53 @@
       "news_titles": [],
       "max_strength": 25.4,
       "raw_priority": 25.4
+    },
+    {
+      "query": "open ai",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "AI",
+          "rank": 25,
+          "signal": "Top",
+          "strength": 15.0
+        },
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "AI",
+          "rank": 23,
+          "signal": "Top",
+          "strength": 16.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 16.6,
+      "raw_priority": 24.6
+    },
+    {
+      "query": "how to invest in stocks",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
+          "rank": 13,
+          "signal": "Top",
+          "strength": 24.6
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 24.6,
+      "raw_priority": 24.6
     },
     {
       "query": "meta earnings call",
@@ -4221,7 +3653,7 @@
       "raw_priority": 24.6
     },
     {
-      "query": "tower semiconductor",
+      "query": "ai stocks",
       "regions": [
         "US"
       ],
@@ -4229,15 +3661,34 @@
         {
           "region": "US",
           "source": "youtube_top",
-          "anchor": "semiconductor",
-          "rank": 13,
+          "anchor": "stocks",
+          "rank": 14,
           "signal": "Top",
-          "strength": 24.6
+          "strength": 23.8
         }
       ],
       "news_titles": [],
-      "max_strength": 24.6,
-      "raw_priority": 24.6
+      "max_strength": 23.8,
+      "raw_priority": 23.8
+    },
+    {
+      "query": "asmr ai",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "AI",
+          "rank": 14,
+          "signal": "Top",
+          "strength": 23.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 23.8,
+      "raw_priority": 23.8
     },
     {
       "query": "elon musk earnings call",
@@ -4249,6 +3700,25 @@
           "region": "US",
           "source": "youtube_top",
           "anchor": "earnings",
+          "rank": 14,
+          "signal": "Top",
+          "strength": 23.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 23.8,
+      "raw_priority": 23.8
+    },
+    {
+      "query": "etf",
+      "regions": [
+        "TW"
+      ],
+      "signals": [
+        {
+          "region": "TW",
+          "source": "youtube_top",
+          "anchor": "股票",
           "rank": 14,
           "signal": "Top",
           "strength": 23.8
@@ -4278,83 +3748,7 @@
       "raw_priority": 23.8
     },
     {
-      "query": "今天 股票",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "股票",
-          "rank": 14,
-          "signal": "Top",
-          "strength": 23.8
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 23.8,
-      "raw_priority": 23.8
-    },
-    {
-      "query": "asmr ai",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 15,
-          "signal": "Top",
-          "strength": 23.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 23.0,
-      "raw_priority": 23.0
-    },
-    {
-      "query": "best stocks to buy",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 15,
-          "signal": "Top",
-          "strength": 23.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 23.0,
-      "raw_priority": 23.0
-    },
-    {
-      "query": "mining stocks",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
-          "rank": 15,
-          "signal": "Top",
-          "strength": 23.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 23.0,
-      "raw_priority": 23.0
-    },
-    {
-      "query": "今日 股票",
+      "query": "股票 即時",
       "regions": [
         "TW"
       ],
@@ -4373,7 +3767,7 @@
       "raw_priority": 23.0
     },
     {
-      "query": "ai baby",
+      "query": "baby ai",
       "regions": [
         "CA"
       ],
@@ -4382,25 +3776,6 @@
           "region": "CA",
           "source": "youtube_top",
           "anchor": "AI",
-          "rank": 16,
-          "signal": "Top",
-          "strength": 22.2
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 22.2,
-      "raw_priority": 22.2
-    },
-    {
-      "query": "canadian dividend stocks",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "stocks",
           "rank": 16,
           "signal": "Top",
           "strength": 22.2
@@ -4430,51 +3805,13 @@
       "raw_priority": 22.2
     },
     {
-      "query": "semiconductor laser",
+      "query": "best stocks to buy",
       "regions": [
         "US"
       ],
       "signals": [
         {
           "region": "US",
-          "source": "youtube_top",
-          "anchor": "semiconductor",
-          "rank": 16,
-          "signal": "Top",
-          "strength": 22.2
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 22.2,
-      "raw_priority": 22.2
-    },
-    {
-      "query": "baby ai",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 17,
-          "signal": "Top",
-          "strength": 21.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 21.4,
-      "raw_priority": 21.4
-    },
-    {
-      "query": "silver stocks",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
           "source": "youtube_top",
           "anchor": "stocks",
           "rank": 17,
@@ -4487,51 +3824,13 @@
       "raw_priority": 21.4
     },
     {
-      "query": "vaneck semiconductor",
+      "query": "sora ai",
       "regions": [
         "US"
       ],
       "signals": [
         {
           "region": "US",
-          "source": "youtube_top",
-          "anchor": "semiconductor",
-          "rank": 17,
-          "signal": "Top",
-          "strength": 21.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 21.4,
-      "raw_priority": 21.4
-    },
-    {
-      "query": "股票 質押",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "股票",
-          "rank": 17,
-          "signal": "Top",
-          "strength": 21.4
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 21.4,
-      "raw_priority": 21.4
-    },
-    {
-      "query": "open ai",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
           "source": "youtube_top",
           "anchor": "AI",
           "rank": 18,
@@ -4544,13 +3843,13 @@
       "raw_priority": 20.6
     },
     {
-      "query": "power of stocks",
+      "query": "stocks live",
       "regions": [
-        "CA"
+        "US"
       ],
       "signals": [
         {
-          "region": "CA",
+          "region": "US",
           "source": "youtube_top",
           "anchor": "stocks",
           "rank": 18,
@@ -4563,26 +3862,7 @@
       "raw_priority": 20.6
     },
     {
-      "query": "股票 期貨",
-      "regions": [
-        "TW"
-      ],
-      "signals": [
-        {
-          "region": "TW",
-          "source": "youtube_top",
-          "anchor": "股票",
-          "rank": 18,
-          "signal": "Top",
-          "strength": 20.6
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 20.6,
-      "raw_priority": 20.6
-    },
-    {
-      "query": "trump ai",
+      "query": "ai asmr",
       "regions": [
         "CA"
       ],
@@ -4591,6 +3871,25 @@
           "region": "CA",
           "source": "youtube_top",
           "anchor": "AI",
+          "rank": 19,
+          "signal": "Top",
+          "strength": 19.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 19.8,
+      "raw_priority": 19.8
+    },
+    {
+      "query": "how to trade stocks",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "stocks",
           "rank": 19,
           "signal": "Top",
           "strength": 19.8
@@ -4620,7 +3919,7 @@
       "raw_priority": 19.0
     },
     {
-      "query": "ai fruit",
+      "query": "best stocks to buy now",
       "regions": [
         "US"
       ],
@@ -4628,18 +3927,18 @@
         {
           "region": "US",
           "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 21,
+          "anchor": "stocks",
+          "rank": 20,
           "signal": "Top",
-          "strength": 18.2
+          "strength": 19.0
         }
       ],
       "news_titles": [],
-      "max_strength": 18.2,
-      "raw_priority": 18.2
+      "max_strength": 19.0,
+      "raw_priority": 19.0
     },
     {
-      "query": "ai robot",
+      "query": "trump ai",
       "regions": [
         "CA"
       ],
@@ -4648,23 +3947,23 @@
           "region": "CA",
           "source": "youtube_top",
           "anchor": "AI",
-          "rank": 21,
+          "rank": 20,
           "signal": "Top",
-          "strength": 18.2
+          "strength": 19.0
         }
       ],
       "news_titles": [],
-      "max_strength": 18.2,
-      "raw_priority": 18.2
+      "max_strength": 19.0,
+      "raw_priority": 19.0
     },
     {
-      "query": "canadian stocks to buy now",
+      "query": "wicked stocks",
       "regions": [
-        "CA"
+        "US"
       ],
       "signals": [
         {
-          "region": "CA",
+          "region": "US",
           "source": "youtube_top",
           "anchor": "stocks",
           "rank": 21,
@@ -4677,13 +3976,13 @@
       "raw_priority": 18.2
     },
     {
-      "query": "ai movie full movie",
+      "query": "ai tools",
       "regions": [
-        "CA"
+        "US"
       ],
       "signals": [
         {
-          "region": "CA",
+          "region": "US",
           "source": "youtube_top",
           "anchor": "AI",
           "rank": 22,
@@ -4715,25 +4014,6 @@
       "raw_priority": 17.4
     },
     {
-      "query": "ai asmr",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 23,
-          "signal": "Top",
-          "strength": 16.6
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 16.6,
-      "raw_priority": 16.6
-    },
-    {
       "query": "investing in stocks",
       "regions": [
         "US"
@@ -4753,26 +4033,7 @@
       "raw_priority": 16.6
     },
     {
-      "query": "sora ai",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 23,
-          "signal": "Top",
-          "strength": 16.6
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 16.6,
-      "raw_priority": 16.6
-    },
-    {
-      "query": "cat ai",
+      "query": "ai fruit",
       "regions": [
         "CA"
       ],
@@ -4791,45 +4052,7 @@
       "raw_priority": 15.8
     },
     {
-      "query": "ai business",
-      "regions": [
-        "CA"
-      ],
-      "signals": [
-        {
-          "region": "CA",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 25,
-          "signal": "Top",
-          "strength": 15.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 15.0,
-      "raw_priority": 15.0
-    },
-    {
-      "query": "ai tools",
-      "regions": [
-        "US"
-      ],
-      "signals": [
-        {
-          "region": "US",
-          "source": "youtube_top",
-          "anchor": "AI",
-          "rank": 25,
-          "signal": "Top",
-          "strength": 15.0
-        }
-      ],
-      "news_titles": [],
-      "max_strength": 15.0,
-      "raw_priority": 15.0
-    },
-    {
-      "query": "day trading",
+      "query": "how to invest in stocks for beginners",
       "regions": [
         "US"
       ],
@@ -4838,6 +4061,44 @@
           "region": "US",
           "source": "youtube_top",
           "anchor": "stocks",
+          "rank": 24,
+          "signal": "Top",
+          "strength": 15.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 15.8,
+      "raw_priority": 15.8
+    },
+    {
+      "query": "local ai",
+      "regions": [
+        "US"
+      ],
+      "signals": [
+        {
+          "region": "US",
+          "source": "youtube_top",
+          "anchor": "AI",
+          "rank": 24,
+          "signal": "Top",
+          "strength": 15.8
+        }
+      ],
+      "news_titles": [],
+      "max_strength": 15.8,
+      "raw_priority": 15.8
+    },
+    {
+      "query": "ai robot",
+      "regions": [
+        "CA"
+      ],
+      "signals": [
+        {
+          "region": "CA",
+          "source": "youtube_top",
+          "anchor": "AI",
           "rank": 25,
           "signal": "Top",
           "strength": 15.0

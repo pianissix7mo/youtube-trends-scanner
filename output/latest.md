@@ -1,31 +1,31 @@
 # YouTube Entity Enrichment
 
-Generated: **2026-09-19T11:29:47.126239+00:00**
+Generated: **2026-09-20T11:34:18.536274+00:00**
 
 This is a measurement table, not the final editorial ranking. ChatGPT reviews it after enrichment.
 
 | # | Entity | YouTube query | Relevant sample | Relevant % | Relevant median views/day | Small-channel median views/day | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---|
-| 1 | Jev AI | Jev AI | 49/50 | 98.0% | 13657 | 2915 | 73.9% | 0.0% | ok |
-| 2 | Philadelphia Semiconductor / Cathay 00830 | 00830 Philadelphia Semiconductor ETF | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 3 | India semiconductor buildout | India semiconductor | 29/50 | 58.0% | 3816 | 5519 | 50.0% | 10.0% | ok |
-| 4 | M31 Technology | M31 6643 stock semiconductor | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 5 | Take-Two Interactive | Take Two TTWO earnings | 3/8 | 37.5% | 369 | 369 | 33.3% | 100.0% | ok |
-| 6 | ON Semiconductor | ON Semiconductor ON stock | 5/50 | 10.0% | 715 | 69 | 0.0% | 40.0% | ok_low_relevance |
-| 7 | Robinhood | Robinhood HOOD earnings | 18/47 | 38.3% | 65 | 36 | 0.0% | 80.0% | ok |
-| 8 | Foxconn / Hon Hai | Foxconn Hon Hai stock AI servers | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 9 | Amazon | Amazon AMZN earnings | 17/50 | 34.0% | 24 | 13 | 7.7% | 60.0% | ok |
-| 10 | Photonics stocks | photonics stocks AI data center | 3/22 | 13.6% | 24 | 14 | 0.0% | 66.7% | ok_low_relevance |
-| 11 | TypeSafe AI | TypeSafe AI | 18/50 | 36.0% | 2361 | 1490 | 61.5% | 60.0% | ok |
-| 12 | Lennar | Lennar LEN earnings | 26/40 | 65.0% | 23 | 19 | 0.0% | 80.0% | ok |
-| 13 | Marvell Technology | Marvell MRVL earnings AI chips | 11/19 | 57.9% | 41 | 33 | 0.0% | 80.0% | ok |
-| 14 | AMD | AMD earnings AI chips | 11/50 | 22.0% | 39 | 24 | 30.0% | 90.0% | ok_low_relevance |
-| 15 | Yageo | Yageo 2327 stock electronics | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 16 | Uber | Uber UBER earnings | 45/50 | 90.0% | 2597 | 761 | 44.0% | 0.0% | ok |
-| 17 | Grab | Grab GRAB stock | 35/50 | 70.0% | 810 | 303 | 26.9% | 30.0% | ok |
-| 18 | NVIDIA | NVIDIA NVDA earnings AI chips | 29/50 | 58.0% | 34 | 23 | 26.1% | 40.0% | ok |
-| 19 | Navitas Semiconductor | Navitas Semiconductor NVTS stock | 5/7 | 71.4% | 44 | 44 | 0.0% | 100.0% | ok |
-| 20 | Tesla | Tesla TSLA earnings | 31/50 | 62.0% | 229 | 12 | 11.1% | 20.0% | ok |
+| 1 | Jev AI | Jev AI decision model | 50/50 | 100.0% | 4500 | 493 | 43.8% | 10.0% | ok |
+| 2 | Lennar | Lennar LEN earnings | 13/23 | 56.5% | 19 | 18 | 0.0% | 90.0% | ok |
+| 3 | UMC | UMC UMC stock 聯電 | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 4 | Circle Internet Group | Circle CRCL stock | 10/18 | 55.6% | 24 | 24 | 20.0% | 100.0% | ok |
+| 5 | Tower Semiconductor | Tower Semiconductor TSEM | 2/5 | 40.0% | 3 | 3 | 0.0% | 100.0% | ok |
+| 6 | Nike | Nike NKE earnings | 31/50 | 62.0% | 188 | 88 | 13.0% | 40.0% | ok |
+| 7 | Amazon | Amazon AMZN earnings | 23/50 | 46.0% | 22 | 23 | 10.0% | 90.0% | ok |
+| 8 | Micron Technology | Micron MU earnings | 26/50 | 52.0% | 102 | 87 | 30.4% | 90.0% | ok |
+| 9 | TSMC | TSMC TSM semiconductor | 8/50 | 16.0% | 9 | 5 | 0.0% | 87.5% | ok_low_relevance |
+| 10 | Semiconductor supply chain | semiconductor supply chain AI chips | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 11 | Marvell Technology | Marvell MRVL earnings | 13/22 | 59.1% | 27 | 22 | 0.0% | 80.0% | ok |
+| 12 | AMD | AMD earnings AI chips | 15/50 | 30.0% | 20 | 20 | 33.3% | 100.0% | ok |
+| 13 | CoreWeave | CoreWeave CRWV earnings | 23/37 | 62.2% | 41 | 35 | 5.0% | 70.0% | ok |
+| 14 | Alphabet | Google GOOGL stock | 41/50 | 82.0% | 315 | 258 | 30.4% | 60.0% | ok |
+| 15 | NVIDIA | NVIDIA NVDA earnings | 37/50 | 74.0% | 40 | 22 | 11.1% | 30.0% | ok |
+| 16 | Uber | Uber UBER earnings | 26/50 | 52.0% | 6023 | 1038 | 55.6% | 10.0% | ok |
+| 17 | Navitas Semiconductor | Navitas Semiconductor NVTS stock | 5/6 | 83.3% | 26 | 26 | 0.0% | 100.0% | ok |
+| 18 | Tesla | Tesla TSLA earnings | 32/50 | 64.0% | 1093 | 17 | 18.8% | 0.0% | ok |
+| 19 | Oil prices | oil price crude oil stocks | 32/50 | 64.0% | 1348 | 23 | 12.5% | 10.0% | ok |
+| 20 | Crypto regulation / CLARITY Act | CLARITY Act crypto regulation Senate | 36/50 | 72.0% | 1730 | 38 | 22.2% | 20.0% | ok |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.
@@ -36,27 +36,19 @@ This is a measurement table, not the final editorial ranking. ChatGPT reviews it
 
 ## Relevance filter diagnostics
 
-### ON Semiconductor — ok_low_relevance
-Relevance groups: `[["ON Semiconductor", "onsemi", "ON stock"]]`
-- Rejected: I just bought THIS Semiconductor Stock
+### TSMC — ok_low_relevance
+Relevance groups: `[["TSMC", "Taiwan Semiconductor", "TSM"]]`
+- Rejected: 台積電"埃米級晶片"拚2030年量產 搶先英特爾！台股量能破兆站回4萬7 外資買超869億第5大｜非凡財經新聞｜20260919 #shorts
+- Rejected: AI退燒了?下一波資金竟轉進這族群!!【小宇宙大爆發 】#shorts #理財
+- Rejected: 魏哲家喊話「股價趕快趕上聯發科」還有2000上漲空間！台積電2奈米擴產狂衝「輾壓中國」華為苦缺產量！【關鍵時刻】張炤和
+- Rejected: AI會不會退燒?潘健成揭邏輯vs信仰成關鍵..記憶體紅利看40年!#AI #股市 #台股 #半導體 #記憶體 #台積電​
+- Rejected: 營收財測衝新高卻不漲？專家揭台積電這大包袱
+
+### Semiconductor supply chain — ok_no_relevant_videos
+Relevance groups: `[["semiconductor supply chain", "chip supply chain"]]`
+- Rejected: ASML Just Told You the AI Chip Boom Is Not Over
 - Rejected: Veteran Strategist: AI stocks to buy as semiconductors MAKE HISTORY
-- Rejected: The REAL REASON AI Stocks Are Falling (and 2 to BUY NOW)
-- Rejected: Trump's HUGE Intel Bet: 3 Chip Stocks With Bigger Upside
-- Rejected: NVTS Stock 2027: Can Navitas Semiconductor Become a Massive AI Power Stock?
-
-### Photonics stocks — ok_low_relevance
-Relevance groups: `[["photonics", "optical interconnect", "silicon photonics"]]`
-- Rejected: Applied Optoelectronics (AAOI): High Speed Optical Connections for AI  | #Optoelectronics
-- Rejected: CRDO Stock: Credo Just Unveiled Its Next AI Connectivity Weapon
-- Rejected: CRDO Stock Just Changed the AI Connectivity Game — Here’s Why
-- Rejected: Tower Semiconductor Stock: Is the 200% Rally Just the Beginning?
-- Rejected: Credo Down 45% — Is It Reasonably Valued After the Crash?
-
-### AMD — ok_low_relevance
-Relevance groups: `[["AMD", "Advanced Micro Devices"]]`
-- Rejected: BofA Leaks $3.2 Trillion Semiconductor Secret - 5 Stocks Leading The Next Supercycle
-- Rejected: The AI Stocks Quietly Beating Nvidia
-- Rejected: Nasdaq Keeps Gain After Fed Quarter-Point Hike: AI/Semiconductor Complex Dominates, Intel-SK Hynix …
-- Rejected: TeraWulf and Cipher Lead as Chip Shares Rally
-- Rejected: TA Masterclass: AI Don’t Care: Q4 Setup Looks Explosive
+- Rejected: The AI Boom Has a Water Problem
+- Rejected: The Hidden Bottleneck Behind Nvidia's New AI Chips
+- Rejected: Who Actually Makes NVIDIA's AI Chips? #ai #aiinvesting #investing
 

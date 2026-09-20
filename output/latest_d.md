@@ -1,21 +1,21 @@
 # Scanner D — Reddit Attention + YouTube Enrichment
 
-Generated: **2026-09-19T11:31:13.781314+00:00**
-Selection generated: **2026-09-19T11:33:00+00:00**
+Generated: **2026-09-20T11:34:34.001298+00:00**
+Selection generated: **2026-09-20T11:31:57+00:00**
 YouTube search calls used: **10**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | GameStop | GME | GameStop GME | 41/50 | 896 | 46.7% | 50.0% | ok |
-| 2 | Nike | NKE | Nike NKE | 31/50 | 126 | 11.1% | 60.0% | ok |
-| 3 | Google | GOOG | Google GOOG | 44/50 | 11043 | 100.0% | 60.0% | ok |
-| 4 | Micron Technology | MU | Micron MU | 40/50 | 240 | 25.0% | 70.0% | ok |
-| 5 | SanDisk | SNDK | SanDisk SNDK | 30/50 | 46 | 18.5% | 100.0% | ok |
-| 6 | IM Cannabis | IMCC | IM Cannabis IMCC | 7/7 | 3 | 14.3% | 100.0% | ok |
-| 7 | NVIDIA | NVDA | NVIDIA NVDA | 43/50 | 575 | 36.7% | 20.0% | ok |
-| 8 | Netflix | NFLX | Netflix NFLX | 38/50 | 97 | 14.8% | 20.0% | ok |
-| 9 | Meta | META | Meta META | 48/50 | 6705 | 92.3% | 10.0% | ok |
-| 10 | Amazon | AMZN | Amazon AMZN | 39/50 | 144 | 27.3% | 0.0% | ok |
+| 1 | NVDA | NVDA | NVIDIA NVDA stock | 44/50 | 64 | 30.6% | 40.0% | ok |
+| 2 | GOOG | GOOG | Google GOOG stock | 17/50 | 20 | 0.0% | 60.0% | ok |
+| 3 | GME | GME | GameStop GME stock | 35/50 | 421 | 33.3% | 80.0% | ok |
+| 4 | TSLA | TSLA | Tesla TSLA stock | 45/50 | 337 | 40.0% | 20.0% | ok |
+| 5 | NKE | NKE | Nike NKE stock | 25/39 | 122 | 10.5% | 40.0% | ok |
+| 6 | SPCX | SPCX | SpaceX SPCX stock | 32/50 | 26 | 20.0% | 60.0% | ok |
+| 7 | MU | MU | Micron MU stock | 39/50 | 89 | 20.0% | 80.0% | ok |
+| 8 | AMZN | AMZN | Amazon AMZN stock | 35/50 | 37 | 3.8% | 30.0% | ok |
+| 9 | SNDK | SNDK | SanDisk SNDK stock | 31/50 | 78 | 20.7% | 100.0% | ok |
+| 10 | DXST | DXST | Decent Holding DXST stock | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

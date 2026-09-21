@@ -1,31 +1,31 @@
 # YouTube Entity Enrichment
 
-Generated: **2026-09-20T11:34:18.536274+00:00**
+Generated: **2026-09-21T11:33:32.216857+00:00**
 
 This is a measurement table, not the final editorial ranking. ChatGPT reviews it after enrichment.
 
 | # | Entity | YouTube query | Relevant sample | Relevant % | Relevant median views/day | Small-channel median views/day | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---|
-| 1 | Jev AI | Jev AI decision model | 50/50 | 100.0% | 4500 | 493 | 43.8% | 10.0% | ok |
-| 2 | Lennar | Lennar LEN earnings | 13/23 | 56.5% | 19 | 18 | 0.0% | 90.0% | ok |
-| 3 | UMC | UMC UMC stock 聯電 | 0/0 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 4 | Circle Internet Group | Circle CRCL stock | 10/18 | 55.6% | 24 | 24 | 20.0% | 100.0% | ok |
-| 5 | Tower Semiconductor | Tower Semiconductor TSEM | 2/5 | 40.0% | 3 | 3 | 0.0% | 100.0% | ok |
-| 6 | Nike | Nike NKE earnings | 31/50 | 62.0% | 188 | 88 | 13.0% | 40.0% | ok |
-| 7 | Amazon | Amazon AMZN earnings | 23/50 | 46.0% | 22 | 23 | 10.0% | 90.0% | ok |
-| 8 | Micron Technology | Micron MU earnings | 26/50 | 52.0% | 102 | 87 | 30.4% | 90.0% | ok |
-| 9 | TSMC | TSMC TSM semiconductor | 8/50 | 16.0% | 9 | 5 | 0.0% | 87.5% | ok_low_relevance |
-| 10 | Semiconductor supply chain | semiconductor supply chain AI chips | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 11 | Marvell Technology | Marvell MRVL earnings | 13/22 | 59.1% | 27 | 22 | 0.0% | 80.0% | ok |
-| 12 | AMD | AMD earnings AI chips | 15/50 | 30.0% | 20 | 20 | 33.3% | 100.0% | ok |
-| 13 | CoreWeave | CoreWeave CRWV earnings | 23/37 | 62.2% | 41 | 35 | 5.0% | 70.0% | ok |
-| 14 | Alphabet | Google GOOGL stock | 41/50 | 82.0% | 315 | 258 | 30.4% | 60.0% | ok |
-| 15 | NVIDIA | NVIDIA NVDA earnings | 37/50 | 74.0% | 40 | 22 | 11.1% | 30.0% | ok |
-| 16 | Uber | Uber UBER earnings | 26/50 | 52.0% | 6023 | 1038 | 55.6% | 10.0% | ok |
-| 17 | Navitas Semiconductor | Navitas Semiconductor NVTS stock | 5/6 | 83.3% | 26 | 26 | 0.0% | 100.0% | ok |
-| 18 | Tesla | Tesla TSLA earnings | 32/50 | 64.0% | 1093 | 17 | 18.8% | 0.0% | ok |
-| 19 | Oil prices | oil price crude oil stocks | 32/50 | 64.0% | 1348 | 23 | 12.5% | 10.0% | ok |
-| 20 | Crypto regulation / CLARITY Act | CLARITY Act crypto regulation Senate | 36/50 | 72.0% | 1730 | 38 | 22.2% | 20.0% | ok |
+| 1 | Memory stocks | memory stocks Micron SanDisk | 18/39 | 46.2% | 459 | 434 | 41.2% | 90.0% | ok |
+| 2 | Power semiconductors | power semiconductor stocks | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 3 | Alphabet / Google | Google GOOGL stock | 38/50 | 76.0% | 203 | 160 | 26.9% | 60.0% | ok |
+| 4 | Circle Internet Group | Circle CRCL stock | 8/11 | 72.7% | 25 | 25 | 12.5% | 100.0% | ok |
+| 5 | iShares Semiconductor ETF / SOXX | iShares Semiconductor SOXX | 1/4 | 25.0% | 12 | 0 | 0.0% | 0.0% | ok_low_relevance |
+| 6 | India semiconductor buildout | India semiconductor investment | 2/50 | 4.0% | 871 | 871 | 50.0% | 100.0% | ok_low_relevance |
+| 7 | UMC | UMC UMC stock semiconductor | 2/8 | 25.0% | 90 | 90 | 0.0% | 100.0% | ok_low_relevance |
+| 8 | Marvell Technology | Marvell MRVL earnings | 10/17 | 58.8% | 13 | 13 | 0.0% | 100.0% | ok |
+| 9 | TSMC | TSMC TSM earnings | 6/13 | 46.2% | 3 | 3 | 0.0% | 100.0% | ok |
+| 10 | Micron Technology | Micron MU earnings memory | 28/47 | 59.6% | 127 | 127 | 18.5% | 100.0% | ok |
+| 11 | Intel | Intel INTC earnings | 18/32 | 56.2% | 19 | 19 | 6.2% | 90.0% | ok |
+| 12 | Qualcomm | Qualcomm QCOM earnings | 14/18 | 77.8% | 19 | 19 | 14.3% | 100.0% | ok |
+| 13 | Alphabet earnings | Google GOOGL earnings | 27/50 | 54.0% | 48 | 25 | 8.3% | 70.0% | ok |
+| 14 | Mining stocks | mining stocks gold copper | 1/50 | 2.0% | 5391 | 0 | 0.0% | 0.0% | ok_low_relevance |
+| 15 | Bitcoin | Bitcoin BTC ETF | 47/50 | 94.0% | 180 | 28 | 14.8% | 20.0% | ok |
+| 16 | Siri AI / Apple | Apple Siri AI | 37/50 | 74.0% | 2147 | 1701 | 56.5% | 50.0% | ok |
+| 17 | Claude / Anthropic | Anthropic Claude AI | 49/50 | 98.0% | 886 | 72 | 31.0% | 30.0% | ok |
+| 18 | Navitas Semiconductor | Navitas NVTS semiconductor | 4/7 | 57.1% | 20 | 20 | 0.0% | 100.0% | ok |
+| 19 | Broadcom | Broadcom AVGO earnings AI | 10/19 | 52.6% | 30 | 30 | 0.0% | 100.0% | ok |
+| 20 | Oil stocks | oil stocks crude oil | 31/50 | 62.0% | 4560 | 700 | 46.2% | 20.0% | ok |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.
@@ -36,19 +36,41 @@ This is a measurement table, not the final editorial ranking. ChatGPT reviews it
 
 ## Relevance filter diagnostics
 
-### TSMC — ok_low_relevance
-Relevance groups: `[["TSMC", "Taiwan Semiconductor", "TSM"]]`
-- Rejected: 台積電"埃米級晶片"拚2030年量產 搶先英特爾！台股量能破兆站回4萬7 外資買超869億第5大｜非凡財經新聞｜20260919 #shorts
-- Rejected: AI退燒了?下一波資金竟轉進這族群!!【小宇宙大爆發 】#shorts #理財
-- Rejected: 魏哲家喊話「股價趕快趕上聯發科」還有2000上漲空間！台積電2奈米擴產狂衝「輾壓中國」華為苦缺產量！【關鍵時刻】張炤和
-- Rejected: AI會不會退燒?潘健成揭邏輯vs信仰成關鍵..記憶體紅利看40年!#AI #股市 #台股 #半導體 #記憶體 #台積電​
-- Rejected: 營收財測衝新高卻不漲？專家揭台積電這大包袱
+### Power semiconductors — ok_no_relevant_videos
+Relevance groups: `[["power semiconductor", "功率半導體", "SiC", "GaN"]]`
+- Rejected: 2 Semiconductor Stocks- Which one is winning?!
+- Rejected: The AI Memory Boom Is About to Get Much Bigger!!
+- Rejected: Navitas Stock Just Entered a New AI Phase — What Comes Next?
+- Rejected: 2 Semiconductor Stocks Building India’s Chip Future
+- Rejected: Tower Semiconductor Stock: Is the 200% Rally Just the Beginning?
 
-### Semiconductor supply chain — ok_no_relevant_videos
-Relevance groups: `[["semiconductor supply chain", "chip supply chain"]]`
-- Rejected: ASML Just Told You the AI Chip Boom Is Not Over
-- Rejected: Veteran Strategist: AI stocks to buy as semiconductors MAKE HISTORY
-- Rejected: The AI Boom Has a Water Problem
-- Rejected: The Hidden Bottleneck Behind Nvidia's New AI Chips
-- Rejected: Who Actually Makes NVIDIA's AI Chips? #ai #aiinvesting #investing
+### iShares Semiconductor ETF / SOXX — ok_low_relevance
+Relevance groups: `[["SOXX", "iShares Semiconductor"]]`
+- Rejected: QCOM Crash 5.8%! Semiconductor Rotation Explained
+- Rejected: ITA: How Creation and Redemption Keeps Price Near NAV
+- Rejected: 巴倫周刊2026.9.21：Anthropic估值2兆上市風險；日本金援美國天然氣電廠；巴菲特退休後波克夏權力轉移；蘋果晶片護城河，與美聯儲升息下法國債市及商業地產REITs投資機會。
+
+### India semiconductor buildout — ok_low_relevance
+Relevance groups: `[["India semiconductor", "India chip"]]`
+- Rejected: 2 Semiconductor Stocks Building India’s Chip Future
+- Rejected: India's Semiconductor Talent Is Finally Working for India
+- Rejected: US, Japan Announce Huge $12 Billion Semiconductors Investment in India! Semicon 2.0 India
+- Rejected: 2 Semiconductor Stocks- Which one is winning?!
+- Rejected: Semicon India 2026 Ends With $7 Billion Investment Commitments
+
+### UMC — ok_low_relevance
+Relevance groups: `[["UMC", "聯電"]]`
+- Rejected: 台股「黃」袍加身 晶片銷量翻倍 CPO軍備戰決戰磷化銦？ - 周佳和 陳唯泰 謝宗霖 蔡侑達《股動錢潮》全集 2026.09.18
+- Rejected: 鴻海靠光通訊噴飛卡位1.6T交換機！「美CPO大廠助攻」成熟製程低基期大爆發 四大受惠股一次看！ - 林友銘 王榮旭 劉寶傑《寶傑點兵》20260918-2
+- Rejected: 00981A配息0.63元！主動ETF領息很香，但總報酬真的比較高？｜家裡隨便聊
+- Rejected: [26.09.19 주간 리포트 메타분석] "전기가 없으면 AI도 없다" : Time-to-Power 병목이 만든 8인치 슈퍼사이클과 LFP 수혜주 Top 10 #전력인프라
+- Rejected: 台股「黃」袍加身 晶片銷量翻倍 CPO軍備戰決戰磷化銦？ - 周佳和 陳唯泰 謝宗霖 蔡侑達《股動錢潮》全集 2026.09.18
+
+### Mining stocks — ok_low_relevance
+Relevance groups: `[["mining stocks", "gold stocks", "copper stocks"]]`
+- Rejected: MIKE MCGLONE: COPPER COULD CRASH 30%
+- Rejected: Silver Jumps 3% While Copper Surges 2.2% And Gold Breaks Higher ~ Monday Market Moves
+- Rejected: BREAKING! 🦍🦍 Metals Are Doing THIS! (Silver, Copper + Gold Price UPDATE)
+- Rejected: +730% and the CEO Says It Hasn’t Even Started — Copper Giant’s 1.1 Billion-Tonne Bet
+- Rejected: Commodities Update: Technical Analysis: GOLD, SILVER, COPPER LOOKING STRONG
 

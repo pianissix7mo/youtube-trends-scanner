@@ -1,31 +1,31 @@
 # YouTube Entity Enrichment
 
-Generated: **2026-09-23T11:29:04.739583+00:00**
+Generated: **2026-09-24T11:38:29.042089+00:00**
 
 This is a measurement table, not the final editorial ranking. ChatGPT reviews it after enrichment.
 
 | # | Entity | YouTube query | Relevant sample | Relevant % | Relevant median views/day | Small-channel median views/day | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---|
-| 1 | Meta Muse AI | Meta Muse AI | 28/50 | 56.0% | 834 | 47 | 12.5% | 10.0% | ok |
-| 2 | NVIDIA | NVDA earnings | 43/50 | 86.0% | 59 | 36 | 24.3% | 60.0% | ok |
-| 3 | Micron Technology | MU Micron earnings | 33/50 | 66.0% | 751 | 751 | 48.3% | 90.0% | ok |
-| 4 | Memory stocks / HBM | memory stocks HBM | 25/50 | 50.0% | 175 | 175 | 23.8% | 80.0% | ok |
-| 5 | Philadelphia Semiconductor Index | Philadelphia Semiconductor SOX | 7/33 | 21.2% | 362 | 362 | 14.3% | 100.0% | ok_low_relevance |
-| 6 | Semiconductor stocks | semiconductor stocks | 20/50 | 40.0% | 97 | 74 | 20.0% | 60.0% | ok |
-| 7 | Foxconn / Hon Hai | Foxconn Hon Hai stock | 6/7 | 85.7% | 2472 | 965 | 0.0% | 16.7% | ok |
-| 8 | Yageo | Yageo stock | 8/10 | 80.0% | 819 | 620 | 0.0% | 75.0% | ok |
-| 9 | AUO | AUO stock | 27/50 | 54.0% | 2908 | 183 | 0.0% | 0.0% | ok |
-| 10 | Alphabet / Google | GOOGL earnings call | 14/50 | 28.0% | 12 | 10 | 9.1% | 70.0% | ok_low_relevance |
-| 11 | Royal Caribbean | RCL stock | 20/50 | 40.0% | 39 | 20 | 7.1% | 50.0% | ok |
-| 12 | General Mills | GIS earnings | 3/50 | 6.0% | 93 | 49 | 0.0% | 66.7% | ok_low_relevance |
-| 13 | Tungsten stocks | tungsten stocks | 12/50 | 24.0% | 14 | 6 | 11.1% | 70.0% | ok_low_relevance |
-| 14 | Oil stocks | oil stocks | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 15 | US diesel policy | US diesel export ban Trump | 24/50 | 48.0% | 1684 | 80 | 46.2% | 50.0% | ok |
-| 16 | US mortgage rates | US mortgage rates | 23/50 | 46.0% | 94 | 18 | 10.0% | 70.0% | ok |
-| 17 | Mining stocks | mining stocks | 8/50 | 16.0% | 597 | 597 | 37.5% | 100.0% | ok_low_relevance |
-| 18 | Silver stocks | silver stocks | 2/50 | 4.0% | 16 | 16 | 0.0% | 100.0% | ok_low_relevance |
-| 19 | TSMC | TSM Taiwan Semiconductor | 14/36 | 38.9% | 52 | 52 | 8.3% | 90.0% | ok |
-| 20 | Apple Siri AI | Apple Siri AI | 41/50 | 82.0% | 927 | 756 | 38.9% | 30.0% | ok |
+| 1 | CoreWeave | crwv earnings call | 2/11 | 18.2% | 19 | 19 | 0.0% | 100.0% | ok_low_relevance |
+| 2 | Yageo | 國巨 股票 | 15/50 | 30.0% | 1725 | 568 | 33.3% | 20.0% | ok |
+| 3 | Costco | costco earnings | 45/50 | 90.0% | 18 | 17 | 20.0% | 70.0% | ok |
+| 4 | Tesla | tsla earnings call | 29/50 | 58.0% | 872 | 20 | 13.3% | 20.0% | ok |
+| 5 | Meta Muse AI | meta muse ai | 40/50 | 80.0% | 56 | 38 | 7.1% | 10.0% | ok |
+| 6 | Cannabis stocks | cannabis stocks | 7/50 | 14.0% | 2638 | 43 | 0.0% | 42.9% | ok_low_relevance |
+| 7 | AUO | 友達 股票 | 44/50 | 88.0% | 7682 | 4333 | 58.3% | 10.0% | ok |
+| 8 | TSMC | taiwan semiconductor stock | 18/50 | 36.0% | 2538 | 6613 | 100.0% | 30.0% | ok |
+| 9 | Super Micro Computer | smci earnings call | 4/8 | 50.0% | 38 | 38 | 0.0% | 100.0% | ok |
+| 10 | Semiconductor stocks | semiconductor stocks | 12/50 | 24.0% | 62 | 52 | 20.0% | 80.0% | ok_low_relevance |
+| 11 | Micron Technology | micron earnings | 44/50 | 88.0% | 182 | 82 | 34.3% | 70.0% | ok |
+| 12 | ON Semiconductor | on semiconductor | 6/50 | 12.0% | 1180 | 118 | 0.0% | 33.3% | ok_low_relevance |
+| 13 | AI glasses | ai 眼鏡 | 17/50 | 34.0% | 11816 | 13028 | 83.3% | 30.0% | ok |
+| 14 | Amazon | amzn earnings call | 8/50 | 16.0% | 360 | 171 | 28.6% | 87.5% | ok_low_relevance |
+| 15 | Intel | intc earnings call | 6/14 | 42.9% | 5 | 5 | 16.7% | 100.0% | ok |
+| 16 | NVIDIA | nvda earnings call | 8/20 | 40.0% | 11 | 11 | 12.5% | 100.0% | ok |
+| 17 | Trump AI policy | trump ai | 0/50 | 0.0% | 0 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 18 | Navitas Semiconductor | navitas semiconductor stock | 10/16 | 62.5% | 31 | 31 | 0.0% | 100.0% | ok |
+| 19 | Meta Platforms | meta earnings | 48/50 | 96.0% | 4067 | 356 | 36.8% | 0.0% | ok |
+| 20 | AMD | amd earnings call | 15/50 | 30.0% | 17 | 17 | 30.8% | 90.0% | ok |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.
@@ -36,60 +36,51 @@ This is a measurement table, not the final editorial ranking. ChatGPT reviews it
 
 ## Relevance filter diagnostics
 
-### Philadelphia Semiconductor Index — ok_low_relevance
-Relevance groups: `[["Philadelphia Semiconductor", "SOX", "費城半導體"]]`
-- Rejected: 害怕買在高點？統計曝「等崩盤」賺最少！破解0050配美股半導體的假性分散陷阱
-- Rejected: Is AI Cooling Down & A Big Shift of Capital Rotation into Crypto Occurring?
-- Rejected: 美股纳指巨头们都回来了！Meta 狂飙 11% 市值增近两千亿，AMD冲破万亿！个人agent软件带动AI硬件半导体？#meta #aiagents #cpu  #semiconductor
-- Rejected: 2026-09-21 財經早報｜費半領漲
-台股高檔戰
-- Rejected: 미국증시 혼조 속 반도체 강세, 메모리·장비주까지 상승 확산
+### CoreWeave — ok_low_relevance
+Relevance groups: `[["CRWV", "CoreWeave"]]`
+- Rejected: Nebius Just Became a 10-Bagger — Here's What's Next
+- Rejected: AI Just Got 60% Cheaper. So Why Did The Chips Get More Expensive?
+- Rejected: He Lost $35 Billion In One Morning. He's Back.
+- Rejected: 62 Companies Just Declared a Sale! (Sep 22, 2026)
+- Rejected: Unusual Whales: How to Tell Good Options Flow From Bad Flow
 
-### Alphabet / Google — ok_low_relevance
-Relevance groups: `[["Alphabet", "Google", "GOOG", "GOOGL"]]`
-- Rejected: SPX Nears All-Time High, Diesel Sees Key Support as UN General Assembly Begins
-- Rejected: Symbiotec Pharmalab Earnings Call for Q1FY27
-- Rejected: Every AI CEO Agreed on “Safety” in Six Days—Now Look at Their Burn Rates!🚨 #ai #stockmarket
-- Rejected: They Priced It Wrong
-- Rejected: The Nasdaq surge: The Investment Committee's strategy
+### Cannabis stocks — ok_low_relevance
+Relevance groups: `[["cannabis stocks", "marijuana stocks"]]`
+- Rejected: Cannabis Clemency Progress, and the Work Still Ahead | TTB Presented by Flowhub
+- Rejected: AMC IS MOVING AGAIN 🚨 Market Talk LIVE | MSOS, Copper & More
+- Rejected: Cannabis Goes Corporate: Who Wins If Washington Legalizes? | The Money Path LIVE
+- Rejected: “They’re circling.”
+- Rejected: 475% Short Squeeze in 30 Minutes
 
-### General Mills — ok_low_relevance
-Relevance groups: `[["General Mills", "GIS"]]`
-- Rejected: The Highest Marginal Tax Rate in Canada Is Paid by Retirees on Modest Incomes
-- Rejected: 📌 You're Probably Wrong About Your Tax Rate in Retirement (Canadian Seniors 65+)
-- Rejected: How Canadian Seniors Get $19,956 a Year in 9 MINUTES (Widowed and Under 65)
-- Rejected: 🎉Canadian Seniors: 5 Bills You Don't Have to Pay After 65 (Most People Don't Know)
-- Rejected: Should You Delay OAS to 70? The Real Math
+### Semiconductor stocks — ok_low_relevance
+Relevance groups: `[["semiconductor stocks", "chip stocks"]]`
+- Rejected: Is Western Digital an Undervalued Semiconductor Stock to Buy Right Now? | WDC STock Analysis
+- Rejected: Agentic AI Just Changed the Memory Trade
+- Rejected: TSM Taiwan Semiconductor Stock: Thursday Predicted Opening Price (Ahead of A14 traction) - 5 Signals
+- Rejected: MICRON STOCK EXPLOSION: MU’S AI MEMORY BOOM COULD SEND IT TO $1,500! 🚀
+- Rejected: MU Stock: SEPTEMBER 30 COULD CHANGE EVERYTHING | Micron
 
-### Tungsten stocks — ok_low_relevance
-Relevance groups: `[["tungsten", "钨", "鎢"]]`
-- Rejected: Why $ELMT Just Received a Massive Defense Bailout
-- Rejected: Gold and Antinmony, Full Production by 2027 | Chris Gerteisen on Nova Minerals (NYSE-A: NVA)
-- Rejected: A Glimpse of What Happens When Oil Sells Off: Tech Stocks Rip
-- Rejected: Resolution Minerals Ltd Advances Two FAST-41 Projects at Horse Heaven
-- Rejected: Eps 27 - The Fed just raised rates. The question isn't what they did...
+### ON Semiconductor — ok_low_relevance
+Relevance groups: `[["ON Semiconductor", "onsemi", "ON"]]`
+- Rejected: Semiconductor Stocks Explode as Oil and Yields Fall
+- Rejected: Is Western Digital an Undervalued Semiconductor Stock to Buy Right Now? | WDC STock Analysis
+- Rejected: Semiconductor Stocks BREAKOUT! Time To BUY, or WAIT?
+- Rejected: How are Semiconductor Chips made? The complete story from sand to 2nm chip
+- Rejected: India’s Chip Dream Is Getting Real. But Is The Semiconductor Boom Creating A New Security Threat?
 
-### Oil stocks — ok_no_relevant_videos
-Relevance groups: `[["oil stocks", "energy stocks", "石油股"]]`
-- Rejected: Slide in Crude Oil, Yields "Extremely Attractive" for Stocks, Mag 7 Lead Momentum
-- Rejected: Oil Prices Are Plunging : Here's What Just Happened | Media Stocks Rally | Alok Jain
-- Rejected: Market Open: Stocks Rise, Oil and Yields Lower, Amazon’s Next Sale Nears • 9/21/26
-- Rejected: Tech Stocks and Crypto Huge Rally 🚨 Oil Prices Fall | Live Trading Stock Market Today $MU $SNDK $QQQ
-- Rejected: Oil & Diesel export ban will TRIGGER A REAL INFLATION SHOCK #oil #wti #brent #stocks #marketcrash
+### Amazon — ok_low_relevance
+Relevance groups: `[["Amazon", "AMZN"]]`
+- Rejected: US Unveils Truce Extension, Trump Greets Xi on Tarmac in Rare Protocol Shift
+- Rejected: How To Turn 1 Self-Published Book Into 7 Income Streams
+- Rejected: Rates, Oil & Big Tech: Where the Value Is Hiding Now | Value Options Letter
+- Rejected: Xi Arrives in US for High-Stakes Summit With Trump
+- Rejected: Target Stock Is Skyrocketing After Boycott
 
-### Mining stocks — ok_low_relevance
-Relevance groups: `[["mining stocks", "miners"]]`
-- Rejected: Eric Sprott Just Bought This Gold Stock! 2 Assets are Basically FREE — Cerrado Gold (CERT.V / CRDOF)
-- Rejected: Greenland Mines Stock: The TRUTH About The Rare Earth Pivot & Financial Risk!
-- Rejected: Peter Krauth: Silver Mania Still Ahead, Don't Get Caught in Bear Trap
-- Rejected: Top 5 Gold Stocks To Watch - Takeover Targets For 2026
-- Rejected: This Gold Discovery Was Already Huge. Now It’s Becoming a Monster. | Goliath Resources
-
-### Silver stocks — ok_low_relevance
-Relevance groups: `[["silver stocks", "silver miners"]]`
-- Rejected: 🚨🚨...BUT It Gets Even BETTER! 🦍🦍 You BEST Hear This SILVER Price and Gold NEWS
-- Rejected: Peter Krauth: Silver Mania Still Ahead, Don't Get Caught in Bear Trap
-- Rejected: Don Durrett’s Masterclass on Investing in Gold & Silver Mining Stocks | Part 3
-- Rejected: BREAKING! 🦍🦍 Metals Are Doing THIS! (Silver, Copper + Gold Price UPDATE)
-- Rejected: The Global Monetary Reset Has Begun (Why Gold & Silver are Next)
+### Trump AI policy — ok_no_relevant_videos
+Relevance groups: `[["Trump AI", "AI policy"]]`
+- Rejected: Trump may bail out AI. You'll pay for it.
+- Rejected: Apparently, artificial intelligence needs a rebrand. #shorts
+- Rejected: Trump wants to “cherish” and “watch over" AI? He didn’t even do that for his kids! #DailyShow #Trump
+- Rejected: Responding to President Trump's "Full Steam Ahead" Approach to AI
+- Rejected: First lady on "Fostering the Future Together" initiative
 

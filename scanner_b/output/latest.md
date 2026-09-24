@@ -1,18 +1,21 @@
 # Scanner B — Catalyst Opportunities
 
-Generated: **2026-09-23T11:29:14.369542+00:00**
+Generated: **2026-09-24T11:38:45.801556+00:00**
 
-YouTube fresh search calls used: **9 / 20**
+YouTube fresh search calls used: **12 / 20**
 Cache hits: **0**; stale fallbacks: **0**; API failures: **0**
 
 | # | Event | Ticker | Judge | Discovery | Burst | Sources | YT gap | B final |
 |---:|---|---|---:|---:|---:|---:|---:|---:|
-| 1 | Global Inflation to Linger and Fed to Hike Again, OECD Says | — | 97 | 58.4 | 21.6 | 55.0 | 100.0 | 86.0 |
-| 2 | Alibaba Unveils New AI Chip and Plans Bigger Qwen Models | BABA | 96 | 58.8 | 28.0 | 72.0 | 100.0 | 85.6 |
-| 3 | Nutanix targets agentic AI workload management with Ryax acquisition | NTNX | 80 | 63.5 | 64.0 | 20.0 | 100.0 | 79.0 |
-| 4 | Bitcoin ETF Inflows Near $1 Billion as Price Surpasses $86,000 | — | 84 | 53.9 | 3.6 | 88.0 | 100.0 | 78.2 |
-| 5 | WPP launches flagship production hub in East London | WPP | 78 | 61.2 | 69.8 | 38.0 | 100.0 | 77.4 |
-| 6 | RPM Announces Acquisition of Volteco | RPM | 74 | 58.0 | 48.4 | 20.0 | 100.0 | 74.4 |
-| 7 | China’s semiconductor equipment imports rise 16% in August | — | 80 | 39.8 | 11.1 | 20.0 | 100.0 | 71.9 |
-| 8 | Florida Sues Eli Lilly, Sanofi, CVS in Insulin Antitrust Action | CVS | 78 | 39.8 | 25.0 | 20.0 | 100.0 | 70.9 |
-| 9 | Samsung, SK hynix Race to Expand HBM Output as Supply Remains Tight | — | 78 | 33.5 | 7.0 | 20.0 | 100.0 | 69.0 |
+| 1 | Diller ends MGM Resorts takeover bid but stays 'open' to other deals | MGM | 92 | 73.3 | 74.5 | 55 | 100.0 | 88.0 |
+| 2 | Fed’s Williams Says More Work Needed to Bring Down US Inflation | — | 91 | 63.5 | 44.1 | 55 | 100.0 | 84.5 |
+| 3 | China's DeepSeek annualised revenue run rate hits $1 billion, the Information reports | — | 90 | 43.7 | 14 | 20 | 100.0 | 78.1 |
+| 4 | Stock futures fall as 30-year Treasury yield hits 2004 high | — | 99 | 69.9 | 44.1 | 72 | 30.0 | 76.5 |
+| 5 | Adobe Completes Acquisition of AI Image & Video Upscaling Company Topaz Labs | ADBE | 86 | 44.3 | 5.7 | 38 | 100.0 | 76.3 |
+| 6 | Siemens and TSMC expand collaboration for AI-integrated semiconductor design | TSM | 82 | 45.9 | 7 | 55 | 100.0 | 74.8 |
+| 7 | Israeli foundry Tower Semiconductor to make Japan main hub for optical chips | TSEM | 81 | 45.5 | 41.2 | 20 | 100.0 | 74.2 |
+| 8 | New Mexico lawsuit against Facebook goes to jury after closing arguments | META | 76 | 45.7 | 23.7 | 38 | 100.0 | 71.7 |
+| 9 | AI is helping automate complex chip-design tasks at Synopsys and TSMC. | SNPS | 76 | 43.5 | 35.5 | 20 | 100.0 | 71.0 |
+| 10 | Microsoft Expands Cloud And AI Footprint With New Telangana Datacenter | MSFT | 73 | 43.9 | 26.3 | 20 | 100.0 | 69.7 |
+| 11 | Thailand eyes $80bn in semiconductor investment by 2050 | — | 72 | 42.8 | 8.6 | 38 | 100.0 | 68.8 |
+| 12 | US-listed spot Bitcoin ETFs turn positive for 2... | — | 82 | 60.1 | 18 | 88 | 30.0 | 65.0 |

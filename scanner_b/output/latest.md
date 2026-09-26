@@ -1,29 +1,29 @@
 # Scanner B — Catalyst Opportunities
 
-Generated: **2026-09-25T11:44:36.974406+00:00**
+Generated: **2026-09-26T12:49:28.009826+00:00**
 
 YouTube fresh search calls used: **20 / 20**
 Cache hits: **0**; stale fallbacks: **0**; API failures: **0**
 
 | # | Event | Ticker | Judge | Discovery | Burst | Sources | YT gap | B final |
 |---:|---|---|---:|---:|---:|---:|---:|---:|
-| 1 | Anthropic signs $11.6 billion, seven-year AI computing deal with Akamai | — | 98 | 49 | 18 | 55 | 100.0 | 83.7 |
-| 2 | Buyout for MGM Resorts withdrawn | MGM | 93 | 58.5 | 28 | 55 | 95.0 | 83.0 |
-| 3 | Tesla Begins High-Volume Semi Production at Nevada Factory, Musk Says | TSLA | 94 | 52.2 | 9.5 | 55 | 100.0 | 82.7 |
-| 4 | Eaton signs agreement to acquire COL Group, expanding manufacturing capacity and capabilities for data center and utility markets in EMEA | ETN | 89 | 53.4 | 44.8 | 20 | 100.0 | 80.5 |
-| 5 | VerifyMe shareholders approve merger with OpenWorld and board elections | VRME | 83 | 62.7 | 58.2 | 20 | 100.0 | 80.3 |
-| 6 | Vertical Aerospace Opens New Valo Assembly Centre to Build Certification and Early Production Aircraft | EVTL | 81 | 63.8 | 74.5 | 20 | 100.0 | 79.6 |
-| 7 | EU urges Britain to raise tariffs on Chinese cars to avoid ‘Made in Europe’ exclusion, report says | — | 89 | 46.6 | 0 | 55 | 100.0 | 78.5 |
-| 8 | TSMC Commits US$29.4 Billion to Capacity Expansion in August 2026 | TSM | 92 | 41.2 | 9.9 | 20 | 100.0 | 78.4 |
-| 9 | Tower Semiconductor to establish large-scale optical chip hub as part of $4bn Japanese investment pledge | TSEM | 86 | 46.6 | 51.2 | 20 | 100.0 | 77.0 |
-| 10 | Surging Treasury yields complicate the Fed's rate path | — | 99 | 69.8 | 47.1 | 72 | 30.0 | 76.4 |
-| 11 | Qualcomm secures extension to global patent licensing pact with Apple | AAPL | 91 | 34 | 7 | 20 | 100.0 | 75.7 |
-| 12 | Kuehne+Nagel Strikes Deal With Amazon For Supply Chain, Cloud Capabilities | AMZN | 85 | 40.2 | 8.6 | 20 | 100.0 | 74.6 |
-| 13 | Apple and Qualcomm Extend Partnership Beyond Earlier iPhone Modem Deal | AAPL | 86 | 37.9 | 7 | 38 | 100.0 | 74.4 |
-| 14 | Why Is Taiwan Semiconductor Manufacturing (TSM) Raising Wafer Prices By 3% To 6%? | TSM | 87 | 35.8 | 9.9 | 20 | 100.0 | 74.2 |
-| 15 | CECO Environmental (CECO) Lifts 2026 Outlook, Is It Still 33% Below Fair Value? | CECO | 75 | 55.2 | 42.5 | 20 | 100.0 | 74.1 |
-| 16 | Battery cell production at Ohio plant to restart for GM EVs | GM | 79 | 43.8 | 21 | 20 | 100.0 | 72.6 |
-| 17 | NEC building 1-petabit-capacity subsea cable for Meta | META | 80 | 40.7 | 16.3 | 20 | 100.0 | 72.2 |
-| 18 | UBS considers merger to move out of Switzerland - report (UBS:NYSE) | UBS | 78 | 43.5 | 16.3 | 38 | 100.0 | 72.0 |
-| 19 | Leading semiconductor analyst says AMD should be investigated for 'treason' over availability of restricted chips in China, AMD blames diversion of export-controlled RFSoC — $36,000 radar silicon allegedly quoted at $1,000 for crowdfunding project | AMD | 79 | 35.6 | 19.7 | 20 | 100.0 | 70.2 |
-| 20 | U.S. Spot Bitcoin ETFs Return to Net Inflows After $5.8 Billion Outflow | — | 83 | 47 | 0 | 72 | 30.0 | 61.6 |
+| 1 | Trump set to impose sweeping tariffs on 60 trade partners | — | 90 | 40.5 | 0 | 38 | 100.0 | 77.2 |
+| 2 | Trump slaps additional 50% tariff on certain Canadian goods | — | 90 | 38.1 | 0 | 20 | 100.0 | 76.4 |
+| 3 | EXCLUSIVE: SK Hynix's Solidigm weighs IPO that could value the unit at up to $150 billion, sources say | — | 91 | 35.9 | 17.2 | 20 | 95.0 | 75.3 |
+| 4 | US 10-year Treasury yields exceed 5.2% | — | 97 | 60.4 | 7 | 88 | 30.0 | 72.6 |
+| 5 | Bio-Techne (TECH) Shareholders Approve the Merck KGaA Takeover and Reject the Pay Package | TECH | 79 | 39.2 | 8.2 | 20 | 100.0 | 71.3 |
+| 6 | Akamai signs $11.6 billion computing supply deal with Anthropic | — | 94 | 46.6 | 5.7 | 72 | 50.0 | 71.0 |
+| 7 | Supermicro NVIDIA Vera Rubin NVL72 Racks Now Shipping With 1.8MW In-Row CDUs and a 1,152-GPU Scalable Unit | SMCI | 81 | 38 | 26.6 | 20 | 95.0 | 70.9 |
+| 8 | Tower Semiconductor to invest $4 billion in Japanese ops to set up massive optical connectivity hub | TSEM | 80 | 36.3 | 21.6 | 20 | 100.0 | 70.9 |
+| 9 | Inflation slams consumer sentiment to four-month low: survey | — | 80 | 37.2 | 0 | 38 | 95.0 | 70.2 |
+| 10 | Oracle Wins 2.4GW Project Jupiter Contract for Major Expansion | ORCL | 81 | 31.5 | 0 | 20 | 100.0 | 70.0 |
+| 11 | Shopify’s Tailwind Acquisition Feeds the Agentic Commerce Story, But the Market Is Already Nervous About the Bill | SHOP | 74 | 41.1 | 17.2 | 20 | 100.0 | 69.3 |
+| 12 | PYPL Stock Climbs On West Coast Takeover Rumors After Stripe Walk-Away Leaves Room For A New Bidder | PYPL | 73 | 41.5 | 7 | 38 | 100.0 | 69.0 |
+| 13 | Paramount Says Timing of Warner Bros. Deal Close 'Not Yet Certain' but Sets Oct. 6 Date for Stock Exchange Switch | PSKY | 73 | 41.2 | 21 | 20 | 100.0 | 68.9 |
+| 14 | CDW Completes $525 Million Acquisition of Lovelytics | CDW | 73 | 40.2 | 7 | 38 | 100.0 | 68.6 |
+| 15 | F5 (FFIV) Following Its Q3 Beat And Outlook Lift, Is The Valuation Already Priced In? | FFIV | 72 | 38.6 | 2.9 | 20 | 100.0 | 67.6 |
+| 16 | Siemens and TSMC Advance AI-Powered Semiconductor Design Automation | TSM | 74 | 32.6 | 11.1 | 20 | 100.0 | 66.8 |
+| 17 | Tesla's Optimus said to face production issues | TSLA | 70 | 34.9 | 5.7 | 20 | 95.0 | 64.5 |
+| 18 | LSCC Jumps As Lattice Semiconductor Unveils New AI FPGA Tools | LSCC | 67 | 32.6 | 11.1 | 20 | 100.0 | 63.3 |
+| 19 | Judge appears skeptical of Pentagon arguments in legal fight over Anthropic 'supply chain risk' designation | — | 82 | 41.9 | 5.7 | 38 | 30.0 | 59.6 |
+| 20 | Google plans orbital AI chip test as data centers face pushback | GOOGL | 69 | 28.7 | 0 | 20 | 50.0 | 53.1 |

@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import os
 import re
+import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -11,6 +13,61 @@ from urllib.parse import urlparse
 import requests
 
 GOOGLE_NEWS_RSS = "https://news.google.com/rss/search"
+GOOGLE_NEWS_MAX_ATTEMPTS = max(1, int(os.getenv("GOOGLE_NEWS_MAX_ATTEMPTS", "3")))
+GOOGLE_NEWS_RETRY_BASE_SECONDS = max(0.0, float(os.getenv("GOOGLE_NEWS_RETRY_BASE_SECONDS", "2")))
+GOOGLE_NEWS_RETRYABLE_STATUS = {429, 500, 502, 503, 504}
+
+
+def _retry_delay_seconds(response: requests.Response | None, attempt: int) -> float:
+    if response is not None:
+        retry_after = str(response.headers.get("Retry-After") or "").strip()
+        try:
+            return max(0.0, float(retry_after))
+        except ValueError:
+            pass
+    return GOOGLE_NEWS_RETRY_BASE_SECONDS * (2 ** max(0, attempt - 1))
+
+
+def _get_google_news_with_retry(
+    session: requests.Session,
+    *,
+    params: dict[str, str],
+    timeout: int,
+) -> requests.Response:
+    last_error: Exception | None = None
+    for attempt in range(1, GOOGLE_NEWS_MAX_ATTEMPTS + 1):
+        response: requests.Response | None = None
+        try:
+            response = session.get(
+                GOOGLE_NEWS_RSS,
+                params=params,
+                timeout=timeout,
+            )
+            if response.status_code not in GOOGLE_NEWS_RETRYABLE_STATUS:
+                response.raise_for_status()
+                return response
+            if attempt >= GOOGLE_NEWS_MAX_ATTEMPTS:
+                response.raise_for_status()
+        except (requests.Timeout, requests.ConnectionError, requests.HTTPError) as exc:
+            last_error = exc
+            status = response.status_code if response is not None else None
+            retryable = status in GOOGLE_NEWS_RETRYABLE_STATUS or isinstance(
+                exc, (requests.Timeout, requests.ConnectionError)
+            )
+            if not retryable or attempt >= GOOGLE_NEWS_MAX_ATTEMPTS:
+                raise
+            delay = _retry_delay_seconds(response, attempt)
+            print(
+                f"Google News RSS transient failure"
+                f"{f' HTTP {status}' if status else ''}; "
+                f"retry {attempt}/{GOOGLE_NEWS_MAX_ATTEMPTS - 1} after {delay:.1f}s"
+            )
+            if delay:
+                time.sleep(delay)
+
+    if last_error is not None:
+        raise last_error
+    raise RuntimeError("Google News RSS request failed without an error")
 
 
 def parse_pubdate(value: str) -> datetime:
@@ -58,8 +115,8 @@ def fetch_google_news(
     # with database-style nested parentheses. Keep the query broad here and let
     # our own entity matching / event clustering do the precision work later.
     q = f"{query} when:{when}".strip()
-    r = session.get(
-        GOOGLE_NEWS_RSS,
+    r = _get_google_news_with_retry(
+        session,
         params={
             "q": q,
             "hl": "en-US",
@@ -68,7 +125,6 @@ def fetch_google_news(
         },
         timeout=timeout,
     )
-    r.raise_for_status()
     root = ET.fromstring(r.content)
 
     output: list[dict[str, Any]] = []

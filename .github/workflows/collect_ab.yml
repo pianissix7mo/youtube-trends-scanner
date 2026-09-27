@@ -152,10 +152,22 @@ jobs:
         run: python -m py_compile scanner_common.py collect_external.py collect_external_safe.py news_rss.py collect_rss.py clean_events.py rank_candidates.py rank_rss.py rank_for_judge.py make_judge_review.py youtube_enrich.py
 
       - name: Collect external catalysts
+        id: scanner_b_collect
+        continue-on-error: true
         working-directory: scanner_b
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT || 'youtube-trends-scanner/scanner-b 70549770+pianissix7mo@users.noreply.github.com' }}
         run: python collect_rss.py
+
+      - name: Retry Scanner B discovery after cooldown
+        if: steps.scanner_b_collect.outcome == 'failure'
+        working-directory: scanner_b
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT || 'youtube-trends-scanner/scanner-b 70549770+pianissix7mo@users.noreply.github.com' }}
+        run: |
+          echo "Scanner B discovery failed; retrying B only after 90 seconds."
+          sleep 90
+          python collect_rss.py
 
       - name: Clean and prepare Judge B candidates
         working-directory: scanner_b

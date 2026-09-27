@@ -36,39 +36,43 @@ def _get_google_news_with_retry(
 ) -> requests.Response:
     last_error: Exception | None = None
     for attempt in range(1, GOOGLE_NEWS_MAX_ATTEMPTS + 1):
-        response: requests.Response | None = None
         try:
             response = session.get(
                 GOOGLE_NEWS_RSS,
                 params=params,
                 timeout=timeout,
             )
-            if response.status_code not in GOOGLE_NEWS_RETRYABLE_STATUS:
-                response.raise_for_status()
-                return response
-            if attempt >= GOOGLE_NEWS_MAX_ATTEMPTS:
-                response.raise_for_status()
-        except (requests.Timeout, requests.ConnectionError, requests.HTTPError) as exc:
+        except (requests.Timeout, requests.ConnectionError) as exc:
             last_error = exc
-            status = response.status_code if response is not None else None
-            retryable = status in GOOGLE_NEWS_RETRYABLE_STATUS or isinstance(
-                exc, (requests.Timeout, requests.ConnectionError)
-            )
-            if not retryable or attempt >= GOOGLE_NEWS_MAX_ATTEMPTS:
+            if attempt >= GOOGLE_NEWS_MAX_ATTEMPTS:
                 raise
-            delay = _retry_delay_seconds(response, attempt)
+            delay = _retry_delay_seconds(None, attempt)
             print(
-                f"Google News RSS transient failure"
-                f"{f' HTTP {status}' if status else ''}; "
+                f"Google News RSS transient connection failure; "
                 f"retry {attempt}/{GOOGLE_NEWS_MAX_ATTEMPTS - 1} after {delay:.1f}s"
             )
             if delay:
                 time.sleep(delay)
+            continue
+
+        if response.status_code in GOOGLE_NEWS_RETRYABLE_STATUS:
+            if attempt >= GOOGLE_NEWS_MAX_ATTEMPTS:
+                response.raise_for_status()
+            delay = _retry_delay_seconds(response, attempt)
+            print(
+                f"Google News RSS transient HTTP {response.status_code}; "
+                f"retry {attempt}/{GOOGLE_NEWS_MAX_ATTEMPTS - 1} after {delay:.1f}s"
+            )
+            if delay:
+                time.sleep(delay)
+            continue
+
+        response.raise_for_status()
+        return response
 
     if last_error is not None:
         raise last_error
     raise RuntimeError("Google News RSS request failed without an error")
-
 
 def parse_pubdate(value: str) -> datetime:
     try:

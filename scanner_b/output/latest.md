@@ -1,9 +1,9 @@
 # Scanner B — Catalyst Opportunities
 
-Generated: **2026-09-27T11:52:56.290923+00:00**
+Generated: **2026-09-27T12:11:05.655630+00:00**
 
-YouTube fresh search calls used: **20 / 20**
-Cache hits: **0**; stale fallbacks: **0**; API failures: **0**
+YouTube fresh search calls used: **0 / 20**
+Cache hits: **20**; stale fallbacks: **0**; API failures: **0**
 
 | # | Event | Ticker | Judge | Discovery | Burst | Sources | YT gap | B final |
 |---:|---|---|---:|---:|---:|---:|---:|---:|

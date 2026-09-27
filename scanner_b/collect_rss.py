@@ -78,7 +78,12 @@ CUSTOM_ENTITIES: dict[str, dict] = {
 AMBIGUOUS_TICKERS = {
     "ON", "HBM", "SOL", "ARM", "AI", "ALL", "BIG", "NOW", "OPEN", "LOVE",
     "RUN", "APP", "CAR", "YOU", "SO", "AM", "BE", "IT", "ARE", "CAN",
+    "MAX", "OLED",
 } | TICKER_DENYLIST
+
+# SEC company names that collapse to ordinary English words after suffix
+# stripping. Never match these by bare company-name text.
+GENERIC_COMPANY_ALIASES = {"popular", "joint"}
 
 
 class MirrorFirstSession(ResilientSession):
@@ -122,20 +127,13 @@ def strict_match_company(
     by_ticker: dict[str, dict],
     first_word_index: dict[str, list[dict]],
 ) -> dict | None:
-    # 1) Explicit, non-ambiguous ticker tokens are high precision.
-    for token in re.findall(r"(?<![A-Z0-9])\$?([A-Z]{2,5})(?![A-Z0-9])", title):
-        if token in AMBIGUOUS_TICKERS:
-            continue
-        item = by_ticker.get(token)
-        if item:
-            return item
-
-    # 2) Curated brands/private/foreign entities.
+    # 1) Prefer explicit company / brand names over ticker-like tokens. This
+    # prevents headlines such as "Boeing 737 MAX" from being stolen by MAX.
     explicit = match_brand_or_custom(title, by_ticker)
     if explicit:
         return explicit
 
-    # 3) Full SEC company alias only. Never accept the old single-first-word
+    # 2) Full SEC company alias only. Never accept the old single-first-word
     # shortcut (e.g. "Trade" -> Trade Desk, "German" -> German American Bank).
     normalized = f" {normalize_text(title)} "
     words = set(re.findall(r"[a-z0-9]+", normalized))
@@ -146,14 +144,26 @@ def strict_match_company(
             indexed_alias = normalize_text(str(item.get("alias") or ""))
             if not full_alias or indexed_alias != full_alias:
                 continue
+            if full_alias in GENERIC_COMPANY_ALIASES:
+                continue
             if len(full_alias) < 4 or f" {full_alias} " not in normalized:
                 continue
             if best is None or len(full_alias) > best[0]:
                 clean_item = dict(item)
                 clean_item.pop("alias", None)
                 best = (len(full_alias), clean_item)
-    return best[1] if best else None
+    if best:
+        return best[1]
 
+    # 3) Fall back to explicit, non-ambiguous ticker tokens only when no
+    # company/brand name matched.
+    for token in re.findall(r"(?<![A-Z0-9])\$?([A-Z]{2,5})(?![A-Z0-9])", title):
+        if token in AMBIGUOUS_TICKERS:
+            continue
+        item = by_ticker.get(token)
+        if item:
+            return item
+    return None
 
 def match_theme(title: str, category: str) -> dict | None:
     for entity, entity_type, rule in legacy.THEME_RULES:
@@ -193,6 +203,8 @@ def main() -> None:
     evidence: list[dict] = []
     seen: set[str] = set()
     per_category: dict[str, int] = {}
+    per_category_articles: dict[str, int | None] = {}
+    per_category_source_status: dict[str, str] = {}
 
     for category, query in CATALYST_RSS_QUERIES.items():
         try:
@@ -200,8 +212,12 @@ def main() -> None:
         except Exception as exc:
             print(f"Google News RSS failed [{category}]: {exc}")
             per_category[category] = 0
+            per_category_articles[category] = None
+            per_category_source_status[category] = "failed"
             continue
 
+        per_category_articles[category] = len(articles)
+        per_category_source_status[category] = "ok"
         accepted = 0
         for article in articles:
             dedupe_key = str(article.get("guid") or article.get("link") or article.get("title") or "")
@@ -244,11 +260,27 @@ def main() -> None:
 
     all_evidence = evidence + sec_evidence
     clusters = legacy.cluster_evidence(all_evidence)
+    failed_categories = [
+        category
+        for category, status in per_category_source_status.items()
+        if status == "failed"
+    ]
+    if len(failed_categories) == len(CATALYST_RSS_QUERIES):
+        news_source_health = "unavailable"
+    elif failed_categories:
+        news_source_health = "degraded"
+    else:
+        news_source_health = "healthy"
+
     payload = {
         "scanner": "B",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "lookback_hours": lookback_hours,
         "primary_news_source": "google_news_rss",
+        "news_source_health": news_source_health,
+        "failed_news_categories": failed_categories,
+        "category_source_status": per_category_source_status,
+        "category_article_counts": per_category_articles,
         "raw_evidence_count": len(all_evidence),
         "news_evidence_count": len(evidence),
         "sec_evidence_count": len(sec_evidence),
@@ -260,6 +292,10 @@ def main() -> None:
     print(f"Wrote {len(clusters)} event clusters from {len(all_evidence)} evidence rows")
 
     if not clusters:
+        if news_source_health == "unavailable":
+            raise RuntimeError(
+                "Scanner B discovery source unavailable: Google News RSS failed for all categories"
+            )
         raise RuntimeError("Scanner B discovery produced zero event clusters")
 
 

@@ -1,6 +1,6 @@
 # Scanner C — Editorial News + YouTube Enrichment
 
-Generated: **2026-09-27T11:48:28.837525+00:00**
+Generated: **2026-09-27T12:14:24.141035+00:00**
 Selection generated: **2026-09-27T11:47:21Z**
 YouTube search calls used: **0**
 

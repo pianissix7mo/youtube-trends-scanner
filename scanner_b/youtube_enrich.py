@@ -102,7 +102,9 @@ def cached_metrics(
         return None
     age = datetime.now(timezone.utc) - dt.astimezone(timezone.utc)
     if age <= timedelta(hours=max_age_hours):
-        return dict(metrics)
+        result = dict(metrics)
+        result.setdefault("source_fetched_at_utc", dt.astimezone(timezone.utc).isoformat())
+        return result
     return None
 
 
@@ -113,9 +115,9 @@ def seed_cache_from_latest(
 ) -> int:
     """Bootstrap Actions cache from the last committed B output.
 
-    This is important when cache support is first deployed or when an Actions
-    cache entry is unavailable. Matching is based on query + event terms rather
-    than event_id, so metadata-only fixes do not burn new search.list quota.
+    Preserve the original metric fetch timestamp. A newly generated report may
+    contain stale_fallback metrics, so report generation time must not make old
+    YouTube data look fresh again.
     """
     latest = OUT / "latest.json"
     if not latest.exists():
@@ -125,15 +127,14 @@ def seed_cache_from_latest(
     except Exception:
         return 0
 
-    dt = parse_cache_time(payload.get("generated_at_utc"))
-    if dt is None:
+    payload_dt = parse_cache_time(payload.get("generated_at_utc"))
+    if payload_dt is None:
         return 0
-    age = datetime.now(timezone.utc) - dt.astimezone(timezone.utc)
-    if age > timedelta(hours=max_age_hours):
+    payload_age = datetime.now(timezone.utc) - payload_dt.astimezone(timezone.utc)
+    if payload_age > timedelta(hours=max_age_hours):
         return 0
 
     seeded = 0
-    stamp = dt.astimezone(timezone.utc).isoformat()
     for event in payload.get("events") or []:
         if not isinstance(event, dict):
             continue
@@ -145,12 +146,32 @@ def seed_cache_from_latest(
         status = str(metrics.get("status") or "")
         if status in {"api_failed_no_cache", "skipped_no_api_key", "skipped_budget_exhausted"}:
             continue
+
+        source_dt = parse_cache_time(metrics.get("source_fetched_at_utc"))
+        if source_dt is None:
+            # Legacy fresh rows can safely use the report timestamp. Legacy
+            # stale fallbacks cannot: doing so would reset their freshness age.
+            if str(metrics.get("cache_status") or "") == "stale_fallback":
+                continue
+            source_dt = payload_dt
+
+        source_age = datetime.now(timezone.utc) - source_dt.astimezone(timezone.utc)
+        if source_age > timedelta(hours=max_age_hours):
+            continue
+
         key = cache_key(query, terms, lookback_days)
         if key not in cache:
-            cache[key] = {"cached_at_utc": stamp, "metrics": metrics}
+            seeded_metrics = dict(metrics)
+            seeded_metrics.setdefault(
+                "source_fetched_at_utc",
+                source_dt.astimezone(timezone.utc).isoformat(),
+            )
+            cache[key] = {
+                "cached_at_utc": source_dt.astimezone(timezone.utc).isoformat(),
+                "metrics": seeded_metrics,
+            }
             seeded += 1
     return seeded
-
 
 def quota_exhausted_error(exc: Exception) -> bool:
     msg = str(exc).lower()
@@ -411,8 +432,10 @@ def main() -> None:
             try:
                 yt = enrich_event(session, row, api_key, config)
                 search_calls += 1
+                fetched_at = datetime.now(timezone.utc).isoformat()
+                yt["source_fetched_at_utc"] = fetched_at
                 cache[cache_key(query, terms, lookback_days)] = {
-                    "cached_at_utc": datetime.now(timezone.utc).isoformat(),
+                    "cached_at_utc": fetched_at,
                     "metrics": yt,
                 }
                 print(f"[youtube] {index}/{len(events)} fresh search: {query}")

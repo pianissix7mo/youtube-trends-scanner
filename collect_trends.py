@@ -88,7 +88,16 @@ def rising_strength(item: dict[str, Any]) -> tuple[str, float]:
 def is_rate_limited(exc: Exception) -> bool:
     status = getattr(getattr(exc, "response", None), "status_code", None)
     text = str(exc).lower()
-    return (\n        status == 429\n        or "429" in text\n        or "too many requests" in text\n        or "unusual traffic" in text\n        or "rate-limited" in text\n        or "rate limited" in text\n        or "stop and back off" in text\n        or "back off" in text\n    )
+    return (
+        status == 429
+        or "429" in text
+        or "too many requests" in text
+        or "unusual traffic" in text
+        or "rate-limited" in text
+        or "rate limited" in text
+        or "stop and back off" in text
+        or "back off" in text
+    )
 
 
 def resolve_explore_timeframe() -> str:

@@ -1,8 +1,8 @@
 # Scanner D — Reddit Attention + YouTube Enrichment
 
-Generated: **2026-09-28T12:23:18.218618+00:00**
+Generated: **2026-09-28T23:22:09.817443+00:00**
 Selection generated: **2026-09-28T12:22:35Z**
-YouTube search calls used: **10**
+YouTube search calls used: **0**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|

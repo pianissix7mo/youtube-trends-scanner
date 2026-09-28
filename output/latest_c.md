@@ -1,8 +1,8 @@
 # Scanner C — Editorial News + YouTube Enrichment
 
-Generated: **2026-09-28T12:23:10.376857+00:00**
+Generated: **2026-09-28T23:22:09.815649+00:00**
 Selection generated: **2026-09-28T12:22:35Z**
-YouTube search calls used: **5**
+YouTube search calls used: **0**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|

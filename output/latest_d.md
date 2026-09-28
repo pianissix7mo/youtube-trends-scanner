@@ -1,21 +1,21 @@
 # Scanner D — Reddit Attention + YouTube Enrichment
 
-Generated: **2026-09-27T12:14:24.141685+00:00**
-Selection generated: **2026-09-27T11:47:21Z**
-YouTube search calls used: **0**
+Generated: **2026-09-28T12:23:18.218618+00:00**
+Selection generated: **2026-09-28T12:22:35Z**
+YouTube search calls used: **10**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | GameStop | GME | GameStop GME stock | 35/50 | 196 | 20.0% | 100.0% | ok |
-| 2 | Google | GOOG | Google GOOG stock | 10/50 | 104 | 0.0% | 80.0% | ok_low_relevance |
-| 3 | NVIDIA | NVDA | NVIDIA NVDA stock | 41/50 | 87 | 33.3% | 70.0% | ok |
-| 4 | Meta | META | Meta META stock | 44/50 | 268 | 9.1% | 10.0% | ok |
-| 5 | Apple | AAPL | Apple AAPL stock | 30/50 | 21 | 3.8% | 60.0% | ok |
-| 6 | Microsoft | MSFT | Microsoft MSFT stock | 38/50 | 17 | 2.9% | 80.0% | ok |
-| 7 | AMD | AMD | AMD AMD stock | 44/50 | 284 | 31.0% | 20.0% | ok |
-| 8 | Tesla | TSLA | Tesla TSLA stock | 43/50 | 334 | 37.5% | 0.0% | ok |
-| 9 | Amazon | AMZN | Amazon AMZN stock | 26/50 | 21 | 0.0% | 40.0% | ok |
-| 10 | Decent Holding | DXST | Decent Holding DXST stock | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 1 | Amazon | AMZN | Amazon AMZN stock | 25/50 | 45 | 20.0% | 60.0% | ok |
+| 2 | Google | GOOG | Google GOOG stock | 10/50 | 43 | 22.2% | 90.0% | ok_low_relevance |
+| 3 | Meta | META | Meta META stock | 43/50 | 91 | 6.7% | 20.0% | ok |
+| 4 | NVIDIA | NVDA | NVIDIA NVDA stock | 38/50 | 92 | 37.5% | 50.0% | ok |
+| 5 | GameStop | GME | GameStop GME stock | 24/48 | 205 | 33.3% | 100.0% | ok |
+| 6 | Micron Technology | MU | Micron Technology MU stock | 21/50 | 97 | 11.8% | 70.0% | ok |
+| 7 | Microsoft | MSFT | Microsoft MSFT stock | 40/50 | 27 | 3.2% | 20.0% | ok |
+| 8 | Tesla | TSLA | Tesla TSLA stock | 38/50 | 381 | 39.1% | 0.0% | ok |
+| 9 | Apple | AAPL | Apple AAPL stock | 32/50 | 33 | 6.9% | 70.0% | ok |
+| 10 | Nike | NKE | Nike NKE stock | 30/50 | 58 | 0.0% | 40.0% | ok |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

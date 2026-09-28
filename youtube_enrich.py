@@ -147,6 +147,20 @@ def api_get(path: str, params: dict[str, Any]) -> dict[str, Any]:
     return r.json()
 
 
+def quota_exhausted_error(exc: Exception) -> bool:
+    msg = str(exc).lower()
+    return (
+        "youtube api 429" in msg
+        or "resource_exhausted" in msg
+        or "quota exceeded" in msg
+        or "quotaexceeded" in msg
+        or "dailylimitexceeded" in msg
+        or "userratelimitexceeded" in msg
+        or "ratelimitexceeded" in msg
+        or "rate_limit_exceeded" in msg
+    )
+
+
 def parse_dt(text: str) -> datetime:
     return datetime.fromisoformat(text.replace("Z", "+00:00")).astimezone(timezone.utc)
 
@@ -440,6 +454,7 @@ def main() -> None:
 
     cache = load_cache()
     enriched: list[dict[str, Any]] = []
+    api_blocked_error: str | None = None
 
     for i, item in enumerate(entities, 1):
         row = dict(item)
@@ -464,6 +479,35 @@ def main() -> None:
             metrics = dict(metrics)
             metrics["cache_status"] = "fresh"
             print("[cache] fresh")
+        elif api_blocked_error:
+            metrics = cached_metrics(cache, query, relevance_groups, STALE_FALLBACK_HOURS)
+            if metrics is not None:
+                metrics = dict(metrics)
+                metrics["cache_status"] = "stale_fallback"
+                metrics["api_error"] = api_blocked_error
+            else:
+                metrics = {
+                    "recent_video_estimate": None,
+                    "raw_recent_video_estimate": None,
+                    "raw_sample_size": 0,
+                    "relevant_sample_size": None,
+                    "relevance_ratio": None,
+                    "median_views": None,
+                    "median_views_per_day": None,
+                    "small_channel_sample_size": None,
+                    "small_channel_median_views_per_day": None,
+                    "small_channel_hit_rate": None,
+                    "top10_small_channel_share": None,
+                    "top10_small_channel_count": None,
+                    "top10_known_channels": None,
+                    "median_channel_subscribers": None,
+                    "small_channel_max_subscribers": SMALL_CHANNEL_MAX_SUBS,
+                    "small_channel_hit_vpd_threshold": SMALL_CHANNEL_HIT_VPD,
+                    "relevance_filter_applied": bool(relevance_groups),
+                    "rejected_sample_titles": [],
+                    "status": "api_failed_no_cache",
+                    "api_error": api_blocked_error,
+                }
         else:
             try:
                 metrics = fetch_metrics(query, relevance_groups, api_key)
@@ -473,6 +517,9 @@ def main() -> None:
                 }
             except Exception as exc:
                 print(f"[warn] API failed: {exc}")
+                if quota_exhausted_error(exc):
+                    api_blocked_error = str(exc)
+                    print("[warn] YouTube quota exhausted; remaining entities will use cache/fallback only.")
                 metrics = cached_metrics(cache, query, relevance_groups, STALE_FALLBACK_HOURS)
                 if metrics is not None:
                     metrics = dict(metrics)

@@ -11,7 +11,7 @@ from typing import Any
 
 import requests
 
-from scanner_common import DATA, OUT, clamp, ensure_dirs, load_config, normalize_text, parse_timestamp, write_json
+from scanner_common import DATA, OUT, clamp, clean_company_name, ensure_dirs, load_config, normalize_text, parse_timestamp, write_json
 
 YT_API = "https://www.googleapis.com/youtube/v3"
 CACHE_DIR = DATA.parent / ".cache"
@@ -179,9 +179,35 @@ def quota_exhausted_error(exc: Exception) -> bool:
         "youtube api 429" in msg
         or "resource_exhausted" in msg
         or "quota exceeded" in msg
+        or "quotaexceeded" in msg
+        or "dailylimitexceeded" in msg
+        or "userratelimitexceeded" in msg
         or "ratelimitexceeded" in msg
         or "rate_limit_exceeded" in msg
     )
+
+
+def broad_fallback_query(event: dict[str, Any], original_query: str) -> tuple[str | None, bool]:
+    """Return a broader company/entity query and whether a broad check is meaningful."""
+    entity = str(event.get("entity") or "").strip()
+    ticker = str(event.get("ticker") or "").strip()
+    entity_type = str(event.get("entity_type") or "").strip().lower()
+
+    # Do not turn generic macro/theme rows into broad, noisy YouTube searches.
+    eligible = bool(ticker) or entity_type in {"company", "private_company", "foreign_company"}
+    if not eligible or not entity:
+        return None, False
+
+    canonical_entity = clean_company_name(entity) or entity
+    parts = [canonical_entity]
+    if ticker and normalize_text(ticker) not in normalize_text(canonical_entity):
+        parts.append(ticker)
+    candidate = " ".join(parts).strip()[:100]
+    if not candidate:
+        return None, False
+    if normalize_text(candidate) == normalize_text(original_query):
+        return None, True
+    return candidate, True
 
 
 def event_title_relevant(title: str, terms: list[str]) -> bool:
@@ -210,13 +236,15 @@ def enrich_event(
     event: dict[str, Any],
     api_key: str,
     config: dict[str, Any],
-) -> dict[str, Any]:
+    allow_broad_fallback: bool,
+) -> tuple[dict[str, Any], int]:
     now = datetime.now(timezone.utc)
     lookback_days = max(1, int(config.get("youtube_lookback_days", 3)))
     sample_size = min(50, max(1, int(config.get("youtube_sample_size", 50))))
     published_after = (now - timedelta(days=lookback_days)).isoformat().replace("+00:00", "Z")
     query = str(event.get("youtube_query") or event.get("entity") or "").strip()
 
+    search_calls_used = 1
     search = api_get(session, "search", {
         "part": "id",
         "q": query,
@@ -233,19 +261,49 @@ def enrich_event(
     ]
     video_ids = [x for x in video_ids if x]
     estimated_total = int((search.get("pageInfo") or {}).get("totalResults") or 0)
+    search_query_used = query
+    fallback_query, broad_check_meaningful = broad_fallback_query(event, query)
+    fallback_attempted = False
+
+    if not video_ids and fallback_query and allow_broad_fallback:
+        fallback_attempted = True
+        search_calls_used += 1
+        search = api_get(session, "search", {
+            "part": "id",
+            "q": fallback_query,
+            "type": "video",
+            "order": "date",
+            "maxResults": sample_size,
+            "publishedAfter": published_after,
+            "relevanceLanguage": "zh",
+            "key": api_key,
+        })
+        video_ids = [
+            str(item.get("id", {}).get("videoId") or "")
+            for item in (search.get("items") or [])
+        ]
+        video_ids = [x for x in video_ids if x]
+        estimated_total = int((search.get("pageInfo") or {}).get("totalResults") or 0)
+        search_query_used = fallback_query
 
     if not video_ids:
-        return {
-            "status": "ok_no_videos",
+        broad_absence_confirmed = broad_check_meaningful and (
+            fallback_query is None or fallback_attempted
+        )
+        return ({
+            "status": "ok_no_videos" if broad_absence_confirmed else "ok_no_videos_unconfirmed",
             "query": query,
+            "search_query_used": search_query_used,
+            "broad_fallback_query": fallback_query,
+            "broad_fallback_attempted": fallback_attempted,
             "raw_sample_size": 0,
-            "relevant_sample_size": 0,
+            "relevant_sample_size": 0 if broad_absence_confirmed else None,
             "estimated_total_results": estimated_total,
-            "youtube_supply_gap_score": 100.0,
-            "median_views_per_day": 0,
-            "small_channel_hit_rate": 0.0,
+            "youtube_supply_gap_score": 100.0 if broad_absence_confirmed else None,
+            "median_views_per_day": 0 if broad_absence_confirmed else None,
+            "small_channel_hit_rate": 0.0 if broad_absence_confirmed else None,
             "sample_videos": [],
-        }
+        }, search_calls_used)
 
     videos = api_get(session, "videos", {
         "part": "statistics,snippet",
@@ -311,9 +369,12 @@ def enrich_event(
     vpds = [int(x["views_per_day"]) for x in parsed]
     parsed.sort(key=lambda x: int(x["views_per_day"]), reverse=True)
     relevant_count = len(parsed)
-    return {
+    return ({
         "status": "ok",
         "query": query,
+        "search_query_used": search_query_used,
+        "broad_fallback_query": fallback_query,
+        "broad_fallback_attempted": fallback_attempted,
         "raw_sample_size": len(video_ids),
         "relevant_sample_size": relevant_count,
         "estimated_total_results": estimated_total,
@@ -322,7 +383,7 @@ def enrich_event(
         "small_channel_sample_size": small_count,
         "small_channel_hit_rate": round(100.0 * small_hits / small_count, 1) if small_count else 0.0,
         "sample_videos": parsed[:10],
-    }
+    }, search_calls_used)
 
 
 def failure_metrics(query: str, error: str) -> dict[str, Any]:
@@ -430,8 +491,14 @@ def main() -> None:
                 }
         else:
             try:
-                yt = enrich_event(session, row, api_key, config)
-                search_calls += 1
+                yt, calls_used = enrich_event(
+                    session,
+                    row,
+                    api_key,
+                    config,
+                    allow_broad_fallback=(search_calls + 1 < budget),
+                )
+                search_calls += calls_used
                 fetched_at = datetime.now(timezone.utc).isoformat()
                 yt["source_fetched_at_utc"] = fetched_at
                 cache[cache_key(query, terms, lookback_days)] = {

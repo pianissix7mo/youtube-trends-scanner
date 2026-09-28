@@ -144,6 +144,31 @@ def anchor_rotation() -> tuple[int, int, dict[str, list[str]], str]:
     return group_index, group_count, selected, today.isoformat()
 
 
+def rotate_request_order(
+    selected_anchors: dict[str, list[str]],
+    rotation_date: str,
+) -> tuple[list[str], dict[str, list[str]]]:
+    """Rotate region and anchor starting points by Toronto date.
+
+    This keeps early rate limits from systematically starving the same region
+    or the same anchors while remaining deterministic for repeated runs.
+    """
+    ordinal = datetime.fromisoformat(rotation_date).date().toordinal()
+    regions = list(REGIONS)
+    if regions:
+        region_offset = ordinal % len(regions)
+        regions = regions[region_offset:] + regions[:region_offset]
+
+    rotated: dict[str, list[str]] = {}
+    for index, geo in enumerate(regions):
+        anchors = list(selected_anchors.get(geo) or [])
+        if anchors:
+            anchor_offset = (ordinal + index) % len(anchors)
+            anchors = anchors[anchor_offset:] + anchors[:anchor_offset]
+        rotated[geo] = anchors
+    return regions, rotated
+
+
 def fetch_rss(geo: str) -> list[dict[str, Any]]:
     r = requests.get(
         RSS_URL,
@@ -272,6 +297,7 @@ def main() -> None:
     explore_stopped_for_429 = False
     explore_timeframe = resolve_explore_timeframe()
     rotation_index, rotation_groups, selected_anchors, rotation_date = anchor_rotation()
+    region_request_order, selected_anchors = rotate_request_order(selected_anchors, rotation_date)
 
     print(f"[youtube trends] configured timeframe: {TIMEFRAME}")
     print(f"[youtube trends] Explore timeframe: {explore_timeframe}")
@@ -279,6 +305,7 @@ def main() -> None:
         f"[youtube trends] rotation {rotation_index + 1}/{rotation_groups} "
         f"for Toronto date {rotation_date}: {selected_anchors}"
     )
+    print(f"[youtube trends] daily region request order: {region_request_order}")
 
     # Reliable broad layer first.
     for geo in REGIONS:
@@ -298,7 +325,7 @@ def main() -> None:
     logical_requests: list[tuple[str, str]] = []
     max_rounds = max((len(v) for v in selected_anchors.values()), default=0)
     for anchor_index in range(max_rounds):
-        for geo in REGIONS:
+        for geo in region_request_order:
             anchors = selected_anchors.get(geo) or []
             if anchor_index < len(anchors):
                 logical_requests.append((geo, anchors[anchor_index]))
@@ -372,6 +399,7 @@ def main() -> None:
             "rotation_date_toronto": rotation_date,
             "rotation_group": rotation_index + 1,
             "rotation_group_count": rotation_groups,
+            "region_request_order": region_request_order,
             "anchors_used": selected_anchors,
             "delay_seconds": YT_DELAY_SECONDS,
             "batch_size": YT_BATCH_SIZE,

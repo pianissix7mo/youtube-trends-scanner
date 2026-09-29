@@ -185,7 +185,17 @@ def main() -> None:
     total_calls = 0
     for letter, key in (("C", "scanner_c"), ("D", "scanner_d")):
         section = selected.get(key) or {}
-        items = section.get("items") or []
+        if isinstance(section, list):
+            # Backward-compatible handoff: accept a bare item list.
+            items = section
+            source = None
+            notes = None
+        elif isinstance(section, dict):
+            items = section.get("items") or []
+            source = section.get("source")
+            notes = section.get("notes")
+        else:
+            raise RuntimeError(f"{key} must be an object or list")
         if not isinstance(items, list):
             raise RuntimeError(f"{key}.items must be a list")
         items = items[:MAX_ITEMS_PER_SCANNER]
@@ -196,8 +206,8 @@ def main() -> None:
         write_payload(
             letter=letter,
             selection_generated_at_utc=selection_generated,
-            source=section.get("source"),
-            notes=section.get("notes"),
+            source=source,
+            notes=notes,
             items=enriched,
             search_calls=calls,
         )

@@ -1,29 +1,29 @@
 # Scanner B — Catalyst Opportunities
 
-Generated: **2026-09-28T23:22:02.013945+00:00**
+Generated: **2026-09-29T12:44:27.139094+00:00**
 
-YouTube fresh search calls used: **0 / 20**
-Cache hits: **20**; stale fallbacks: **0**; API failures: **0**
+YouTube fresh search calls used: **20 / 20**
+Cache hits: **0**; stale fallbacks: **0**; API failures: **0**
 
 | # | Event | Ticker | Judge | Discovery | Burst | Sources | YT gap | B final |
 |---:|---|---|---:|---:|---:|---:|---:|---:|
-| 1 | Gold Fields' $27 Billion Takeover Bid for Northern Star Resources Rejected | GFI | 94 | 90.2 | 90.3 | 88 | 100.0 | 94.1 |
-| 2 | China May Let Some Firms Buy Nvidia’s New AI Chip | NVDA | 87 | 55.2 | 51.7 | 38 | 95.0 | 79.1 |
-| 3 | As 10-Year Treasury Yields Rise, Commercial Real Estate Reels | — | 84 | 58.9 | 41.4 | 38 | 95.0 | 78.7 |
-| 4 | Foreign banks eye merger with UBS – report | UBS | 86 | 52 | 5.2 | 55 | 100.0 | 78.6 |
-| 5 | FTAI Aviation (FTAI) Completes Acquisition of 27 Boeing 737-700 Aircraft from WestJet | FTAI | 77 | 64.1 | 65.7 | 20 | 100.0 | 77.7 |
-| 6 | US-China trade deal details emerge as both nations agree to lower tariffs on $30B of goods | — | 98 | 48.6 | 1.3 | 55 | 70.0 | 77.6 |
-| 7 | Samsung Electro-Mechanics to Invest ₩6.8 Trillion in AI Semiconductor Substrates, Expanding Sejong and Vietnam Simultaneously | — | 86 | 40.5 | 5.4 | 38 | 100.0 | 75.2 |
-| 8 | Bitcoin ETFs record biggest weekly inflows since October 2025 at $2.4B | — | 82 | 46.7 | 0 | 72 | 100.0 | 75.0 |
-| 9 | NetApp expands AI infra push with Peak:AIo acquisition | NTAP | 82 | 45 | 0 | 38 | 100.0 | 74.5 |
-| 10 | A South Korean plant now has capacity for about 1 million battery cells a year. SES AI runs it. | SES | 76 | 54.6 | 48.2 | 20 | 100.0 | 74.4 |
-| 11 | Akamai expands deal to $11.6 billion partnership with Anthropic | — | 86 | 36.8 | 4.1 | 38 | 100.0 | 74.0 |
-| 12 | AbbVie's Cerevel takeover delivers Parkinson's approval | ABBV | 83 | 39.9 | 0 | 20 | 100.0 | 73.5 |
-| 13 | GM Taps Korean Equipment Makers for Next-Generation Battery Production | GM | 76 | 50.4 | 39.6 | 20 | 100.0 | 73.1 |
-| 14 | Apple and Amazon Face UK Consumer Lawsuit Over Marketplace Sales | AMZN | 78 | 45.2 | 5.2 | 38 | 100.0 | 72.6 |
-| 15 | Microsoft and Chevron Sign 20-Year Power Deal For Texas Data Center | MSFT | 85 | 31.5 | 0 | 20 | 100.0 | 72.0 |
-| 16 | TSMC stakeholder VIS Singapore wafer fab reaches full production | TSM | 79 | 37.9 | 4.1 | 20 | 100.0 | 70.9 |
-| 17 | Surging AI demand drives Taiwan Semiconductor to accelerate capacity expansion, targeting a monthly output of 120,000 wafers for its 2nm process by year-end. | TSM | 81 | 32.5 | 4.1 | 20 | 100.0 | 70.2 |
-| 18 | Vertiv expands data center kit manufacturing capacity in Slovakia | VRT | 79 | 35 | 0 | 20 | 100.0 | 70.0 |
-| 19 | Roblox fails to halt LA child-exploitation lawsuit over age checks | RBLX | 74 | 43.4 | 18 | 20 | 100.0 | 70.0 |
-| 20 | Philippine Airlines commits to order up to 20 Boeing 787 jets | BA | 74 | 31.5 | 0 | 20 | 100.0 | 66.5 |
+| 1 | Shell takes final investment decision to double LNG Canada capacity | SHEL | 94 | 57.1 | 44.3 | 38 | 100.0 | 84.1 |
+| 2 | CarMax Beats Earnings Estimates as Revenue Jumps 20%. The Stock Rises. | KMX | 83 | 77.8 | 92.6 | 38 | 95.0 | 83.8 |
+| 3 | Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns | RTX | 96 | 47.2 | 30.2 | 38 | 100.0 | 82.2 |
+| 4 | Meta signs deal for Firmus AI computing capacity in Southeast Asia | META | 92 | 53 | 36.9 | 38 | 100.0 | 81.9 |
+| 5 | Israel Cites Saudi, Qatari Stakes in Hapag to Halt $4 Billion ZIM Takeover | ZIM | 87 | 59.9 | 53.7 | 20 | 100.0 | 81.5 |
+| 6 | U.S. Stocks Drop as Treasury Yields Surge | — | 90 | 53.1 | 29.1 | 38 | 100.0 | 80.9 |
+| 7 | Samsung Electronics says HBM to account for nearly 30% of industry DRAM capacity next year | — | 93 | 42.1 | 28 | 20 | 100.0 | 79.1 |
+| 8 | Navitas Semiconductor jumps 12% after winning U... | NVTS | 89 | 67.8 | 65 | 55 | 70.0 | 78.8 |
+| 9 | Uranium Energy (UEC) Reports Strong Production Growth Amid Overv | UEC | 80 | 75.6 | 97.1 | 38 | None | 78.5 |
+| 10 | Iovance Biotherapeutics Raises Full Year 2026 Revenue Guidance to $410 to $420 Million | IOVA | 81 | 56.8 | 47.1 | 20 | 100.0 | 77.5 |
+| 11 | Apple and Amazon face renewed UK antitrust lawsuit | AMZN | 83 | 45.1 | 18.7 | 38 | 100.0 | 75.0 |
+| 12 | U.S. and China to Cut Tariffs on $60 Billion of Goods | — | 93 | 51.9 | 5.4 | 72 | 50.0 | 72.1 |
+| 13 | Goldman Sachs $100bn Treasury Fund Adds Tokenized Settlement | GS | 80 | 57.2 | 43.3 | 38 | None | 72.0 |
+| 14 | Microsoft and Chevron Sign 20-Year Power Deal For Texas Data Center | MSFT | 84 | 31.5 | 0 | 20 | 100.0 | 71.5 |
+| 15 | Fed's Lisa Cook Says AI Is Fueling Inflation — Warns Labor Market Faces a ‘Painful Transition’ | — | 79 | 53.4 | 29.1 | 38 | None | 70.0 |
+| 16 | South Korean exports seen rising for 16th month on solid AI chip demand: Reuters poll | — | 83 | 40.8 | 13.1 | 38 | None | 68.2 |
+| 17 | GM’s pint-sized Bolt EV gets smaller production run | GM | 81 | 41 | 9.3 | 20 | None | 67.0 |
+| 18 | Pfizer, Moderna lose bids to escape Bayer US mRNA patent lawsuit | MRNA | 83 | 32.3 | 0 | 20 | 70.0 | 65.2 |
+| 19 | AMD to Acquire World Labs for $8.2 Billion | AMD | 97 | 35.1 | 0 | 20 | 30.0 | 65.0 |
+| 20 | Nvidia Reportedly Turns To Insurers To De-Risk AI Chip Loans As Jensen Huang Pushes Beyond Big Tech — Cou | NVDA | 71 | 46.3 | 18.6 | 38 | None | 62.4 |

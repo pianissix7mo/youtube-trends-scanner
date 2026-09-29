@@ -12,9 +12,9 @@ on:
         required: false
         default: "1000"
   schedule:
-    # Toronto 02:15 = 06:15 UTC in EDT, 07:15 UTC in EST.
-    - cron: "15 6 * * *"
-    - cron: "15 7 * * *"
+    # Toronto 07:15 = 11:15 UTC in EDT, 12:15 UTC in EST.
+    - cron: "15 11 * * *"
+    - cron: "15 12 * * *"
 
 permissions:
   contents: write
@@ -35,8 +35,8 @@ jobs:
           fi
           TORONTO_OFFSET=$(TZ=America/Toronto date +%z)
           SCHEDULE="${{ github.event.schedule }}"
-          if { [ "$TORONTO_OFFSET" = "-0400" ] && [ "$SCHEDULE" = "15 6 * * *" ]; } || \
-             { [ "$TORONTO_OFFSET" = "-0500" ] && [ "$SCHEDULE" = "15 7 * * *" ]; }; then
+          if { [ "$TORONTO_OFFSET" = "-0400" ] && [ "$SCHEDULE" = "15 11 * * *" ]; } || \
+             { [ "$TORONTO_OFFSET" = "-0500" ] && [ "$SCHEDULE" = "15 12 * * *" ]; }; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"

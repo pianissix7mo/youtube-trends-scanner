@@ -1,21 +1,21 @@
 # Scanner D — Reddit Attention + YouTube Enrichment
 
-Generated: **2026-09-28T23:22:09.817443+00:00**
-Selection generated: **2026-09-28T12:22:35Z**
-YouTube search calls used: **0**
+Generated: **2026-09-29T12:47:27.632408+00:00**
+Selection generated: **2026-09-29T12:45:48.722Z**
+YouTube search calls used: **10**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | Amazon | AMZN | Amazon AMZN stock | 25/50 | 45 | 20.0% | 60.0% | ok |
-| 2 | Google | GOOG | Google GOOG stock | 10/50 | 43 | 22.2% | 90.0% | ok_low_relevance |
-| 3 | Meta | META | Meta META stock | 43/50 | 91 | 6.7% | 20.0% | ok |
-| 4 | NVIDIA | NVDA | NVIDIA NVDA stock | 38/50 | 92 | 37.5% | 50.0% | ok |
-| 5 | GameStop | GME | GameStop GME stock | 24/48 | 205 | 33.3% | 100.0% | ok |
-| 6 | Micron Technology | MU | Micron Technology MU stock | 21/50 | 97 | 11.8% | 70.0% | ok |
-| 7 | Microsoft | MSFT | Microsoft MSFT stock | 40/50 | 27 | 3.2% | 20.0% | ok |
-| 8 | Tesla | TSLA | Tesla TSLA stock | 38/50 | 381 | 39.1% | 0.0% | ok |
-| 9 | Apple | AAPL | Apple AAPL stock | 32/50 | 33 | 6.9% | 70.0% | ok |
-| 10 | Nike | NKE | Nike NKE stock | 30/50 | 58 | 0.0% | 40.0% | ok |
+| 1 | NVIDIA | NVDA | NVIDIA NVDA stock | 48/50 | 78 | 32.3% | 40.0% | ok |
+| 2 | Meta | META | Meta META stock | 45/50 | 106 | 23.1% | 30.0% | ok |
+| 3 | GameStop | GME | GameStop GME stock | 31/50 | 128 | 29.0% | 100.0% | ok |
+| 4 | Micron Technology | MU | Micron Technology MU stock | 22/50 | 36 | 0.0% | 60.0% | ok |
+| 5 | Google | GOOG | Google GOOG stock | 11/50 | 29 | 10.0% | 90.0% | ok_low_relevance |
+| 6 | SpaceX | SPCX | SpaceX SPCX stock | 34/50 | 100 | 19.0% | 20.0% | ok |
+| 7 | Uber | UBER | Uber UBER stock | 35/50 | 259 | 26.9% | 50.0% | ok |
+| 8 | Amazon | AMZN | Amazon AMZN stock | 15/50 | 16 | 7.7% | 80.0% | ok |
+| 9 | Tesla | TSLA | Tesla TSLA stock | 39/50 | 581 | 41.7% | 30.0% | ok |
+| 10 | AMD | AMD | AMD AMD stock | 43/50 | 70 | 24.1% | 20.0% | ok |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

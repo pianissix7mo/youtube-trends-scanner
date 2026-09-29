@@ -1,8 +1,39 @@
 {
-  "generated_at_utc": "2026-09-28T12:22:35Z",
-  "source_raw_generated_at_utc": "2026-09-28T11:29:44.603828+00:00",
-  "notes": "Fresh Sep 28 Toronto-morning Scanner A review of all 186 raw candidates. US, Canada and Taiwan treated as near-equal discovery markets. Generic stock-picking/how-to, entertainment/sports, creator noise and evergreen queries were rejected; long-tail duplicates were merged. Twenty distinct investor-relevant entities/themes retained. No YouTube metrics computed manually.",
+  "generated_at_utc": "2026-09-29T12:41:53.230Z",
+  "source_raw_generated_at_utc": "2026-09-29T11:32:26.817299+00:00",
+  "notes": "Manual recovery selection for 2026-09-29 after the scheduled Prepare A+B ran before fresh discovery data landed. Reviewed the full 186-candidate raw review; removed generic/evergreen/entertainment/noisy queries and semantically merged duplicates.",
   "selected": [
+    {
+      "entity": "Micron Technology",
+      "entity_type": "company",
+      "youtube_query": "Micron MU earnings",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Micron earnings-related queries occupy multiple rising/top positions, led by +300% rising interest.",
+      "trend_evidence": [
+        "micron earnings call +300% rising",
+        "mu earnings call +300% rising",
+        "mu earnings +250% rising",
+        "micron earnings +180% rising"
+      ],
+      "relevance_groups": [
+        [
+          "Micron",
+          "MU",
+          "美光"
+        ],
+        [
+          "earnings",
+          "results",
+          "财报",
+          "財報",
+          "业绩",
+          "業績",
+          "earnings call"
+        ]
+      ]
+    },
     {
       "entity": "Snowflake",
       "entity_type": "company",
@@ -10,14 +41,11 @@
       "regions": [
         "US"
       ],
-      "selection_reason": "Snowflake earnings is a U.S. YouTube Breakout query and directly fits a U.S.-stock audience.",
-      "trend_evidence": {
-        "priority_score": 111.6,
-        "signals": [
-          "US:youtube_rising:Breakout:via=earnings:rank=1",
-          "US:youtube_top:Top:via=earnings:rank=22"
-        ]
-      },
+      "selection_reason": "SNOW earnings is a Breakout YouTube-search query and also appears in Top results.",
+      "trend_evidence": [
+        "snow earnings Breakout via earnings",
+        "snow earnings Top rank 21"
+      ],
       "relevance_groups": [
         [
           "Snowflake",
@@ -27,318 +55,77 @@
           "earnings",
           "results",
           "财报",
-          "財報"
-        ]
-      ]
-    },
-    {
-      "entity": "Tower Semiconductor",
-      "entity_type": "company",
-      "youtube_query": "Tower Semiconductor TSEM stock",
-      "regions": [
-        "US"
-      ],
-      "selection_reason": "Tower Semiconductor is a U.S. YouTube Breakout semiconductor query with direct chip-sector relevance.",
-      "trend_evidence": {
-        "priority_score": 111.6,
-        "signals": [
-          "US:youtube_rising:Breakout:via=semiconductor:rank=1",
-          "US:youtube_top:Top:via=semiconductor:rank=14"
-        ]
-      },
-      "relevance_groups": [
-        [
-          "Tower Semiconductor",
-          "TSEM"
-        ]
-      ]
-    },
-    {
-      "entity": "iShares Semiconductor ETF",
-      "entity_type": "asset",
-      "youtube_query": "SOXX iShares Semiconductor ETF",
-      "regions": [
-        "US"
-      ],
-      "selection_reason": "iShares Semiconductor is a U.S. YouTube Breakout query and gives a direct investable semiconductor basket angle.",
-      "trend_evidence": {
-        "priority_score": 111.2,
-        "signals": [
-          "US:youtube_rising:Breakout:via=semiconductor:rank=2",
-          "US:youtube_top:Top:via=semiconductor:rank=15"
-        ]
-      },
-      "relevance_groups": [
-        [
-          "iShares Semiconductor",
-          "SOXX",
-          "iShares Semiconductor ETF"
+          "財報",
+          "业绩",
+          "業績"
         ]
       ]
     },
     {
       "entity": "SpaceX",
       "entity_type": "company",
-      "youtube_query": "SpaceX stock SPCX",
+      "youtube_query": "SpaceX 股票 Starship",
       "regions": [
         "TW"
       ],
-      "selection_reason": "SpaceX stock interest is a Taiwan YouTube Breakout query and has strong cross-market investor attention.",
-      "trend_evidence": {
-        "priority_score": 111.2,
-        "signals": [
-          "TW:youtube_rising:Breakout:via=股票:rank=2",
-          "TW:youtube_top:Top:via=股票:rank=18"
-        ]
-      },
+      "selection_reason": "SpaceX stock-related searches are Breakout in Taiwan and also show a +550% rising signal.",
+      "trend_evidence": [
+        "spacex 股票 Breakout",
+        "spacex 股票 +550% rising",
+        "spacex 股票 Top ranks 19-20"
+      ],
       "relevance_groups": [
         [
           "SpaceX",
-          "SPCX"
+          "Starship",
+          "星舰",
+          "星艦"
         ]
       ]
     },
     {
-      "entity": "Netflix",
+      "entity": "Foxconn / Hon Hai",
       "entity_type": "company",
-      "youtube_query": "Netflix NFLX stock",
+      "youtube_query": "鴻海 Foxconn 股票 AI",
       "regions": [
         "TW"
       ],
-      "selection_reason": "Netflix stock is a Taiwan YouTube Breakout query and remains directly investable for U.S.-equity viewers.",
-      "trend_evidence": {
-        "priority_score": 110.4,
-        "signals": [
-          "TW:youtube_rising:Breakout:via=股票:rank=4",
-          "TW:youtube_top:Top:via=股票:rank=21"
-        ]
-      },
-      "relevance_groups": [
-        [
-          "Netflix",
-          "NFLX"
-        ]
-      ]
-    },
-    {
-      "entity": "Magnachip Semiconductor",
-      "entity_type": "company",
-      "youtube_query": "Magnachip MX stock",
-      "regions": [
-        "US"
+      "selection_reason": "鴻海股票 is a Breakout query in Taiwan, relevant to the AI hardware and U.S. tech supply chain.",
+      "trend_evidence": [
+        "鴻海 股票 Breakout",
+        "鴻海 股票 Top rank 25"
       ],
-      "selection_reason": "Magnachip semiconductor searches are up sharply in the U.S. and map cleanly to a listed chip company.",
-      "trend_evidence": {
-        "priority_score": 74.59,
-        "signals": [
-          "US:youtube_rising:+350%:via=semiconductor:rank=3",
-          "US:youtube_top:Top:via=semiconductor:rank=7"
-        ]
-      },
       "relevance_groups": [
         [
-          "Magnachip",
-          "Magnachip Semiconductor",
-          "MX"
+          "Foxconn",
+          "Hon Hai",
+          "鴻海",
+          "鸿海"
         ]
       ]
     },
     {
-      "entity": "Oracle",
+      "entity": "Anthropic / Claude",
       "entity_type": "company",
-      "youtube_query": "Oracle ORCL stock",
+      "youtube_query": "Anthropic Claude AI",
       "regions": [
+        "CA",
+        "US",
         "TW"
       ],
-      "selection_reason": "Oracle stock is rising in Taiwan YouTube search and is highly relevant to AI/cloud infrastructure investors.",
-      "trend_evidence": {
-        "priority_score": 69.42,
-        "signals": [
-          "TW:youtube_rising:+200%:via=股票:rank=5",
-          "TW:youtube_top:Top:via=股票:rank=17"
-        ]
-      },
-      "relevance_groups": [
-        [
-          "Oracle",
-          "ORCL",
-          "甲骨文"
-        ]
-      ]
-    },
-    {
-      "entity": "Valens Semiconductor",
-      "entity_type": "company",
-      "youtube_query": "Valens Semiconductor VLN stock",
-      "regions": [
-        "US"
+      "selection_reason": "Claude AI appears across all three discovery regions, with rising interest in Taiwan and Top interest in North America.",
+      "trend_evidence": [
+        "claude ai +50% rising TW",
+        "Top CA rank 12",
+        "Top US rank 18",
+        "Top TW rank 11"
       ],
-      "selection_reason": "Valens Semiconductor shows strong U.S. YouTube search acceleration with a clear semiconductor-investing angle.",
-      "trend_evidence": {
-        "priority_score": 68.07,
-        "signals": [
-          "US:youtube_rising:+160%:via=semiconductor:rank=4",
-          "US:youtube_top:Top:via=semiconductor:rank=10"
-        ]
-      },
       "relevance_groups": [
         [
-          "Valens Semiconductor",
-          "Valens",
-          "VLN"
-        ]
-      ]
-    },
-    {
-      "entity": "Micron",
-      "entity_type": "company",
-      "youtube_query": "Micron MU earnings",
-      "regions": [
-        "US"
-      ],
-      "selection_reason": "Micron earnings is rising strongly in U.S. YouTube search and is a core memory/AI-supply-chain topic.",
-      "trend_evidence": {
-        "priority_score": 67.83,
-        "signals": [
-          "US:youtube_rising:+140%:via=earnings:rank=2",
-          "US:youtube_top:Top:via=earnings:rank=4"
-        ]
-      },
-      "relevance_groups": [
-        [
-          "Micron",
-          "MU"
-        ],
-        [
-          "earnings",
-          "results",
-          "财报",
-          "財報"
-        ]
-      ]
-    },
-    {
-      "entity": "AI stocks",
-      "entity_type": "other",
-      "youtube_query": "AI stocks",
-      "regions": [
-        "TW"
-      ],
-      "selection_reason": "AI-stock searches are rising in Taiwan and remain highly actionable for the channel's core audience.",
-      "trend_evidence": {
-        "priority_score": 64.35,
-        "signals": [
-          "TW:youtube_rising:+110%:via=股票:rank=6",
-          "TW:youtube_top:Top:via=股票:rank=3"
-        ]
-      },
-      "relevance_groups": [
-        [
-          "AI stocks",
-          "AI stock",
-          "artificial intelligence stocks",
-          "AI 股票",
-          "人工智能股票"
-        ]
-      ]
-    },
-    {
-      "entity": "Tariffs and stocks",
-      "entity_type": "policy",
-      "youtube_query": "tariffs stocks trade war",
-      "regions": [
-        "US"
-      ],
-      "selection_reason": "Tariff-related stock searches are rising and connect directly to current cross-border market risk.",
-      "trend_evidence": {
-        "priority_score": 58.41,
-        "signals": [
-          "US:youtube_rising:+70%:via=stocks:rank=12"
-        ]
-      },
-      "relevance_groups": [
-        [
-          "tariff",
-          "tariffs",
-          "trade war",
-          "关税",
-          "關稅"
-        ]
-      ]
-    },
-    {
-      "entity": "Amazon",
-      "entity_type": "company",
-      "youtube_query": "Amazon AMZN stock",
-      "regions": [
-        "US"
-      ],
-      "selection_reason": "Amazon stock search momentum is rising in the U.S. and remains a high-interest mega-cap topic.",
-      "trend_evidence": {
-        "priority_score": 58.01,
-        "signals": [
-          "US:youtube_rising:+70%:via=stocks:rank=13"
-        ]
-      },
-      "relevance_groups": [
-        [
-          "Amazon",
-          "AMZN"
-        ]
-      ]
-    },
-    {
-      "entity": "U.S. stock market today",
-      "entity_type": "macro",
-      "youtube_query": "stock market today SPY QQQ",
-      "regions": [
-        "CA"
-      ],
-      "selection_reason": "Google Trends is surfacing current-market searches alongside oil/yield-driven market headlines, making this a timely macro topic.",
-      "trend_evidence": {
-        "priority_score": 53.8,
-        "signals": [
-          "CA:google_trending:GTrend 1000+:rank=8"
-        ]
-      },
-      "relevance_groups": [
-        [
-          "stock market",
-          "S&P 500",
-          "SPY",
-          "Nasdaq",
-          "QQQ",
-          "美股"
-        ]
-      ]
-    },
-    {
-      "entity": "Mortgage rates",
-      "entity_type": "macro",
-      "youtube_query": "mortgage rates Treasury yields",
-      "regions": [
-        "CA"
-      ],
-      "selection_reason": "Mortgage-rate searches are trending in Canada while bond yields and financing costs are a live market driver.",
-      "trend_evidence": {
-        "priority_score": 50.64,
-        "signals": [
-          "CA:google_trending:GTrend 500+:rank=9"
-        ]
-      },
-      "relevance_groups": [
-        [
-          "mortgage rates",
-          "mortgage rate",
-          "房贷利率",
-          "房貸利率"
-        ],
-        [
-          "Treasury",
-          "yield",
-          "yields",
-          "利率",
-          "收益率"
+          "Anthropic",
+          "Claude",
+          "克劳德",
+          "克勞德"
         ]
       ]
     },
@@ -347,66 +134,250 @@
       "entity_type": "other",
       "youtube_query": "AI agents agentic AI",
       "regions": [
-        "US",
         "CA",
+        "US",
         "TW"
       ],
-      "selection_reason": "AI-agent searches rank across U.S., Canada and Taiwan YouTube, providing broad cross-market AI interest.",
-      "trend_evidence": {
-        "priority_score": 45.4,
-        "signals": [
-          "TW:youtube_top:Top:via=AI:rank=7",
-          "US:youtube_top:Top:via=AI:rank=16",
-          "CA:youtube_top:Top:via=AI:rank=17"
-        ]
-      },
+      "selection_reason": "AI agent searches are present across all three regions with rising momentum in Taiwan and Top demand in North America.",
+      "trend_evidence": [
+        "ai agent +40% rising TW",
+        "ai agent Top CA/US/TW",
+        "ai agents Top CA/US"
+      ],
       "relevance_groups": [
         [
           "AI agent",
           "AI agents",
           "agentic AI",
-          "AI 智能体",
-          "AI 智能體"
+          "智能体",
+          "智能體",
+          "AI代理"
         ]
       ]
     },
     {
-      "entity": "Anthropic Claude",
+      "entity": "Magnachip Semiconductor",
       "entity_type": "company",
-      "youtube_query": "Claude Anthropic AI",
+      "youtube_query": "Magnachip semiconductor MX",
       "regions": [
-        "US",
-        "CA"
+        "US"
       ],
-      "selection_reason": "Claude remains a top YouTube AI query in both Canada and the U.S., with direct relevance to the frontier-model competitive landscape.",
-      "trend_evidence": {
-        "priority_score": 32.6,
-        "signals": [
-          "CA:youtube_top:Top:via=AI:rank=13",
-          "US:youtube_top:Top:via=AI:rank=20"
-        ]
-      },
+      "selection_reason": "Magnachip Semiconductor is the strongest company-specific rising semiconductor query today in the U.S.",
+      "trend_evidence": [
+        "magnachip semiconductor +250% rising",
+        "Top semiconductor rank 9"
+      ],
       "relevance_groups": [
         [
-          "Claude",
-          "Anthropic"
+          "Magnachip",
+          "MX",
+          "美格纳",
+          "美格納"
+        ]
+      ]
+    },
+    {
+      "entity": "Power semiconductors",
+      "entity_type": "other",
+      "youtube_query": "power semiconductor 功率半導體",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "功率半導體 is rising +250% in Taiwan and ranks highly in semiconductor Top searches.",
+      "trend_evidence": [
+        "功率 半導體 +250% rising",
+        "功率 半導體 Top rank 3"
+      ],
+      "relevance_groups": [
+        [
+          "power semiconductor",
+          "power semiconductors",
+          "功率半導體",
+          "功率半导体",
+          "SiC",
+          "GaN"
+        ]
+      ]
+    },
+    {
+      "entity": "Global Unichip / 創意電子",
+      "entity_type": "company",
+      "youtube_query": "創意 3443 Global Unichip AI",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "創意股票 is rising +190% in Taiwan, relevant to AI ASIC and semiconductor supply-chain investors.",
+      "trend_evidence": [
+        "創意 股票 +190% rising",
+        "創意 股票 Top rank 23"
+      ],
+      "relevance_groups": [
+        [
+          "Global Unichip",
+          "GUC",
+          "創意",
+          "创意",
+          "3443"
+        ]
+      ]
+    },
+    {
+      "entity": "Super Micro Computer",
+      "entity_type": "company",
+      "youtube_query": "SMCI earnings Supermicro",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "SMCI earnings-call searches are rising strongly and fit the AI-server theme.",
+      "trend_evidence": [
+        "smci earnings call +110% rising",
+        "SMCI earnings Top rank 23"
+      ],
+      "relevance_groups": [
+        [
+          "SMCI",
+          "Super Micro",
+          "Supermicro",
+          "超微"
+        ],
+        [
+          "earnings",
+          "results",
+          "财报",
+          "財報",
+          "业绩",
+          "業績",
+          "earnings call"
+        ]
+      ]
+    },
+    {
+      "entity": "Tower Semiconductor",
+      "entity_type": "company",
+      "youtube_query": "Tower Semiconductor TSEM",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Tower Semiconductor is rising +80% in U.S. semiconductor searches and has Top-search presence.",
+      "trend_evidence": [
+        "tower semiconductor +80% rising",
+        "Top semiconductor rank 11"
+      ],
+      "relevance_groups": [
+        [
+          "Tower Semiconductor",
+          "TSEM",
+          "Tower Semi"
+        ]
+      ]
+    },
+    {
+      "entity": "NVIDIA",
+      "entity_type": "company",
+      "youtube_query": "NVIDIA NVDA",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "NVIDIA remains a high-volume semiconductor/earnings topic with +60% rising interest and strong Top ranking.",
+      "trend_evidence": [
+        "nvidia +60% rising",
+        "nvidia Top earnings rank 7",
+        "nvidia earnings +60% rising"
+      ],
+      "relevance_groups": [
+        [
+          "NVIDIA",
+          "NVDA",
+          "英伟达",
+          "英偉達",
+          "輝達",
+          "辉达"
+        ]
+      ]
+    },
+    {
+      "entity": "DoorDash",
+      "entity_type": "company",
+      "youtube_query": "DoorDash DASH earnings",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "DoorDash earnings is rising +50% and has Top earnings-search presence.",
+      "trend_evidence": [
+        "doordash earnings +50% rising",
+        "Top earnings rank 15"
+      ],
+      "relevance_groups": [
+        [
+          "DoorDash",
+          "DASH"
+        ],
+        [
+          "earnings",
+          "results",
+          "财报",
+          "財報",
+          "业绩",
+          "業績"
+        ]
+      ]
+    },
+    {
+      "entity": "TSMC",
+      "entity_type": "company",
+      "youtube_query": "TSMC 台積電 semiconductor",
+      "regions": [
+        "US",
+        "TW"
+      ],
+      "selection_reason": "TSMC-related searches appear in both U.S. semiconductor and Taiwan stock discovery layers.",
+      "trend_evidence": [
+        "taiwan semiconductor Top US rank 2",
+        "台灣 半導體 Top TW rank 2",
+        "台積電 Top TW stock rank 14"
+      ],
+      "relevance_groups": [
+        [
+          "TSMC",
+          "Taiwan Semiconductor",
+          "台積電",
+          "台积电",
+          "TSM"
+        ]
+      ]
+    },
+    {
+      "entity": "ON Semiconductor",
+      "entity_type": "company",
+      "youtube_query": "ON Semiconductor ON Semi",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "ON Semiconductor is a Top semiconductor search topic and remains directly relevant to U.S. chip investors.",
+      "trend_evidence": [
+        "on semiconductor Top rank 4"
+      ],
+      "relevance_groups": [
+        [
+          "ON Semiconductor",
+          "ON Semi",
+          "onsemi",
+          "ON"
         ]
       ]
     },
     {
       "entity": "Navitas Semiconductor",
       "entity_type": "company",
-      "youtube_query": "Navitas Semiconductor NVTS stock",
+      "youtube_query": "Navitas Semiconductor NVTS",
       "regions": [
         "US"
       ],
-      "selection_reason": "Navitas appears in U.S. top semiconductor searches and offers a distinct power-semiconductor angle.",
-      "trend_evidence": {
-        "priority_score": 30.2,
-        "signals": [
-          "US:youtube_top:Top:via=semiconductor:rank=6"
-        ]
-      },
+      "selection_reason": "Navitas appears twice in U.S. Top semiconductor searches and is highly actionable for the power-semiconductor/AI-infrastructure theme.",
+      "trend_evidence": [
+        "navitas semiconductor Top rank 6",
+        "navitas semiconductor stock Top rank 7"
+      ],
       "relevance_groups": [
         [
           "Navitas Semiconductor",
@@ -416,82 +387,116 @@
       ]
     },
     {
-      "entity": "Tesla",
+      "entity": "Meta Platforms",
       "entity_type": "company",
-      "youtube_query": "Tesla TSLA earnings",
+      "youtube_query": "Meta META earnings",
       "regions": [
         "US"
       ],
-      "selection_reason": "Tesla earnings-call searches remain prominent in U.S. YouTube search and fit the channel strongly.",
-      "trend_evidence": {
-        "priority_score": 30.2,
-        "signals": [
-          "US:youtube_top:Top:via=earnings:rank=6"
-        ]
-      },
+      "selection_reason": "Meta earnings remains a Top earnings-search topic and has strong channel fit.",
+      "trend_evidence": [
+        "meta earnings Top rank 9",
+        "meta earnings call Top rank 13"
+      ],
       "relevance_groups": [
         [
-          "Tesla",
-          "TSLA"
+          "Meta",
+          "META",
+          "Facebook",
+          "脸书",
+          "臉書"
         ],
         [
           "earnings",
           "results",
           "财报",
-          "財報"
+          "財報",
+          "业绩",
+          "業績",
+          "earnings call"
         ]
       ]
     },
     {
-      "entity": "NVIDIA",
+      "entity": "Silver mining stocks",
+      "entity_type": "asset",
+      "youtube_query": "silver mining stocks 白银",
+      "regions": [
+        "CA"
+      ],
+      "selection_reason": "Silver stocks are a Top Canadian stock-search theme with direct investable commodity/miner relevance.",
+      "trend_evidence": [
+        "silver stocks Top CA rank 12"
+      ],
+      "relevance_groups": [
+        [
+          "silver",
+          "白银",
+          "白銀"
+        ],
+        [
+          "miner",
+          "miners",
+          "mining",
+          "矿业",
+          "礦業",
+          "矿商",
+          "礦商"
+        ]
+      ]
+    },
+    {
+      "entity": "Uranium stocks",
+      "entity_type": "asset",
+      "youtube_query": "uranium stocks uranium miners",
+      "regions": [
+        "CA"
+      ],
+      "selection_reason": "Uranium stocks are a Top Canadian stock-search theme and pair with fresh uranium-sector catalysts.",
+      "trend_evidence": [
+        "uranium stocks Top CA rank 17"
+      ],
+      "relevance_groups": [
+        [
+          "uranium",
+          "铀",
+          "鈾"
+        ],
+        [
+          "stock",
+          "stocks",
+          "miner",
+          "miners",
+          "mining",
+          "矿业",
+          "礦業"
+        ]
+      ]
+    },
+    {
+      "entity": "Costco",
       "entity_type": "company",
-      "youtube_query": "NVIDIA NVDA earnings",
+      "youtube_query": "Costco COST earnings",
       "regions": [
         "US"
       ],
-      "selection_reason": "NVIDIA earnings remains a top U.S. YouTube earnings query and is central to AI-equity demand.",
-      "trend_evidence": {
-        "priority_score": 28.6,
-        "signals": [
-          "US:youtube_top:Top:via=earnings:rank=8"
-        ]
-      },
+      "selection_reason": "Costco earnings remains a Top U.S. earnings-search topic and has broad investor interest.",
+      "trend_evidence": [
+        "costco earnings Top rank 19"
+      ],
       "relevance_groups": [
         [
-          "NVIDIA",
-          "NVDA",
-          "英伟达",
-          "輝達"
+          "Costco",
+          "COST",
+          "好市多"
         ],
         [
           "earnings",
           "results",
           "财报",
-          "財報"
-        ]
-      ]
-    },
-    {
-      "entity": "TSMC",
-      "entity_type": "company",
-      "youtube_query": "TSMC TSM stock",
-      "regions": [
-        "TW"
-      ],
-      "selection_reason": "TSMC is a top Taiwan stock query and a direct read-through for the global semiconductor and AI supply chain.",
-      "trend_evidence": {
-        "priority_score": 25.4,
-        "signals": [
-          "TW:youtube_top:Top:via=股票:rank=12"
-        ]
-      },
-      "relevance_groups": [
-        [
-          "TSMC",
-          "Taiwan Semiconductor",
-          "TSM",
-          "台积电",
-          "台積電"
+          "財報",
+          "业绩",
+          "業績"
         ]
       ]
     }

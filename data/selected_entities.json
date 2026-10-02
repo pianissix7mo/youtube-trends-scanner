@@ -1,34 +1,187 @@
 {
-  "generated_at_utc": "2026-10-01T11:32:33Z",
-  "source_raw_generated_at_utc": "2026-10-01T11:28:38.288754+00:00",
-  "notes": "Fresh 2026-10-01 Toronto-morning Scanner A selection. Reviewed all 30 raw candidates. The upstream YouTube Trends Explore collection was rate-limited after its first attempted request, so selections rely on the available Google-trending/news evidence rather than inventing missing signals. Removed entertainment, sports, creator/general-interest and generic noise; selected only distinct investing-relevant topics, fewer rather than padding. No YouTube metrics were computed here.",
+  "generated_at_utc": "2026-10-02T12:06:58Z",
+  "source_raw_generated_at_utc": "2026-10-02T11:58:19.267131+00:00",
+  "notes": "Fresh 2026-10-02 Toronto-morning Scanner A selection. Reviewed all 205 raw-review candidates from the current scheduled discovery run. Merged long-tail searches around the same entity/topic; removed entertainment, sports, creator/channel names, generic how-to, evergreen and low-value non-investing noise. US, Canada and Taiwan were treated as near-equal discovery markets. Selected 20 distinct investing-relevant entities/themes without computing YouTube metrics directly.",
   "selected": [
     {
-      "entity": "Google Gemini 4 Argon",
+      "entity": "Micron Technology",
       "entity_type": "company",
-      "youtube_query": "Google Gemini 4 Argon GOOGL",
-      "regions": ["CA"],
-      "selection_reason": "Fresh company-specific AI search momentum around Google's Gemini 4 Argon launch is directly relevant to Alphabet's AI competitive position and U.S. technology investors.",
-      "trend_evidence": ["google gemini ai CA GTrend 200+ rank=8", "News: Gemini 4 Argon launch and flagship-model coverage"],
-      "relevance_groups": [["Google", "Alphabet", "GOOGL", "GOOG"], ["Gemini 4", "Gemini 4 Argon", "Argon"]]
+      "youtube_query": "Micron MU earnings AI memory",
+      "regions": ["US", "CA", "TW"],
+      "selection_reason": "Micron dominates the current earnings search cluster across the U.S. and Canada, with additional Taiwan interest, making it the strongest company-specific crowd-momentum signal in the pool.",
+      "trend_evidence": ["CA: 'micron earnings' Breakout rank=1", "US: 'mu earnings live' Breakout rank=1", "TW: '美光 財報' +500% and 'mu 財報' Breakout"],
+      "relevance_groups": [["Micron", "MU", "美光"], ["earnings", "財報", "guidance", "memory", "HBM"]]
     },
     {
-      "entity": "McDonald's GLP-1 menu investment",
+      "entity": "OpenAI DevDay / Dots",
+      "entity_type": "private_company",
+      "youtube_query": "OpenAI DevDay Dots AI",
+      "regions": ["US", "CA", "TW"],
+      "selection_reason": "OpenAI has unusually strong cross-region AI search momentum, with both DevDay and Dots queries breaking out and directly relevant to the competitive AI ecosystem and public-company partners.",
+      "trend_evidence": ["CA: 'open ai dev day' Breakout rank=2", "US: 'open ai dev day' +4,650%", "TW+CA: 'open ai dots' Breakout rank=1", "US: 'dots open ai' Breakout rank=1"],
+      "relevance_groups": [["OpenAI", "Open AI"], ["DevDay", "Dev Day", "Dots"]]
+    },
+    {
+      "entity": "Nike",
       "entity_type": "company",
-      "youtube_query": "McDonald's MCD GLP-1 menu $8.5 billion",
+      "youtube_query": "Nike NKE earnings outlook",
+      "regions": ["US", "CA"],
+      "selection_reason": "Nike earnings-related searches are breaking out in both Canada and the U.S., giving a clean large-cap consumer-stock earnings angle.",
+      "trend_evidence": ["CA: 'nike earnings' Breakout rank=2", "US: 'nke earnings' Breakout rank=3", "US: 'nike earnings' +1,400%"],
+      "relevance_groups": [["Nike", "NKE"], ["earnings", "results", "outlook", "guidance"]]
+    },
+    {
+      "entity": "Marvell Technology",
+      "entity_type": "company",
+      "youtube_query": "Marvell MRVL stock AI chips",
       "regions": ["US"],
-      "selection_reason": "The fast-food trend is tied to fresh reports that McDonald's is considering an $8.5B menu overhaul for GLP-1/protein-focused demand, with an identifiable stock-market reaction.",
-      "trend_evidence": ["fast food US GTrend 1000+ rank=2", "News: McDonald's $8.5B GLP-1/protein menu strategy and reported 6% share decline"],
-      "relevance_groups": [["McDonald's", "McDonalds", "MCD"], ["GLP-1", "protein", "menu"]]
+      "selection_reason": "Marvell has one of the strongest single-stock momentum spikes outside the earnings clusters and is directly tied to custom AI silicon and data-center infrastructure.",
+      "trend_evidence": ["US: 'mrvl stock' +4,150% via stocks rank=2"],
+      "relevance_groups": [["Marvell", "MRVL"], ["AI", "chip", "semiconductor", "data center", "custom silicon"]]
     },
     {
-      "entity": "U.S.-Canada trade tensions",
-      "entity_type": "macro",
-      "youtube_query": "Trump Canada trade Navarro tariffs",
+      "entity": "Navitas Semiconductor",
+      "entity_type": "company",
+      "youtube_query": "Navitas Semiconductor NVTS stock",
+      "regions": ["US", "CA"],
+      "selection_reason": "Navitas is rising in both U.S. and Canadian semiconductor searches, providing a focused power-semiconductor stock topic rather than a generic sector query.",
+      "trend_evidence": ["CA: 'navitas semiconductor stock' +170%", "US: 'navitas semiconductor stock' +160%", "US: 'navitas semiconductor' +70%"],
+      "relevance_groups": [["Navitas", "NVTS"], ["semiconductor", "GaN", "SiC", "power"]]
+    },
+    {
+      "entity": "ON Semiconductor",
+      "entity_type": "company",
+      "youtube_query": "ON Semiconductor ON stock Synaptics",
+      "regions": ["US"],
+      "selection_reason": "ON Semiconductor shows strong direct company search momentum and is highly relevant to U.S.-listed semiconductor investors.",
+      "trend_evidence": ["US: 'on semiconductor' +200% via semiconductor rank=5; Top rank=2"],
+      "relevance_groups": [["ON Semiconductor", "onsemi", "ON"]]
+    },
+    {
+      "entity": "TSMC",
+      "entity_type": "company",
+      "youtube_query": "TSMC TSM Taiwan Semiconductor",
+      "regions": ["US"],
+      "selection_reason": "TSMC remains a direct U.S.-investor semiconductor topic with rising U.S. search interest and strong foundry/supply-chain relevance.",
+      "trend_evidence": ["US: 'tsmc' +90% via semiconductor rank=8; Top rank=14", "US: 'taiwan semiconductor' Top rank=3"],
+      "relevance_groups": [["TSMC", "Taiwan Semiconductor", "TSM", "台積電"]]
+    },
+    {
+      "entity": "NIO",
+      "entity_type": "company",
+      "youtube_query": "NIO earnings stock",
+      "regions": ["US"],
+      "selection_reason": "NIO earnings is a breakout U.S. search query and remains directly relevant to U.S.-listed China EV exposure.",
+      "trend_evidence": ["US: 'nio earnings' Breakout rank=4; Top rank=22"],
+      "relevance_groups": [["NIO", "蔚來", "蔚来"], ["earnings", "results", "guidance"]]
+    },
+    {
+      "entity": "Foxconn / Hon Hai",
+      "entity_type": "company",
+      "youtube_query": "Foxconn Hon Hai 鴻海 AI servers stock",
+      "regions": ["TW"],
+      "selection_reason": "Hon Hai is breaking out in Taiwan stock searches and is materially connected to U.S. AI-server and electronics supply chains.",
+      "trend_evidence": ["TW: '鴻海 股票' Breakout rank=2; Top rank=22"],
+      "relevance_groups": [["Foxconn", "Hon Hai", "鴻海", "2317"]]
+    },
+    {
+      "entity": "Robinhood",
+      "entity_type": "company",
+      "youtube_query": "Robinhood HOOD stock",
+      "regions": ["US", "CA"],
+      "selection_reason": "Robinhood-related stock search activity is elevated and fits a U.S.-listed brokerage/retail-trading channel angle.",
+      "trend_evidence": ["CA: 'hood stocks' +60%", "US: 'hood stocks' Top rank=11"],
+      "relevance_groups": [["Robinhood", "HOOD"]]
+    },
+    {
+      "entity": "Uranium stocks",
+      "entity_type": "sector",
+      "youtube_query": "uranium stocks CCJ UEC nuclear",
       "regions": ["CA"],
-      "selection_reason": "A sharp Canada search trend is linked to fresh U.S.-Canada political/trade friction involving Trump adviser Peter Navarro, relevant to cross-border trade and tariff-sensitive equities.",
-      "trend_evidence": ["trump canada CA GTrend 2000+ rank=7", "News: Navarro warning Canada over U.S. political lobbying/interference"],
-      "relevance_groups": [["Trump", "Navarro"], ["Canada", "Canadian"], ["trade", "tariff", "tariffs"]]
+      "selection_reason": "Uranium stocks show a meaningful Canadian breakout and map cleanly to U.S.-listed uranium/nuclear names and the power-demand theme.",
+      "trend_evidence": ["CA: 'uranium stocks' +130% via stocks rank=3"],
+      "relevance_groups": [["uranium", "nuclear"], ["stock", "stocks", "CCJ", "UEC", "URA"]]
+    },
+    {
+      "entity": "Gold and silver mining stocks",
+      "entity_type": "sector",
+      "youtube_query": "gold silver mining stocks GDX SIL",
+      "regions": ["US"],
+      "selection_reason": "Precious-metals mining searches are rising and provide a direct investable equity angle rather than generic commodity commentary.",
+      "trend_evidence": ["US: 'gold and silver mining stocks' +160% via stocks rank=9"],
+      "relevance_groups": [["gold", "silver"], ["mining", "miners", "stocks", "GDX", "SIL"]]
+    },
+    {
+      "entity": "Space stocks",
+      "entity_type": "sector",
+      "youtube_query": "space stocks RKLB ASTS LUNR",
+      "regions": ["US"],
+      "selection_reason": "Space-stock search momentum is sharply higher and maps to several actively traded U.S.-listed names.",
+      "trend_evidence": ["US: 'space stocks' +400% via stocks rank=4"],
+      "relevance_groups": [["space", "rocket", "satellite"], ["stock", "stocks", "RKLB", "ASTS", "LUNR"]]
+    },
+    {
+      "entity": "Chinese stocks",
+      "entity_type": "sector",
+      "youtube_query": "Chinese stocks BABA JD PDD NIO",
+      "regions": ["US"],
+      "selection_reason": "Chinese-stock searches are rising in the U.S. and are directly relevant to U.S.-listed ADRs and cross-border investors.",
+      "trend_evidence": ["US: 'chinese stocks' +200% via stocks rank=7"],
+      "relevance_groups": [["China", "Chinese"], ["stock", "stocks", "BABA", "JD", "PDD", "NIO"]]
+    },
+    {
+      "entity": "Optical communications / CPO",
+      "entity_type": "sector",
+      "youtube_query": "optical communications CPO AI data center stocks",
+      "regions": ["TW"],
+      "selection_reason": "Taiwan search momentum and news headlines show a live optical-communications/CPO theme tied directly to AI data-center interconnect demand.",
+      "trend_evidence": ["TW: '光 通訊' Google Trending 2000+ rank=8", "News: optical-communications stocks strengthened on U.S. China optical-module restriction discussion", "News: silicon photonics/CPO theme spreading"],
+      "relevance_groups": [["optical", "光通訊", "CPO", "silicon photonics", "矽光子"]]
+    },
+    {
+      "entity": "Power semiconductors",
+      "entity_type": "sector",
+      "youtube_query": "power semiconductor SiC GaN stocks",
+      "regions": ["TW"],
+      "selection_reason": "Power-semiconductor search interest is rising in Taiwan and connects to U.S.-listed SiC/GaN and automotive/industrial semiconductor names.",
+      "trend_evidence": ["TW: '功率 半導體' +50% via 半導體 rank=5; Top rank=5"],
+      "relevance_groups": [["power semiconductor", "功率 半導體", "SiC", "GaN"]]
+    },
+    {
+      "entity": "indie Semiconductor",
+      "entity_type": "company",
+      "youtube_query": "indie Semiconductor INDI stock",
+      "regions": ["US"],
+      "selection_reason": "indie Semiconductor is rising in U.S. semiconductor searches and offers a distinct automotive-semiconductor small/mid-cap angle.",
+      "trend_evidence": ["US: 'indie semiconductor' +50% via semiconductor rank=12; Top rank=15"],
+      "relevance_groups": [["indie Semiconductor", "INDI"]]
+    },
+    {
+      "entity": "Apple Siri AI",
+      "entity_type": "company",
+      "youtube_query": "Apple Siri AI AAPL",
+      "regions": ["TW"],
+      "selection_reason": "Siri AI is rising in Taiwan AI searches and maps directly to Apple's AI product strategy and a major U.S. equity.",
+      "trend_evidence": ["TW: 'siri ai' +70% via AI rank=4; Top rank=10"],
+      "relevance_groups": [["Apple", "AAPL", "Siri"], ["AI", "Apple Intelligence"]]
+    },
+    {
+      "entity": "Tokenized stocks",
+      "entity_type": "theme",
+      "youtube_query": "tokenized stocks Robinhood crypto equities",
+      "regions": ["US"],
+      "selection_reason": "Tokenized-stock searches are rising in the U.S. and represent a distinct market-structure/fintech theme relevant to brokers, exchanges and crypto-equity convergence.",
+      "trend_evidence": ["US: 'tokenized stocks' +100% via stocks rank=12"],
+      "relevance_groups": [["tokenized stock", "tokenized stocks", "tokenized equities"]]
+    },
+    {
+      "entity": "Semiconductor market / foundry manufacturing",
+      "entity_type": "sector",
+      "youtube_query": "semiconductor market foundry manufacturing TSMC Intel",
+      "regions": ["US", "CA"],
+      "selection_reason": "Broad semiconductor/foundry search momentum is strong enough to justify a sector-level slot, especially because it connects directly to TSMC, Intel, equipment and supply-chain names.",
+      "trend_evidence": ["US: 'semiconductor market' Breakout rank=1", "US: 'foundry semiconductor' Breakout rank=2", "CA: 'semiconductor stocks' +120%", "US: 'semiconductor manufacturing' +100%"],
+      "relevance_groups": [["semiconductor", "foundry", "chip manufacturing"]]
     }
   ]
 }

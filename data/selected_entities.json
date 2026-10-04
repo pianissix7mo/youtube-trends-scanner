@@ -1,115 +1,23 @@
 {
-  "generated_at_utc": "2026-10-03T11:37:21Z",
-  "source_raw_generated_at_utc": "2026-10-03T11:31:45.114979+00:00",
-  "notes": "Fresh 2026-10-03 Toronto-morning Scanner A selection from the scheduled discovery run. Reviewed the complete 140-candidate raw-review pool. Merged long-tail searches around the same entity/topic; removed sports, entertainment, creator/channel names, generic how-to, evergreen semiconductor explainers and low-value investing noise. US, Canada and Taiwan were treated as near-equal discovery markets. The upstream Explore collector was rate-limited after 8 successful calls, so selections use only observed signals and do not invent missing data. Selected fewer than 20 rather than padding. No YouTube metrics were computed here.",
+  "generated_at_utc": "2026-10-04T11:40:38Z",
+  "source_raw_generated_at_utc": "2026-10-04T11:18:08.639651+00:00",
+  "notes": "Fresh 2026-10-04 Toronto-morning Scanner A selection from the scheduled discovery run. Reviewed all 208 raw-review candidates. Merged long-tail searches by underlying entity/topic; removed entertainment, sports, creator/channel names, generic how-to, evergreen explainers and low-value investing noise. US, Canada and Taiwan were treated as near-equal discovery markets. One CA semiconductor Explore request failed because the chart did not render, while 11/12 requests succeeded; only observed signals were used. Selected fewer than 20 rather than padding. No YouTube metrics were computed here.",
   "selected": [
-    {
-      "entity": "Micron Technology",
-      "entity_type": "company",
-      "youtube_query": "Micron MU earnings memory HBM",
-      "regions": ["US", "CA", "TW"],
-      "selection_reason": "Micron overwhelmingly dominates the current earnings-search cluster across all three discovery markets, with multiple breakout queries and direct AI-memory relevance.",
-      "trend_evidence": ["CA: mu earnings call Breakout rank=1", "US: mu earnings live Breakout rank=1", "TW: mu 財報 Breakout rank=1", "US: memory stocks Breakout rank=1"],
-      "relevance_groups": [["Micron", "MU", "美光"], ["earnings", "財報", "memory", "HBM", "guidance"]]
-    },
-    {
-      "entity": "Nike",
-      "entity_type": "company",
-      "youtube_query": "Nike NKE earnings outlook",
-      "regions": ["US", "CA"],
-      "selection_reason": "Nike earnings searches are breaking out in both the U.S. and Canada, creating a clean large-cap consumer earnings topic.",
-      "trend_evidence": ["CA: nike stock earnings Breakout rank=3", "US: nke earnings Breakout rank=3", "US: nike earnings call +2,650%"],
-      "relevance_groups": [["Nike", "NKE"], ["earnings", "results", "guidance", "outlook"]]
-    },
-    {
-      "entity": "Robinhood",
-      "entity_type": "company",
-      "youtube_query": "Robinhood HOOD stock",
-      "regions": ["US", "CA"],
-      "selection_reason": "HOOD-related stock searches show breakout momentum in Canada plus top-query presence in the U.S., directly relevant to retail-trading investors.",
-      "trend_evidence": ["CA: hood stocks Breakout rank=2", "US: hood stocks Top rank=11"],
-      "relevance_groups": [["Robinhood", "HOOD"]]
-    },
-    {
-      "entity": "AMD",
-      "entity_type": "company",
-      "youtube_query": "AMD earnings AI chips",
-      "regions": ["CA"],
-      "selection_reason": "AMD earnings is a breakout Canadian query and the company is central to U.S. AI accelerator and semiconductor competition.",
-      "trend_evidence": ["CA: amd earnings Breakout rank=4; Top rank=14"],
-      "relevance_groups": [["AMD", "Advanced Micro Devices"], ["earnings", "AI", "chip", "GPU"]]
-    },
-    {
-      "entity": "NIO",
-      "entity_type": "company",
-      "youtube_query": "NIO earnings stock",
-      "regions": ["US"],
-      "selection_reason": "NIO earnings is a breakout U.S. query and maps directly to a U.S.-listed China EV stock.",
-      "trend_evidence": ["US: nio earnings Breakout rank=4; Top rank=22"],
-      "relevance_groups": [["NIO", "蔚來", "蔚来"], ["earnings", "results", "guidance"]]
-    },
-    {
-      "entity": "Accenture",
-      "entity_type": "company",
-      "youtube_query": "Accenture ACN earnings AI",
-      "regions": ["US"],
-      "selection_reason": "Accenture earnings-call search momentum remains unusually elevated and connects directly to the market debate over AI disruption versus AI-services demand.",
-      "trend_evidence": ["US: accenture earnings call Breakout rank=8"],
-      "relevance_groups": [["Accenture", "ACN"], ["earnings", "AI", "guidance"]]
-    },
-    {
-      "entity": "Quantum computing stocks",
-      "entity_type": "sector",
-      "youtube_query": "quantum computing stocks IONQ RGTI QBTS",
-      "regions": ["CA"],
-      "selection_reason": "Quantum-stock searches are breaking out in Canada and map to actively traded U.S.-listed quantum-computing equities.",
-      "trend_evidence": ["CA: quantum stocks Breakout rank=1", "CA: quantum computing stocks rising"],
-      "relevance_groups": [["quantum", "quantum computing"], ["stock", "stocks", "IONQ", "RGTI", "QBTS"]]
-    },
-    {
-      "entity": "Chinese stocks",
-      "entity_type": "sector",
-      "youtube_query": "Chinese stocks BABA JD PDD NIO",
-      "regions": ["US"],
-      "selection_reason": "Chinese-stock searches are rising in the U.S. and provide a direct ADR and cross-border equity angle.",
-      "trend_evidence": ["US: chinese stocks +400% via stocks rank=3"],
-      "relevance_groups": [["China", "Chinese"], ["stock", "stocks", "BABA", "JD", "PDD", "NIO"]]
-    },
-    {
-      "entity": "Gold and silver mining stocks",
-      "entity_type": "sector",
-      "youtube_query": "gold silver mining stocks GDX SIL",
-      "regions": ["US"],
-      "selection_reason": "Precious-metals mining equities have fresh search momentum and offer a concrete investable-stock angle rather than generic commodity discussion.",
-      "trend_evidence": ["US: gold and silver mining stocks +140% via stocks rank=5"],
-      "relevance_groups": [["gold", "silver"], ["mining", "miners", "stocks", "GDX", "SIL"]]
-    },
-    {
-      "entity": "Taiwan semiconductor / TSMC",
-      "entity_type": "company",
-      "youtube_query": "TSMC TSM Taiwan Semiconductor",
-      "regions": ["US", "TW"],
-      "selection_reason": "Taiwan-semiconductor searches remain prominent and are directly relevant to TSMC, the foundry supply chain and U.S. AI-chip investors.",
-      "trend_evidence": ["US: taiwan semiconductor rising/top semiconductor query", "TW: 00830 Cathay Philadelphia Semiconductor Breakout rank=1"],
-      "relevance_groups": [["TSMC", "Taiwan Semiconductor", "TSM", "台積電", "台积电"]]
-    },
-    {
-      "entity": "Memory stocks",
-      "entity_type": "sector",
-      "youtube_query": "memory stocks Micron MU HBM DRAM NAND",
-      "regions": ["US", "TW"],
-      "selection_reason": "Memory stocks themselves are a breakout U.S. search theme, reinforced by unusually strong Micron and Taiwan memory-interest signals.",
-      "trend_evidence": ["US: memory stocks Breakout rank=1", "TW: Micron earnings queries elevated"],
-      "relevance_groups": [["memory", "DRAM", "NAND", "HBM"], ["stock", "stocks", "Micron", "MU"]]
-    },
-    {
-      "entity": "Semiconductor ETF / Philadelphia Semiconductor Index",
-      "entity_type": "sector",
-      "youtube_query": "Philadelphia Semiconductor Index SOX semiconductor ETF",
-      "regions": ["TW"],
-      "selection_reason": "Taiwan interest in the Philadelphia Semiconductor exposure is breaking out and maps directly to U.S. semiconductor-sector performance.",
-      "trend_evidence": ["TW: 00830 國泰 費城 半導體 Breakout rank=1; Top rank=2"],
-      "relevance_groups": [["Philadelphia Semiconductor", "SOX", "費城半導體", "00830"]]
-    }
+    {"entity":"Nike","entity_type":"company","youtube_query":"Nike NKE earnings 2027 outlook","regions":["US","CA","TW"],"selection_reason":"Nike earnings dominates today's investing-relevant rising-query cluster across the U.S. and Canada, with additional Taiwan stock interest.","trend_evidence":["CA: nike earnings call Breakout rank=1","US: nke earnings call Breakout rank=1","US: nike earnings call +4,400%","TW: nike 股票 Breakout rank=6"],"relevance_groups":[["Nike","NKE"],["earnings","earnings call","results","2027 outlook"]]},
+    {"entity":"Alphabet / Google","entity_type":"company","youtube_query":"Alphabet GOOGL Google stock AI","regions":["TW"],"selection_reason":"Google stock is the strongest Taiwan stock-query breakout and directly maps to Alphabet, a core U.S. mega-cap AI equity.","trend_evidence":["TW: google 股票 Breakout rank=1; Top rank=23"],"relevance_groups":[["Google","Alphabet","GOOGL","GOOG"],["stock","股票","AI"]]},
+    {"entity":"Semiconductor ETF / Philadelphia Semiconductor Index","entity_type":"sector","youtube_query":"semiconductor ETF SOX Philadelphia Semiconductor Index","regions":["TW","US"],"selection_reason":"Semiconductor ETF interest is breaking out in Taiwan, reinforced by strong Philadelphia Semiconductor and U.S. semiconductor ETF searches.","trend_evidence":["TW: 半導體 etf Breakout rank=1; Top rank=4","TW: 00830 國泰 費城 半導體 +950% rank=2","US: semiconductor etf Top rank=10"],"relevance_groups":[["semiconductor ETF","半導體 ETF","SOX","Philadelphia Semiconductor","費城半導體","00830"]]},
+    {"entity":"Circle Internet Group","entity_type":"company","youtube_query":"Circle CRCL stock stablecoin USDC","regions":["TW"],"selection_reason":"CRCL stock is a Taiwan breakout query and maps directly to a U.S.-listed stablecoin/crypto-infrastructure equity.","trend_evidence":["TW: crcl 股票 Breakout rank=3"],"relevance_groups":[["Circle","CRCL"],["USDC","stablecoin","stock","股票"]]},
+    {"entity":"ON Semiconductor","entity_type":"company","youtube_query":"ON Semiconductor ON stock Synaptics","regions":["US"],"selection_reason":"ON Semiconductor has fresh U.S. rising search momentum and is directly relevant to the semiconductor and current Synaptics transaction narrative.","trend_evidence":["US: on semiconductor stock +400% rank=1","US: on semiconductor +50% rank=2; Top rank=3"],"relevance_groups":[["ON Semiconductor","onsemi","ON"],["stock","Synaptics","semiconductor"]]},
+    {"entity":"NIO","entity_type":"company","youtube_query":"NIO earnings stock","regions":["US"],"selection_reason":"NIO earnings remains a strongly rising U.S. query with a direct U.S.-listed China-EV investing angle.","trend_evidence":["US: nio earnings +300% rank=9; Top rank=13"],"relevance_groups":[["NIO","蔚來","蔚来"],["earnings","stock","results"]]},
+    {"entity":"Accenture","entity_type":"company","youtube_query":"Accenture ACN earnings AI","regions":["US"],"selection_reason":"Accenture earnings is rising sharply in U.S. search and remains relevant to the AI-services disruption and enterprise-spending debate.","trend_evidence":["US: accenture earnings +300% rank=10; Top rank=21"],"relevance_groups":[["Accenture","ACN"],["earnings","AI","guidance"]]},
+    {"entity":"Oracle","entity_type":"company","youtube_query":"Oracle ORCL stock AI cloud","regions":["TW"],"selection_reason":"Oracle stock is a rising Taiwan stock query and directly connects to U.S. cloud, database and AI-infrastructure investment themes.","trend_evidence":["TW: 甲骨文 股票 +250% rank=10; Top rank=22"],"relevance_groups":[["Oracle","ORCL","甲骨文"],["stock","股票","AI","cloud"]]},
+    {"entity":"Quantum computing stocks","entity_type":"sector","youtube_query":"quantum computing stocks IONQ RGTI QBTS","regions":["CA"],"selection_reason":"Quantum-stock searches continue rising in Canada and map to actively traded U.S.-listed quantum-computing equities.","trend_evidence":["CA: quantum stocks +60% rank=6; Top rank=20"],"relevance_groups":[["quantum","quantum computing"],["IONQ","RGTI","QBTS","stocks"]]},
+    {"entity":"TSMC / Taiwan Semiconductor","entity_type":"company","youtube_query":"TSMC TSM Taiwan Semiconductor AI chips","regions":["US","TW"],"selection_reason":"Taiwan Semiconductor remains a rising/top U.S. semiconductor query and is central to the AI foundry supply chain.","trend_evidence":["US: taiwan semiconductor +50% rank=3; Top rank=2","TW: semiconductor-sector searches elevated"],"relevance_groups":[["TSMC","Taiwan Semiconductor","TSM","台積電","台积电"]]},
+    {"entity":"Micron Technology","entity_type":"company","youtube_query":"Micron MU earnings HBM memory","regions":["US","CA","TW"],"selection_reason":"Micron remains a top earnings query across all three discovery markets and directly anchors the AI-memory/HBM investment theme.","trend_evidence":["CA/US: micron earnings Top queries","TW: 美光 財報 Top rank=1","US: mu earnings Top rank=9"],"relevance_groups":[["Micron","MU","美光"],["earnings","財報","HBM","DRAM","memory"]]},
+    {"entity":"Memory stocks","entity_type":"sector","youtube_query":"memory stocks Micron HBM DRAM NAND","regions":["US","TW"],"selection_reason":"Memory stocks show fresh U.S. rising momentum, reinforced by strong Micron and Taiwan memory-sector attention.","trend_evidence":["US: memory stocks +60% rank=13","TW: memory-related stock news prominent in trending results"],"relevance_groups":[["memory","DRAM","NAND","HBM"],["stocks","Micron","MU"]]},
+    {"entity":"Gold and silver mining stocks","entity_type":"sector","youtube_query":"gold silver mining stocks GDX SIL","regions":["US","CA"],"selection_reason":"Precious-metals mining equities have fresh U.S. search momentum and provide a concrete investable equity angle.","trend_evidence":["US: gold and silver mining stocks +60% rank=14","CA: mining stocks rising/top"],"relevance_groups":[["gold","silver","mining","miners"],["GDX","SIL","stocks"]]},
+    {"entity":"Chinese stocks / U.S.-listed China ADRs","entity_type":"sector","youtube_query":"Chinese stocks BABA JD PDD NIO ADR","regions":["US"],"selection_reason":"Chinese-stock searches are rising in the U.S., providing a direct ADR and cross-border equity topic for the channel.","trend_evidence":["US: chinese stocks +100% rank=8"],"relevance_groups":[["China","Chinese","ADR"],["BABA","JD","PDD","NIO","stocks"]]},
+    {"entity":"Iran currency / oil pressure","entity_type":"macro","youtube_query":"Iran rial currency oil exports markets","regions":["CA"],"selection_reason":"Iran's currency crash is a fresh Canada Google trend backed by current oil-sales and sanctions-related headlines, creating a macro/oil-market angle.","trend_evidence":["CA: iran currency GTrend 200+ rank=1","News: Iranian rial new low; oil-sale and U.S. pressure headlines"],"relevance_groups":[["Iran","Iranian rial","rial"],["oil","sanctions","currency"]]},
+    {"entity":"Uranium stocks","entity_type":"sector","youtube_query":"uranium stocks CCJ UEC nuclear energy","regions":["CA"],"selection_reason":"Uranium stocks remain a top Canadian investing query and map to U.S.-listed nuclear-fuel equities and the data-center power theme.","trend_evidence":["CA: uranium stocks Top rank=25"],"relevance_groups":[["uranium","nuclear"],["CCJ","UEC","stocks"]]}
   ]
 }

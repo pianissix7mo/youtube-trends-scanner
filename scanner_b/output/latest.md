@@ -1,24 +1,29 @@
 # Scanner B — Catalyst Opportunities
 
-Generated: **2026-10-04T11:42:22.331079+00:00**
+Generated: **2026-10-05T12:22:46.847717+00:00**
 
 YouTube fresh search calls used: **20 / 20**
 Cache hits: **0**; stale fallbacks: **0**; API failures: **0**
 
 | # | Event | Ticker | Judge | Discovery | Burst | Sources | YT gap | B final |
 |---:|---|---|---:|---:|---:|---:|---:|---:|
-| 1 | ON Semicondcutor to Buy Synaptics for Cash, Not Stock, in Downsized Deal | SYNA | 94 | 46.2 | 11.1 | 20.0 | 100.0 | 80.9 |
-| 2 | Trump slaps 100% tariff on some pharmaceutical drugs via executive order | — | 95 | 42.0 | 0.0 | 38.0 | 100.0 | 80.1 |
-| 3 | Federal Reserve raises interest rates for the 1st time since 2023 | — | 96 | 42.0 | 0.0 | 38.0 | 95.0 | 79.6 |
-| 4 | US Treasury Yields Hit Multi-Decade Highs as Mortgage Rates Top 7% | — | 90 | 43.2 | 0.0 | 38.0 | 100.0 | 78.0 |
-| 5 | Trump Presses South Korea on Alaska LNG Investment, Threatens to Double Tariffs | — | 93 | 45.7 | 0.0 | 55.0 | 85.0 | 77.2 |
-| 6 | NIKE (NKE) Cuts 2027 Revenue Outlook As Fair Value Stays Just Above The Stock | NKE | 88 | 44.0 | 20.9 | 20.0 | 100.0 | 77.2 |
-| 7 | Rockville-Based Capital Bancorp to Be Acquired in $728 Million Merger | CBNK | 80 | 55.6 | 44.8 | 20.0 | 100.0 | 76.7 |
-| 8 | Bitcoin holds near $85,000 as SEC clears first 3x leveraged crypto ETPs | — | 93 | 42.7 | 0.0 | 55.0 | 85.0 | 76.3 |
-| 9 | Robinhood Plans to Let Customers Trade Stocks on Weekends. Here's What That Could Do for Its Revenue. | HOOD | 84 | 56.2 | 48.8 | 20.0 | 85.0 | 75.9 |
-| 10 | Lockheed Martin plans to expand India production if it wins $10.5 billion aircraft deal | LMT | 89 | 43.6 | 0.0 | 55.0 | 85.0 | 74.6 |
-| 11 | Paramount Shareholders to Get Stock Warrants in Huge Financing Deal for Warner Acquisition | PSKY | 86 | 43.5 | 7.0 | 20.0 | 85.0 | 73.0 |
-| 12 | Lam Research Plans $1.2 Billion Investment in India Semiconductor Unit | LRCX | 80 | 31.1 | 0.0 | 20.0 | 95.0 | 68.3 |
-| 13 | Trump orders US government to cut ties with Anthropic; Hegseth declares supply chain 'risk' | — | 88 | 31.5 | 0.0 | 20.0 | None | 68.2 |
-| 14 | CDW completes acquisition of Lovelytics for approximately $525 million | CDW | 76 | 51.7 | 33.7 | 20.0 | 70.0 | 67.5 |
-| 15 | Google set to defend £1.2bn UK lawsuit over ‘excessive’ app download charges | GOOGL | 87 | 43.2 | 14.0 | 20.0 | 50.0 | 66.5 |
+| 1 | Schneider Electric to Buy PTC in French Industrial Giant’s Largest-Ever Acquisition | PTC | 100 | 91.6 | 100.0 | 72.0 | 100.0 | 97.5 |
+| 2 | National Grid raises full-year earnings view after strong H1 (NGG:NYSE) | NGG | 94 | 73.7 | 80.9 | 38.0 | 100.0 | 89.1 |
+| 3 | Foxconn Third-Quarter Revenue Rises 47% as AI Demand Supports Growth | — | 99 | 54.1 | 25.0 | 38.0 | 100.0 | 85.7 |
+| 4 | Treasury yields hold near multiyear highs as traders await data, Fed minutes this week | — | 96 | 51.0 | 23.2 | 38.0 | None | 80.2 |
+| 5 | UK business secretary weighs up tariffs on Chinese EVs | — | 91 | 47.2 | 0.0 | 55.0 | 85.0 | 76.7 |
+| 6 | Vultr Commits $1.2B to the AMD Helios AI Rack by HPE, HPE’s First Order for the 72-GPU MI455X System | AMD | 92 | 32.1 | 2.9 | 20.0 | 100.0 | 75.6 |
+| 7 | SEC Clears Cboe to List Volatility Shares’ 3x Bitcoin and Ether Funds | — | 90 | 44.2 | 0.0 | 55.0 | 85.0 | 75.3 |
+| 8 | AMD CEO Lisa Su rushes to Taiwan for more AI chip capacity | AMD | 88 | 34.2 | 2.9 | 20.0 | 100.0 | 74.3 |
+| 9 | InTest Expects Record Orders for Q3 2026 and Revenue at High End of Guidance Range for Q3 and Full Year 2026 | INTT | 87 | 49.0 | 25.0 | 20.0 | None | 73.7 |
+| 10 | Nutanix acquires Ryax Technologies to make scattered GPU infrastructure easier to manage for enterprise AI | NTNX | 84 | 52.2 | 50.0 | 20.0 | None | 72.9 |
+| 11 | Nvidia’s $20bn licensing deal with Groq faces lawsuit from jilted engineers | NVDA | 95 | 44.6 | 18.0 | 20.0 | 50.0 | 70.9 |
+| 12 | India-US trade talks hit 'plateau', finance minister says, as tariffs narrow room for deal | — | 91 | 35.7 | 0.0 | 20.0 | 70.0 | 70.2 |
+| 13 | Micron Profit, Revenue Surge as Memory Crunch Looks to Last Through 2028 | MU | 96 | 39.6 | 8.2 | 20.0 | 50.0 | 69.9 |
+| 14 | TransDigm Completes $1.066 Billion Prince & Izant Acquisition | TDG | 85 | 36.3 | 0.0 | 20.0 | None | 68.0 |
+| 15 | Euro zone business growth hits over 3-1/2-year high despite inflation worries, PMI shows | — | 82 | 41.7 | 0.0 | 38.0 | None | 67.9 |
+| 16 | Polish antitrust watchdog reportedly probes Google over media publisher payments | GOOGL | 87 | 46.7 | 9.3 | 38.0 | 50.0 | 67.5 |
+| 17 | Accenture Completes Acquisition of Mjølner Informatics, Bringing Deep Software Engineering Expertise for Energy, Utilities and Manufacturing Clients in Denmark | ACN | 84 | 36.3 | 0.0 | 20.0 | None | 67.3 |
+| 18 | Boeing secures full-rate production order for Grey Wolf | BA | 84 | 35.0 | 0.0 | 20.0 | None | 66.8 |
+| 19 | Amazon Is Spending Another $1 Billion on AI Data Centers — But This Time, It's Not Buying a Single GPU | AMZN | 85 | 28.7 | 0.0 | 20.0 | None | 65.3 |
+| 20 | Microsoft and Chevron Sign 20-Year Power Deal For Texas Data Center | MSFT | 89 | 31.5 | 0.0 | 20.0 | 30.0 | 60.0 |

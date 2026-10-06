@@ -1,115 +1,20 @@
 {
-  "generated_at_utc": "2026-10-05T12:18:22Z",
-  "source_raw_generated_at_utc": "2026-10-05T11:47:50.210342+00:00",
-  "notes": "Fresh 2026-10-05 Toronto-morning Scanner A selection from the scheduled discovery run. Reviewed all 155 raw-review candidates. Merged long-tail searches by underlying entity/topic; removed entertainment, sports, creator/channel names, generic how-to, evergreen explainers and low-value non-investing noise. US, Canada and Taiwan were treated as near-equal discovery markets. Upstream Explore was rate-limited after 8 attempted requests (7 succeeded); only observed signals were used. Selected 12 distinct investing-relevant topics rather than padding to 20. No YouTube metrics were computed here.",
+  "generated_at_utc": "2026-10-06T11:48:24Z",
+  "source_raw_generated_at_utc": "2026-10-06T11:41:25.799375+00:00",
+  "notes": "Fresh 2026-10-06 Toronto-morning Scanner A selection from the scheduled discovery output. Reviewed the current 177-candidate review set, merged long-tail searches by underlying entity/topic, and removed entertainment, sports, creator/channel names, generic how-to, evergreen explainers and low-value non-investing noise. US, Canada and Taiwan were treated as near-equal discovery markets. Upstream Explore attempted 11 logical requests, 8 succeeded, and stopped after a 429; only observed signals were used. Selected fewer than 20 rather than padding. No YouTube metrics were computed here.",
   "selected": [
-    {
-      "entity": "Quantum computing stocks",
-      "entity_type": "sector",
-      "youtube_query": "quantum computing stocks RGTI IONQ QBTS QUBT",
-      "regions": ["CA"],
-      "selection_reason": "Quantum-computing equities are the strongest clean stock-specific breakout in the Canadian discovery feed and are directly relevant to U.S.-listed speculative technology names.",
-      "trend_evidence": ["CA: quantum computing stocks Breakout rank=2; Top rank=22", "CA: quantum stocks +80% rank=5; Top rank=13"],
-      "relevance_groups": [["quantum computing", "quantum stocks", "IONQ", "RGTI", "QBTS", "QUBT"]]
-    },
-    {
-      "entity": "Alphabet / Google",
-      "entity_type": "company",
-      "youtube_query": "Alphabet Google GOOGL stock AI",
-      "regions": ["TW"],
-      "selection_reason": "Google stock is a Taiwan breakout query and maps directly to Alphabet, a core U.S. mega-cap AI equity.",
-      "trend_evidence": ["TW: google 股票 Breakout rank=3"],
-      "relevance_groups": [["Google", "Alphabet", "GOOGL", "GOOG"]]
-    },
-    {
-      "entity": "AMD",
-      "entity_type": "company",
-      "youtube_query": "AMD earnings AI chips",
-      "regions": ["CA"],
-      "selection_reason": "AMD earnings search interest is sharply rising in Canada, making it a clean U.S.-semiconductor investor topic with strong AI relevance.",
-      "trend_evidence": ["CA: amd earnings +650% rank=1; Top rank=2"],
-      "relevance_groups": [["AMD", "Advanced Micro Devices"], ["earnings", "results", "AI", "chips"]]
-    },
-    {
-      "entity": "Micron Technology",
-      "entity_type": "company",
-      "youtube_query": "Micron MU earnings memory HBM",
-      "regions": ["CA", "TW"],
-      "selection_reason": "Micron remains a top Canadian earnings query while Taiwan interest in memory-chip stocks is rising, reinforcing the memory/HBM cycle as an investable U.S.-equity topic.",
-      "trend_evidence": ["CA: micron earnings Top rank=3", "TW: 記憶 體 股票 +250% rank=6; Top rank=15"],
-      "relevance_groups": [["Micron", "MU"], ["earnings", "memory", "HBM", "DRAM", "記憶體"]]
-    },
-    {
-      "entity": "ON Semiconductor",
-      "entity_type": "company",
-      "youtube_query": "ON Semiconductor ON stock",
-      "regions": ["US"],
-      "selection_reason": "ON Semiconductor has fresh U.S. rising search momentum and is directly relevant to semiconductor investors.",
-      "trend_evidence": ["US: on semiconductor stock +120% rank=3; Top rank=12", "US: on semiconductor Top rank=4"],
-      "relevance_groups": [["ON Semiconductor", "onsemi", "ON"]]
-    },
-    {
-      "entity": "Nike",
-      "entity_type": "company",
-      "youtube_query": "Nike NKE earnings call",
-      "regions": ["CA"],
-      "selection_reason": "Nike earnings-call interest is rising in Canada and ranks first among the earnings top queries, giving it a clear U.S.-listed consumer-stock angle.",
-      "trend_evidence": ["CA: nike earnings call +80% rank=2; Top rank=1"],
-      "relevance_groups": [["Nike", "NKE"], ["earnings", "earnings call", "results"]]
-    },
-    {
-      "entity": "TSMC",
-      "entity_type": "company",
-      "youtube_query": "TSMC TSM Taiwan Semiconductor stock",
-      "regions": ["US", "TW"],
-      "selection_reason": "Taiwan Semiconductor is rising in U.S. semiconductor searches and remains a direct Taiwan stock query, with major relevance to U.S. AI and chip investors.",
-      "trend_evidence": ["US: taiwan semiconductor +80% rank=4; Top rank=2", "US: taiwan semiconductor manufacturing Top rank=9", "TW: 台積電 股票 Top rank=17"],
-      "relevance_groups": [["TSMC", "Taiwan Semiconductor", "TSM", "台積電"]]
-    },
-    {
-      "entity": "Navitas Semiconductor",
-      "entity_type": "company",
-      "youtube_query": "Navitas Semiconductor NVTS stock GaN SiC",
-      "regions": ["US"],
-      "selection_reason": "Navitas has both rising and top U.S. semiconductor-query presence, making it a focused small-cap power-semiconductor topic.",
-      "trend_evidence": ["US: navitas semiconductor +40% rank=5; Top rank=3", "US: navitas semiconductor stock Top rank=8"],
-      "relevance_groups": [["Navitas Semiconductor", "Navitas", "NVTS"], ["GaN", "SiC", "semiconductor", "stock"]]
-    },
-    {
-      "entity": "Figure AI",
-      "entity_type": "private_company",
-      "youtube_query": "Figure AI humanoid robots",
-      "regions": ["TW"],
-      "selection_reason": "Figure AI is a strong Taiwan AI rising query and is relevant to the U.S. humanoid-robotics and AI-capex ecosystem even though it is private.",
-      "trend_evidence": ["TW: figure ai +250% rank=1; Top rank=18"],
-      "relevance_groups": [["Figure AI", "Figure"], ["robot", "robots", "robotics", "humanoid"]]
-    },
-    {
-      "entity": "U.S. AI policy / AI czar",
-      "entity_type": "policy",
-      "youtube_query": "Trump AI czar Jay Clayton AI policy",
-      "regions": ["CA"],
-      "selection_reason": "A strong Canada trend around Donald Trump is tied to fresh reports of a new U.S. AI czar and AI-risk strategy, directly relevant to regulation and U.S. technology equities.",
-      "trend_evidence": ["CA: donald trump GTrend 2000+ rank=1", "News: Trump chooses top spy boss to run new AI taskforce; names Jay Clayton as AI czar; new AI strategy coverage"],
-      "relevance_groups": [["Trump", "Jay Clayton", "AI czar"], ["AI", "artificial intelligence", "policy", "taskforce"]]
-    },
-    {
-      "entity": "Delta Electronics",
-      "entity_type": "foreign_company",
-      "youtube_query": "Delta Electronics 2308 AI power data center",
-      "regions": ["TW"],
-      "selection_reason": "Delta Electronics is a fresh Taiwan trend and a key power/cooling supplier exposed to AI data-center capex and global technology supply chains.",
-      "trend_evidence": ["TW: 台 達 電 GTrend 1000+ rank=2", "TW: 2308 GTrend 500+ rank=8"],
-      "relevance_groups": [["Delta Electronics", "台達電", "2308"], ["AI", "data center", "power", "cooling"]]
-    },
-    {
-      "entity": "Semiconductor manufacturing capacity",
-      "entity_type": "sector",
-      "youtube_query": "semiconductor plant manufacturing capacity US chips",
-      "regions": ["US"],
-      "selection_reason": "U.S. searches for semiconductor plants are rising sharply while semiconductor manufacturing ranks first among top semiconductor queries, supporting a broad capacity/supply-chain topic.",
-      "trend_evidence": ["US: semiconductor plant +190% rank=2; Top rank=15", "US: semiconductor manufacturing Top rank=1"],
-      "relevance_groups": [["semiconductor plant", "semiconductor manufacturing", "chip fab", "fab", "foundry"]]
-    }
+    {"entity":"Applied Digital","entity_type":"company","youtube_query":"Applied Digital APLD earnings AI data centers","regions":["US"],"selection_reason":"APLD earnings is today's strongest clean U.S. investing breakout and maps directly to an AI/data-center infrastructure equity.","trend_evidence":["US: apld earnings Breakout rank=1; Top rank=17"],"relevance_groups":[["Applied Digital","APLD"],["earnings","AI","data center"]]},
+    {"entity":"Oracle","entity_type":"company","youtube_query":"Oracle ORCL stock cloud AI","regions":["TW"],"selection_reason":"Oracle stock is the top Taiwan stock-query breakout and is directly relevant to U.S. cloud and AI infrastructure investors.","trend_evidence":["TW: 甲骨文 股票 Breakout rank=1"],"relevance_groups":[["Oracle","ORCL","甲骨文"],["stock","股票","cloud","AI"]]},
+    {"entity":"Costco","entity_type":"company","youtube_query":"Costco COST earnings","regions":["US"],"selection_reason":"Costco earnings is a breakout U.S. earnings query with a direct large-cap consumer-equity angle.","trend_evidence":["US: costco earnings Breakout rank=3; Top rank=20"],"relevance_groups":[["Costco","COST"],["earnings","results"]]},
+    {"entity":"Applied Optoelectronics","entity_type":"company","youtube_query":"Applied Optoelectronics AAOI stock AI optics","regions":["TW"],"selection_reason":"AAOI stock is a Taiwan breakout and offers a clean U.S.-listed AI optical-networking angle.","trend_evidence":["TW: aaoi 股票 Breakout rank=5"],"relevance_groups":[["Applied Optoelectronics","AAOI"],["optics","AI","stock","股票"]]},
+    {"entity":"Uber","entity_type":"company","youtube_query":"Uber UBER earnings Uber Eats","regions":["US"],"selection_reason":"Uber Eats earnings interest is sharply rising and maps to Uber's delivery economics and U.S.-listed equity.","trend_evidence":["US: uber eats earnings +450% rank=4; Top rank=18"],"relevance_groups":[["Uber","UBER","Uber Eats"],["earnings","delivery"]]},
+    {"entity":"Tesla","entity_type":"company","youtube_query":"Tesla TSLA earnings call Elon Musk","regions":["US"],"selection_reason":"Elon Musk earnings-call searches are sharply rising and most naturally map to Tesla's investor attention cycle.","trend_evidence":["US: elon musk earnings call +450% rank=5; Top rank=14"],"relevance_groups":[["Tesla","TSLA","Elon Musk"],["earnings call","earnings"]]},
+    {"entity":"Foxconn / Hon Hai","entity_type":"foreign_company","youtube_query":"Foxconn Hon Hai 2317 stock AI servers","regions":["TW"],"selection_reason":"Hon Hai stock search interest is rising in Taiwan and is highly relevant to the U.S. AI-server supply chain.","trend_evidence":["TW: 鴻海 股票 +170% rank=8; Top rank=25"],"relevance_groups":[["Foxconn","Hon Hai","鴻海","2317"],["stock","股票","AI server"]]},
+    {"entity":"Data center stocks","entity_type":"sector","youtube_query":"data center stocks AI infrastructure","regions":["CA"],"selection_reason":"Data-center stocks are a clean rising Canadian investing query with direct relevance to U.S. AI infrastructure equities.","trend_evidence":["CA: data center stocks +110% rank=4"],"relevance_groups":[["data center stocks","AI infrastructure","data centers"]]},
+    {"entity":"NVIDIA","entity_type":"company","youtube_query":"NVIDIA NVDA earnings AI chips","regions":["US"],"selection_reason":"NVDA earnings search interest is rising and remains a core U.S. AI-semiconductor investor topic.","trend_evidence":["US: nvda earnings +80% rank=7; Top rank=10"],"relevance_groups":[["NVIDIA","NVDA"],["earnings","AI","chips"]]},
+    {"entity":"UMC","entity_type":"foreign_company","youtube_query":"UMC UMC stock semiconductor foundry","regions":["TW"],"selection_reason":"UMC stock searches are rising in Taiwan and connect directly to the global foundry cycle and U.S.-listed UMC ADR.","trend_evidence":["TW: 聯電 股票 +100% rank=10; Top rank=21"],"relevance_groups":[["UMC","United Microelectronics","聯電"],["stock","股票","foundry"]]},
+    {"entity":"Circle Internet Group","entity_type":"company","youtube_query":"Circle CRCL stock USDC stablecoin","regions":["TW"],"selection_reason":"CRCL stock interest is rising in Taiwan and maps directly to a U.S.-listed stablecoin infrastructure equity.","trend_evidence":["TW: crcl 股票 +70% rank=14; Top rank=24"],"relevance_groups":[["Circle","CRCL"],["USDC","stablecoin","stock","股票"]]},
+    {"entity":"MediaTek","entity_type":"foreign_company","youtube_query":"MediaTek 2454 AI chips news","regions":["TW"],"selection_reason":"MediaTek is a fresh Taiwan news trend with direct relevance to semiconductor competition and AI-device supply chains.","trend_evidence":["TW: 聯發科 新聞 GTrend 2000+ rank=6"],"relevance_groups":[["MediaTek","聯發科","2454"],["AI","semiconductor","chips"]]},
+    {"entity":"Semiconductor industry","entity_type":"sector","youtube_query":"semiconductor industry AI chips stocks","regions":["US","TW"],"selection_reason":"Semiconductor-industry and component searches remain elevated across U.S. and Taiwan discovery, supporting a broad investable chip-cycle topic.","trend_evidence":["US: semiconductor industry +50% rank=1; Top rank=3","TW: 半導體 元件 +40% rank=2; Top rank=4"],"relevance_groups":[["semiconductor industry","半導體","半導體 元件","chips"]]}
   ]
 }

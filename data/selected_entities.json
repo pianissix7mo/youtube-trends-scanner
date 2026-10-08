@@ -1,55 +1,467 @@
 {
-  "generated_at_utc": "2026-10-07T11:46:36.342Z",
-  "source_raw_generated_at_utc": "2026-10-07T11:29:10.058832+00:00",
-  "notes": "Fresh 2026-10-07 Toronto-morning Scanner A selection from the scheduled discovery output. Reviewed all 30 raw candidates/review records. Removed weather, sports, entertainment, creator/personality, generic news, non-U.S.-investing macro noise and low-value non-investing searches. US, Canada and Taiwan were treated as near-equal discovery markets. Today's raw set is unusually sparse for investing signals, so only two distinct investable topics were retained rather than padding. No YouTube metrics were computed here.",
+  "generated_at_utc": "2026-10-08T11:46:19.899Z",
+  "source_raw_generated_at_utc": "2026-10-08T11:39:53.197094+00:00",
+  "notes": "2026-10-08 Toronto morning scheduled-discovery output. Reviewed all 215 candidates and 215 raw_review records; 11/12 Explore calls succeeded and TW earnings chart did not render. Merged long-tail searches, removed entertainment, sports, creators, tutorials, generic/evergreen and low-value topics. US/CA/TW treated as near-equal discovery markets. Only observed search signals used; no YouTube metrics computed. Source blob 1d96d4057a841399038ec782b6cd2073fcc208db.",
   "selected": [
     {
-      "entity": "IREN",
+      "entity": "Applied Digital (APLD)",
       "entity_type": "company",
-      "youtube_query": "IREN stock AI neocloud data center",
+      "youtube_query": "APLD Applied Digital earnings AI data center",
       "regions": [
-        "US"
+        "US",
+        "CA"
       ],
-      "selection_reason": "IREN is the clearest U.S.-equity search-momentum signal in today's raw set, with current coverage focused on AI-neocloud demand, a large spending plan and the stock's recent pullback.",
+      "selection_reason": "Fresh earnings-related breakout in Canada and multiple strong U.S. rising searches; direct U.S.-listed AI data-center investment catalyst.",
       "trend_evidence": [
-        "US: iren stock GTrend 100+ rank=6",
-        "Current news cluster: AI neocloud demand, $30B spending plan and Texas grid/data-center thesis"
+        "CA: \"apld earnings\" youtube_rising Breakout rank=1 via=earnings",
+        "US: \"apld earnings\" youtube_rising +2,450% rank=5 via=earnings",
+        "US: \"apld earnings call\" youtube_rising +700% rank=6 via=earnings",
+        "US: \"applied digital earnings\" youtube_rising +600% rank=7 via=earnings",
+        "US: \"applied digital earnings call\" youtube_rising +450% rank=8 via=earnings",
+        "CA: \"apld earnings\" youtube_top Top rank=1 via=earnings",
+        "US: \"apld earnings\" youtube_top Top rank=2 via=earnings"
       ],
       "relevance_groups": [
         [
-          "IREN",
-          "IREN stock"
+          "Applied Digital",
+          "APLD"
         ],
         [
-          "AI neocloud",
-          "data center",
-          "AI demand",
-          "spending plan"
+          "earnings",
+          "earnings call",
+          "AI data center"
         ]
       ]
     },
     {
-      "entity": "Phison Electronics",
-      "entity_type": "foreign_company",
-      "youtube_query": "Phison 8299 NAND AI storage",
+      "entity": "Aehr Test Systems (AEHR)",
+      "entity_type": "company",
+      "youtube_query": "AEHR Aehr Test Systems earnings semiconductor",
       "regions": [
-        "TW"
+        "US"
       ],
-      "selection_reason": "Ticker 8299 is a live Taiwan search signal for Phison, a semiconductor/storage company directly connected to the AI and memory supply-chain themes followed by U.S.-market investors.",
+      "selection_reason": "U.S. earnings breakout for a listed semiconductor testing supplier; specific timely company signal.",
       "trend_evidence": [
-        "TW: 8299 GTrend 100+ rank=10"
+        "US: \"aehr earnings\" youtube_rising Breakout rank=1 via=earnings",
+        "US: \"aehr earnings\" youtube_top Top rank=22 via=earnings"
       ],
       "relevance_groups": [
         [
-          "Phison",
-          "8299",
-          "群聯"
+          "Aehr",
+          "AEHR"
         ],
         [
-          "NAND",
-          "SSD",
-          "AI storage",
+          "earnings",
+          "semiconductor testing"
+        ]
+      ]
+    },
+    {
+      "entity": "PepsiCo (PEP)",
+      "entity_type": "company",
+      "youtube_query": "PepsiCo PEP Q3 earnings guidance",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "U.S. breakout in PepsiCo earnings-call searches coincides with a directly investable consumer-staples results topic.",
+      "trend_evidence": [
+        "US: \"pepsico earnings call\" youtube_rising Breakout rank=2 via=earnings",
+        "US: \"pepsico earnings call\" youtube_top Top rank=24 via=earnings"
+      ],
+      "relevance_groups": [
+        [
+          "PepsiCo",
+          "PEP"
+        ],
+        [
+          "earnings call",
+          "guidance"
+        ]
+      ]
+    },
+    {
+      "entity": "Memory semiconductor stocks",
+      "entity_type": "sector",
+      "youtube_query": "Micron MU Samsung SK hynix HBM memory stocks",
+      "regions": [
+        "CA"
+      ],
+      "selection_reason": "Canadian breakout for memory stocks, directly linked to investable AI-memory demand and pricing exposure.",
+      "trend_evidence": [
+        "CA: \"memory stocks\" youtube_rising Breakout rank=1 via=stocks",
+        "CA: \"memory stocks\" youtube_top Top rank=25 via=stocks"
+      ],
+      "relevance_groups": [
+        [
+          "memory stocks",
+          "DRAM",
+          "HBM"
+        ],
+        [
+          "Micron",
+          "MU",
+          "Samsung",
+          "SK hynix"
+        ]
+      ]
+    },
+    {
+      "entity": "OpenAI mathematical research",
+      "entity_type": "technology",
+      "youtube_query": "OpenAI AI math mathematical research 2026",
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "selection_reason": "Canada breakout and U.S./Canada rising interest in AI mathematics; specific AI research theme with implications for major AI-platform competition, not a generic AI tutorial.",
+      "trend_evidence": [
+        "CA: \"open ai math\" youtube_rising Breakout rank=1 via=AI",
+        "US: \"ai math\" youtube_rising +130% rank=1 via=AI",
+        "CA: \"ai math\" youtube_rising +110% rank=2 via=AI"
+      ],
+      "relevance_groups": [
+        [
+          "OpenAI",
+          "AI math"
+        ],
+        [
+          "mathematical research",
+          "AI research"
+        ]
+      ]
+    },
+    {
+      "entity": "Taiwan Semiconductor Manufacturing (TSMC)",
+      "entity_type": "company",
+      "youtube_query": "TSMC TSM September revenue AI chips",
+      "regions": [
+        "US",
+        "CA",
+        "TW"
+      ],
+      "selection_reason": "Canadian rising search and cross-market U.S. and Taiwan interest in a key U.S.-listed AI chip foundry.",
+      "trend_evidence": [
+        "CA: \"taiwan semiconductor\" youtube_rising +100% rank=1 via=semiconductor",
+        "CA: \"taiwan semiconductor\" youtube_top Top rank=2 via=semiconductor",
+        "US: \"taiwan semiconductor\" youtube_top Top rank=2 via=semiconductor",
+        "TW: \"台積電 股票\" youtube_top Top rank=23 via=股票"
+      ],
+      "relevance_groups": [
+        [
+          "TSMC",
+          "Taiwan Semiconductor",
+          "TSM",
+          "台積電"
+        ],
+        [
+          "AI chips",
+          "revenue"
+        ]
+      ]
+    },
+    {
+      "entity": "AMD",
+      "entity_type": "company",
+      "youtube_query": "AMD stock AI chips earnings",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "U.S. rising AMD stock and earnings searches signal direct U.S.-equity attention.",
+      "trend_evidence": [
+        "US: \"amd stock\" youtube_rising +140% rank=8 via=stocks",
+        "US: \"amd earnings\" youtube_rising +50% rank=10 via=earnings",
+        "US: \"amd earnings\" youtube_top Top rank=21 via=earnings"
+      ],
+      "relevance_groups": [
+        [
+          "AMD",
+          "Advanced Micro Devices"
+        ],
+        [
+          "stock",
+          "earnings",
+          "AI chips"
+        ]
+      ]
+    },
+    {
+      "entity": "McDonald's (MCD)",
+      "entity_type": "company",
+      "youtube_query": "McDonalds MCD earnings results",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "U.S. +170% rising earnings search offers a concrete large-cap consumer discretionary investor angle.",
+      "trend_evidence": [
+        "US: \"mcdonald's earnings\" youtube_rising +170% rank=9 via=earnings",
+        "US: \"mcdonald's earnings\" youtube_top Top rank=23 via=earnings"
+      ],
+      "relevance_groups": [
+        [
+          "McDonald's",
+          "MCD"
+        ],
+        [
+          "earnings",
+          "results"
+        ]
+      ]
+    },
+    {
+      "entity": "Cybersecurity stocks",
+      "entity_type": "sector",
+      "youtube_query": "cybersecurity stocks CrowdStrike Palo Alto Zscaler",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "U.S. +130% rising query for an investable software/security equity group; exclude generic cybersecurity tutorials.",
+      "trend_evidence": [
+        "US: \"cybersecurity stocks\" youtube_rising +130% rank=10 via=stocks"
+      ],
+      "relevance_groups": [
+        [
+          "cybersecurity stocks",
+          "security software"
+        ],
+        [
+          "CRWD",
+          "PANW",
+          "ZS"
+        ]
+      ]
+    },
+    {
+      "entity": "Energy stocks",
+      "entity_type": "sector",
+      "youtube_query": "US energy stocks oil gas electricity",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "U.S. +90% rising search is a direct investable sector-interest signal, not an evergreen energy explainer.",
+      "trend_evidence": [
+        "US: \"energy stocks\" youtube_rising +90% rank=12 via=stocks"
+      ],
+      "relevance_groups": [
+        [
+          "energy stocks",
+          "energy equities"
+        ],
+        [
+          "oil",
+          "natural gas",
+          "power"
+        ]
+      ]
+    },
+    {
+      "entity": "Silver mining stocks",
+      "entity_type": "sector",
+      "youtube_query": "silver mining stocks AG EXK silver price",
+      "regions": [
+        "CA"
+      ],
+      "selection_reason": "Canadian +50% rising searches for a U.S.-investable precious-metal mining group.",
+      "trend_evidence": [
+        "CA: \"silver stocks\" youtube_rising +50% rank=9 via=stocks",
+        "CA: \"silver stocks\" youtube_top Top rank=22 via=stocks"
+      ],
+      "relevance_groups": [
+        [
+          "silver stocks",
+          "silver miners"
+        ],
+        [
+          "AG",
+          "EXK",
+          "silver price"
+        ]
+      ]
+    },
+    {
+      "entity": "Sung Yang Semiconductor (8028)",
+      "entity_type": "company",
+      "youtube_query": "昇陽半導體 8028 semiconductor stock",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "Taiwan semiconductor breakout with strong top-query presence; adjacent to the AI foundry and semiconductor manufacturing supply chain.",
+      "trend_evidence": [
+        "TW: \"8028 昇 陽 半導體\" youtube_rising Breakout rank=1 via=半導體",
+        "TW: \"8028 昇 陽 半導體\" youtube_top Top rank=4 via=半導體"
+      ],
+      "relevance_groups": [
+        [
+          "昇陽半導體",
+          "8028",
+          "Sung Yang"
+        ],
+        [
+          "semiconductor",
+          "半導體"
+        ]
+      ]
+    },
+    {
+      "entity": "Truelight (3234)",
+      "entity_type": "company",
+      "youtube_query": "光環 3234 optical communications stock",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "Taiwan stock-query breakout for optical communications components, a relevant AI networking supply-chain adjacency.",
+      "trend_evidence": [
+        "TW: \"光環 股票\" youtube_rising Breakout rank=3 via=股票"
+      ],
+      "relevance_groups": [
+        [
+          "光環",
+          "3234",
+          "Truelight"
+        ],
+        [
+          "optical communication",
+          "光通訊"
+        ]
+      ]
+    },
+    {
+      "entity": "Defense and aerospace stocks",
+      "entity_type": "sector",
+      "youtube_query": "US defense stocks LMT RTX NOC military spending",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "Taiwan military-industry stock-query breakout can be framed around U.S.-listed aerospace/defense equities rather than geopolitics.",
+      "trend_evidence": [
+        "TW: \"軍工 股票\" youtube_rising Breakout rank=4 via=股票"
+      ],
+      "relevance_groups": [
+        [
+          "軍工 股票",
+          "defense stocks"
+        ],
+        [
+          "LMT",
+          "RTX",
+          "NOC"
+        ]
+      ]
+    },
+    {
+      "entity": "Yageo (2327)",
+      "entity_type": "company",
+      "youtube_query": "國巨 2327 Yageo electronic components AI",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "Taiwan rising Yageo stock query; electronics/passive components are relevant to the broader U.S. AI-hardware supply chain.",
+      "trend_evidence": [
+        "TW: \"國巨 股票\" youtube_rising +60% rank=18 via=股票",
+        "TW: \"國巨 股票\" youtube_top Top rank=22 via=股票"
+      ],
+      "relevance_groups": [
+        [
+          "國巨",
+          "Yageo",
+          "2327"
+        ],
+        [
+          "passive components",
+          "AI hardware"
+        ]
+      ]
+    },
+    {
+      "entity": "Navitas Semiconductor (NVTS)",
+      "entity_type": "company",
+      "youtube_query": "Navitas Semiconductor NVTS stock GaN",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Two prominent U.S. top semiconductor searches for a listed power-semiconductor supplier.",
+      "trend_evidence": [
+        "US: \"navitas semiconductor\" youtube_top Top rank=6 via=semiconductor",
+        "US: \"navitas semiconductor stock\" youtube_top Top rank=7 via=semiconductor"
+      ],
+      "relevance_groups": [
+        [
+          "Navitas",
+          "NVTS"
+        ],
+        [
+          "semiconductor",
+          "GaN",
+          "stock"
+        ]
+      ]
+    },
+    {
+      "entity": "ON Semiconductor (ON)",
+      "entity_type": "company",
+      "youtube_query": "ON Semiconductor ON stock",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Repeated U.S. top searches identify a directly listed semiconductor equity rather than ordinary English 'on'.",
+      "trend_evidence": [
+        "US: \"on semiconductor\" youtube_top Top rank=8 via=semiconductor",
+        "US: \"on semiconductor stock\" youtube_top Top rank=12 via=semiconductor"
+      ],
+      "relevance_groups": [
+        [
+          "ON Semiconductor",
+          "onsemi",
+          "ON"
+        ],
+        [
+          "stock",
           "semiconductor"
+        ]
+      ]
+    },
+    {
+      "entity": "Micron Technology (MU)",
+      "entity_type": "company",
+      "youtube_query": "Micron MU earnings HBM DRAM",
+      "regions": [
+        "US"
+      ],
+      "selection_reason": "Prominent U.S. top earnings query for a core listed AI-memory company, distinct from sector-wide memory-stock interest.",
+      "trend_evidence": [
+        "US: \"micron earnings\" youtube_top Top rank=6 via=earnings"
+      ],
+      "relevance_groups": [
+        [
+          "Micron",
+          "MU"
+        ],
+        [
+          "earnings",
+          "HBM",
+          "DRAM"
+        ]
+      ]
+    },
+    {
+      "entity": "Philadelphia Semiconductor Index / ETF",
+      "entity_type": "sector",
+      "youtube_query": "SOX Philadelphia Semiconductor ETF 00830",
+      "regions": [
+        "TW"
+      ],
+      "selection_reason": "Taiwan top query for the Philadelphia semiconductor ETF directly links Taiwan discovery to U.S. chip-equity performance.",
+      "trend_evidence": [
+        "TW: \"00830 國泰 費城 半導體\" youtube_top Top rank=6 via=半導體"
+      ],
+      "relevance_groups": [
+        [
+          "00830",
+          "費城半導體",
+          "SOX"
+        ],
+        [
+          "semiconductor ETF",
+          "半導體"
         ]
       ]
     }

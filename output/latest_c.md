@@ -1,17 +1,17 @@
 # Scanner C — Editorial News + YouTube Enrichment
 
-Generated: **2026-10-07T11:51:37.695999+00:00**
-Selection generated: **2026-10-07T11:50:51Z**
+Generated: **2026-10-08T11:33:59.609216+00:00**
+Selection generated: **2026-10-08T11:33:34.175Z**
 YouTube search calls used: **6**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | Microsoft / NVIDIA | MSFT / NVDA | Microsoft Nvidia AI laptop Surface Laptop Ultra RTX Spark October 2026 | 4/12 | 53 | 25.0% | 100.0% | ok |
-| 2 | Marvell Technology | MRVL | Marvell 2028 revenue forecast custom AI chips Broadcom October 2026 | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 3 | Lambda | — | Lambda $4 billion funding $50 billion backlog Nvidia IPO 2027 | 1/2 | 9 | 0.0% | 100.0% | ok |
-| 4 | AirTrunk / Blackstone | BX | AirTrunk Blackstone Japan $1 billion AI data center Inzai October 2026 | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
-| 5 | Tesla | TSLA | Tesla FSD Europe Germany EU approval October 2026 | 3/9 | 102 | 0.0% | 100.0% | ok |
-| 6 | Micron Technology | MU | Micron Taiwan strike union Taoyuan memory supply October 2026 | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 1 | Samsung Electronics | 005930.KS | Samsung Electronics Samsung projects record Q3 operating profit of KRW 107.4 trillion October 2026 | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 2 | TSMC | TSM | TSMC TSMC Q3 revenue rises 50% to record T$1.49 trillion October 2026 | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 3 | Applied Digital | APLD | Applied Digital Applied Digital reports quarterly revenue growth of 322% October 2026 | 0/4 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 4 | Wolfspeed | WOLF | Wolfspeed Wolfspeed receives conditional $1.5 billion US defense loan commitment October 2026 | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 5 | US equities / oil and yields | SPY / QQQ | US equities / oil and yields US futures slide as oil and Treasury yields rise October 2026 | 0/13 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 6 | Yandex | YDEX | Yandex Drones hit Yandex data center in Russia October 2026 | 0/8 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

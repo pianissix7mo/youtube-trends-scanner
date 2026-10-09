@@ -27,7 +27,7 @@ ALIASES = {
     "WOLF": ("wolfspeed",),
     "RTX": ("raytheon", "雷神公司"),
     "SBUX": ("starbucks", "星巴克"),
-    "DAL": ("delta air lines", "delta airlines", "达美航空", "達美航空"),
+    "DAL": ("delta air lines", "delta airlines", "delta airline", "达美航空", "達美航空"),
     "HOOD": ("robinhood",),
     "PRU": ("prudential financial", "保德信"),
 }

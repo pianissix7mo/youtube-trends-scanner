@@ -19,13 +19,20 @@ on:
 permissions:
   contents: write
 
+# A prompt-triggered collector and a delayed GitHub cron must not collect
+# twice concurrently. The second run re-checks today's freshness on start.
+concurrency:
+  group: collect-ab-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   schedule_guard:
     runs-on: ubuntu-latest
     outputs:
       run: ${{ steps.guard.outputs.run }}
     steps:
-      - name: Check Toronto schedule
+      - uses: actions/checkout@v4
+      - name: Check Toronto schedule and source freshness
         id: guard
         shell: bash
         run: |
@@ -37,7 +44,28 @@ jobs:
           SCHEDULE="${{ github.event.schedule }}"
           if { [ "$TORONTO_OFFSET" = "-0400" ] && [ "$SCHEDULE" = "15 11 * * *" ]; } || \
              { [ "$TORONTO_OFFSET" = "-0500" ] && [ "$SCHEDULE" = "15 12 * * *" ]; }; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
+            python - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          today = datetime.now(ZoneInfo("America/Toronto")).date()
+          def fresh(path):
+              try:
+                  stamp = json.loads(Path(path).read_text(encoding="utf-8"))["generated_at_utc"]
+                  dt = datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+                  return dt.astimezone(ZoneInfo("America/Toronto")).date() == today
+              except (OSError, ValueError, KeyError, TypeError):
+                  return False
+
+          if fresh("data/raw_candidates.json") and fresh("scanner_b/data/judge_candidates.json"):
+              print("A+B discovery already fresh today; skip late/duplicate cron.")
+              os.system('echo run=false >> "$GITHUB_OUTPUT"')
+          else:
+              os.system('echo run=true >> "$GITHUB_OUTPUT"')
+          PY
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
             echo "Skipping duplicate UTC trigger."

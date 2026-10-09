@@ -84,7 +84,7 @@ def any_phrase(title: str, terms: tuple[str, ...] | list[str]) -> bool:
 
 def entity_aliases(entity: str, ticker: str = "") -> tuple[str, ...]:
     ticker = normalize(ticker).upper()
-    cleaned = re.sub(r"\\b(?:incorporated|inc|corporation|corp|company|co|ltd|plc|holdings|group)\\b[.,]*", " ", entity, flags=re.I)
+    cleaned = re.sub(r"\b(?:incorporated|inc|corporation|corp|company|co|ltd|plc|holdings|group)\b[.,]*", " ", entity, flags=re.I)
     cleaned = " ".join(cleaned.split()).strip(" ,.")
     aliases = [*ALIASES.get(ticker, ())]
     if len(cleaned) >= 4 and "/" not in cleaned:
@@ -101,6 +101,13 @@ def company_in_title(title: str, entity: str, ticker: str = "") -> bool:
     # For titles with several tickers, the company must be a material focus.
     head = title[:110]
     if any_phrase(head, aliases):
+        # Apple is also a fruit; an Apple stock/iPhone video needs a tech or
+        # investing cue before its metrics can influence an equity report.
+        if ticker == "AAPL" and has_phrase(head, "apple"):
+            return any_phrase(title, MARKET_CONTEXT + (
+                "iphone", "ipad", "macbook", "mac", "ios", "airpods",
+                "苹果手机", "蘋果手機", "苹果公司", "蘋果公司",
+            ))
         return True
     if not ticker or not has_phrase(head, ticker):
         return False

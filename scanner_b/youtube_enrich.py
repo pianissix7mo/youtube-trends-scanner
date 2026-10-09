@@ -5,11 +5,15 @@ import hashlib
 import json
 import os
 import statistics
+import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
 import requests
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from youtube_title_relevance import FILTER_VERSION, event_relevant
 
 from scanner_common import DATA, OUT, clamp, clean_company_name, ensure_dirs, load_config, normalize_text, parse_timestamp, write_json
 
@@ -51,6 +55,7 @@ def cache_key(query: str, terms: list[str], lookback_days: int) -> str:
         {
             "lookback_days": int(lookback_days),
             "query": normalize_text(query),
+            "filter_version": FILTER_VERSION,
             "terms": [normalize_text(x) for x in terms],
         },
         ensure_ascii=False,
@@ -144,6 +149,8 @@ def seed_cache_from_latest(
         if not query or not isinstance(metrics, dict):
             continue
         status = str(metrics.get("status") or "")
+        if metrics.get("relevance_filter_version") != FILTER_VERSION:
+            continue  # Do not re-seed historic false-positive BP/MSFT samples.
         if status in {"api_failed_no_cache", "skipped_no_api_key", "skipped_budget_exhausted"}:
             continue
 
@@ -210,11 +217,8 @@ def broad_fallback_query(event: dict[str, Any], original_query: str) -> tuple[st
     return candidate, True
 
 
-def event_title_relevant(title: str, terms: list[str]) -> bool:
-    if not terms:
-        return True
-    hay = normalize_text(title)
-    return any(normalize_text(term) in hay for term in terms if normalize_text(term))
+def event_title_relevant(title: str, event: dict[str, Any]) -> bool:
+    return event_relevant(title, event)
 
 
 def supply_gap_score(relevant_sample_size: int) -> float:
@@ -292,6 +296,7 @@ def enrich_event(
         )
         return ({
             "status": "ok_no_videos" if broad_absence_confirmed else "ok_no_videos_unconfirmed",
+            "relevance_filter_version": FILTER_VERSION,
             "query": query,
             "search_query_used": search_query_used,
             "broad_fallback_query": fallback_query,
@@ -318,7 +323,7 @@ def enrich_event(
         snippet = item.get("snippet") or {}
         stats = item.get("statistics") or {}
         title = str(snippet.get("title") or "")
-        if not event_title_relevant(title, terms):
+        if not event_title_relevant(title, event):
             continue
         try:
             published = parse_timestamp(str(snippet.get("publishedAt") or ""))
@@ -370,7 +375,8 @@ def enrich_event(
     parsed.sort(key=lambda x: int(x["views_per_day"]), reverse=True)
     relevant_count = len(parsed)
     return ({
-        "status": "ok",
+        "status": "ok" if relevant_count else "ok_no_relevant_videos",
+        "relevance_filter_version": FILTER_VERSION,
         "query": query,
         "search_query_used": search_query_used,
         "broad_fallback_query": fallback_query,
@@ -378,10 +384,11 @@ def enrich_event(
         "raw_sample_size": len(video_ids),
         "relevant_sample_size": relevant_count,
         "estimated_total_results": estimated_total,
-        "youtube_supply_gap_score": supply_gap_score(relevant_count),
-        "median_views_per_day": int(statistics.median(vpds)) if vpds else 0,
+        "youtube_supply_gap_score": supply_gap_score(relevant_count) if relevant_count else None,
+        "median_views_per_day": int(statistics.median(vpds)) if vpds else None,
         "small_channel_sample_size": small_count,
-        "small_channel_hit_rate": round(100.0 * small_hits / small_count, 1) if small_count else 0.0,
+        "small_channel_hit_rate": (round(100.0 * small_hits / small_count, 1)
+                                   if small_count else None),
         "sample_videos": parsed[:10],
     }, search_calls_used)
 
@@ -521,6 +528,8 @@ def main() -> None:
                 else:
                     yt = failure_metrics(query, error)
 
+        yt = dict(yt)
+        yt["relevance_filter_version"] = FILTER_VERSION
         row["youtube_metrics"] = yt
         gap = yt.get("youtube_supply_gap_score")
         discovery = float(row.get("discovery_score") or 0.0)

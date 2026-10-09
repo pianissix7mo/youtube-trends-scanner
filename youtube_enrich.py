@@ -23,6 +23,9 @@ from pathlib import Path
 from typing import Any
 
 import requests
+from youtube_title_relevance import (
+    FILTER_VERSION, groups_relevant, has_phrase,
+)
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -89,18 +92,14 @@ def term_matches(normalized_title: str, term: str) -> bool:
     needle = normalize_text(term)
     if not needle:
         return False
-    if re.fullmatch(r"[a-z0-9.+&/-]+", needle):
-        pattern = rf"(?<![a-z0-9]){re.escape(needle)}(?![a-z0-9])"
-        return re.search(pattern, normalized_title) is not None
-    return needle in normalized_title
+    return has_phrase(normalized_title, needle)
 
 
-def is_relevant_title(title: str, groups: list[list[str]]) -> bool:
-    """All groups must match; any term inside a group may satisfy that group."""
-    if not groups:
-        return True
-    normalized_title = normalize_text(title)
-    return all(any(term_matches(normalized_title, term) for term in group) for group in groups)
+def is_relevant_title(
+    title: str, groups: list[list[str]], entity: str = "", ticker: str = ""
+) -> bool:
+    """All groups plus company identity must match (where a ticker exists)."""
+    return groups_relevant(title, groups, entity, ticker)
 
 
 def relevance_signature(groups: list[list[str]]) -> str:
@@ -111,7 +110,7 @@ def relevance_signature(groups: list[list[str]]) -> str:
 
 def cache_key(query: str, relevance_groups: list[list[str]]) -> str:
     normalized_query = normalize_text(query)
-    return f"{LOOKBACK_DAYS}d|{normalized_query}|rel:{relevance_signature(relevance_groups)}"
+    return f"{FILTER_VERSION}|{LOOKBACK_DAYS}d|{normalized_query}|rel:{relevance_signature(relevance_groups)}"
 
 
 def cached_metrics(
@@ -201,6 +200,8 @@ def fetch_metrics(
     query: str,
     relevance_groups: list[list[str]],
     api_key: str,
+    entity: str = "",
+    ticker: str = "",
 ) -> dict[str, Any]:
     now = datetime.now(timezone.utc)
     published_after = (now - timedelta(days=LOOKBACK_DAYS)).isoformat().replace("+00:00", "Z")
@@ -262,7 +263,7 @@ def fetch_metrics(
     relevant: list[dict[str, Any]] = []
     rejected: list[dict[str, Any]] = []
     for row in raw_parsed:
-        if is_relevant_title(str(row.get("title") or ""), relevance_groups):
+        if is_relevant_title(str(row.get("title") or ""), relevance_groups, entity, ticker):
             relevant.append(row)
         else:
             rejected.append(row)
@@ -344,6 +345,7 @@ def fetch_metrics(
 
     status = "ok_low_relevance" if relevance_groups and relevance_ratio < 30.0 else "ok"
     return {
+        "relevance_filter_version": FILTER_VERSION,
         "recent_video_estimate": estimated_supply,
         "raw_recent_video_estimate": estimated_supply,
         "raw_sample_size": raw_sample_size,
@@ -510,7 +512,7 @@ def main() -> None:
                 }
         else:
             try:
-                metrics = fetch_metrics(query, relevance_groups, api_key)
+                metrics = fetch_metrics(query, relevance_groups, api_key, entity, str(row.get("ticker") or ""))
                 cache[cache_key(query, relevance_groups)] = {
                     "cached_at_utc": datetime.now(timezone.utc).isoformat(),
                     "metrics": metrics,
@@ -549,6 +551,8 @@ def main() -> None:
                         "api_error": str(exc),
                     }
 
+        metrics = dict(metrics)
+        metrics["relevance_filter_version"] = FILTER_VERSION
         row["youtube_metrics"] = metrics
         enriched.append(row)
 

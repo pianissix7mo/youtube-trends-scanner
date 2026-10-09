@@ -1,0 +1,30 @@
+name: Relevance Filter Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "youtube_title_relevance.py"
+      - "youtube_enrich.py"
+      - "youtube_enrich_external.py"
+      - "scanner_b/youtube_enrich.py"
+      - "tests/test_title_relevance.py"
+      - ".github/workflows/test_relevance.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Python syntax and relevance regression tests (no YouTube API)
+        run: |
+          python -m py_compile youtube_title_relevance.py youtube_enrich.py youtube_enrich_external.py scanner_b/youtube_enrich.py
+          python -m unittest discover -s tests -v

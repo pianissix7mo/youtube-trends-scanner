@@ -80,7 +80,7 @@ def enrich_items(
             metrics["cache_status"] = "fresh"
         else:
             try:
-                metrics = base.fetch_metrics(query, relevance_groups, api_key)
+                metrics = base.fetch_metrics(query, relevance_groups, api_key, entity, str(row.get("ticker") or ""))
                 search_calls += 1
                 cache[base.cache_key(query, relevance_groups)] = {
                     "cached_at_utc": datetime.now(timezone.utc).isoformat(),
@@ -97,6 +97,8 @@ def enrich_items(
                 else:
                     metrics = failed_metrics(relevance_groups, str(exc))
 
+        metrics = dict(metrics)
+        metrics["relevance_filter_version"] = base.FILTER_VERSION
         row["youtube_metrics"] = metrics
         enriched.append(row)
 

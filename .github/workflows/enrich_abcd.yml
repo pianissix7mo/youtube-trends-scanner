@@ -2,17 +2,8 @@ name: Enrich Scanner A + B + C + D
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "data/selected_entities.json"
-      - "scanner_b/data/selected_events.json"
-      - "data/selected_external.json"
-      - "youtube_enrich.py"
-      - "scanner_b/youtube_enrich.py"
-      - "youtube_enrich_external.py"
-      - ".github/workflows/enrich_abcd.yml"
 
+# Automatic enrichment paused 2026-10-10 at owner's request; manual dispatch remains available.
 permissions:
   contents: write
 

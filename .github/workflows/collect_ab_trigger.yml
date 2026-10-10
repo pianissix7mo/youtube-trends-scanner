@@ -1,12 +1,9 @@
 name: Trigger Scanner A + B Recovery
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "data/collect_ab_trigger.txt"
+  workflow_dispatch:
 
+# Automatic recovery trigger paused 2026-10-10 at owner's request; manual dispatch remains available.
 permissions:
   actions: write
   contents: read

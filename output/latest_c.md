@@ -1,19 +1,17 @@
 # Scanner C — Editorial News + YouTube Enrichment
 
-Generated: **2026-10-09T13:17:28.281674+00:00**
-Selection generated: **2026-10-09T12:55:54.938Z**
-YouTube search calls used: **8**
+Generated: **2026-10-10T12:22:04.213665+00:00**
+Selection generated: **2026-10-10T12:21:38.129Z**
+YouTube search calls used: **6**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | SpaceX / US telecom operators | SPCX / T / VZ / TMUS | SpaceX 800MHz spectrum Starlink Mobile ATT Verizon T Mobile | 0/45 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 2 | Humana | HUM | Humana HUM Medicare star ratings 2027 95% | 1/2 | 0 | 0.0% | 100.0% | ok |
-| 3 | Apple | AAPL | Apple iPhone 18 Pro production order cut Nikkei | 0/2 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 4 | OpenAI / AI semiconductor complex | NVDA / MU / AMD / AVGO | OpenAI revenue 50 70 billion Nvidia Micron stock selloff | 0/8 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 5 | Delta Air Lines | DAL | Delta DAL earnings guidance jet fuel October 2026 | 0/1 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 6 | TSMC / GlobalFoundries | TSM / GFS | GlobalFoundries TSMC 2 billion interposer chips | 0/3 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 7 | Wolfspeed | WOLF | Wolfspeed WOLF 1.5 billion defense loan | 1/4 | 42 | 0.0% | 100.0% | ok_low_relevance |
-| 8 | US market Q3 earnings / AI | SPY / QQQ | S&P 500 2026 Q3 earnings AI technology growth | 0/40 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 1 | SpaceX | SPCX/T/VZ/TMUS | SpaceX Starlink spectrum | 29/50 | 94 | 10.5% | 20.0% | ok |
+| 2 | Apple | AAPL | Apple iPhone 18 Pro orders | 21/50 | 27 | 6.2% | 60.0% | ok |
+| 3 | Lumentum | LITE | Lumentum AI optical 2029 | 4/18 | 4 | 0.0% | 100.0% | ok_low_relevance |
+| 4 | Nuvacore | AMD/INTC/NVDA | Nuvacore CPU valuation | 0/5 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 5 | Super Micro Computer | SMCI/NVDA | Super Micro Nvidia export case | 0/10 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 6 | Humana | HUM | Humana Medicare ratings 95% | 2/13 | 11 | 0.0% | 100.0% | ok_low_relevance |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.

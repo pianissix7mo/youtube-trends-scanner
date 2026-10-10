@@ -1,21 +1,21 @@
 # Scanner D — Reddit Attention + YouTube Enrichment
 
-Generated: **2026-10-09T13:17:33.541896+00:00**
-Selection generated: **2026-10-09T12:55:54.938Z**
+Generated: **2026-10-10T12:22:08.699633+00:00**
+Selection generated: **2026-10-10T12:21:38.129Z**
 YouTube search calls used: **10**
 
 | # | Entity | Ticker | YouTube query | Relevant sample | Small-channel median VPD | Small-channel hit | Top-10 small share | Status |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | GameStop | GME | GME GameStop stock Reddit October 9 2026 | 3/6 | 16 | 33.3% | 100.0% | ok |
-| 2 | Google | GOOG | GOOG Google stock Reddit October 9 2026 | 1/28 | 0 | 0.0% | 0.0% | ok_low_relevance |
-| 3 | SpaceX | SPCX | SPCX SpaceX stock Reddit October 9 2026 | 1/2 | 76 | 0.0% | 100.0% | ok |
-| 4 | NVIDIA | NVDA | NVDA NVIDIA stock Reddit October 9 2026 | 3/7 | 42 | 0.0% | 66.7% | ok |
-| 5 | Microsoft | MSFT | MSFT Microsoft stock Reddit October 9 2026 | 0/2 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 6 | Micron Technology | MU | MU Micron Technology stock Reddit October 9 2026 | 2/11 | 84 | 0.0% | 100.0% | ok_low_relevance |
-| 7 | AST SpaceMobile | ASTS | ASTS AST SpaceMobile stock Reddit October 9 2026 | 0/2 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 8 | Meta | META | META Meta stock Reddit October 9 2026 | 0/49 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 9 | Amazon | AMZN | AMZN Amazon stock Reddit October 9 2026 | 0/5 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
-| 10 | Dell Technologies | DELL | DELL Dell Technologies stock Reddit October 9 2026 | 1/18 | 3 | 0.0% | 100.0% | ok_low_relevance |
+| 1 | GameStop | GME | GameStop GME stock Reddit | 8/14 | 20 | 0.0% | 100.0% | ok |
+| 2 | SpaceX | SPCX | SpaceX SPCX stock Reddit | 1/1 | 30 | 0.0% | 100.0% | ok |
+| 3 | AST SpaceMobile | ASTS | AST SpaceMobile ASTS stock Reddit | 1/3 | 30 | 0.0% | 100.0% | ok |
+| 4 | Adobe | ADBE | Adobe ADBE stock Reddit | 0/0 | 0 | 0.0% | 0.0% | ok_no_videos |
+| 5 | NVIDIA | NVDA | NVIDIA NVDA stock Reddit | 5/10 | 33 | 0.0% | 80.0% | ok |
+| 6 | Micron Technology | MU | Micron Technology MU stock Reddit | 6/8 | 33 | 0.0% | 100.0% | ok |
+| 7 | Google | GOOG | Google GOOG stock Reddit | 0/3 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 8 | Tesla | TSLA | Tesla TSLA stock Reddit | 2/4 | 10 | 0.0% | 100.0% | ok |
+| 9 | Microsoft | MSFT | Microsoft MSFT stock Reddit | 0/4 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
+| 10 | Amazon | AMZN | Amazon AMZN stock Reddit | 0/4 | 0 | 0.0% | 0.0% | ok_no_relevant_videos |
 
 - Window: last 3 days.
 - Small channel: fewer than 50,000 subscribers.
